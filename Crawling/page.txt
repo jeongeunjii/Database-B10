@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="sect-city">
+	<ul>
+		<li class="on"><a href="#">서울</a>
+		<div class="area">
+			<ul>
+				<li class="on"><a title="CGV강남" href="/theaters/?areacode=01&amp;theaterCode=0056&amp;date=20191114">CGV강남</a></li>
+				<li><a title="CGV강변" href="/theaters/?areacode=01&amp;theaterCode=0001&amp;date=20191114">CGV강변</a></li>
+				<li><a title="CGV건대입구" href="/theaters/?areacode=01&amp;theaterCode=0229&amp;date=20191114">CGV건대입구</a></li>
+				<li><a title="CGV구로" href="/theaters/?areacode=01&amp;theaterCode=0010&amp;date=20191114">CGV구로</a></li>
+				<li><a title="CGV대학로" href="/theaters/?areacode=01&amp;theaterCode=0063&amp;date=20191114">CGV대학로</a></li>
+				<li><a title="CGV동대문" href="/theaters/?areacode=01&amp;theaterCode=0252&amp;date=20191114">CGV동대문</a></li>
+				<li><a title="CGV등촌" href="/theaters/?areacode=01&amp;theaterCode=0230&amp;date=20191114">CGV등촌</a></li>
+				<li><a title="CGV명동 X 이진혁" href="/theaters/?areacode=01&amp;theaterCode=0009&amp;date=20191114">CGV명동 X 이진혁</a></li>
+				<li><a title="CGV명동역 씨네라이브러리" href="/theaters/?areacode=01&amp;theaterCode=0105&amp;date=20191114">CGV명동역 씨네라이브러리</a></li>
+				<li><a title="CGV목동" href="/theaters/?areacode=01&amp;theaterCode=0011&amp;date=20191114">CGV목동</a></li>
+				<li><a title="CGV미아" href="/theaters/?areacode=01&amp;theaterCode=0057&amp;date=20191114">CGV미아</a></li>
+				<li><a title="CGV불광" href="/theaters/?areacode=01&amp;theaterCode=0030&amp;date=20191114">CGV불광</a></li>
+				<li><a title="CGV상봉" href="/theaters/?areacode=01&amp;theaterCode=0046&amp;date=20191114">CGV상봉</a></li>
+				<li><a title="CGV성신여대입구" href="/theaters/?areacode=01&amp;theaterCode=0300&amp;date=20191114">CGV성신여대입구</a></li>
+				<li><a title="CGV송파" href="/theaters/?areacode=01&amp;theaterCode=0088&amp;date=20191114">CGV송파</a></li>
+				<li><a title="CGV수유" href="/theaters/?areacode=01&amp;theaterCode=0276&amp;date=20191114">CGV수유</a></li>
+				<li><a title="CGV신촌아트레온" href="/theaters/?areacode=01&amp;theaterCode=0150&amp;date=20191114">CGV신촌아트레온</a></li>
+				<li><a title="CGV압구정" href="/theaters/?areacode=01&amp;theaterCode=0040&amp;date=20191114">CGV압구정</a></li>
+				<li><a title="CGV여의도" href="/theaters/?areacode=01&amp;theaterCode=0112&amp;date=20191114">CGV여의도</a></li>
+				<li><a title="CGV영등포" href="/theaters/?areacode=01&amp;theaterCode=0059&amp;date=20191114">CGV영등포</a></li>
+				<li><a title="CGV왕십리" href="/theaters/?areacode=01&amp;theaterCode=0074&amp;date=20191114">CGV왕십리</a></li>
+				<li><a title="CGV용산아이파크몰" href="/theaters/?areacode=01&amp;theaterCode=0013&amp;date=20191114">CGV용산아이파크몰</a></li>
+				<li><a title="CGV중계" href="/theaters/?areacode=01&amp;theaterCode=0131&amp;date=20191114">CGV중계</a></li>
+				<li><a title="CGV천호" href="/theaters/?areacode=01&amp;theaterCode=0199&amp;date=20191114">CGV천호</a></li>
+				<li><a title="CGV청담씨네시티" href="/theaters/?areacode=01&amp;theaterCode=0107&amp;date=20191114">CGV청담씨네시티</a></li>
+				<li><a title="CGV피카디리1958" href="/theaters/?areacode=01&amp;theaterCode=0223&amp;date=20191114">CGV피카디리1958</a></li>
+				<li><a title="CGV하계" href="/theaters/?areacode=01&amp;theaterCode=0164&amp;date=20191114">CGV하계</a></li>
+				<li><a title="CGV홍대" href="/theaters/?areacode=01&amp;theaterCode=0191&amp;date=20191114">CGV홍대</a></li>
+			</ul>
+		</div>
+		</li>
+		<li><a href="#">경기</a>
+		<div class="area">
+			<ul>
+				<li><a title="CGV경기광주" href="/theaters/?areacode=02&amp;theaterCode=0260&amp;date=20191114">CGV경기광주</a></li>
+				<li><a title="CGV광교상현" href="/theaters/?areacode=02&amp;theaterCode=0266&amp;date=20191114">CGV광교상현</a></li>
+				<li><a title="CGV광명철산" href="/theaters/?areacode=02&amp;theaterCode=0182&amp;date=20191114">CGV광명철산</a></li>
+				<li><a title="CGV구리" href="/theaters/?areacode=02&amp;theaterCode=0232&amp;date=20191114">CGV구리</a></li>
+				<li><a title="CGV김포" href="/theaters/?areacode=02&amp;theaterCode=0177&amp;date=20191114">CGV김포</a></li>
+				<li><a title="CGV김포운양" href="/theaters/?areacode=02&amp;theaterCode=0188&amp;date=20191114">CGV김포운양</a></li>
+				<li><a title="CGV김포풍무" href="/theaters/?areacode=02&amp;theaterCode=0126&amp;date=20191114">CGV김포풍무</a></li>
+				<li><a title="CGV김포한강" href="/theaters/?areacode=02&amp;theaterCode=0298&amp;date=20191114">CGV김포한강</a></li>
+				<li><a title="CGV동백" href="/theaters/?areacode=02&amp;theaterCode=0124&amp;date=20191114">CGV동백</a></li>
+				<li><a title="CGV동수원" href="/theaters/?areacode=02&amp;theaterCode=0041&amp;date=20191114">CGV동수원</a></li>
+				<li><a title="CGV동탄" href="/theaters/?areacode=02&amp;theaterCode=0106&amp;date=20191114">CGV동탄</a></li>
+				<li><a title="CGV동탄역" href="/theaters/?areacode=02&amp;theaterCode=0265&amp;date=20191114">CGV동탄역</a></li>
+				<li><a title="CGV배곧" href="/theaters/?areacode=02&amp;theaterCode=0226&amp;date=20191114">CGV배곧</a></li>
+				<li><a title="CGV범계" href="/theaters/?areacode=02&amp;theaterCode=0155&amp;date=20191114">CGV범계</a></li>
+				<li><a title="CGV부천" href="/theaters/?areacode=02&amp;theaterCode=0015&amp;date=20191114">CGV부천</a></li>
+				<li><a title="CGV부천역" href="/theaters/?areacode=02&amp;theaterCode=0194&amp;date=20191114">CGV부천역</a></li>
+				<li><a title="CGV북수원" href="/theaters/?areacode=02&amp;theaterCode=0049&amp;date=20191114">CGV북수원</a></li>
+				<li><a title="CGV산본" href="/theaters/?areacode=02&amp;theaterCode=0242&amp;date=20191114">CGV산본</a></li>
+				<li><a title="CGV서현" href="/theaters/?areacode=02&amp;theaterCode=0196&amp;date=20191114">CGV서현</a></li>
+				<li><a title="CGV소풍" href="/theaters/?areacode=02&amp;theaterCode=0143&amp;date=20191114">CGV소풍</a></li>
+				<li><a title="CGV수원" href="/theaters/?areacode=02&amp;theaterCode=0012&amp;date=20191114">CGV수원</a></li>
+				<li><a title="CGV스타필드시티위례" href="/theaters/?areacode=02&amp;theaterCode=0274&amp;date=20191114">CGV스타필드시티위례</a></li>
+				<li><a title="CGV시흥" href="/theaters/?areacode=02&amp;theaterCode=0073&amp;date=20191114">CGV시흥</a></li>
+				<li><a title="CGV안산" href="/theaters/?areacode=02&amp;theaterCode=0211&amp;date=20191114">CGV안산</a></li>
+				<li><a title="CGV안성" href="/theaters/?areacode=02&amp;theaterCode=0279&amp;date=20191114">CGV안성</a></li>
+				<li><a title="CGV야탑" href="/theaters/?areacode=02&amp;theaterCode=0003&amp;date=20191114">CGV야탑</a></li>
+				<li><a title="CGV역곡" href="/theaters/?areacode=02&amp;theaterCode=0029&amp;date=20191114">CGV역곡</a></li>
+				<li><a title="CGV오리" href="/theaters/?areacode=02&amp;theaterCode=0004&amp;date=20191114">CGV오리</a></li>
+				<li><a title="CGV용인" href="/theaters/?areacode=02&amp;theaterCode=0271&amp;date=20191114">CGV용인</a></li>
+				<li><a title="CGV의정부" href="/theaters/?areacode=02&amp;theaterCode=0113&amp;date=20191114">CGV의정부</a></li>
+				<li><a title="CGV의정부태흥" href="/theaters/?areacode=02&amp;theaterCode=0187&amp;date=20191114">CGV의정부태흥</a></li>
+				<li><a title="CGV이천" href="/theaters/?areacode=02&amp;theaterCode=0205&amp;date=20191114">CGV이천</a></li>
+				<li><a title="CGV일산" href="/theaters/?areacode=02&amp;theaterCode=0054&amp;date=20191114">CGV일산</a></li>
+				<li><a title="CGV죽전" href="/theaters/?areacode=02&amp;theaterCode=0055&amp;date=20191114">CGV죽전</a></li>
+				<li><a title="CGV파주문산" href="/theaters/?areacode=02&amp;theaterCode=0148&amp;date=20191114">CGV파주문산</a></li>
+				<li><a title="CGV판교" href="/theaters/?areacode=02&amp;theaterCode=0181&amp;date=20191114">CGV판교</a></li>
+				<li><a title="CGV평촌" href="/theaters/?areacode=02&amp;theaterCode=0195&amp;date=20191114">CGV평촌</a></li>
+				<li><a title="CGV평택" href="/theaters/?areacode=02&amp;theaterCode=0052&amp;date=20191114">CGV평택</a></li>
+				<li><a title="CGV평택소사" href="/theaters/?areacode=02&amp;theaterCode=0214&amp;date=20191114">CGV평택소사</a></li>
+				<li><a title="CGV화성봉담" href="/theaters/?areacode=02&amp;theaterCode=0301&amp;date=20191114">CGV화성봉담</a></li>
+				<li><a title="CGV화정" href="/theaters/?areacode=02&amp;theaterCode=0145&amp;date=20191114">CGV화정</a></li>
+			</ul>
+		</div>
+		</li>
+		<li><a href="#">인천</a>
+		<div class="area">
+			<ul>
+				<li><a title="CGV계양" href="/theaters/?areacode=202&amp;theaterCode=0043&amp;date=20191114">CGV계양</a></li>
+				<li><a title="CGV남주안" href="/theaters/?areacode=202&amp;theaterCode=0198&amp;date=20191114">CGV남주안</a></li>
+				<li><a title="CGV부평" href="/theaters/?areacode=202&amp;theaterCode=0021&amp;date=20191114">CGV부평</a></li>
+				<li><a title="CGV연수역" href="/theaters/?areacode=202&amp;theaterCode=0247&amp;date=20191114">CGV연수역</a></li>
+				<li><a title="CGV인천" href="/theaters/?areacode=202&amp;theaterCode=0002&amp;date=20191114">CGV인천</a></li>
+				<li><a title="CGV인천공항" href="/theaters/?areacode=202&amp;theaterCode=0118&amp;date=20191114">CGV인천공항</a></li>
+				<li><a title="CGV인천논현" href="/theaters/?areacode=202&amp;theaterCode=0254&amp;date=20191114">CGV인천논현</a></li>
+				<li><a title="CGV인천연수" href="/theaters/?areacode=202&amp;theaterCode=0258&amp;date=20191114">CGV인천연수</a></li>
+				<li><a title="CGV주안역" href="/theaters/?areacode=202&amp;theaterCode=0027&amp;date=20191114">CGV주안역</a></li>
+				<li><a title="CGV청라" href="/theaters/?areacode=202&amp;theaterCode=0235&amp;date=20191114">CGV청라</a></li>
+			</ul>
+		</div>
+		</li>
+		<li><a href="#">강원</a>
+		<div class="area">
+			<ul>
+				<li><a title="CGV강릉" href="/theaters/?areacode=12&amp;theaterCode=0139&amp;date=20191114">CGV강릉</a></li>
+				<li><a title="CGV원주" href="/theaters/?areacode=12&amp;theaterCode=0144&amp;date=20191114">CGV원주</a></li>
+				<li><a title="CGV인제" href="/theaters/?areacode=12&amp;theaterCode=0281&amp;date=20191114">CGV인제</a></li>
+				<li><a title="CGV춘천" href="/theaters/?areacode=12&amp;theaterCode=0070&amp;date=20191114">CGV춘천</a></li>
+				<li><a title="CGV춘천명동" href="/theaters/?areacode=12&amp;theaterCode=0189&amp;date=20191114">CGV춘천명동</a></li>
+			</ul>
+		</div>
+		</li>
+		<li><a href="#">대전/충청</a>
+		<div class="area">
+			<ul>
+				<li><a title="CGV당진" href="/theaters/?areacode=03&amp;theaterCode=0207&amp;date=20191114">CGV당진</a></li>
+				<li><a title="CGV대전" href="/theaters/?areacode=03&amp;theaterCode=0007&amp;date=20191114">CGV대전</a></li>
+				<li><a title="CGV대전가수원" href="/theaters/?areacode=03&amp;theaterCode=0286&amp;date=20191114">CGV대전가수원</a></li>
+				<li><a title="CGV대전가오" href="/theaters/?areacode=03&amp;theaterCode=0154&amp;date=20191114">CGV대전가오</a></li>
+				<li><a title="CGV대전탄방" href="/theaters/?areacode=03&amp;theaterCode=0202&amp;date=20191114">CGV대전탄방</a></li>
+				<li><a title="CGV대전터미널" href="/theaters/?areacode=03&amp;theaterCode=0127&amp;date=20191114">CGV대전터미널</a></li>
+				<li><a title="CGV보령" href="/theaters/?areacode=03&amp;theaterCode=0275&amp;date=20191114">CGV보령</a></li>
+				<li><a title="CGV서산" href="/theaters/?areacode=03&amp;theaterCode=0091&amp;date=20191114">CGV서산</a></li>
+				<li><a title="CGV세종" href="/theaters/?areacode=03&amp;theaterCode=0219&amp;date=20191114">CGV세종</a></li>
+				<li><a title="CGV유성노은" href="/theaters/?areacode=03&amp;theaterCode=0206&amp;date=20191114">CGV유성노은</a></li>
+				<li><a title="CGV유성온천" href="/theaters/?areacode=03&amp;theaterCode=0209&amp;date=20191114">CGV유성온천</a></li>
+				<li><a title="CGV천안" href="/theaters/?areacode=03&amp;theaterCode=0044&amp;date=20191114">CGV천안</a></li>
+				<li><a title="CGV천안터미널" href="/theaters/?areacode=03&amp;theaterCode=0293&amp;date=20191114">CGV천안터미널</a></li>
+				<li><a title="CGV천안펜타포트" href="/theaters/?areacode=03&amp;theaterCode=0110&amp;date=20191114">CGV천안펜타포트</a></li>
+				<li><a title="CGV청주(서문)" href="/theaters/?areacode=03&amp;theaterCode=0228&amp;date=20191114">CGV청주(서문)</a></li>
+				<li><a title="CGV청주성안길" href="/theaters/?areacode=03&amp;theaterCode=0297&amp;date=20191114">CGV청주성안길</a></li>
+				<li><a title="CGV청주율량" href="/theaters/?areacode=03&amp;theaterCode=0282&amp;date=20191114">CGV청주율량</a></li>
+				<li><a title="CGV청주지웰시티" href="/theaters/?areacode=03&amp;theaterCode=0142&amp;date=20191114">CGV청주지웰시티</a></li>
+				<li><a title="CGV청주터미널" href="/theaters/?areacode=03&amp;theaterCode=0294&amp;date=20191114">CGV청주터미널</a></li>
+				<li><a title="CGV충북혁신" href="/theaters/?areacode=03&amp;theaterCode=0284&amp;date=20191114">CGV충북혁신</a></li>
+				<li><a title="CGV홍성" href="/theaters/?areacode=03&amp;theaterCode=0217&amp;date=20191114">CGV홍성</a></li>
+			</ul>
+		</div>
+		</li>
+		<li><a href="#">대구</a>
+		<div class="area">
+			<ul>
+				<li><a title="CGV대구" href="/theaters/?areacode=11&amp;theaterCode=0058&amp;date=20191114">CGV대구</a></li>
+				<li><a title="CGV대구수성" href="/theaters/?areacode=11&amp;theaterCode=0157&amp;date=20191114">CGV대구수성</a></li>
+				<li><a title="CGV대구스타디움" href="/theaters/?areacode=11&amp;theaterCode=0108&amp;date=20191114">CGV대구스타디움</a></li>
+				<li><a title="CGV대구아카데미" href="/theaters/?areacode=11&amp;theaterCode=0185&amp;date=20191114">CGV대구아카데미</a></li>
+				<li><a title="CGV대구월성" href="/theaters/?areacode=11&amp;theaterCode=0216&amp;date=20191114">CGV대구월성</a></li>
+				<li><a title="CGV대구이시아" href="/theaters/?areacode=11&amp;theaterCode=0117&amp;date=20191114">CGV대구이시아</a></li>
+				<li><a title="CGV대구칠곡" href="/theaters/?areacode=11&amp;theaterCode=0071&amp;date=20191114">CGV대구칠곡</a></li>
+				<li><a title="CGV대구한일" href="/theaters/?areacode=11&amp;theaterCode=0147&amp;date=20191114">CGV대구한일</a></li>
+				<li><a title="CGV대구현대" href="/theaters/?areacode=11&amp;theaterCode=0109&amp;date=20191114">CGV대구현대</a></li>
+			</ul>
+		</div>
+		</li>
+		<li><a href="#">부산/울산</a>
+		<div class="area">
+			<ul>
+				<li><a title="CGV남포" href="/theaters/?areacode=05&amp;theaterCode=0065&amp;date=20191114">CGV남포</a></li>
+				<li><a title="CGV대연" href="/theaters/?areacode=05&amp;theaterCode=0061&amp;date=20191114">CGV대연</a></li>
+				<li><a title="CGV대한" href="/theaters/?areacode=05&amp;theaterCode=0151&amp;date=20191114">CGV대한</a></li>
+				<li><a title="CGV동래" href="/theaters/?areacode=05&amp;theaterCode=0042&amp;date=20191114">CGV동래</a></li>
+				<li><a title="CGV서면" href="/theaters/?areacode=05&amp;theaterCode=0005&amp;date=20191114">CGV서면</a></li>
+				<li><a title="CGV서면삼정타워" href="/theaters/?areacode=05&amp;theaterCode=0285&amp;date=20191114">CGV서면삼정타워</a></li>
+				<li><a title="CGV센텀시티" href="/theaters/?areacode=05&amp;theaterCode=0089&amp;date=20191114">CGV센텀시티</a></li>
+				<li><a title="CGV아시아드" href="/theaters/?areacode=05&amp;theaterCode=0160&amp;date=20191114">CGV아시아드</a></li>
+				<li><a title="CGV울산삼산" href="/theaters/?areacode=05&amp;theaterCode=0128&amp;date=20191114">CGV울산삼산</a></li>
+				<li><a title="CGV울산진장" href="/theaters/?areacode=05&amp;theaterCode=0246&amp;date=20191114">CGV울산진장</a></li>
+				<li><a title="CGV정관" href="/theaters/?areacode=05&amp;theaterCode=0306&amp;date=20191114">CGV정관</a></li>
+				<li><a title="CGV하단아트몰링" href="/theaters/?areacode=05&amp;theaterCode=0245&amp;date=20191114">CGV하단아트몰링</a></li>
+				<li><a title="CGV해운대" href="/theaters/?areacode=05&amp;theaterCode=0253&amp;date=20191114">CGV해운대</a></li>
+				<li><a title="CGV화명" href="/theaters/?areacode=05&amp;theaterCode=0159&amp;date=20191114">CGV화명</a></li>
+			</ul>
+		</div>
+		</li>
+		<li><a href="#">경상</a>
+		<div class="area">
+			<ul>
+				<li><a title="CGV거제" href="/theaters/?areacode=204&amp;theaterCode=0263&amp;date=20191114">CGV거제</a></li>
+				<li><a title="CGV구미" href="/theaters/?areacode=204&amp;theaterCode=0053&amp;date=20191114">CGV구미</a></li>
+				<li><a title="CGV김천율곡" href="/theaters/?areacode=204&amp;theaterCode=0240&amp;date=20191114">CGV김천율곡</a></li>
+				<li><a title="CGV김해" href="/theaters/?areacode=204&amp;theaterCode=0028&amp;date=20191114">CGV김해</a></li>
+				<li><a title="CGV김해장유" href="/theaters/?areacode=204&amp;theaterCode=0239&amp;date=20191114">CGV김해장유</a></li>
+				<li><a title="CGV마산" href="/theaters/?areacode=204&amp;theaterCode=0033&amp;date=20191114">CGV마산</a></li>
+				<li><a title="CGV북포항" href="/theaters/?areacode=204&amp;theaterCode=0097&amp;date=20191114">CGV북포항</a></li>
+				<li><a title="CGV안동" href="/theaters/?areacode=204&amp;theaterCode=0272&amp;date=20191114">CGV안동</a></li>
+				<li><a title="CGV양산물금" href="/theaters/?areacode=204&amp;theaterCode=0222&amp;date=20191114">CGV양산물금</a></li>
+				<li><a title="CGV창원" href="/theaters/?areacode=204&amp;theaterCode=0023&amp;date=20191114">CGV창원</a></li>
+				<li><a title="CGV창원더시티" href="/theaters/?areacode=204&amp;theaterCode=0079&amp;date=20191114">CGV창원더시티</a></li>
+				<li><a title="CGV통영" href="/theaters/?areacode=204&amp;theaterCode=0156&amp;date=20191114">CGV통영</a></li>
+				<li><a title="CGV포항" href="/theaters/?areacode=204&amp;theaterCode=0045&amp;date=20191114">CGV포항</a></li>
+			</ul>
+		</div>
+		</li>
+		<li><a href="#">광주/전라/제주</a>
+		<div class="area">
+			<ul>
+				<li><a title="CGV광양" href="/theaters/?areacode=206&amp;theaterCode=0220&amp;date=20191114">CGV광양</a></li>
+				<li><a title="CGV광양 엘에프스퀘어" href="/theaters/?areacode=206&amp;theaterCode=0221&amp;date=20191114">CGV광양 엘에프스퀘어</a></li>
+				<li><a title="CGV광주금남로" href="/theaters/?areacode=206&amp;theaterCode=0295&amp;date=20191114">CGV광주금남로</a></li>
+				<li><a title="CGV광주상무" href="/theaters/?areacode=206&amp;theaterCode=0193&amp;date=20191114">CGV광주상무</a></li>
+				<li><a title="CGV광주용봉" href="/theaters/?areacode=206&amp;theaterCode=0210&amp;date=20191114">CGV광주용봉</a></li>
+				<li><a title="CGV광주첨단" href="/theaters/?areacode=206&amp;theaterCode=0218&amp;date=20191114">CGV광주첨단</a></li>
+				<li><a title="CGV광주충장로" href="/theaters/?areacode=206&amp;theaterCode=0244&amp;date=20191114">CGV광주충장로</a></li>
+				<li><a title="CGV광주터미널" href="/theaters/?areacode=206&amp;theaterCode=0090&amp;date=20191114">CGV광주터미널</a></li>
+				<li><a title="CGV광주하남" href="/theaters/?areacode=206&amp;theaterCode=0215&amp;date=20191114">CGV광주하남</a></li>
+				<li><a title="CGV군산" href="/theaters/?areacode=206&amp;theaterCode=0277&amp;date=20191114">CGV군산</a></li>
+				<li><a title="CGV나주" href="/theaters/?areacode=206&amp;theaterCode=0237&amp;date=20191114">CGV나주</a></li>
+				<li><a title="CGV목포" href="/theaters/?areacode=206&amp;theaterCode=0289&amp;date=20191114">CGV목포</a></li>
+				<li><a title="CGV목포평화광장" href="/theaters/?areacode=206&amp;theaterCode=0280&amp;date=20191114">CGV목포평화광장</a></li>
+				<li><a title="CGV서전주" href="/theaters/?areacode=206&amp;theaterCode=0225&amp;date=20191114">CGV서전주</a></li>
+				<li><a title="CGV순천" href="/theaters/?areacode=206&amp;theaterCode=0114&amp;date=20191114">CGV순천</a></li>
+				<li><a title="CGV순천신대" href="/theaters/?areacode=206&amp;theaterCode=0268&amp;date=20191114">CGV순천신대</a></li>
+				<li><a title="CGV여수웅천" href="/theaters/?areacode=206&amp;theaterCode=0208&amp;date=20191114">CGV여수웅천</a></li>
+				<li><a title="CGV익산" href="/theaters/?areacode=206&amp;theaterCode=0020&amp;date=20191114">CGV익산</a></li>
+				<li><a title="CGV전주고사" href="/theaters/?areacode=206&amp;theaterCode=0213&amp;date=20191114">CGV전주고사</a></li>
+				<li><a title="CGV전주효자" href="/theaters/?areacode=206&amp;theaterCode=0179&amp;date=20191114">CGV전주효자</a></li>
+				<li><a title="CGV정읍" href="/theaters/?areacode=206&amp;theaterCode=0186&amp;date=20191114">CGV정읍</a></li>
+				<li><a title="CGV제주" href="/theaters/?areacode=206&amp;theaterCode=0121&amp;date=20191114">CGV제주</a></li>
+				<li><a title="CGV제주노형" href="/theaters/?areacode=206&amp;theaterCode=0259&amp;date=20191114">CGV제주노형</a></li>
+			</ul>
+		</div>
+		</li>
+	</ul>
+</div>
+</body>
+</html>
