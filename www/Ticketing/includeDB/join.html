@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Login</title>
+	</head>
+
+	<body>
+		<div class="wrap">
+				<form action="join.html" method="post">
+					ID: <input type="text" name="id" /><br/>
+					PASSWORD: <input type="text" name="ps" /><br/>
+          이름(last): <input type="text" name="laName" /><br/>
+          이름(first): <input type="text" name="fiName" /><br/>
+          생일 <br/>
+          년: <input type="text" name="year" /><br>
+          월: <input type="text" name="mon" /><br>
+          일: <input type="text" name="day" /><br>
+          전화번호: <input type="text" name="hp" /><br>
+          *"-"를 제외하고 작성해주세요. <br/>
+					<input type="submit" />
+				</form>
+				<?php
+					$dbHost = "localhost";
+					$dbName = "test";
+					$dbUser = "root";
+					$dbPass = "root";
+
+					$id = $_POST["id"];
+					$ps = $_POST["ps"];
+          $laName = $_POST["laName"];
+          $fiName = $_POST["fiName"];
+          $birth = (string)$_POST["year"] . "-" . (string)$_POST["mon"] . "-" . (string)$_POST["day"];
+          $hp = $_POST["hp"];
+
+					$DB = new PDO("mysql:host={$dbHost};dbname={$dbName}", $dbUser, $dbPass);
+					$join = $DB->query("insert into 회원 (아이디,비밀번호,이름_성,이름_이름,생일,전화번호) values('$id','$ps','$laName','$fiName','$birth','$hp')");
+				?>
+    </div>
+  </body>
+</html>

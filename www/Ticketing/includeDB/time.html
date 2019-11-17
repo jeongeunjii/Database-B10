@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>db testing</title>
+	</head>
+
+	<body>
+		<div class="wrap">
+      <?php
+			$dbHost = "localhost";
+			$dbName = "test";
+			$dbUser = "root";
+			$dbPass = "root";
+
+			$office = 2;
+			$date = "2019-11-17";
+			$movie = 1;
+
+			$DB = new PDO("mysql:host={$dbHost};dbname={$dbName}", $dbUser, $dbPass);
+			$seat = $DB->query("select 상영관번호, 상영관명, 좌석수 from 상영관 where 지점번호= '$office'");
+			foreach ($seat as $j) {
+				$sang = $j["상영관번호"];
+				$timeq = $DB->query("select 상영정보번호,영화시작시간,영화종료시간 from 영화상영정보 where 지점번호= '$office' and 상영관번호 = '$sang' and  일자= '$date' and 영화번호= '$movie'");
+				foreach ($timeq as $i) {
+					$time = $i["상영정보번호"];
+					$seat = $DB->query("select count(*) from 예매,품목 where 예매.예매번호=품목.예매번호 and 예매.상영정보번호 = '$time' and 품목.품목취소코드 = 'B'");
+					$selctedSeat = $seat-> fetch();
+					$left_seat = $j["좌석수"] - $selctedSeat["count(*)"]; ?>
+					<p>상영관: <?= $j["상영관번호"] ?></p>
+					<p>시작: <?= $i["영화시작시간"] ?></p>
+					<p>남은좌석수: <?= $left_seat ?></p>
+	<?php	}
+			} ?>
+		</div>
+  </body>
+</html>

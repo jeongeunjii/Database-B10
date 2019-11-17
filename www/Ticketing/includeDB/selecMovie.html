@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>select</title>
+	</head>
+
+	<body>
+		<div class="wrap">
+      <?php
+			$dbHost = "localhost";
+			$dbName = "test";
+			$dbUser = "root";
+			$dbPass = "root";
+
+			$city = null;
+			$office = null;
+			$date = null;
+			$movie = null;
+
+			$DB = new PDO("mysql:host={$dbHost};dbname={$dbName}", $dbUser, $dbPass);
+			?>
+      <div class="city">
+				<ul>
+					<?php
+						$cityq = $DB->query("select distinct 특별시_광역시_도 from 지점");
+						foreach ($cityq as $row) { ?>
+							<li><input type='button' value=<?= $row["특별시_광역시_도"] ?> oneclick= /></li>
+					<?php } ?>
+				</ul>
+			</div>
+			<div class="office">
+				<ul>
+					<!-- <?php
+						if ($city != null) {
+							$officeq = $DB->query("select 지점명 from 지점 where 특별시_광역시_도 ='$city'");
+							foreach ($officeq as $row) {
+								$tmpoffice = $low["지점명"] ?>
+								<li><input type='button' value='<?= $tmpoffice?>' /></li>
+						<?php }
+						} ?> -->
+				</ul>
+			</div>
+			<div class="date">
+				<ul>
+					<?php
+						$dateq = $DB->query("select distinct 일자 from 영화상영정보");
+						foreach ($dateq as $row) { ?>
+							<li><input type='button' value=<?= $row["일자"] ?> oneclick= /></li>
+					<?php } ?>
+				</ul>
+			</div>
+			<div class="movie">
+				<ul>
+					<?php
+						$movienum = $DB->query("select distinct 영화번호 from 영화상영정보");
+						foreach ($movienum as $i) {
+							$mnum = $i['영화번호'];
+							$movieq = $DB->query("select 제목 from 영화 where 영화번호='$mnum'");
+							foreach ($movieq as $j) {
+							?>
+								<li><input type='button' value=<?= $j["제목"] ?> oneclick= /></li>
+		  	<?php }
+			      } ?>
+				</ul>
+			</div>
+		</div>
+  </body>
+</html>
