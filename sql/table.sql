@@ -1,227 +1,222 @@
-CREATE TABLE ¿¹¸Å
+CREATE TABLE ì˜ˆë§¤
 (
-¿¹¸Å¹øÈ£ integer NOT NULL PRIMARY KEY,
-È¸¿ø¾ÆÀÌµğ varchar(20) NOT NULL,
-»ó¿µÁ¤º¸¹øÈ£ integer NOT NULL,
-°³¼ö_¼ºÀÎ integer,
-°³¼ö_Ã»¼Ò³â integer,
-°áÁ¦¹æ¹ı varchar(10) NOT NULL,
-ÇÒÀÎÀû¿ë varchar(10),
-ÃÑ°¡°İ integer NOT NULL,
-¿¹¸ÅÀÏÀÚ datetime NOT NULL,
-¿¹¸Å»óÅÂ char(1) NOT NULL
+ì˜ˆë§¤ë²ˆí˜¸ integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
+íšŒì›ì•„ì´ë”” varchar(20) NOT NULL,
+ìƒì˜ì •ë³´ë²ˆí˜¸ integer NOT NULL,
+ê°œìˆ˜_ì„±ì¸ integer,
+ê°œìˆ˜_ì²­ì†Œë…„ integer,
+ê²°ì œë°©ë²• varchar(10) NOT NULL,
+í• ì¸ì ìš© varchar(10),
+ì´ê°€ê²© integer NOT NULL,
+ì˜ˆë§¤ì¼ì datetime NOT NULL,
+ì˜ˆë§¤ìƒíƒœ char(1) NOT NULL
 );
 
-CREATE TABLE ÁöÁ¡
+CREATE TABLE ì§€ì—­
 (
-ÁöÁ¡¹øÈ£ integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
-ÁöÁ¡¸í varchar(30) NOT NULL,
-Æ¯º°½Ã_±¤¿ª½Ã_µµ varchar(15) NOT NULL,
-±¸_±º_½Ã varchar(10),
-½Ã_±¸ varchar(10),
-µ¿_À¾_¸é varchar(10),
-µµ·Î¸í varchar(30) NOT NULL,
-°Ç¹°¹øÈ£ varchar(10) NOT NULL,
-»ó¼¼ÁÖ¼Ò varchar(40),
-ÀüÈ­¹øÈ£ varchar(13) NOT NULL
+ì§€ì—­ë²ˆí˜¸ varchar(4) NOT NULL PRIMARY KEY,
+ì§€ì—­ëª… varchar(30) NOT NULL
+)
+
+CREATE TABLE ì§€ì 
+(
+ì§€ì ë²ˆí˜¸ varchar(4) NOT NULL PRIMARY KEY,
+ì§€ì—­ë²ˆí˜¸ varchar(4) NOT NULL,
+ì§€ì ëª… varchar(30) NOT NULL,
+ì£¼ì†Œ varchar(80) NOT NULL,
+ë„ë¡œëª…ì£¼ì†Œ varchar(80) NOT NULL,
+ì „í™”ë²ˆí˜¸ varchar(13) NOT NULL
 );
 
-CREATE TABLE »ó¿µ°ü
+CREATE TABLE ìƒì˜ê´€
 (
-»ó¿µ°ü¹øÈ£ integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
-ÁöÁ¡¹øÈ£ integer NOT NULL,
-»ó¿µ°ü¸í VARCHAR(10) NOT NULL,
-»ó¿µ°üÁ¾·ùÄÚµå CHAR(1) NOT NULL,
-ÁÂ¼®¼ö integer NOT NULL,
-ÁÂ¼®¹øÈ£_Çà char(1) NOT NULL,
-ÁÂ¼®¹øÈ£_¿­ integer NOT NULL
+ì§€ì ë²ˆí˜¸ integer NOT NULL,
+ìƒì˜ê´€ëª… VARCHAR(10) NOT NULL,
+ìƒì˜ê´€ì¢…ë¥˜ì½”ë“œ CHAR(1) NOT NULL,
+ì¢Œì„ìˆ˜ integer NOT NULL,
+ì¢Œì„ë²ˆí˜¸_í–‰ char(1) NOT NULL,
+ì¢Œì„ë²ˆí˜¸_ì—´ integer NOT NULL
 );
 
-CREATE TABLE ¿µÈ­
+CREATE TABLE ì˜í™”
 (
-¿µÈ­¹øÈ£ integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
-Á¦¸ñ VARCHAR(20) NOT NULL,
-¿µÈ­µî±ŞÄÚµå char(1) NOT NULL,
-Àå¸£ VARCHAR(20) NOT NULL,
-°¨µ¶_first VARCHAR(20),
-°¨µ¶_family VARCHAR(20) NOT NULL
+ì˜í™”ë²ˆí˜¸ integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
+ì œëª© VARCHAR(20) NOT NULL,
+ì˜í™”ë“±ê¸‰ì½”ë“œ char(1) NOT NULL,
+ìƒì˜ì‹œê°„ VARCHAR(9) NOT NULL,
+ì¥ë¥´ VARCHAR(20) NOT NULL,
+ê°ë…_first VARCHAR(20),
+ê°ë…_family VARCHAR(20) NOT NULL
 );
 
-CREATE TABLE ¿µÈ­»ó¿µÁ¤º¸
+CREATE TABLE ì˜í™”ìƒì˜ì •ë³´
 (
-»ó¿µÁ¤º¸¹øÈ£ integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
-ÁöÁ¡¹øÈ£ integer NOT NULL,
-»ó¿µ°ü¹øÈ£ integer NOT NULL,
-¿µÈ­¹øÈ£ integer NOT NULL,
-ÀÏÀÚ date NOT NULL,
-¿µÈ­½ÃÀÛ½Ã°£ time NOT NULL,
-¿µÈ­Á¾·á½Ã°£ time NOT NULL,
-¼ºÀÎ´Ü°¡ integer NOT NULL,
-Ã»¼Ò³â´Ü°¡ integer
+ìƒì˜ì •ë³´ë²ˆí˜¸ integer PRIMARY KEY AUTO_INCREMENT,
+ì§€ì ë²ˆí˜¸ varchar(4) NOT NULL,
+ìƒì˜ê´€ëª… VARCHAR(10) NOT NULL,
+ì˜í™”ë²ˆí˜¸ integer NOT NULL,
+ì¼ì date NOT NULL,
+ì˜í™”ì‹œì‘ì‹œê°„ varchar(10) NOT NULL,
+ëŸ¬ë‹íƒ€ì„ varchar(8) NOT NULL,
+ì„±ì¸ë‹¨ê°€ integer NOT NULL,
+ì²­ì†Œë…„ë‹¨ê°€ integer
 );
 
-CREATE TABLE Ç°¸ñ
+CREATE TABLE í’ˆëª©
 (
-¿¹¸Å¹øÈ£ integer NOT NULL,
-ÁÂ¼®¹øÈ£_Çà char(1) NOT NULL,
-ÁÂ¼®¹øÈ£_¿­ integer NOT NULL,
-Ç°¸ñÃë¼ÒÄÚµå char(1) NOT NULL
+ì˜ˆë§¤ë²ˆí˜¸ integer NOT NULL,
+ì¢Œì„ë²ˆí˜¸_í–‰ char(1) NOT NULL,
+ì¢Œì„ë²ˆí˜¸_ì—´ integer NOT NULL,
+í’ˆëª©ì·¨ì†Œì½”ë“œ char(1) NOT NULL
 );
 
-CREATE TABLE È¸¿ø
+CREATE TABLE íšŒì›
 (
-¾ÆÀÌµğ VARCHAR(20) NOT NULL PRIMARY KEY,
-ºñ¹Ğ¹øÈ£ VARCHAR(20) NOT NULL,
-ÀÌ¸§_¼º VARCHAR(20) NOT NULL,
-ÀÌ¸§_ÀÌ¸§ VARCHAR(20) NOT NULL,
-»ıÀÏ date NOT NULL,
-ÀüÈ­¹øÈ£ varchar(13) NOT NULL
+ì•„ì´ë”” VARCHAR(20) NOT NULL PRIMARY KEY,
+ë¹„ë°€ë²ˆí˜¸ VARCHAR(20) NOT NULL,
+ì´ë¦„_ì„± VARCHAR(20) NOT NULL,
+ì´ë¦„_ì´ë¦„ VARCHAR(20) NOT NULL,
+ìƒì¼ date NOT NULL,
+ì „í™”ë²ˆí˜¸ varchar(13) NOT NULL
 );
 
-CREATE TABLE Á÷¿ø°ü¸®
+CREATE TABLE ì§ì›ê´€ë¦¬
 (
- »ç¹ø integer NOT NULL PRIMARY KEY,
- ÀÌ¸§_¼º varchar(10) NOT NULL,
- ÀÌ¸§_ÀÌ¸§ varchar(10) NOT NULL,
- ºÎ¼­ varchar(15) NOT NULL,
- Á÷±Ş varchar(15) NOT NULL,
- Á÷¹« varchar(15) NOT NULL,
- ÆÄÆ® char(1),
- »ı³â¿ùÀÏ date NOT NULL,
- ÀüÈ­¹øÈ£ varchar(13) NOT NULL,
- Æ¯º°½Ã_±¤¿ª½Ã_µµ varchar(10) NOT NULL,
- ±¸_±º_½Ã varchar(10),
- ½Ã_±¸ varchar(10),
- µ¿_À¾_¸é varchar(10),
- µµ·Î¸í varchar(20) NOT NULL,
- °Ç¹°¹øÈ£ varchar(10) NOT NULL,
- »ó¼¼ÁÖ¼Ò varchar(30),
- ÀÌ¸ŞÀÏ varchar(30),
- ¿ù±Ù·Î½Ã°£ integer,
- ¿¬Â÷ integer,
- ºñ°í varchar(30)
+ ì‚¬ë²ˆ integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
+ ì´ë¦„_ì„± varchar(10) NOT NULL,
+ ì´ë¦„_ì´ë¦„ varchar(10) NOT NULL,
+ ë¶€ì„œ varchar(15) NOT NULL,
+ ì§ê¸‰ varchar(15) NOT NULL,
+ ì§ë¬´ varchar(15) NOT NULL,
+ íŒŒíŠ¸ char(1),
+ ìƒë…„ì›”ì¼ date NOT NULL,
+ ì „í™”ë²ˆí˜¸ varchar(13) NOT NULL,
+ íŠ¹ë³„ì‹œ_ê´‘ì—­ì‹œ_ë„ varchar(10) NOT NULL,
+ êµ¬_êµ°_ì‹œ varchar(10),
+ ì‹œ_êµ¬ varchar(10),
+ ì_ë©´ varchar(10),
+ ë„ë¡œëª… varchar(20) NOT NULL,
+ ê±´ë¬¼ë²ˆí˜¸ varchar(10) NOT NULL,
+ ìƒì„¸ì£¼ì†Œ varchar(30),
+ ì´ë©”ì¼ varchar(30),
+ ì›”ê·¼ë¡œì‹œê°„ integer,
+ ì—°ì°¨ integer,
+ ë¹„ê³  varchar(20)
 );
 
-CREATE TABLE ±Ş¿©°ü¸®
+CREATE TABLE ê¸‰ì—¬ê´€ë¦¬
 (
- »ç¹ø integer NOT NULL,
- ±Í¼Ó³â¿ù date NOT NULL,
- Áö±ŞÀÏÀÚ date,
- ±âº»±Ş integer NOT NULL,
- ¾ß°£¼ö´ç integer,
- ÃÊ°ú±Ù¹«¼ö´ç integer,
- ÈŞÀÏ±Ù¹«¼ö´ç integer,
- »ó¿©±İ integer,
- ±âÅ¸¼ö´ç integer,
- ±¹¹Î¿¬±İ integer,
- °Ç°­º¸Çè integer,
- Àå±â¿ä¾çº¸Çè integer,
- °í¿ëº¸Çè integer,
- °¢Á¾±Ù·Î¼Òµæ¼¼ integer,
- ÁÖ¹Î¼¼ integer,
- ±âÅ¸°øÁ¦ integer,
- ÃÖÁ¾Áö±Ş¾× integer NOT NULL,
- ºñ°í varchar(20)
+ ì‚¬ë²ˆ integer NOT NULL,
+ ê·€ì†ë…„ì›” date NOT NULL,
+ ì§€ê¸‰ì¼ì date,
+ ê¸°ë³¸ê¸‰ integer NOT NULL,
+ ì•¼ê°„ìˆ˜ë‹¹ integer,
+ ì´ˆê³¼ê·¼ë¬´ìˆ˜ë‹¹ integer,
+ íœ´ì¼ê·¼ë¬´ìˆ˜ë‹¹ integer,
+ ìƒì—¬ê¸ˆ integer,
+ ê¸°íƒ€ìˆ˜ë‹¹ integer,
+ êµ­ë¯¼ì—°ê¸ˆ integer,
+ ê±´ê°•ë³´í—˜ integer,
+ ì¥ê¸°ìš”ì–‘ë³´í—˜ integer,
+ ê³ ìš©ë³´í—˜ integer,
+ ê°ì¢…ê·¼ë¡œì†Œë“ì„¸ integer,
+ ì£¼ë¯¼ì„¸ integer,
+ ê¸°íƒ€ê³µì œ integer,
+ ìµœì¢…ì§€ê¸‰ì•¡ integer NOT NULL,
+ ë¹„ê³  varchar(20)
 );
 
-CREATE TABLE ±ÙÅÂ°ü¸®
+CREATE TABLE ê·¼íƒœê´€ë¦¬
 (
- ÀÏÀÚ date NOT NULL,
- »ç¹ø integer NOT NULL,
- ±ÙÅÂ»óÅÂÄÚµå char(1) NOT NULL,
- Ãâ±Ù datetime,
- Åğ±Ù datetime,
- ºñ°í varchar(20)
+ ì¼ì date NOT NULL,
+ ì‚¬ë²ˆ integer NOT NULL,
+ ê·¼íƒœìƒíƒœì½”ë“œ char(1) NOT NULL,
+ ì¶œê·¼ datetime,
+ í‡´ê·¼ datetime,
+ ë¹„ê³  varchar(20)
 );
 
-CREATE TABLE floor¾÷¹«°ü¸®
+CREATE TABLE floorì—…ë¬´ê´€ë¦¬
 (
- »ç¹ø integer NOT NULL PRIMARY KEY,
- Çö¹èÄ¡Àå¼Ò varchar(30),
- Çö¾÷¹« varchar(20),
- ºñ°í varchar(20)
+ ì‚¬ë²ˆ integer NOT NULL PRIMARY KEY,
+ í˜„ë°°ì¹˜ì¥ì†Œ varchar(30),
+ í˜„ì—…ë¬´ varchar(20),
+ ë¹„ê³  varchar(20)
 );
 
-CREATE TABLE ÀÎ»ç°í°ú°ü¸®
+CREATE TABLE ì¸ì‚¬ê³ ê³¼ê´€ë¦¬
 (
- »ç¹ø integer NOT NULL,
- Æò°¡ÀÏÀÚ date,
- ±ÙÅÂÁ¡¼ö integer,
- ¾÷¹«ÅÂµµ integer,
- ¾÷¹«¼ºÃëµµ integer,
- ¾÷¹«ÀûÇÕ¼º integer,
- °í°´¸¸Á·µµ integer,
- ÆÀ¿öÅ©Çü¼º integer,
- ºñ°í varchar(20)
+ ì‚¬ë²ˆ integer NOT NULL,
+ í‰ê°€ì¼ì date,
+ ê·¼íƒœì ìˆ˜ integer,
+ ì—…ë¬´íƒœë„ integer,
+ ì—…ë¬´ì„±ì·¨ë„ integer,
+ ì—…ë¬´ì í•©ì„± integer,
+ ê³ ê°ë§Œì¡±ë„ integer,
+ íŒ€ì›Œí¬í˜•ì„± integer,
+ ë¹„ê³  varchar(20)
 );
 
-CREATE TABLE ÈŞ°¡°ü¸®
+CREATE TABLE íœ´ê°€ê´€ë¦¬
 (
- »ç¹ø integer NOT NULL,
- ÈŞ°¡±â°£_from date NOT NULL,
- ÈŞ°¡±â°£_to date NOT NULL,
- ÈŞ°¡Á¾·ùÄÚµå char(1) NOT NULL,
- »çÀ¯ varchar(10),
- ºñ°í varchar(20)
+ ì‚¬ë²ˆ integer NOT NULL,
+ íœ´ê°€ê¸°ê°„_from date NOT NULL,
+ íœ´ê°€ê¸°ê°„_to date NOT NULL,
+ íœ´ê°€ì¢…ë¥˜ì½”ë“œ char(1) NOT NULL,
+ ì‚¬ìœ  varchar(10),
+ ë¹„ê³  varchar(20)
 );
 
-CREATE TABLE Àç°í°ü¸®
+CREATE TABLE ì¬ê³ ê´€ë¦¬
 (
- ÁöÁ¡¹øÈ£ integer NOT NULL,
- ½Ã¼³¹°¹øÈ£ integer NOT NULL,
- ¹°Ç°¹øÈ£ integer NOT NULL,
- ´ã´çÁ÷¿ø»ç¹ø integer,
- ±âÁ¸Àç°í·® integer,
- ¿¬°£¼ö¿ä integer,
- ÀÏÀÏ¼ö¿ä integer,
- ÇöÀçÀç°í·® integer,
- ¿¬°£Àç°íÀ¯Áöºñ integer,
- ÁÖ¹®ºñ¿ë integer,
- ÁÖ¹®ÄÚµå char(1) NOT NULL
+ ì§€ì ë²ˆí˜¸ integer NOT NULL,
+ ì‹œì„¤ë¬¼ë²ˆí˜¸ integer NOT NULL,
+ ë¬¼í’ˆë²ˆí˜¸ integer NOT NULL,
+ ë‹´ë‹¹ì§ì›ì‚¬ë²ˆ integer,
+ ê¸°ì¡´ì¬ê³ ëŸ‰ integer,
+ ì—°ê°„ìˆ˜ìš” integer,
+ ì¼ì¼ìˆ˜ìš” integer,
+ ì—°ê°„ì¬ê³ ìœ ì§€ë¹„ integer,
+ 1íšŒ_ì£¼ë¬¸ë¹„ìš© integer,
+ ì£¼ë¬¸ì½”ë“œ char(1) NOT NULL
 );
 
-CREATE TABLE ¹°Ç°
+CREATE TABLE ì‹œì„¤ë¬¼
 (
-  ¹°Ç°¹øÈ£ integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  ¹°Ç°¸í varchar(20) NOT NULL
+ ì‹œì„¤ë¬¼ë²ˆí˜¸ integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
+ ì‹œì„¤ë¬¼ëª… varchar(20) NOT NULL
 );
 
-CREATE TABLE ½Ã¼³¹°
+CREATE TABLE ì‹œì„¤ë¬¼ê´€ë¦¬
 (
- ½Ã¼³¹°¹øÈ£ integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
- ½Ã¼³¹°¸í varchar(20) NOT NULL
+ ì§€ì ë²ˆí˜¸ integer NOT NULL,
+ ì‹œì„¤ë¬¼ë²ˆí˜¸ integer NOT NULL,
+ ì ê²€ì¼ì‹œ datetime NOT NULL,
+ ë‹´ë‹¹ì§ì›ì‚¬ë²ˆ integer,
+ ì ê²€ì¢…ë¥˜ì½”ë“œ char(1) NOT NULL,
+ ì ê²€ìƒíƒœì½”ë“œ char(1) NOT NULL,
+ ì •ê¸°ì ê²€ê¸°ê°„_from datetime,
+ ì •ê¸°ì ê²€ê¸°ê°„_to datetime
 );
 
-CREATE TABLE ½Ã¼³¹°°ü¸®
+CREATE TABLE ì²­ê²°ê´€ë¦¬
 (
- ÁöÁ¡¹øÈ£ integer NOT NULL,
- ½Ã¼³¹°¹øÈ£ integer NOT NULL,
- ´ã´çÁ÷¿ø»ç¹ø integer,
- Á¡°ËÁ¾·ùÄÚµå char(1) NOT NULL,
- Á¡°ËÀÏ½Ã datetime NOT NULL,
- Á¡°Ë»óÅÂÄÚµå char(1) NOT NULL,
- Á¤±âÁ¡°Ë±â°£_from datetime,
- Á¤±âÁ¡°Ë±â°£_to datetime
+ ì§€ì ë²ˆí˜¸ integer NOT NULL,
+ ì‹œì„¤ë¬¼ë²ˆí˜¸ integer NOT NULL,
+ ì²­ì†Œì¼ì‹œ datetime,
+ ë‹´ë‹¹ì§ì›ì‚¬ë²ˆ integer,
+ ì„¤ë¹„ìƒíƒœì½”ë“œ char(1) NOT NULL
 );
 
-CREATE TABLE Ã»°á°ü¸®
+CREATE TABLE ë©”ì¸ì½”ë“œ
 (
- ÁöÁ¡¹øÈ£ integer NOT NULL,
- ½Ã¼³¹°¹øÈ£ integer NOT NULL,
- ´ã´çÁ÷¿ø»ç¹ø integer,
- Ã»¼ÒÀÏ½Ã datetime, 
- ¼³ºñ»óÅÂÄÚµå char(1) NOT NULL
+ ë©”ì¸ì½”ë“œ char(1) NOT NULL PRIMARY KEY,
+ ì½”ë“œê°’ varchar(40) NOT NULL
 );
 
-CREATE TABLE ¸ŞÀÎÄÚµå
+CREATE TABLE ì„œë¸Œì½”ë“œ
 (
- ¸ŞÀÎÄÚµå char(1) NOT NULL PRIMARY KEY,
- ÄÚµå°ª varchar(40) NOT NULL
-);
-
-CREATE TABLE ¼­ºêÄÚµå
-(
- ¸ŞÀÎÄÚµå char(1) NOT NULL,
- ¼­ºêÄÚµå char(1) NOT NULL,
- ÄÚµå°ª varchar(40) NOT NULL
+ ë©”ì¸ì½”ë“œ char(1) NOT NULL,
+ ì„œë¸Œì½”ë“œ char(1) NOT NULL,
+ ì½”ë“œê°’ varchar(40) NOT NULL
 );

@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
-moviecodes = ['82463','81895','82427','81945','82516','82487','82257']
+moviecodes = ['81581','82377','79313','82379','82530','82463','81895','82427','81945','82516','82487','82257','82481']
 
 array = [[] for i in range(200)]
 
@@ -56,6 +56,19 @@ for k in range(0,len(array)):
         x.append(temp[3])
         array[k] = x
         # print(array[k])
-print(array)
 
-#영화번호','제목','영화등급코드','상영시간','장르','감독', '배우'
+
+def makecode(str):
+    if (str=='전체'):
+        return 'A'
+    elif (str=='12세 이상'):
+        return 'B'
+    elif (str=='15세 이상'):
+        return 'C'
+    elif (str=='청소년 관람불가'):
+        return 'D'
+
+
+for info in array:
+    if (info!=[]):
+        print("INSERT INTO 영화 VALUES ("+info[0]+",'"+info[1]+"','"+makecode(info[2])+"','"+info[3]+"','"+info[4]+"','"+info[5]+"','"+info[6]+"');")
