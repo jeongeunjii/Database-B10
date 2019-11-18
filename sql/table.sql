@@ -1,15 +1,14 @@
-CREATE TABLE 예매
+CREATE TABLE 메인코드
 (
-예매번호 integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
-회원아이디 varchar(20) NOT NULL,
-상영정보번호 integer NOT NULL,
-개수_성인 integer,
-개수_청소년 integer,
-결제방법 varchar(10) NOT NULL,
-할인적용 varchar(10),
-총가격 integer NOT NULL,
-예매일자 datetime NOT NULL,
-예매상태 char(1) NOT NULL
+ 메인코드 char(1) NOT NULL PRIMARY KEY,
+ 코드값 varchar(40) NOT NULL
+);
+
+CREATE TABLE 서브코드
+(
+ 메인코드 char(1) NOT NULL,
+ 서브코드 char(1) NOT NULL,
+ 코드값 varchar(40) NOT NULL
 );
 
 CREATE TABLE 지역
@@ -60,6 +59,20 @@ CREATE TABLE 영화상영정보
 러닝타임 varchar(8) NOT NULL,
 성인단가 integer NOT NULL,
 청소년단가 integer
+);
+
+CREATE TABLE 예매
+(
+예매번호 integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
+회원아이디 varchar(20) NOT NULL,
+상영정보번호 integer NOT NULL,
+개수_성인 integer,
+개수_청소년 integer,
+결제방법 varchar(10) NOT NULL,
+할인적용 varchar(10),
+총가격 integer NOT NULL,
+예매일자 datetime NOT NULL,
+예매상태 char(1) NOT NULL
 );
 
 CREATE TABLE 품목
@@ -208,15 +221,10 @@ CREATE TABLE 청결관리
  설비상태코드 char(1) NOT NULL
 );
 
-CREATE TABLE 메인코드
+CREATE TABLE 물품
 (
- 메인코드 char(1) NOT NULL PRIMARY KEY,
- 코드값 varchar(40) NOT NULL
+  물품번호 integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  물품명 varchar(20) NOT NULL
 );
 
-CREATE TABLE 서브코드
-(
- 메인코드 char(1) NOT NULL,
- 서브코드 char(1) NOT NULL,
- 코드값 varchar(40) NOT NULL
-);
+

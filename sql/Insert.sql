@@ -7,6 +7,7 @@ INSERT INTO 메인코드 VALUES('F', '휴가종류코드');
 INSERT INTO 메인코드 VALUES('G', '점검종류코드');
 INSERT INTO 메인코드 VALUES('H', '점검상태코드');
 INSERT INTO 메인코드 VALUES('I', '설비상태코드');
+INSERT INTO 메인코드 VALUES('J', '주문코드');
 
 INSERT INTO 서브코드 VALUES('A', 'A', '4D');
 INSERT INTO 서브코드 VALUES('A', 'B', '3D');
@@ -15,12 +16,10 @@ INSERT INTO 서브코드 VALUES('A', 'D', 'IMAX');
 INSERT INTO 서브코드 VALUES('B', 'A', '정상');
 INSERT INTO 서브코드 VALUES('B', 'B', '일부취소');
 INSERT INTO 서브코드 VALUES('B', 'C', '전체취소');
-
 INSERT INTO 서브코드 VALUES('C', 'A', '전체');
 INSERT INTO 서브코드 VALUES('C', 'B', '12세 이상');
 INSERT INTO 서브코드 VALUES('C', 'C', '15세 이상');
 INSERT INTO 서브코드 VALUES('C', 'D', '청소년 관람불가');
-
 INSERT INTO 서브코드 VALUES('D', 'A', 'Y');
 INSERT INTO 서브코드 VALUES('D', 'B', 'N');
 INSERT INTO 서브코드 VALUES('E', 'A', '정상');
@@ -34,9 +33,15 @@ INSERT INTO 서브코드 VALUES('F', 'B', '무급');
 INSERT INTO 서브코드 VALUES('G', 'A', '진행중');
 INSERT INTO 서브코드 VALUES('G', 'A', '종료');
 INSERT INTO 서브코드 VALUES('G', 'A', '점검전');
-
 INSERT INTO 서브코드 VALUES('I', 'A', '양호');
 INSERT INTO 서브코드 VALUES('I', 'A', '청소필요');
+INSERT INTO 서브코드 VALUES('H', 'A', '정상');
+INSERT INTO 서브코드 VALUES('H', 'B', '오작동');
+INSERT INTO 서브코드 VALUES('H', 'C', '파손');
+INSERT INTO 서브코드 VALUES('I', 'A', '양호');
+INSERT INTO 서브코드 VALUES('I', 'B', '청소필요');
+INSERT INTO 서브코드 VALUES('J', 'A', '주문완료');
+INSERT INTO 서브코드 VALUES('J', 'B', '미주문');
 
 
 
@@ -1833,7 +1838,7 @@ INSERT INTO 상영관 VALUES ('0211','8관','C',175,'M',16);
 
 
 INSERT INTO 영화 VALUES (81581,'증인','B','129분','드라마','이한','정우성');
-INSERT INTO 영화 VALUES (82377,'조커','C','123분','액션,'토드 필립스','호아킨 피닉스');
+INSERT INTO 영화 VALUES (82377,'조커','C','123분','액션','토드 필립스','호아킨 피닉스');
 INSERT INTO 영화 VALUES (79313,'너의 이름은.','B','107분','애니메이션','신카이 마코토','카미키 류노스케');
 INSERT INTO 영화 VALUES (82379,'윤희에게','B','105분','로맨스','임대형','김희애');
 INSERT INTO 영화 VALUES (82530,'좀비랜드- 더블 탭','C','099분','호러','루벤 플레셔','우디 해럴슨');
@@ -1886,45 +1891,7 @@ INSERT INTO 영화상영정보 VALUES (NULL, '0211','4관',82541,'20191118','11:
 
 
 
-INSERT INTO 메인코드 VALUES('A', '상영관종류코드');
-INSERT INTO 메인코드 VALUES('B', '예매상태코드');
-INSERT INTO 메인코드 VALUES('C', '영화등급코드');
-INSERT INTO 메인코드 VALUES('D', '품목취소코드');
-INSERT INTO 메인코드 VALUES('E', '근태상태코드');
-INSERT INTO 메인코드 VALUES('F', '휴가종류코드');
-INSERT INTO 메인코드 VALUES('G', '점검종류코드');
-INSERT INTO 메인코드 VALUES('H', '점검상태코드');
-INSERT INTO 메인코드 VALUES('I', '설비상태코드');
-INSERT INTO 메인코드 VALUES('J', '주문코드');
 
-INSERT INTO 서브코드 VALUES('A', 'A', '4D');
-INSERT INTO 서브코드 VALUES('A', 'B', '3D');
-INSERT INTO 서브코드 VALUES('A', 'C', '2D');
-INSERT INTO 서브코드 VALUES('A', 'D', 'IMAX');
-INSERT INTO 서브코드 VALUES('B', 'A', '정상');
-INSERT INTO 서브코드 VALUES('B', 'B', '일부취소');
-INSERT INTO 서브코드 VALUES('B', 'C', '전체취소');
-
-INSERT INTO 서브코드 VALUES('D', 'A', 'Y');
-INSERT INTO 서브코드 VALUES('D', 'B', 'N');
-INSERT INTO 서브코드 VALUES('E', 'A', '정상');
-INSERT INTO 서브코드 VALUES('E', 'B', '결근');
-INSERT INTO 서브코드 VALUES('E', 'C', '휴가');
-INSERT INTO 서브코드 VALUES('E', 'D', '조퇴');
-INSERT INTO 서브코드 VALUES('E', 'E', '출장');
-INSERT INTO 서브코드 VALUES('E', 'F', '지각');
-INSERT INTO 서브코드 VALUES('F', 'A', '유급');
-INSERT INTO 서브코드 VALUES('F', 'B', '무급');
-INSERT INTO 서브코드 VALUES('G', 'A', '진행중');
-INSERT INTO 서브코드 VALUES('G', 'B', '종료');
-INSERT INTO 서브코드 VALUES('G', 'C', '점검전');
-INSERT INTO 서브코드 VALUES('H', 'A', '정상');
-INSERT INTO 서브코드 VALUES('H', 'B', '오작동');
-INSERT INTO 서브코드 VALUES('H', 'C', '파손');
-INSERT INTO 서브코드 VALUES('I', 'A', '양호');
-INSERT INTO 서브코드 VALUES('I', 'B', '청소필요');
-INSERT INTO 서브코드 VALUES('J', 'A', '주문완료');
-INSERT INTO 서브코드 VALUES('J', 'B', '미주문');
 
 INSERT INTO 회원 VALUES('ID1', 'password1', '홍', '길동', '1995-01-06', 01022591271);
 INSERT INTO 회원 VALUES('ID2', 'password2', '김', '재영', '1996-02-07', 01056562238);
