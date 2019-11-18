@@ -15,7 +15,7 @@ CREATE TABLE 지역
 (
 지역번호 varchar(4) NOT NULL PRIMARY KEY,
 지역명 varchar(30) NOT NULL
-)
+);
 
 CREATE TABLE 지점
 (
@@ -98,7 +98,7 @@ CREATE TABLE 직원관리
  사번 integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
  이름_성 varchar(10) NOT NULL,
  이름_이름 varchar(10) NOT NULL,
- 부서 varchar(15) NOT NULL,
+ 부서 varchar(15),
  직급 varchar(15) NOT NULL,
  직무 varchar(15) NOT NULL,
  파트 char(1),
