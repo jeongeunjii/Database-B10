@@ -14,33 +14,43 @@ INSERT INTO 서브코드 VALUES('A', 'A', '4D');
 INSERT INTO 서브코드 VALUES('A', 'B', '3D');
 INSERT INTO 서브코드 VALUES('A', 'C', '2D');
 INSERT INTO 서브코드 VALUES('A', 'D', 'IMAX');
+
 INSERT INTO 서브코드 VALUES('B', 'A', '정상');
 INSERT INTO 서브코드 VALUES('B', 'B', '일부취소');
 INSERT INTO 서브코드 VALUES('B', 'C', '전체취소');
+
 INSERT INTO 서브코드 VALUES('C', 'A', '전체');
 INSERT INTO 서브코드 VALUES('C', 'B', '12세 이상');
 INSERT INTO 서브코드 VALUES('C', 'C', '15세 이상');
 INSERT INTO 서브코드 VALUES('C', 'D', '청소년 관람불가');
+
 INSERT INTO 서브코드 VALUES('D', 'A', 'Y');
 INSERT INTO 서브코드 VALUES('D', 'B', 'N');
+
 INSERT INTO 서브코드 VALUES('E', 'A', '정상');
 INSERT INTO 서브코드 VALUES('E', 'B', '결근');
 INSERT INTO 서브코드 VALUES('E', 'C', '휴가');
 INSERT INTO 서브코드 VALUES('E', 'D', '조퇴');
 INSERT INTO 서브코드 VALUES('E', 'E', '출장');
-INSERT INTO 서브코드 VALUES('F', 'E', '지각');
+INSERT INTO 서브코드 VALUES('E', 'F', '지각');
+
 INSERT INTO 서브코드 VALUES('F', 'A', '유급');
 INSERT INTO 서브코드 VALUES('F', 'B', '무급');
+
 INSERT INTO 서브코드 VALUES('G', 'A', '진행중');
-INSERT INTO 서브코드 VALUES('G', 'A', '종료');
-INSERT INTO 서브코드 VALUES('G', 'A', '점검전');
+INSERT INTO 서브코드 VALUES('G', 'B', '종료');
+INSERT INTO 서브코드 VALUES('G', 'C', '점검전');
+
 INSERT INTO 서브코드 VALUES('I', 'A', '양호');
-INSERT INTO 서브코드 VALUES('I', 'A', '청소필요');
+INSERT INTO 서브코드 VALUES('I', 'B', '청소필요');
+
 INSERT INTO 서브코드 VALUES('H', 'A', '정상');
 INSERT INTO 서브코드 VALUES('H', 'B', '오작동');
 INSERT INTO 서브코드 VALUES('H', 'C', '파손');
+
 INSERT INTO 서브코드 VALUES('I', 'A', '양호');
 INSERT INTO 서브코드 VALUES('I', 'B', '청소필요');
+
 INSERT INTO 서브코드 VALUES('J', 'A', '주문완료');
 INSERT INTO 서브코드 VALUES('J', 'B', '미주문');
 
@@ -1919,14 +1929,14 @@ INSERT INTO 품목 VALUES(12345, 'B',5,'A');
 INSERT INTO 품목 VALUES(12345, 'A',6,'B');
 INSERT INTO 품목 VALUES(12345, 'A',7,'B');
 
-INSERT INTO 직원관리 VALUES(19010, '김', '미소', '운영지원팀', '알바생', '고객응대','A', '1999-01-05', 01045229342, '경기도', '안산시', '상록구', '사2동', '감골로', 35, '203동 402호', 'arbeit@naver.com',160,0,'비정규직'); 
-INSERT INTO 직원관리 VALUES(19011, '박', '정리', '운영지원팀', '알바생', '청소', 'A', '2000-04-01', 01065332972,'경기도','안산시','단원구','가나동', '동산로', 123, '303동 604호', 'clean1@naver.com', 120,0, '비정규직');
-INSERT INTO 직원관리 VALUES(19001, '김', '재영', '인사팀', '사원', '인사관리', 'A', '1995-01-02', 01023229812, '경기도', '안산시', '상록구','사2동', '감골로', 83, '101동 101호', 'kjyl95718@naver.com', 220, 11, NULL);
-INSERT INTO 직원관리 VALUES(19002, '이', '준수', '재무팀', '사원', '재무회계', 'B', '1996-02-05', 01032531123,'경기도','안산시','단원구','나다동','광덕대로', 192,'201동 204호', 'wodud95718@naver.com', 230, 11, NULL);
-INSERT INTO 직원관리 VALUES(18002, '홍', '길동', '마케팅', '대리', '성과관리','A', '1992-07-12', 01099423921,'경기도','안산시','상록구','본오동','샘골로7길', 12, '402동502호', 'asdfzxcv1@naver.com',220,12,NULL);
-INSERT INTO 직원관리 VALUES(16013, '박', '준영', '마케팅', '부장', '전략수립', 'C', '1989-05-22', 01054201823,'경기도','안산시','단원구','광덕동','동산로',268,'101동 203호', 'confuseTT@daum.net',210,16,'19년말 퇴사예정');
-INSERT INTO 직원관리 VALUES(17022, '신', '사장', NULL,'영업원','카페사장',NULL,'1991-06-12', 01023963293, '경기도','안산시','상록구','사2동','감골로',43,'503동 203호', 'cafe24@naver.com',0,0,NULL);
-INSERT INTO 직원관리 VALUES(18006, '최', '설비', '기술지원팀','사원','기기점검','A','1989-09-11', 01064268743, '경기도','안산시','상록구','건동','건건8길',10,'709동 305호', 'fix24@gmail.com',200,11,NULL);
+INSERT INTO 직원관리 VALUES('0211',19010, '김', '미소', '운영지원팀', '알바생', '고객응대','A', '1999-01-05', 01045229342, '경기도', '안산시', '상록구', '사2동', '감골로', 35, '203동 402호', 'arbeit@naver.com',160,0,'비정규직'); 
+INSERT INTO 직원관리 VALUES('0211',19011, '박', '정리', '운영지원팀', '알바생', '청소', 'A', '2000-04-01', 01065332972,'경기도','안산시','단원구','가나동', '동산로', 123, '303동 604호', 'clean1@naver.com', 120,0, '비정규직');
+INSERT INTO 직원관리 VALUES('0211',19001, '김', '재영', '인사팀', '사원', '인사관리', 'A', '1995-01-02', 01023229812, '경기도', '안산시', '상록구','사2동', '감골로', 83, '101동 101호', 'kjyl95718@naver.com', 220, 11, NULL);
+INSERT INTO 직원관리 VALUES('0211',19002, '이', '준수', '재무팀', '사원', '재무회계', 'B', '1996-02-05', 01032531123,'경기도','안산시','단원구','나다동','광덕대로', 192,'201동 204호', 'wodud95718@naver.com', 230, 11, NULL);
+INSERT INTO 직원관리 VALUES('0211',18002, '홍', '길동', '마케팅', '대리', '성과관리','A', '1992-07-12', 01099423921,'경기도','안산시','상록구','본오동','샘골로7길', 12, '402동502호', 'asdfzxcv1@naver.com',220,12,NULL);
+INSERT INTO 직원관리 VALUES('0211',16013, '박', '준영', '마케팅', '부장', '전략수립', 'C', '1989-05-22', 01054201823,'경기도','안산시','단원구','광덕동','동산로',268,'101동 203호', 'confuseTT@daum.net',210,16,'19년말 퇴사예정');
+INSERT INTO 직원관리 VALUES('0211',17022, '신', '사장', NULL,'영업원','카페사장',NULL,'1991-06-12', 01023963293, '경기도','안산시','상록구','사2동','감골로',43,'503동 203호', 'cafe24@naver.com',0,0,NULL);
+INSERT INTO 직원관리 VALUES('0211',18006, '최', '설비', '기술지원팀','사원','기기점검','A','1989-09-11', 01064268743, '경기도','안산시','상록구','건동','건건8길',10,'709동 305호', 'fix24@gmail.com',200,11,NULL);
 
 INSERT INTO 급여관리 VALUES(19010,'2019-09-05', '2019-09-05', 1450000, 60000, 70000, 70000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1650000, NULL);
 INSERT INTO 급여관리 VALUES(19011,'2019-09-05', '2019-09-05', 1150000, 40000, 50000, 50000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1290000, NULL);
@@ -1964,24 +1974,40 @@ INSERT INTO 물품 VALUES(NULL,'커피');
 INSERT INTO 물품 VALUES(NULL,'팝콘옥수수');
 INSERT INTO 물품 VALUES(NULL,'콜라');
 INSERT INTO 물품 VALUES(NULL,'오징어');
-INSERT INTO 시설물 VALUES(NULL,'카페');
-INSERT INTO 시설물 VALUES(NULL,'매표소');
-INSERT INTO 시설물 VALUES(NULL,'매점');
-INSERT INTO 시설물 VALUES(NULL,'스태프실');
 
-INSERT INTO 재고관리 VALUES(2,1,1,17022,43,365,1,1200,600,'A');
-INSERT INTO 재고관리 VALUES(2,1,2,17022,43,365,1,1200,600,'B');
+INSERT INTO 시설물 VALUES('0211',NULL,'카페');
+INSERT INTO 시설물 VALUES('0211',NULL,'매표소');
+INSERT INTO 시설물 VALUES('0211',NULL,'매점');
+INSERT INTO 시설물 VALUES('0211',NULL,'스태프실');
+INSERT INTO 시설물 VALUES('0211',NULL,'여자화장실5F');
+INSERT INTO 시설물 VALUES('0211',NULL,'남자화장실5F');
+INSERT INTO 시설물 VALUES('0211',NULL,'여자화장실6F');
+INSERT INTO 시설물 VALUES('0211',NULL,'남자화장실6F');
+INSERT INTO 시설물 VALUES('0211',NULL,'여자화장실7F');
+INSERT INTO 시설물 VALUES('0211',NULL,'남자화장실7F');
+INSERT INTO 시설물 VALUES('0211',NULL,'여자화장실8F');
+INSERT INTO 시설물 VALUES('0211',NULL,'남자화장실8F');
 
-INSERT INTO 시설물관리 VALUES(2,3,'2019-09-01 11:30:00',18006,'C','A', '2019-10-01 11:30:00', '2019-10-03 11:30:00');
-INSERT INTO 시설물관리 VALUES(2,3,'2019-10-01 11:50:00',18006,'A','B', '2019-10-01 11:30:00', '2019-10-03 11:30:00');
-INSERT INTO 시설물관리 VALUES(2,3,'2019-10-03 09:30:00',18006,'B','A', '2019-11-03 09:30:00', '2019-11-05 09:30:00');
-INSERT INTO 시설물관리 VALUES(2,3,'2019-10-03 09:30:00',18006,'C','A', '2019-11-03 09:30:00', '2019-11-05 09:30:00');
-INSERT INTO 시설물관리 VALUES(2,3,'2019-11-03 09:35:38',18006,'B','A', '2019-12-03 09:35:38', '2019-12-05 09:35:38');
+INSERT INTO 재고관리 VALUES('0211',1,1,17022,43,365,1,1200,600,'A');
+INSERT INTO 재고관리 VALUES('0211',3,2,17022,43,365,1,1200,600,'B');
+INSERT INTO 재고관리 VALUES('0211',3,3,17022,43,365,1,1200,600,'A');
+INSERT INTO 재고관리 VALUES('0211',3,4,17022,43,365,1,1200,600,'B');
 
-INSERT INTO 청결관리 VALUES(2,4,'2019-11-10 09:30:00',19011,'B');
-INSERT INTO 청결관리 VALUES(2,4,'2019-11-10 13:30:00',19011,'A');
-INSERT INTO 청결관리 VALUES(2,4,'2019-11-10 17:30:00',19011,'B');
-INSERT INTO 청결관리 VALUES(2,4,'2019-11-10 21:30:00',19011,'A');
+INSERT INTO 시설물관리 VALUES('0211',3,'2019-09-01 11:30:00',18006,'C','A', '2019-10-01 11:30:00', '2019-10-03 11:30:00');
+INSERT INTO 시설물관리 VALUES('0211',3,'2019-10-01 11:50:00',18006,'A','B', '2019-10-01 11:30:00', '2019-10-03 11:30:00');
+INSERT INTO 시설물관리 VALUES('0211',3,'2019-10-03 09:30:00',18006,'B','A', '2019-11-03 09:30:00', '2019-11-05 09:30:00');
+INSERT INTO 시설물관리 VALUES('0211',3,'2019-10-03 09:30:00',18006,'C','A', '2019-11-03 09:30:00', '2019-11-05 09:30:00');
+INSERT INTO 시설물관리 VALUES('0211',3,'2019-11-03 09:35:38',18006,'B','A', '2019-12-03 09:35:38', '2019-12-05 09:35:38');
+
+INSERT INTO 청결관리 VALUES('0211',4,'2019-11-10 09:30:00',19011,'B');
+INSERT INTO 청결관리 VALUES('0211',4,'2019-11-10 13:30:00',19011,'A');
+INSERT INTO 청결관리 VALUES('0211',4,'2019-11-10 17:30:00',19011,'B');
+INSERT INTO 청결관리 VALUES('0211',4,'2019-11-10 21:30:00',19011,'A');
+INSERT INTO 청결관리 VALUES('0211',5,'2019-12-10 21:30:00',19011,'B');
+INSERT INTO 청결관리 VALUES('0211',5,'2019-12-10 21:30:00',19011,'A');
+INSERT INTO 청결관리 VALUES('0211',6,'2019-12-10 21:30:00',19011,'B');
+INSERT INTO 청결관리 VALUES('0211',6,'2019-12-10 21:30:00',19011,'A');
+
 
 
 

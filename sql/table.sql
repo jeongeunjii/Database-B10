@@ -29,7 +29,7 @@ CREATE TABLE 지점
 
 CREATE TABLE 상영관
 (
-지점번호 integer NOT NULL,
+지점번호 varchar(4) NOT NULL,
 상영관명 VARCHAR(10) NOT NULL,
 상영관종류코드 CHAR(1) NOT NULL,
 좌석수 integer NOT NULL,
@@ -93,8 +93,9 @@ CREATE TABLE 회원
 전화번호 varchar(13) NOT NULL
 );
 
-CREATE TABLE 직원관리
+CREATE TABLE 직원관리 
 (
+ 지점번호 varchar(4) NOT NULL,
  사번 integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
  이름_성 varchar(10) NOT NULL,
  이름_이름 varchar(10) NOT NULL,
@@ -170,7 +171,7 @@ CREATE TABLE 인사고과관리
  비고 varchar(20)
 );
 
-CREATE TABLE 휴가관리
+CREATE TABLE 휴가관리 
 (
  사번 integer NOT NULL,
  휴가기간_from date NOT NULL,
@@ -196,6 +197,7 @@ CREATE TABLE 재고관리
 
 CREATE TABLE 시설물
 (
+ 지점번호 varchar(4) NOT NULL,
  시설물번호 integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
  시설물명 varchar(20) NOT NULL
 );
@@ -226,5 +228,33 @@ CREATE TABLE 물품
   물품번호 integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
   물품명 varchar(20) NOT NULL
 );
+
+
+
+ALTER TABLE 메인코드 CONVERT TO character SET utf8;
+ALTER TABLE 서브코드 CONVERT TO character SET utf8;
+
+ALTER TABLE 지역 CONVERT TO character SET utf8;
+ALTER TABLE 지점 CONVERT TO character SET utf8;
+ALTER TABLE 상영관 CONVERT TO character SET utf8;
+ALTER TABLE 영화 CONVERT TO character SET utf8;
+ALTER TABLE 영화상영정보 CONVERT TO character SET utf8;
+
+ALTER TABLE 예매 CONVERT TO character SET utf8;
+ALTER TABLE 품목 CONVERT TO character SET utf8;
+ALTER TABLE 회원 CONVERT TO character SET utf8;
+ALTER TABLE 직원관리 CONVERT TO character SET utf8;
+ALTER TABLE 급여관리 CONVERT TO character SET utf8;
+ALTER TABLE 근태관리 CONVERT TO character SET utf8;
+ALTER TABLE floor업무관리 CONVERT TO character SET utf8;
+ALTER TABLE 인사고과관리 CONVERT TO character SET utf8;
+ALTER TABLE 휴가관리 CONVERT TO character SET utf8;
+ALTER TABLE 재고관리 CONVERT TO character SET utf8;
+ALTER TABLE 시설물 CONVERT TO character SET utf8;
+ALTER TABLE 시설물관리 CONVERT TO character SET utf8;
+ALTER TABLE 청결관리 CONVERT TO character SET utf8;
+ALTER TABLE 물품 CONVERT TO character SET utf8;
+
+
 
 
