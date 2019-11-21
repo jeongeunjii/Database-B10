@@ -31,24 +31,39 @@ header p {
 #nav {
 	height: 100%;
 	background-color: #F2F2F2;
-	width: 300px;
+	width: 250px;
 	position: fixed;
 	top: 60px;
 	color: gray;
 	margin: 0;
 	padding: 0;
+	padding-left: 20px;
+	list-style: none;
 }
 
 #nav img {
 	width: 30px;
 	padding-right: 20px;
-	padding-bottom: 20px;
+	padding-top: 20px;
 }
 
 #nav ul {
 	list-style: none;
+	display: none;
+}
+
+#nav:hover ul {
+	display: inline;
+	-webkit-transform: rotateY(130deg); /* Safari prior 9.0 */
+  	transform: rotateY(130deg); /* Standard syntax */
 }
 
 #nav a:link { color: gray; text-decoration: none;}
 #nav a:visited { color: gray; text-decoration: none;}
-#nav a:hover { color: gray; text-decoration: underline;}
+
+#nav a:hover { 
+	color: gray; text-decoration: underline;
+	-webkit-transform: translate(100px, 50px);
+	-ms-transform: translate(100px, 50px);
+	transform: translate(100px, 50px);
+}
