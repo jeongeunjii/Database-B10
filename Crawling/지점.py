@@ -7,6 +7,7 @@ soup = BeautifulSoup(html, 'html.parser')
 
 areas = soup.find_all('div',class_='area')
 branch = [[] for i in range(164)]
+i=0
 size = 0
 for area in areas:
 	datas = area.find_all('a')
@@ -16,13 +17,13 @@ for area in areas:
 		array = href.split('&')
 		array.pop()
 		array.append(name)
-		branch[size].append(array[0])
-		branch[size].append(array[1])
+		branch[size].append(array[0].replace("areacode=",""))
+		branch[size].append(array[1].replace("theaterCode=",""))
 		branch[size].append(array[2])
 		size = size + 1
 size = 0
 for index in branch:
-	url = 'http://www.cgv.co.kr/theaters/?'+index[0]+'&'+index[1]+'&date=20191114'
+	url = 'http://www.cgv.co.kr/theaters/?areacode='+index[0]+'&theaterCode='+index[1]+'&date=20191114'
 	respose = requests.get(url)
 	html = respose.text
 	soup = BeautifulSoup(html, 'html.parser')
@@ -39,7 +40,6 @@ for index in branch:
 	branch[size].append('1544-1122')
 	size = size + 1
 	
-print(branch)
-	#'지점번호ok','지점명ok','특별시_광역시_도','구_군_시','시_구','동_읍_면','도로명','건물번호','상세주소','전화번호')
-	# [areacode, theatercode, 지점명]
+for low in branch:
+	print("INSERT INTO 지점 VALUES ('"+low[1]+"','"+low[0]+"','"+low[2]+"','"+low[3]+"','"+low[4]+"','"+low[5]+"');")
 
