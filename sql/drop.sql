@@ -4,6 +4,7 @@ DROP TABLE 서브코드;
 DROP TABLE 지역;
 DROP TABLE 지점;
 DROP TABLE 상영관;
+DROP TABLE 좌석;
 DROP TABLE 영화;
 DROP TABLE 영화상영정보;
 
@@ -21,4 +22,3 @@ DROP TABLE 시설물;
 DROP TABLE 시설물관리;
 DROP TABLE 청결관리;
 DROP TABLE 물품;
-
