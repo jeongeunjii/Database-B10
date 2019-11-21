@@ -58,7 +58,7 @@ CREATE TABLE 영화상영정보
 (
 상영정보번호 integer PRIMARY KEY AUTO_INCREMENT,
 지점번호 varchar(4) NOT NULL,
-상영관명 VARCHAR(10) NOT NULL,
+상영관번호 VARCHAR(10) NOT NULL,
 영화번호 integer NOT NULL,
 일자 date NOT NULL,
 영화시작시간 varchar(10) NOT NULL,
