@@ -13,6 +13,7 @@ header {
     height: 80px;
     width: 100%;
     margin: 10px  auto 0px auto;
+    clear: both;
 }
 
 header h1 {
@@ -34,6 +35,9 @@ header p {
     color: rgb(254, 180, 11);
 }
 
+section {
+    display: flex;
+}
 
 nav {
     width: 25%;
@@ -52,7 +56,11 @@ nav ul img {
     margin : 5px 25px 5px 10px;
 }
 
-
+nav ul li span {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 25px;
+}
 
 nav ul li ul li:hover {
     background-color: rgb(220, 220, 220);
@@ -60,7 +68,21 @@ nav ul li ul li:hover {
 
 
 nav ul ul {
+    list-style-type: none;
+    padding: 0px;
     display: none;
+}
+
+nav ul ul li {
+    text-align: center;
+    height: 50px;
+}
+
+nav ul ul li a {
+    color: black;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 17px;
 }
 
 nav ul li:hover > ul {
@@ -69,7 +91,7 @@ nav ul li:hover > ul {
 }
 
 main {
-    width: 74%;
+    width: 75%;
     height: 800px;
     float: right;
 }

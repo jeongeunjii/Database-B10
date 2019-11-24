@@ -11,20 +11,15 @@
         $db->query("set session character_set_client=utf8;");
         
         $id = $_POST['id'];
-        $pw = $_POST['password'];
         $num = $db->quote($id);
-        $check = "SELECT 사번,이름,부서 FROM 직원관리 WHERE 사번 = $num";
-        $rows = $db->query($check);
 
-        $result = $rows->fetchAll();
-        if ($result[0] === NULL or $result[0]['이름'] != $pw){
-            header("Location: ../htmlp/home.php");
-        }else {
-            $_SESSION['ID'] = $id;
-            $_SESSION['PW'] = $pw;
-            $_SESSION['DEP'] = $result[0]['부서'];
-            header("Location: ../htmlp/home.php");
-        }
+        $check = "UPDATE floor업무관리
+        SET 시설물번호 = NULL,
+            상태 = 1
+        WHERE 사번 = $num;";
+        $db->exec($check);
+
+        header("Location: ../htmlp/floor.php");
         // echo "<pre>";
         // var_dump($result[0]);
         // echo "</pre>";

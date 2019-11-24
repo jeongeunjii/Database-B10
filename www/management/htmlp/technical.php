@@ -9,13 +9,14 @@
 
 <body>
     <header>
-        <h1>10Jo</h1>
+        <a href="home.php"><h1>10Jo</h1></a>
         <div id="login"></div>
     </header>
+    <section>
     <nav>
         <ul>
             <li>
-                <img src="../image/employee.png" width="50px" alt="employee_icon" />직원관리
+                <img src="../image/employee.png" width="50px" alt="employee_icon" /> <span>직원관리</span>
                 <ul>
                     <li><a href="list.php">직원목록</a></li>
                     <li><a href="attenndance.php">근태관리</a></li>
@@ -32,7 +33,7 @@
             </li>
         </ul>
     </nav>
-
+    </section>
 </body>
 
 </html>
