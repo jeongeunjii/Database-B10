@@ -17,13 +17,13 @@ http-equiv="X-UA-Compatible" content="ie=edge"> <title>Document</title> </head>
 
     <body>
         <header>
-            <h1>10Jo</h1>
+            <a href="home.php"><h1>10Jo</h1></a>
         </header>
-
+        <section>
         <nav>
             <ul>
                 <li>
-                    <img src="../image/employee.png" width="50px" alt="employee_icon"/>직원관리
+                    <img src="../image/employee.png" width="50px" alt="employee_icon"/> <span>직원관리</span>
                     <ul>
                         <li>
                             <a href="list.php">직원목록</a>
@@ -37,8 +37,7 @@ http-equiv="X-UA-Compatible" content="ie=edge"> <title>Document</title> </head>
                     </ul>
                 </li>
                 <li >
-                    <img src="../image/store.png" width="50px" alt="store_icon"/>
-                    <span>시설관리</span>
+                    <img src="../image/store.png" width="50px" alt="store_icon"/> <span>시설관리</span>
                     <ul>
                         <li>
                             <a href="order.php">주문발주</a>
@@ -54,12 +53,14 @@ http-equiv="X-UA-Compatible" content="ie=edge"> <title>Document</title> </head>
             </ul>
         </nav>
         <main>
-            <p>감</p>
+            <p>감자머리</p>
             <form method="post" action="../php/login.php">
-            <input type="text" name="id" placeholder="사번"/>
-            <input type="text" name="password" placeholder="이름"/>
-            <input type="submit" value="login"/>
+                <input type="text" name="id" placeholder="사번"/>
+                <input type="text" name="password" placeholder="이름"/>
+                <input type="submit" value="login"/>
+            </form>
         </main>
+        </section>
     </body>
 
 </html>

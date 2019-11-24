@@ -13,12 +13,12 @@
 
     <body>
         <header>
-            <h1>10Jo</h1>
+            <a href="home.php"><h1>10Jo</h1></a>
             <div id="login">
             <?php
                 // session_destroy();
                 if (isset($_SESSION['ID'])){
-                    echo $_SESSION['ID'];
+                    echo "( ".$_SESSION['ID']." / ".$_SESSION['PW']." / ".$_SESSION['DEP']." )";
                 }
                 else {
                     echo '<a href="login.php">login</a>';
@@ -26,11 +26,12 @@
             ?>
             </div>
         </header>
+        <section>
 
         <nav>
             <ul>
                 <li>
-                    <img src="../image/employee.png" width="50px" alt="employee_icon"/>직원관리
+                    <img src="../image/employee.png" width="50px" alt="employee_icon"/> <span>직원관리</span> 
                     <ul>
                         <li>
                             <a href="list.php">직원목록</a>
@@ -44,8 +45,7 @@
                     </ul>
                 </li>
                 <li >
-                    <img src="../image/store.png" width="50px" alt="store_icon"/>
-                    <span>시설관리</span>
+                    <img src="../image/store.png" width="50px" alt="store_icon"/> <span>시설관리</span>
                     <ul>
                         <li>
                             <a href="order.php">주문발주</a>
@@ -91,6 +91,9 @@
             }
         ?>
         </main>
+        
+        </section>
+        
     </body>
 
 </html>
