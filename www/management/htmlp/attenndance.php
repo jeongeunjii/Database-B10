@@ -52,24 +52,39 @@
     <main>
     <?php
         try {
+            $db = new PDO("mysql:dbname=movie; host=13.125.252.255; port=3306", "root", "1234");
+            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $db->query("set session character_set_connection=utf8;");
+            $db->query("set session character_set_results=utf8;");
+            $db->query("set session character_set_client=utf8;");
+            $rows = $db->query("SELECT * FROM 근태관리");
+            $today = date("Y-m-d");
+            $time = date("H:i:s"); 
             if ( $_SESSION['DEP'] == "매니저"){
-                $db = new PDO("mysql:dbname=movie; host=13.125.252.255; port=3306", "root", "1234");
-                $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                $db->query("set session character_set_connection=utf8;");
-                $db->query("set session character_set_results=utf8;");
-                $db->query("set session character_set_client=utf8;");
-
-                $rows = $db->query("SELECT * FROM 직원관리");
                 foreach ($rows as $row) {
+                    if ($today == $row["일자"]){
+            ?>
+                    <li>
+                        
+                    </li>
+            <?php
+                    }
+                }
+            }
+            else {
+                foreach ($rows as $row) {
+                    if ($row["사번"] == $_SESSION["ID"]) {
                 ?>
-                <li>
-                    <?= $row["사번"] ?>
-                    <?= $row["이름"] ?>
-                    <?= $row["부서"] ?>
-                    <?= $row["생년월일"] ?>
-                    <?= $row["전화번호"] ?>
-                </li>
+                        <li>
+                            <?= $row["사번"] ?>
+                            <?= $row["이름"] ?>
+                            <?= $row["부서"] ?>
+                            <?= $row["생년월일"] ?>
+                            <?= $row["전화번호"] ?>
+                        </li>
+                        <button></button>
                 <?php
+                    }
                 }
             }
         } catch (PDOException $ex) {
