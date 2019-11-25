@@ -35,4 +35,5 @@
         <p>(Error details: <?= $ex->getMessage() ?>)</p>
         <?php
     }
+    exit;
 ?>

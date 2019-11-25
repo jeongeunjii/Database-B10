@@ -16,11 +16,13 @@
 <body>
     <header>
         <a href="home.php"><h1>10Jo</h1></a>
-        <div id="login">
+        <div id="login"><p>
             <?php
-                // session_destroy();
                 if (isset($_SESSION['ID'])){
                     echo "( ".$_SESSION['ID']." / ".$_SESSION['PW']." / ".$_SESSION['DEP']." )";
+            ?>
+            </p><a href="../php/logout.php">Logout</a>
+            <?php
                 }
                 else {
                     echo '<a href="login.php">login</a>';
