@@ -140,6 +140,7 @@ CREATE TABLE 기술지원
 CREATE TABLE 물품주문
 (
  지점번호 integer NOT NULL,
+ 시설물번호 integer,
  물품 varchar(25) NOT NULL,
  주문량 integer NOT NULL
 );
