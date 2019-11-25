@@ -6,14 +6,11 @@
     <link rel="stylesheet" type="text/css" href="../css/layout.css">
     <link rel="stylesheet" type="text/css" href="../css/clean.css">
 	<title>10Jo</title>
-	<script language="javascript">
-	function showPopup() { window.open("staffing_popup.html", "popup" , 'width=300,height=300,location=no,status=no'); }
-	</script>
 </head>
 
 <body>
     <header>
-        <h1>10Jo</h1>
+		<a href="home.html"><h1>10Jo</h1></a>
         <div id="login"></div>
     </header>
     <nav>
@@ -23,16 +20,17 @@
                 <img src="../image/employee.png" width="50px" alt="employee_icon" />직원관리
                 <ul>
                     <li><a href="list.html">직원목록</a></li>
-                    <li><a href="attenndance.html">근태관리</a></li>
-                    <li><a href="floor.html">플로어업무</a></li>
+                    <li><a href="attenndance_manager.html">근태관리</a></li>
+					<li><a href="floor.html">플로어업무</a></li>
+					<li><a href="engineer.html">기술업무</a></li>
                 </ul>
             </li>
             <li >
                 <img src="../image/store.png" width="50px" alt="store_icon" /> <span>시설관리</span> 
                 <ul>
                     <li><a href="order.html">주문발주</a></li>
-                    <li><a href="support.html">기술지원</a></li>
-                    <li><a href="clean.html">청결관리</a></li>
+                    <li><a href="staffing_manager.html">기술지원</a></li>
+                    <li><a href="clean_manager.html">청결관리</a></li>
 				</ul>
 			</li>
 			<div><a href="settings.html"><img src="../image/settings.png" alt="settings_icon" />설정</a></div>
@@ -51,25 +49,48 @@
 			<option value="부장">부장</option>
 			<option value="카페사장">카페사장</option>
 		</select>
-		<button type="button">+ 추가</button>
-		<table>
-			<thead>
-				<tr>
-					<th>이름</th>
-					<th>직급</th>
-					<th>파트</th>
-					<th>업무상황</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th>"정은지"</th>
-					<th>"알바생"</th>
-					<th>"인사관리"</th>
-					<th><button type="button">보기</button></th>
-					<th><button type="button">상세정보</button></th>
-				</tr>
-			</tbody>
-		</table>
+		<button onclick = "window.open('employee_add.html', 'popup' , 'width=300,height=300,location=no,status=no');" />
+			추가</button>
+		<button onclick = "window.open('employee_del.html', 'popup' , 'width=300,height=300,location=no,status=no');" />
+			삭제</button>
+		<button onclick = "window.open('employee_add.html', 'popup' , 'width=300,height=300,location=no,status=no');" />
+			수정</button>
+
+		<article>
+			<table>
+				<thead>
+					<tr>
+						<th>사번</th>
+						<th>이름</th>
+						<th>부서</th>
+						<th>생년월일</th>
+						<th>전화번호</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>"</td>
+						<td>"</td>
+						<td>floor</td>
+						<td>"</td>
+						<td>"</td>
+					</tr>
+					<tr>
+						<td>"</td>
+						<td>"</td>
+						<td>floor</td>
+						<td>"</td>
+						<td>"</td>
+					</tr>
+					<tr>
+						<td>"</td>
+						<td>"</td>
+						<td>매니저</td>
+						<td>"</td>
+						<td>"</td>
+					</tr>								
+				</tbody>
+			</table>
+		</article>
 </body>
 </html>

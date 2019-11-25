@@ -23,6 +23,9 @@ header h1 {
     margin: 0;
 }
 
+header a:link { color:white; text-decoration: none;}
+header a:visited { color: white; text-decoration: none;}
+
 header p {
     position: relative;
     margin: 0;
