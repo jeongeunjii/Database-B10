@@ -1,69 +1,43 @@
-
-
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
 
+    <link rel="stylesheet" href="vendor/bootstrap/css/join.css">
+    <link href="css/business-casual.min.css" rel="stylesheet">
 
-
-<title>회원가입</title>
-
+    <title>회원가입</title>
 </head>
-
 <!-- join_form.html -->
-
 <body>
-
  <center>
-
-   <h3>회원가입</h3>
-
-   <table cellpadding="5" cellspacing="0"
-
-          bgcolor="eeeeee">
-
+   <form action="submitDB.html" method="post">
+   <table cellpadding="5" cellspacing="0" bgcolor="eeeeee">
+     <tr>
+       <td><h1>회원가입</h1></td>
+       <td></td>
+     </tr>
       <tr>
 
         <td>ID:</td>
-
         <td><input type="text">
-
-            <input type="button" value="중복확인">
-
+            <input type="button" value="중복확인" class="bt">
         </td>
-
       </tr>
-
       <tr>
-
         <td>비밀번호:</td>
-
         <td><input type="password"> </td>
-
       </tr>
-
       <tr>
-
         <td>비밀번호 확인:</td>
-
         <td><input type="password"> </td>
-
       </tr>
-
       <tr>
-
         <td>이 름:</td>
-
         <td><input type="text"> </td>
-
       </tr>
-
-
-
       <tr>
-
         <td>전화번호:</td>
-
         <td><select>
         <option>010</option>
         <option>011</option>
@@ -71,40 +45,27 @@
         <option>017</option>
         <option>018</option>
         <option>019</option>
-        </select> 
+        </select>
         <input type="text" size="4">
         <input type="text" size="4">
-        </td> 
-
+        </td>
       </tr>
-
       <tr>
-
         <td>주 소:</td>
-
         <td><input type="text"> </td>
-
       </tr>
-
-      
       <tr align="center">
-
         <td colspan="2">
+           <input type="submit" value="등록" title = "등록" class="submit">
 
-           <input type="submit" value="등록">
-
-           <input type="reset" value="취소">
-
-        </td>       
-
+         </form>
+         <form action="index.html" method="post">
+         <a href="index.html" title = "취소"><button>취소</button></a>
+       </form></td>
       </tr>
-
    </table>
 
  </center>
-
-
-
 </body>
 
 </html>

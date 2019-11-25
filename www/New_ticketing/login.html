@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!-- URL : http://localhost:8080/  -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>로그인 | 회원서비스</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <style>
+        .page{
+            position:absolute;
+            top:40%;
+            left:50%;
+            transform:translate(-50%, -50%);
+        }
+    </style>
+      <link href="css/business-casual.min.css" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/login.css">
+</head>
+<body>
+<div class="page">
+    <div class="title">
+        <h1>로그인</h1>
+    </div>
+    <div class="content form-horizontal align-items-center">
+        <form action="loginDB.html" method="post" >
+            <div class="form-group">
+                <label for="username" class="control-label">아이디</label>
+                <input type="text" id="username" name="username" class="form-control"/>
+
+                <label for="password" class="control-label">비밀번호</label>
+                <input type="password" id="password" name="password" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="로그인" class="btn btn-primary btn-block">
+            </div>
+        </form>
+        <div class="form-group">
+            <form action='join.html' method="get">
+                  <input type="submit" value="회원가입" class="btn btn-primary btn-block">
+            </form>
+        </div>
+    </div>
+</div>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

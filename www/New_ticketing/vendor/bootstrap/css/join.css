@@ -1,0 +1,63 @@
+table {
+    background-color: white;
+    border-collapse: collapse;
+
+
+}
+th,td {
+    border-bottom: 1px solid;
+    padding: 20px;
+    border-color: #dcdcdc;
+    color: #353535;
+}
+
+input {
+
+    height: 27px;
+    vertical-align: middle;
+}
+
+.submit{
+  cursor : pointer;
+  position:relative;
+  right:55px;
+  padding: 5px;
+  height: 40px;
+  width: 100px;
+  border: solid 1px;
+  border-color: #2D0000;
+  font-weight: bold;
+  background-color: black;
+  color: white;
+}
+select {
+  height : 27px;
+}
+.bt {
+    margin: 10px;
+    width: 80px;
+    height: 27px;
+    display: inline-block;
+    background-color: #f8f8f8;
+    padding: 1px;
+    color: #353535;
+    border-color: #f8f8f8;
+}
+button {
+  padding: 5px;
+  position:relative;
+  bottom:41px;
+  left:50px;
+    width:102px;
+    height: 42px;
+    background-color: black;
+    border-color: #2D0000;
+    border: solid 1px;
+    color:#fff;
+    vertical-align: middle;
+    text-align: center;
+    display: inline-block;
+
+    font-weight: bold;
+    cursor: pointer;
+}
