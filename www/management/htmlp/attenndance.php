@@ -37,6 +37,7 @@
                     <li><a href="list.php">직원목록</a></li>
                     <li><a href="attenndance.php">근태관리</a></li>
                     <li><a href="floor.php">플로어업무</a></li>
+                    <li><a href="repair.php">정비업무</a></li>
                 </ul>
             </li>
             <li >
@@ -57,15 +58,16 @@
             $db->query("set session character_set_connection=utf8;");
             $db->query("set session character_set_results=utf8;");
             $db->query("set session character_set_client=utf8;");
-            $rows = $db->query("SELECT * FROM 근태관리");
-            $today = date("Y-m-d");
-            $time = date("H:i:s"); 
+            $rows = $db->query("SELECT * FROM 근태관리 NATURAL JOIN 직원관리");
+            date_default_timezone_set("Asia/Seoul");
+            // $today = date("Y-m-d");
+            // $time = date("H:i:s"); 
             if ( $_SESSION['DEP'] == "매니저"){
                 foreach ($rows as $row) {
                     if ($today == $row["일자"]){
             ?>
                     <li>
-                        
+                        <?= $row["일자"]." ".$row["이름"]." ".$row["출근"]." ".$row["퇴근"]  ?>
                     </li>
             <?php
                     }
@@ -73,20 +75,18 @@
             }
             else {
                 foreach ($rows as $row) {
-                    if ($row["사번"] == $_SESSION["ID"]) {
-                ?>
-                        <li>
-                            <?= $row["사번"] ?>
-                            <?= $row["이름"] ?>
-                            <?= $row["부서"] ?>
-                            <?= $row["생년월일"] ?>
-                            <?= $row["전화번호"] ?>
-                        </li>
-                        <button></button>
-                <?php
+                    if ($_SESSION['ID'] == $row["사번"]){
+            ?>
+                                            <li>
+                                                <?= date("Y-m-d") ?>
+                                                <?= date("H:i:s") ?>
+                                            </li>
+                                            <button></button>
+            <?php
                     }
                 }
             }
+
         } catch (PDOException $ex) {
     ?>
         <p>Sorry, a database error occurred. Please try again later.</p>

@@ -11,21 +11,23 @@
         $db->query("set session character_set_client=utf8;");
         
         $id = $_POST['id'];
-        $pw = $_POST['password'];
         $num = $db->quote($id);
-        $check = "SELECT 사번,이름,부서,지점번호 FROM 직원관리 WHERE 사번 = $num";
-        $rows = $db->query($check);
+        $check = "DELETE FROM 직원관리
+        WHERE 사번 = $num";
+        $db->exec($check);
 
-        $result = $rows->fetchAll();
-        if ($result[0] === NULL or $result[0]['이름'] != $pw){
-            header("Location: ../htmlp/home.php");
-        }else {
-            $_SESSION['REGION'] = $result[0]['지점번호'];
-            $_SESSION['ID'] = $id;
-            $_SESSION['PW'] = $pw;
-            $_SESSION['DEP'] = $result[0]['부서'];
-            header("Location: ../htmlp/home.php");
-        }
+        $num = $db->quote($id);
+        $check = "DELETE FROM floor업무관리
+        WHERE 사번 = $num";
+        $db->exec($check);
+
+        $num = $db->quote($id);
+        $check = "DELETE FROM 기술지원
+        WHERE 사번 = $num";
+        $db->exec($check);
+
+   
+        header("Location: ../htmlp/list.php");
         // echo "<pre>";
         // var_dump($result[0]);
         // echo "</pre>";

@@ -65,10 +65,8 @@
                     JOIN 시설물 s ON c.시설물번호 = s.시설물번호
                     ");
                     foreach ($rows as $row) {
-                    ?>
-            <li>
-                <?= $row["청소일시"] ?>
-                <?= $row["시설물명"] ?></li>
+            ?>
+            
 
             <?php
                     }
