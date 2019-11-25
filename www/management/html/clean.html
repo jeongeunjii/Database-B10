@@ -2,42 +2,42 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="../css/layout.css">
-	<link rel="stylesheet" type="text/css" href="index.css">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../css/layout.css">
+    <link rel="stylesheet" type="text/css" href="../css/clean.css">
 	<title>10Jo</title>
+	<script language="javascript">
+	function showPopup() { window.open("staffing_popup.html", "popup" , 'width=300,height=300,location=no,status=no'); }
+	</script>
 </head>
 
 <body>
-	<header>
-		<h1>10Jo</h1>
-		<p>eunji</p>
-	</header>
+    <header>
+        <h1>10Jo</h1>
+        <div id="login"></div>
+    </header>
+    <nav>
+        <ul>
+            <li>
+                <img src="../image/employee.png" width="50px" alt="employee_icon" />직원관리
+                <ul>
+                    <li><a href="list.html">직원목록</a></li>
+                    <li><a href="attenndance.html">근태관리</a></li>
+                    <li><a href="floor.html">플로어업무</a></li>
+                </ul>
+            </li>
+            <li >
+                <img src="../image/store.png" width="50px" alt="store_icon" /> <span>시설관리</span> 
+                <ul>
+                    <li><a href="order.html">주문발주</a></li>
+                    <li><a href="support.html">기술지원</a></li>
+                    <li><a href="clean.html">청결관리</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
 
-	<ul id="nav">
-		<div><a href="home.html"><img src="../image/home.png" alt="home_icon" />홈</a></div>
-		<li class="group">
-			<div class="title"><img src="../image/store.png" alt="store_icon" />시설관리</div>
-			<ul class="sub">
-				<li><a href="clean.html">청결관리</a></li>
-				<li><a href="facility.html">설비관리</a></li>
-				<li><a href="stock.html">재고관리</a></li>
-			</ul>
-		</li>
-		<li class="group">
-			<div class="title"><img src="../image/employee.png" alt="employee_icon" />직원관리</div>
-			<ul class="sub">
-				<li><a href="list.html">직원목록</a></li>
-				<li><a href="personnel.html">인사고과</a></li>
-				<li><a href="attenndance.html">근태관리</a></li>
-				<li><a href="salary.html">급여관리</a></li>
-				<li><a href="vacation.html">휴가관리</a></li>
-			</ul>
-		</li>
-		<div><a href="settings.html"><img src="../image/settings.png" alt="settings_icon" />설정</a></div>
-	</ul>
-
-	<main>
+    <main>
 		<h2>청결관리</h2>
 		<p>시설</p>
 		<select name="facility">
@@ -48,21 +48,46 @@
 			<option value="스태프실">스태프실</option>
 		</select>
 		<button type="button">+ 추가</button>
-		<table>
-			<thead>
-				<tr>
-					<th>시설명</th>
-					<th>청소시간</th>
-					<th>담당직원</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th>"카페"</th>
-					<th>"18:00"</th>
-					<th>"정은지"</th>
-				</tr>
-			</tbody>
-		</table>
+		<article>
+			<table>
+				<thead>
+					<tr>
+						<th>시설명</th>
+						<th>청소일시</th>
+                        <th>청결상태</th>
+                        <th>직원배치</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1관</td>
+						<td>"</td>
+                        <td>정상</td>
+                        <td><button onclick = "showPopup();" />배치</button></td>
+					</tr>
+					<tr>
+						<td>2관</td>
+						<td>"</td>
+						<td>청소필요</td>
+						<td><button onclick = "showPopup();" />배치</button></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><button onclick = "showPopup();" />배치</button></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><button onclick = "showPopup();" />배치</button></td>
+					</tr>
+				</tbody>
+			</table>
+		</article>
+	</main>
+
 </body>
+
 </html>
