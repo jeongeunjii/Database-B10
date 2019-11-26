@@ -1,0 +1,130 @@
+.box {
+    text-align: center;
+    font-weight: bold;
+    width: 20px;
+    border: solid 1px;
+    border-color: #A6A6A6;
+    display: inline-block;
+    color: #232323;
+}
+
+.menu {
+    margin: 3px;
+    border: solid 0px;
+    display: inline-block;
+    font-size: 17px;
+    text-align: left;
+    width: 70px;
+}
+
+.top>p {
+    vertical-align: center;
+    padding: 1px;
+    margin-top: 0px;
+    text-align: center;
+    width: 1000px;
+    height: 30px;
+    border: solid 1px;
+    color: white;
+    font-weight: bold;
+    background-color: #353535;
+}
+
+hr {
+    float: left;
+    color: #737373;
+    width: 1000px;
+}
+
+.number_people {
+    width: 400px;
+    height: auto;
+    margin-left: 45px;
+    padding: 15px;
+    border-right: solid 1px;
+    border-right-color: #777777;
+    display: inline-block;
+}
+
+.status {
+    width: 400px;
+    height: auto;
+    margin: 40px;
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+}
+
+.time {
+    font-weight: bold;
+    color: #353535;
+    font-size: 25px;
+}
+
+iframe  {
+    width: 850px;
+    height: 450px;
+    border-top: solid 2px;
+    border-top-color: #777777;
+    display: inline-block;
+}
+
+section {
+    width: 1003px;
+    border: solid 3px;
+    border-color: #A6A6A6;
+    border-top: none;
+    background-color: #f5f5f5;
+    border-radius: 3px;
+}
+
+.theater {
+    font-size: 20px;
+}
+
+.info {
+    text-align: right;
+    padding: 5px;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    margin-left: 30px;
+}
+
+.info > p {
+    display: inline-block;
+    margin: 3px;
+    vertical-align: middle;
+}
+
+.done {
+    border: solid 0px;
+    width: 15px;
+    height: 15px;
+    background-color: #8c8c8c;
+    display: inline-block;
+}
+
+.unable {
+    border: solid 0px;
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    font-size: 12px;
+    background-color: #8c8c8c;
+    color: white;
+}
+
+.choose {
+    background-color: #AA1212;
+    border: solid 0px;
+    width: 15px;
+    height: 15px;
+}
+
+.desc {
+    width: 70px;
+    text-align: left;
+    font-size: 14px;
+    vertical-align: middle;
+}
