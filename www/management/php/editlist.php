@@ -1,8 +1,4 @@
 <?php
-    session_start();
-?>
-
-<?php
     try {
         $db = new PDO("mysql:dbname=movie; host=13.125.252.255; port=3306", "root", "1234");
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -11,18 +7,25 @@
         $db->query("set session character_set_client=utf8;");
         
         $id = $_POST['id'];
-        $num = $db->quote($id);
+        $id = $db->quote($id);
+        $name = $_POST['name'];
+        $name = $db->quote($name);
+        $department = $_POST['department'];
+        $department = $db->quote($department);
+        $birth = $_POST['birth'];
+        $birth = $db->quote($birth);
+        $phone = $_POST['phone'];
+        $phone = $db->quote($phone);
 
-        $check = "UPDATE floor업무관리
-        SET 시설물번호 = NULL,
-            상태 = 1
-        WHERE 사번 = $num;";
+        $check = "UPDATE 직원관리
+        SET 이름 = $name,
+            부서 = $department,
+            생년월일 = $birth,
+            전화번호 = $phone
+        WHERE 사번 = $id;";
         $db->exec($check);
 
-        header("Location: ../htmlp/floor.php");
-        // echo "<pre>";
-        // var_dump($result[0]);
-        // echo "</pre>";
+        header("Location: ../htmlp/list.php");
 
     } catch (PDOException $ex) {
         ?>

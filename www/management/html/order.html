@@ -20,8 +20,9 @@
                 <img src="../image/employee.png" width="50px" alt="employee_icon" />직원관리
                 <ul>
                     <li><a href="list.html">직원목록</a></li>
-                    <li><a href="attenndance_manager.html">근태관리</a></li>
-                    <li><a href="floor.html">플로어업무</a></li>
+					<li><a href="attenndance_manager.html">근태관리</a></li>
+					<li><a href="floor.html">플로어업무</a></li>
+					<li><a href="engineer.html">기술업무</a></li>
                 </ul>
             </li>
             <li >
@@ -35,6 +36,35 @@
 			<div><a href="settings.html"><img src="../image/settings.png" alt="settings_icon" />설정</a></div>
         </ul>
     </nav>
-	
+
+	<main>
+		<h2>재고관리</h2>
+		<p>물품</p>
+		<select name="product">
+			<option value="">선택</option>
+			<option value="커피">커피</option>
+			<option value="팝콘옥수수">팝콘옥수수</option>
+			<option value="콜라">콜라</option>
+			<option value="오징어">오징어</option>
+		</select>
+		<article>
+			<table>
+				<thead>
+					<tr>
+						<th>물품</th>
+						<th>주문수량</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>팝콘</td>
+						<td>132</td>
+						<td><button onclick = "window.open('order_popup.html', 'popup' , 'width=300,height=300,location=no,status=no');" />
+							주문</button></td>
+					</tr>
+				</tbody>
+			</table>
+		</article>
 </body>
 </html>

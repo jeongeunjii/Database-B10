@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="css/index.css">
-    <link rel="stylesheet" type="text/css" href="css/login.css">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
     <script src="script/index.js" type="text/javascript"></script>
-    <title>로그인 | 회원서비스</title>
+    <title>Best of Best, 쉽조영화관</title>
 </head>
 <body>
     <header>
@@ -17,25 +16,31 @@
 
     <nav>
         <ul>
-            <li class="menu"><a href="index.html" onclick="menu();">HOME</a></li>
-            <li class="menu"><a href="ticketing.html">예매</a></li>
-            <li class="menu"><a href="login.html">로그인</a></li>
-            <li class="menu"><a href="join.html">회원가입</a></li>
+            <li id="home" onclick="home();"><a href="index.html">HOME</a></li>
+            <li id="ticketing" onclick="ticketing();"><a href="ticketing.html">예매</a></li>
+            <li id="login" onclick="login();"><a href="login.html">로그인</a></li>
+            <li id="join" onclick="join();"><a href="join.html">회원가입</a></li>
         </ul>
     </nav>
 
     <section>
-        <div >
-            <h1>로그인</h1>
-            <form action="loginDB.html" method="POST" >
-                <p>아이디</p>
-                <input type="text" id="username" name="username" placeholder="ID"/> <br>
-                <p>비밀번호</p>
-                <input type="password" id="password" name="password" placeholder="password"/> <br>
-                <input type="submit" value="로그인">
-                <input type="button" onclick="location.href='join.html'"name="" value="회원가입">
-            </form>
-        </div>
+        <h1>영화상세</h1>
+        <hr>
+        <article>
+            <img src="img/movie1.PNG" alt="" width="300px" height="450px">
+            <h2>터미네이터- 다크 페이트</h2>
+            <hr>
+            <p>감독 : 팀 밀러</p>
+            <p>배우 : 맥켄지 데이비스 ,  아놀드 슈왈제네거 ,  린다 해밀턴</p>
+            <p>장르 : 액션, SF, 어드벤처 </p>
+            <p>기본 : 15세 이상, 128분, 미국</p>
+            <p>개봉 : 2019.10.30</p>
+
+        </article>
+
+        <article>
+            
+        </article>
     </section>
 
     <footer>

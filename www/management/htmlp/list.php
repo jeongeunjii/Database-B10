@@ -16,11 +16,13 @@
 <body>
     <header>
         <a href="home.php"><h1>10Jo</h1></a>
-        <div id="login">
+        <div id="login"><p>
             <?php
-                // session_destroy();
                 if (isset($_SESSION['ID'])){
                     echo "( ".$_SESSION['ID']." / ".$_SESSION['PW']." / ".$_SESSION['DEP']." )";
+            ?>
+            </p><a href="../php/logout.php">Logout</a>
+            <?php
                 }
                 else {
                     echo '<a href="login.php">login</a>';
@@ -32,15 +34,16 @@
     <nav>
         <ul>
             <li>
-                <img src="../image/employee.png" width="50px" alt="employee_icon"/> <span>직원관리</span>
+                <img src="../image/employee.png" width="50px" alt="employee_icon"/> <span>직원관리</span> 
                 <ul>
                     <li><a href="list.php">직원목록</a></li>
                     <li><a href="attenndance.php">근태관리</a></li>
                     <li><a href="floor.php">플로어업무</a></li>
+                    <li><a href="repair.php">정비업무</a></li>
                 </ul>
             </li>
             <li >
-                <img src="../image/store.png" width="50px" alt="store_icon" /> <span>시설관리</span> 
+                <img src="../image/store.png" width="50px" alt="store_icon"/> <span>시설관리</span>
                 <ul>
                     <li><a href="order.php">주문발주</a></li>
                     <li><a href="technical.php">시설정비</a></li>
@@ -71,7 +74,7 @@
                 $db->query("set session character_set_results=utf8;");
                 $db->query("set session character_set_client=utf8;");
 
-                $rows = $db->query("SELECT * FROM 직원관리");
+                $rows = $db->query("SELECT * FROM 직원관리 ORDER BY 부서");
                 foreach ($rows as $row) {
                 ?>
                 <li>
@@ -94,8 +97,8 @@
     ?>
     </main>
     <div id="add">
-        <form method="post" action="">
-            <span>이름 : </span><input type="text" name="password" placeholder="이름"/><br>
+        <form method="post" action="../php/addlist.php">
+            <span>이름 : </span><input type="text" name="name" placeholder="이름"/><br>
             <span>부서 : </span><input type="text" name="department" placeholder="부서"/><br>
             <span>생년월일 : </span><input type="date" name="birth" placeholder="생일"/><br>
             <span>전화번호 : </span><input type="phone" name="phone" placeholder="전화번호"/><br>
@@ -104,8 +107,9 @@
     </div>
 
     <div id="edit">
-        <form method="post" action="">
-            <span>이름 : </span><input type="text" name="password" placeholder="이름"/><br>
+        <form method="post" action="../php/editlist.php">
+            <span>사번 : </span><input type="text" name="id" placeholder="사번"/><br>
+            <span>이름 : </span><input type="text" name="name" placeholder="이름"/><br>
             <span>부서 : </span><input type="text" name="department" placeholder="부서"/><br>
             <span>생년월일 : </span><input type="date" name="birth" placeholder="생일"/><br>
             <span>전화번호 : </span><input type="phone" name="phone" placeholder="전화번호"/><br>
@@ -114,7 +118,7 @@
     </div>
 
     <div id="delete">
-        <form method="post" action="">
+        <form method="post" action="../php/deletelist.php">
             <span>사번 : </span><input type="text" name="id" placeholder="사번"/><br>
             <span></span><input id="deletebutton" type="submit" value="정보삭제"/>
         </form>

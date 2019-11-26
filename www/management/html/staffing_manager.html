@@ -21,7 +21,8 @@
                 <ul>
                     <li><a href="list.html">직원목록</a></li>
                     <li><a href="attenndance_manager.html">근태관리</a></li>
-                    <li><a href="floor.html">플로어업무</a></li>
+					<li><a href="floor.html">플로어업무</a></li>
+					<li><a href="engineer.html">기술업무</a></li>
                 </ul>
             </li>
             <li >
@@ -35,6 +36,37 @@
 			<div><a href="settings.html"><img src="../image/settings.png" alt="settings_icon" />설정</a></div>
         </ul>
     </nav>
-	
+
+	<main>
+		<h2>기술지원</h2>
+		<p>시설</p>
+		<select name="facility">
+			<option value="">선택</option>
+			<option value="카페">카페</option>
+			<option value="매표소">매표소</option>
+			<option value="매점">매점</option>
+			<option value="스태프실">스태프실</option>
+		</select>
+		<article>
+			<table>
+				<thead>
+					<tr>
+						<th>시설명</th>
+						<th>점검시간</th>
+						<th>점검상태</th>
+						<th>직원배치</th>					
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1관</td>
+						<td>"</td>
+						<td>정상</td>
+						<td><button onclick = "window.open('staffing_popup.html', 'popup' , 'width=300,height=300,location=no,status=no');" />
+							배치</button></td>
+					</tr>
+				</tbody>
+			</table>
+		</article>
 </body>
 </html>

@@ -2,7 +2,7 @@ import requests
 import copy
 from bs4 import BeautifulSoup
 
-date = '20191118'
+date = '20191125'
 url = 'http://www.cgv.co.kr/common/showtimes/iframeTheater.aspx?areacode=02&theatercode=0211&date='+date
 respose = requests.get(url)
 html = respose.text
@@ -56,7 +56,7 @@ for movie in movies:
             
         infoes = table.find('div', class_="info-timetable")
         infoes = infoes.find_all('li')
-        for info in infoes:
+        for info in infoes: 
             link = info.find('a')
             theatername = link.get('data-theatername')
             remainseat  = link.get('data-seatremaincnt') + '석'

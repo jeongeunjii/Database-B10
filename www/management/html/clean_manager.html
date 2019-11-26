@@ -37,60 +37,62 @@
         </ul>
     </nav>
 
-	<main>
-		<h2>직원목록</h2>
-		<p>직급</p>
-		<select name="position">
+    <main>
+		<h2>청결관리</h2>
+		<p>시설</p>
+		<select name="facility">
 			<option value="">선택</option>
-			<option value="전체">전체</option>
-			<option value="알바생">알바생</option>
-			<option value="사원">사원</option>
-			<option value="대리">대리</option>
-			<option value="부장">부장</option>
-			<option value="카페사장">카페사장</option>
+			<option value="카페">카페</option>
+			<option value="매표소">매표소</option>
+			<option value="매점">매점</option>
+			<option value="스태프실">스태프실</option>
 		</select>
-		<button onclick = "window.open('employee_add.html', 'popup' , 'width=300,height=300,location=no,status=no');" />
-			추가</button>
-		<button onclick = "window.open('employee_del.html', 'popup' , 'width=300,height=300,location=no,status=no');" />
-			삭제</button>
-		<button onclick = "window.open('employee_add.html', 'popup' , 'width=300,height=300,location=no,status=no');" />
-			수정</button>
+		<button type="button">+ 추가</button>
 
 		<article>
 			<table>
 				<thead>
 					<tr>
-						<th>사번</th>
-						<th>이름</th>
-						<th>부서</th>
-						<th>생년월일</th>
-						<th>전화번호</th>
+						<th>시설명</th>
+						<th>청소일시</th>
+						<th>청결상태</th>
+						<th>직원배치</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
+						<td>1관</td>
 						<td>"</td>
-						<td>"</td>
-						<td>floor</td>
-						<td>"</td>
-						<td>"</td>
+						<td>정상</td>
+						<td><button onclick = "window.open('staffing_popup.html', 'popup' , 'width=300,height=300,location=no,status=no');" />
+							배치</button></td>
 					</tr>
 					<tr>
+						<td>2관</td>
 						<td>"</td>
-						<td>"</td>
-						<td>floor</td>
-						<td>"</td>
-						<td>"</td>
+						<td>청소필요</td>
+						<td><button onclick = "window.open('staffing_popup.html', 'popup' , 'width=300,height=300,location=no,status=no');" />
+							배치</button></td>
 					</tr>
 					<tr>
-						<td>"</td>
-						<td>"</td>
-						<td>매니저</td>
-						<td>"</td>
-						<td>"</td>
-					</tr>								
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><button onclick = "window.open('staffing_popup.html', 'popup' , 'width=300,height=300,location=no,status=no');" />
+							배치</button></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><button onclick = "window.open('staffing_popup.html', 'popup' , 'width=300,height=300,location=no,status=no');" />
+							배치</button></td>
+					</tr>
 				</tbody>
 			</table>
 		</article>
+	</main>
+
 </body>
+
 </html>
