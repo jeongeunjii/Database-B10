@@ -11,8 +11,8 @@ section > div {
   font-size:30px;
   margin : 0;
   height: 50px;
-  background-color: black;
-  color: yellow;
+  background-color: #333333;
+  color: #7F7F7F;
   text-align: center;
 }
 .mv_list{
@@ -34,6 +34,7 @@ section > div {
   height: 50px;
   font-weight:bold;
   text-align: left;
+  cursor: pointer;
 }
 .theater_list{
   position: relative;
@@ -56,10 +57,10 @@ section > div {
   height:500px;
 }
 .area_name>p{
-  background-color:cyan;
-  text-align: right;
-  height: 30px;
-
+  background-color:#D5D5D5;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
   margin:0;
 }
 .area_name_list{
@@ -73,16 +74,19 @@ section > div {
 .theater_list p{
   font-size: 12px;
   font-weight: bold; 
+  cursor: pointer;
 }
 .area_name_list p{
   margin:0;
+  line-height: 40px;
   height: 55px;
-
+  
   text-align: left; 
 }
 
 
 .date_list {
+    background-color:#EDEDEF;
     margin: 0px 10px 0px 10px;
     width: 120px;
     height: 500px;
@@ -104,14 +108,14 @@ section > div {
     color: #B70000;
 }
 
-.time{
+.time_table{
 
   background: #EDEDEF;
   height: 500px;
   width: 300px;
   overflow-x: auto;
 }
-.time >p{
+.time_table p{
   margin: 15px 0 0 20px;
   height: 50px;
   font-size: 12px;
