@@ -1,0 +1,78 @@
+main div {
+    border: rgb(241, 241, 241) solid 1px;
+    height: 100px;
+}
+
+#add {
+    display: none;
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    left: 50%;
+    top: 50%;
+    margin-left: -250px;
+    margin-top: -250px;
+   
+    border: #000 solid 1px;
+    background: #82713F;
+}
+
+#add input {
+    display: inline-block;
+    margin: 10px;
+}
+
+#addbutton {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+#edit {
+    display: none;
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    left: 50%;
+    top: 50%;
+    margin-left: -250px;
+    margin-top: -250px;
+   
+    border: #000 solid 1px;
+    background: #82713F;
+}
+
+#edit input {
+    display: inline-block;
+    margin: 10px;
+}
+
+#editbutton {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+#delete {
+    display: none;
+    position: absolute;
+    width: 500px;
+    height: 100px;
+    left: 50%;
+    top: 50%;
+    margin-left: -250px;
+    margin-top: -250px;
+    border: #000 solid 1px;
+    background: #82713F;
+}
+
+#delete input {
+    display: inline-block;
+    margin: 10px;
+}
+
+#deletebutton {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}

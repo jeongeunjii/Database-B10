@@ -10,23 +10,19 @@
         $db->query("set session character_set_results=utf8;");
         $db->query("set session character_set_client=utf8;");
         
-        $id = $_POST['id'];
-        $num = $db->quote($id);
+        $facility = $_POST['facility'];
+        $q_facility = $db->quote($facility);
+        $query = $db->query("SELECT 시설물번호 FROM 시설물 WHERE 시설물명 = $q_facility");
+        $query = $query->fetchAll();
+        $num = $query[0]['시설물번호'];
+        $num = $db->quote($num);
 
-        $check = "UPDATE 기술지원
-        SET 시설물번호 = NULL,
-            상태 = 1
-        WHERE 사번 = $num;";
+        $check = "UPDATE 청결관리
+        SET 청결상태 = '접수완료'
+        WHERE 시설물번호 = $num;";
         $db->exec($check);
 
-        $check = "UPDATE 시설물관리
-        SET 점검상태 = '정상',
-            사번 = NULL
-        WHERE 사번 = $num;";
-
-        $db->exec($check);
-
-        header("Location: ../htmlp/repair.php");
+        header("Location: ../htmlp/clean.php");
         // echo "<pre>";
         // var_dump($result[0]);
         // echo "</pre>";

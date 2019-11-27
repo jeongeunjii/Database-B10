@@ -7,7 +7,7 @@
 
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="../css/layout2.css">
+    <link rel="stylesheet" type="text/css" href="../css1/layout2.css">
     <title>10Jo</title>
 </head>
 
@@ -34,18 +34,40 @@
             <li>
                 <img src="../image/employee.png" width="50px" alt="employee_icon" /> <span>직원관리</span>
                 <ul>
-                    <li><a href="list.php">직원목록</a></li>
+                    <?php  
+                    if ($_SESSION['DEP'] == "매니저") { 
+                    ?>
+                        <li><a href="list.php">직원목록</a></li>
+                    <?php
+                    }
+                    ?>
                     <li><a href="attendance.php">근태관리</a></li>
-                    <li><a href="floor.php">플로어업무</a></li>
-                    <li><a href="repair.php">정비업무</a></li>
+                    <?php 
+                    if ($_SESSION['DEP'] == "플로어") { ?>
+                        <li><a href="floor.php">플로어업무</a></li>
+                    <?php
+                    }
+                    ?>
+                    <?php 
+                    if ($_SESSION['DEP'] == "기술지원") { ?>
+                        <li><a href="repair.php">정비업무</a></li>
+                    <?php
+                    }
+                    ?>
                 </ul>
             </li>
             <li >
                 <img src="../image/store.png" width="50px" alt="store_icon" /> <span>시설관리</span> 
                 <ul>
                     <li><a href="order.php">주문발주</a></li>
-                    <li><a href="technical.php">시설정비</a></li>
-                    <li><a href="clean.php">청결관리</a></li>
+                    <?php  
+                    if ($_SESSION['DEP'] == "매니저") { 
+                    ?>
+                        <li><a href="technical.php">시설정비</a></li>
+                        <li><a href="clean.php">청결관리</a></li>
+                    <?php
+                    }
+                    ?>
                 </ul>
             </li>
         </ul>
@@ -76,6 +98,8 @@
                     $q_num = $db->quote($num);
                     $db->exec("INSERT INTO 근태관리 VALUE ($q_today, $q_num, NULL, NULL)");
                 }
+                $rows = $db->query("SELECT * FROM 근태관리 NATURAL JOIN 직원관리 WHERE 일자 = $q_today");
+                $rows = $rows->fetchAll();
             }
 
             if ($_SESSION['DEP']=="매니저") {

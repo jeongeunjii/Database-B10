@@ -11,7 +11,7 @@ http-equiv="X-UA-Compatible" content="ie=edge"> <title>Document</title> </head>
 
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="../css/layout2.css">
+        <link rel="stylesheet" type="text/css" href="../css1/layout2.css">
         <title>10Jo</title>
     </head>
 
@@ -21,28 +21,49 @@ http-equiv="X-UA-Compatible" content="ie=edge"> <title>Document</title> </head>
         </header>
         <section>
         <nav>
-            <ul>
-                <li>
-                    <img src="../image/employee.png" width="50px" alt="employee_icon"/> <span>직원관리</span> 
-                    <ul>
+        <ul>
+            <li>
+                <img src="../image/employee.png" width="50px" alt="employee_icon" /> <span>직원관리</span>
+                <ul>
+                    <?php  
+                    if ($_SESSION['DEP'] == "매니저") { 
+                    ?>
                         <li><a href="list.php">직원목록</a></li>
-                        <li><a href="attendance.php">근태관리</a></li>
+                    <?php
+                    }
+                    ?>
+                    <li><a href="attendance.php">근태관리</a></li>
+                    <?php 
+                    if ($_SESSION['DEP'] == "플로어") { ?>
                         <li><a href="floor.php">플로어업무</a></li>
+                    <?php
+                    }
+                    ?>
+                    <?php 
+                    if ($_SESSION['DEP'] == "기술지원") { ?>
                         <li><a href="repair.php">정비업무</a></li>
-                    </ul>
-                </li>
-                <li >
-                    <img src="../image/store.png" width="50px" alt="store_icon"/> <span>시설관리</span>
-                    <ul>
-                        <li><a href="order.php">주문발주</a></li>
+                    <?php
+                    }
+                    ?>
+                </ul>
+            </li>
+            <li >
+                <img src="../image/store.png" width="50px" alt="store_icon" /> <span>시설관리</span> 
+                <ul>
+                    <li><a href="order.php">주문발주</a></li>
+                    <?php  
+                    if ($_SESSION['DEP'] == "매니저") { 
+                    ?>
                         <li><a href="technical.php">시설정비</a></li>
                         <li><a href="clean.php">청결관리</a></li>
-                    </ul>
-                </li>
-            </ul>
+                    <?php
+                    }
+                    ?>
+                </ul>
+            </li>
+        </ul>
         </nav>
         <main>
-            <p>감자머리</p>
             <form method="post" action="../php/login.php">
                 <input type="text" name="id" placeholder="사번"/>
                 <input type="text" name="password" placeholder="이름"/>
