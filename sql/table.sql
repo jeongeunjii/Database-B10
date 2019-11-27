@@ -158,7 +158,8 @@ CREATE TABLE 시설물관리
  지점번호 integer NOT NULL,
  시설물번호 integer NOT NULL,
  점검시간 datetime NOT NULL,
- 점검상태 varchar(15) NOT NULL
+ 점검상태 varchar(15) NOT NULL,
+ 사번 integer
 );
 
 CREATE TABLE 청결관리
@@ -166,7 +167,8 @@ CREATE TABLE 청결관리
  지점번호 integer NOT NULL,
  시설물번호 integer NOT NULL,
  청소일시 datetime NOT NULL,
- 청결상태 varchar(15) NOT NULL
+ 청결상태 varchar(15) NOT NULL,
+ 사번 integer
 );
 
 

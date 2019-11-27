@@ -7,7 +7,7 @@
 
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="../css/layout2.css">
+        <link rel="stylesheet" type="text/css" href="../css1/layout2.css">
         <title>10Jo</title>
     </head>
 
@@ -33,54 +33,48 @@
         <nav>
             <ul>
                 <li>
-                    <img src="../image/employee.png" width="50px" alt="employee_icon"/> <span>직원관리</span> 
+                    <img src="../image/employee.png" width="50px" alt="employee_icon" /> <span>직원관리</span>
                     <ul>
-                        <li><a href="list.php">직원목록</a></li>
-                        <li><a href="attenndance.php">근태관리</a></li>
-                        <li><a href="floor.php">플로어업무</a></li>
-                        <li><a href="repair.php">정비업무</a></li>
+                        <?php  
+                        if ($_SESSION['DEP'] == "매니저") { 
+                        ?>
+                            <li><a href="list.php">직원목록</a></li>
+                        <?php
+                        }
+                        ?>
+                        <li><a href="attendance.php">근태관리</a></li>
+                        <?php 
+                        if ($_SESSION['DEP'] == "플로어") { ?>
+                            <li><a href="floor.php">플로어업무</a></li>
+                        <?php
+                        }
+                        ?>
+                        <?php 
+                        if ($_SESSION['DEP'] == "기술지원") { ?>
+                            <li><a href="repair.php">정비업무</a></li>
+                        <?php
+                        }
+                        ?>
                     </ul>
                 </li>
                 <li >
-                    <img src="../image/store.png" width="50px" alt="store_icon"/> <span>시설관리</span>
+                    <img src="../image/store.png" width="50px" alt="store_icon" /> <span>시설관리</span> 
                     <ul>
                         <li><a href="order.php">주문발주</a></li>
-                        <li><a href="technical.php">시설정비</a></li>
-                        <li><a href="clean.php">청결관리</a></li>
+                        <?php  
+                        if ($_SESSION['DEP'] == "매니저") { 
+                        ?>
+                            <li><a href="technical.php">시설정비</a></li>
+                            <li><a href="clean.php">청결관리</a></li>
+                        <?php
+                        }
+                        ?>
                     </ul>
                 </li>
             </ul>
         </nav>
         <main>
-            <?php
-            try {
-                if (isset($_SESSION['ID'])){
-                    $db = new PDO("mysql:dbname=movie; host=13.125.252.255; port=3306", "root", "1234");
-                    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                    $db->query("set session character_set_connection=utf8;");
-                    $db->query("set session character_set_results=utf8;");
-                    $db->query("set session character_set_client=utf8;");
-
-                    $rows = $db->query("SELECT 청소일시, 시설물명, 청결상태 FROM 청결관리 c
-                    JOIN 시설물 s ON c.시설물번호 = s.시설물번호
-                    ");
-                    foreach ($rows as $row) {
-                    ?>
-            <li>
-                <?= $row["청소일시"] ?>
-                <?= $row["시설물명"] ?></li>
-
-            <?php
-                    }
-                }
-            }catch (PDOException $ex) {
-        ?>
-            <p>Sorry, a database error occurred. Please try again later.</p>
-            <p>(Error details:
-                <?= $ex->getMessage() ?>)</p>
-            <?php
-            }
-        ?>
+           <p>너무 허전하다</p>
         </main>
         
         </section>

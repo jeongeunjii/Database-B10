@@ -10,20 +10,12 @@
         $db->query("set session character_set_results=utf8;");
         $db->query("set session character_set_client=utf8;");
         
-        $id = $_POST['id'];
-        $num = $db->quote($id);
+        $stuff = $_POST['stuff'];
+        $q_stuff = $db->quote($stuff);
 
-        $check = "UPDATE floor업무관리
-        SET 시설물번호 = NULL,
-            상태 = 1
-        WHERE 사번 = $num;";
-        $db->exec($check);
-
-        $check = "UPDATE 청결관리
-        SET 청결상태 = '정상',
-            사번 = NULL
-        WHERE 사번 = $num;";
-
+        $check = "UPDATE 물품주문
+        SET 주문량 = $q_stuff,
+        WHERE 물품 = $q_stuff";
         $db->exec($check);
 
         header("Location: ../htmlp/floor.php");
