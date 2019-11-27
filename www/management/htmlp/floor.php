@@ -37,7 +37,7 @@
                 <img src="../image/employee.png" width="50px" alt="employee_icon"/> <span>직원관리</span> 
                 <ul>
                     <li><a href="list.php">직원목록</a></li>
-                    <li><a href="attenndance.php">근태관리</a></li>
+                    <li><a href="attendance.php">근태관리</a></li>
                     <li><a href="floor.php">플로어업무</a></li>
                     <li><a href="repair.php">정비업무</a></li>
                 </ul>
@@ -64,11 +64,13 @@
                 $db->query("set session character_set_results=utf8;");
                 $db->query("set session character_set_client=utf8;");
 
+                $no_jobs = true;
                 $rows = $db->query("SELECT * FROM floor업무관리
                 NATURAL JOIN 직원관리
                 NATURAL JOIN 시설물");
                 foreach ($rows as $row) {
                     if ($row['사번'] == $_SESSION['ID'] ) {
+                        $no_jobs = false;
                 ?>
                         <li>
                             <?= $row["시설물명"] ?>
@@ -81,6 +83,11 @@
                 <?php
                     }
                 }
+                if ($no_jobs){
+                    ?>
+                        <li>배정된 업무가 없습니다.</li>
+                    <?php
+                    }
             }
         } catch (PDOException $ex) {
     ?>

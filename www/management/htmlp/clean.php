@@ -31,7 +31,7 @@
                 <img src="../image/employee.png" width="50px" alt="employee_icon"/> <span>직원관리</span> 
                 <ul>
                     <li><a href="list.php">직원목록</a></li>
-                    <li><a href="attenndance.php">근태관리</a></li>
+                    <li><a href="attendance.php">근태관리</a></li>
                     <li><a href="floor.php">플로어업무</a></li>
                     <li><a href="repair.php">정비업무</a></li>
                 </ul>

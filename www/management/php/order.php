@@ -10,22 +10,15 @@
         $db->query("set session character_set_results=utf8;");
         $db->query("set session character_set_client=utf8;");
         
-        $id = $_POST['id'];
-        $pw = $_POST['password'];
-        $num = $db->quote($id);
-        $check = "SELECT 사번,이름,부서,지점번호 FROM 직원관리 WHERE 사번 = $num";
-        $rows = $db->query($check);
-        $result = $rows->fetchAll();
-        
-        if ($result[0] === NULL or $result[0]['이름'] != $pw){
-            header("Location: ../htmlp/home.php");
-        }else {
-            $_SESSION['REGION'] = $result[0]['지점번호'];
-            $_SESSION['ID'] = $id;
-            $_SESSION['PW'] = $pw;
-            $_SESSION['DEP'] = $result[0]['부서'];
-            header("Location: ../htmlp/home.php");
-        }
+        $stuff = $_POST['stuff'];
+        $q_stuff = $db->quote($stuff);
+
+        $check = "UPDATE 물품주문
+        SET 주문량 = $q_stuff,
+        WHERE 물품 = $q_stuff";
+        $db->exec($check);
+
+        header("Location: ../htmlp/floor.php");
         // echo "<pre>";
         // var_dump($result[0]);
         // echo "</pre>";
