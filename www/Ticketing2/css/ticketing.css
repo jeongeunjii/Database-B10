@@ -16,10 +16,9 @@ section > div {
   text-align: center;
 }
 .mv_list{
-    width: 300px;
+    width: 200px;
     height: 500px;
-    background: lightgray;
-    opacity: 0.8;
+    background: #EDEDEF;
     overflow-x: auto;
     }
 
@@ -38,11 +37,16 @@ section > div {
 }
 .theater_list{
   position: relative;
-  bottom:12px;
-  width: 300px;
+  width: 320px;
   height: 500px;
-  background: lightgray;
-  opacity: 0.8;
+  background: #EDEDEF
+}
+.theater_list ul{
+  margin: 0;
+  padding-left:20px;
+}
+.theater_list hr{
+  margin:0;
 }
 .area_name{
   margin:0;
@@ -51,9 +55,12 @@ section > div {
   width:100px;
   height:500px;
 }
-.area_name p{
+.area_name>p{
+  background-color:cyan;
   text-align: right;
-  padding-top: 20px;
+  height: 30px;
+
+  margin:0;
 }
 .area_name_list{
   position: absolute;
@@ -68,7 +75,9 @@ section > div {
   font-weight: bold; 
 }
 .area_name_list p{
-  height: 50px;
+  margin:0;
+  height: 55px;
+
   text-align: left; 
 }
 
@@ -97,7 +106,7 @@ section > div {
 
 .time{
 
-  background-color: lightgray;
+  background: #EDEDEF;
   height: 500px;
   width: 300px;
   overflow-x: auto;
