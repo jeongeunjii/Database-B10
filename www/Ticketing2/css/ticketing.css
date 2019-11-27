@@ -7,49 +7,75 @@ section > div {
     vertical-align: top;
     display: inline-block;
 }
+  h3{
+  font-size:30px;
+  margin : 0;
+  height: 50px;
+  background-color: black;
+  color: yellow;
+  text-align: center;
+
+}
 .mv_list{
-    margin: auto;
-    width: 700px;
-    height: 600px;
+    width: 300px;
+    height: 500px;
     background: lightgray;
     opacity: 0.8;
-    text-align: center;
+    overflow-x: auto;
     }
 
- div.mv_list>img{
+.mv_list>img{
   width: 30px;
   height: 30px;
-
+  float: left;
+  margin: 5px;
 }
+
  div.mv_list>p{
   font-size: 12px;
+  height: 50px;
   font-weight:bold;
-  text-align: center;
-  margin-right: 0px;
-  height: auto;
+  text-align: left;
   font-family: 'Lora';
 }
+
+.date {
+    margin: 10px;
+    width: 120px;
+    height: 500px;
+    overflow-x: auto;
+    text-align: center;
+    }
 .day, .day-red {
     background-color: #D5D5D5;
-    width: 70px;
+    width: 60px;
     height: 50px;
     font-weight: bold;
     line-height: 50px;
-    text-align: center;
     padding: 3px;
-    margin: 1px;
+    margin: 0px 0px 1px 19px;
     cursor: pointer;
     color: #454545;
 }
 .day-red {
     color: #B70000;
 }
-.date {
-    margin: 10px;
-    width: 120px;
-    height: 500px;
-    overflow-x: auto;
+
+.time{
+
+  background-color: lightgray;
+  height: 500px;
+  width: 300px;
+  overflow-x: auto;
 }
+.time >p{
+  margin: 15px 0 0 20px;
+  height: 50px;
+  font-size: 12px;
+  font-weight: bold;
+
+}
+
 
 #style-1::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
