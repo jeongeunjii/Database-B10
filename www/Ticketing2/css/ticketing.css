@@ -35,15 +35,43 @@ section > div {
   height: 50px;
   font-weight:bold;
   text-align: left;
-  font-family: 'Lora';
 }
-
 .theater_list{
+  position: relative;
+  bottom:12px;
   width: 300px;
   height: 500px;
   background: lightgray;
   opacity: 0.8;
 }
+.area_name{
+  margin:0;
+  padding:0;
+  border-right: 1px solid gray;
+  width:100px;
+  height:500px;
+}
+.area_name p{
+  text-align: right;
+  padding-top: 20px;
+}
+.area_name_list{
+  position: absolute;
+  top:0;
+  right:0px;
+  width:170px;
+  height: 500px;
+  overflow-x: auto;
+}
+.theater_list p{
+  font-size: 12px;
+  font-weight: bold; 
+}
+.area_name_list p{
+  height: 50px;
+  text-align: left; 
+}
+
 
 .date_list {
     margin: 0px 10px 0px 10px;
