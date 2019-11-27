@@ -1,9 +1,9 @@
 section{
   padding: 40px 0px;
+  
 }
 
 section > div {
-
     vertical-align: top;
     display: inline-block;
 }
@@ -14,7 +14,6 @@ section > div {
   background-color: black;
   color: yellow;
   text-align: center;
-
 }
 .mv_list{
     width: 300px;
@@ -31,7 +30,7 @@ section > div {
   margin: 5px;
 }
 
- div.mv_list>p{
+ .mv_list>p{
   font-size: 12px;
   height: 50px;
   font-weight:bold;
@@ -39,8 +38,15 @@ section > div {
   font-family: 'Lora';
 }
 
-.date {
-    margin: 10px;
+.theater_list{
+  width: 300px;
+  height: 500px;
+  background: lightgray;
+  opacity: 0.8;
+}
+
+.date_list {
+    margin: 0px 10px 0px 10px;
     width: 120px;
     height: 500px;
     overflow-x: auto;
