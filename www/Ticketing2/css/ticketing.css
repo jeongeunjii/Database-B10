@@ -1,6 +1,5 @@
 section{
   padding: 40px 0px;
-  
 }
 
 section > div {
@@ -112,17 +111,45 @@ section > div {
 
   background: #EDEDEF;
   height: 500px;
-  width: 300px;
+  width: 400px;
   overflow-x: auto;
 }
 .time_table p{
-  margin: 15px 0 0 20px;
   height: 50px;
   font-size: 12px;
   font-weight: bold;
-
 }
-
+.time_table > .whole_table{
+  height:500px;
+}
+.one_table{
+  height:240px;
+  margin:0 25px 0 25px;
+  border-bottom:2px solid gray;
+}
+.one_table > theater_location{
+  text-align: left;
+}
+.time_info li{
+  position: relative;
+  float: left;
+  height: 50px;
+  line-height: 50px;
+  padding-bottom: 9px;
+}
+.ticketing_choice{
+  height:100px;
+  width:90%;
+  border:2px solid gold;
+  margin:auto;
+}
+.ticketing_choice .choice{
+  height:30px;
+  width: 80px;
+  border: 2px solid gold;
+  background-color: cyan;
+  text-align: center;
+}
 
 #style-1::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
