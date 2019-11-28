@@ -8,9 +8,10 @@
 	<body>
 		<div class="wrap">
 				<form action="login.html" method="post">
-					ID: <input type="text" name="id" /><br>
-					PASSWORD: <input type="text" name="ps" /><br>
-					<input type="submit" />
+					ID: <input type="text" id="username" name="id" /><br>
+					PASSWORD: <input type="password" id="password" name="ps" /><br>
+					<input type="submit" value="로그인">
+					<input type="button" onclick="location.href='join.html'"name="" value="회원가입">
 				</form>
 				<?php
 					session_start();

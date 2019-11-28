@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../common/css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/join.css" >
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+    <title>회원가입 | 회원서비스</title>
+</head>
+<body>
+    <header>
+        <a href="../index.html"><img src="../img/logo.png" alt="logo"></a>
+    </header>
+
+    <nav>
+      <ul>
+        <li id="home"><a href="../index.html">HOME</a></li>
+        <li id="movie"><a href="../movie/movie.html">영화</a></li>
+        <li id="ticketing"><a href="../ticketing/ticketing.html">예매</a></li>
+        <li class = "selected" id="login"><a href="login.html">로그인</a></li>
+      </ul>
+    </nav>
+
+    <section>
+      <div class="wrap">
+          <h1>회원가입</h1>
+          <form action="join.html" method="post">
+            ID: <input type="text" name="id" /><br/>
+            PASSWORD: <input type="password" name="ps" /><br/>
+            이름(last): <input type="text" name="laName" /><br/>
+            이름(first): <input type="text" name="fiName" /><br/>
+            생일 <br/>
+            년: <input type="text" name="year" /><br>
+            월: <input type="text" name="mon" /><br>
+            일: <input type="text" name="day" /><br>
+            전화번호: <input type="text" name="hp" /><br>
+            *"-"를 제외하고 작성해주세요. <br/>
+            <hr>
+            <input type="submit" value="등록" class="submit">
+          </form>
+          <?php
+            $dbHost = "13.125.252.255";
+            $dbName = "movie";
+            $dbUser = "root";
+            $dbPass = "1234";
+
+            $id = $_POST["id"];
+            $ps = $_POST["ps"];
+            $laName = $_POST["laName"];
+            $fiName = $_POST["fiName"];
+            $birth = (string)$_POST["year"] . "-" . (string)$_POST["mon"] . "-" . (string)$_POST["day"];
+            $hp = $_POST["hp"];
+
+            $db = new PDO("mysql:host={$dbHost};dbname={$dbName}; port=3306", $dbUser, $dbPass);
+            $db->exec("set names utf8");
+            $join = $db->query("insert into 회원 (아이디,비밀번호,이름_성,이름_이름,생일,전화번호) values('$id','$ps','$laName','$fiName','$birth','$hp')");
+            // 정상 insert시 회원가입 되었습니다 메세지 띄우고 로그인 페이지로
+           ?>
+      </div>
+    </section>
+
+    <footer>
+        <div>
+            <div id="foot_img">
+                <img src="img/logo.png" width="120px">
+            </div>
+            <div id="foot_p">
+                <p>경기도 안산시 상록구 한양대학로 55</p>
+                <p>개발자 | 정은지,김재영,박예림,이재원,윤성주 |</p>
+                <p>&copy;10PLEX.All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
