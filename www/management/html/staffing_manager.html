@@ -71,6 +71,7 @@
 	<main>
         <section>
             <h2>기술지원</h2>
+            <div id="container">
             <form method="POST" action="">
             <div id="btn_search"><button class="button">검색</button></div>
             <table>
@@ -85,7 +86,7 @@
                 <tbody>
                     <tr>
                         <td class="selec_td"><select name="시설명">
-                            <option value=""></option>
+                            <option value="전체"></option>
                             <option value="카페">카페</option>
                             <option value="매점">매점</option>
                             <option value="여자화장실6F">여자화장실6F</option>
@@ -104,13 +105,13 @@
                             <option value="8관">8관</option>
                         </select></td>
                         <td><input type="text" name="점검시간" /></td>
-                        <td class="selec_td"><select name="점검상태">
-                            <option value=""></option>
+                        <td class="selec_td2"><select name="점검상태">
+                            <option value="전체"></option>
                             <option value="정상">정상</option>
                             <option value="점검필요">점검필요</option>
                         </select></td>
-                        <td class="selec_td"><select name="직원배치">
-                            <option value=""></option>
+                        <td class="selec_td2"><select name="직원배치">
+                            <option value="전체"></option>
                             <option value="배치가능">배치가능</option>
                             <option value="배치불가능">배치불가능</option>
                         </select></td>
@@ -119,12 +120,13 @@
                         <td>1관</td>
                         <td>"</td>
                         <td>정상</td>
-                        <td><button onclick = "window.open('popup_staffing.html', 'popup' , 'width=300,height=300,location=no,status=no');" />
+                        <td><button class="table_button" onclick = "window.open('popup_staffing.html', 'popup' , 'width=300,height=300,location=no,status=no');" />
                             배치</button></td>
                     </tr>
                 </tbody>
             </table>
             </form>
+            </div>
         </section>
     </main>
 </body>

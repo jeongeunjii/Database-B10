@@ -14,9 +14,15 @@ main {
 
 section{
 	overflow: hidden;
-	padding: 50px;
-	padding-top: 20px;
-	margin: 10px 5px;
+	padding: 10px 20px 40px 20px;
+	margin: 20px 35px;
+}
+
+#container {
+	border: 1px solid rgba(194, 194, 194, 0.568);
+	box-shadow: 0px 0px 5px rgba(174, 176, 167, 0.753);
+	padding: 10px 20px 20px 20px;
+	margin-top: 40px;
 }
 
 h2 {
@@ -29,6 +35,7 @@ table {
 	text-align: center;
 	background: #fffdfd;
 	border: 1.5px solid rgba(194, 194, 194, 0.568);
+	font-size: 15px;
 }
 
 table th {
@@ -38,7 +45,7 @@ table th {
 }
 
 table td {
-	height: 20px;
+	height: 30px;
 	border-bottom: 1.5px solid #F2F2F2;
 	border-right: 1.5px solid #F2F2F2;
 	padding: 10px 10px 10px 10px;	
@@ -60,7 +67,8 @@ table tr:first-child:hover td {
 
 input, select {
 	width: 95%;
-	height: 140%;
+	height: 110%;
+	font-size: 15px;
 }
 
 input:hover, select:hover {
@@ -71,6 +79,10 @@ select {
 	background: white;
 }
 
-select:hover .selec_td {
-	padding: 10px 0px 10px 0px;
+.selec_td {
+	max-width: 70px;
+}
+
+.selec_td2 {
+	max-width: 60px;
 }

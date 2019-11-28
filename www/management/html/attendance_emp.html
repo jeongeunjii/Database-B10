@@ -71,6 +71,7 @@
     <main>
         <section>
             <h2>근태관리</h2>
+            <container>
             <form method="post" action="">
                 <div id="btn_search"><button class="button">검색</button></div>
                 <!-- 테이블 입력칸에 input하고 검색버튼 누르면 그에 맞는 테이블만 출력 -->
@@ -97,12 +98,12 @@
                         <td>"</td>
                         <td>
                         <!-- <?php if(출근데이터 없으면) { -->
-                        <button onclick = "window.open('popup_attendance_arrive.html', 'popup' , 'width=300,height=300,location=no,status=no');" />
+                        <button class="table_button" onclick = "window.open('popup_attendance_arrive.html', 'popup' , 'width=300,height=300,location=no,status=no');" />
                             출근</button></td>
                             <!-- <?php }
                                 else { echo $time } ?>-->
                         <td><!-- <?php if(퇴근데이터 없으면) { -->
-                        <button onclick = "window.open('popup_attendance_arrive.html', 'popup' , 'width=300,height=300,location=no,status=no');" />
+                        <button class="table_button" onclick = "window.open('popup_attendance_arrive.html', 'popup' , 'width=300,height=300,location=no,status=no');" />
                                 퇴근</button></td>
                                 <!-- <?php }
                                     else { echo $time } ?>-->
@@ -111,6 +112,7 @@
                 </tbody>
             </table>
             </form>
+            </container>
         </section>
     </main>
 </body>

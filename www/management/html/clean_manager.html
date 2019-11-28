@@ -71,6 +71,7 @@
     <main>
         <section>
             <h2>청결관리</h2>
+            <div id="container">
             <form method="POST" action="">
                 <div id="btn_search"><button class="button">검색</button></div>
                 <!-- 테이블 입력칸에 input하고 검색버튼 누르면 그에 맞는 테이블만 출력 -->
@@ -86,7 +87,7 @@
                 <tbody>
                     <tr>
                         <td class="selec_td"><select name="시설명">
-                            <option value=""></option>
+                            <option value="전체"></option>
                             <option value="카페">카페</option>
                             <option value="매점">매점</option>
                             <option value="여자화장실6F">여자화장실6F</option>
@@ -105,13 +106,13 @@
                             <option value="8관">8관</option>
                         </select></td>
                         <td><input type="text" name="청소일시" /></td>
-                        <td class="selec_td"><select name="청결상태">
-                            <option value=""></option>
+                        <td class="selec_td2"><select name="청결상태">
+                            <option value="전체"></option>
                             <option value="정상">정상</option>
                             <option value="청소필요">청소필요</option>
                         </select></td>
-                        <td><select name="직원배치">
-                            <option value=""></option>
+                        <td class="selec_td2"><select name="직원배치">
+                            <option value="전체"></option>
                             <option value="배치가능">배치가능</option>
                             <option value="배치불가능">배치불가능</option>
                         </select></td>
@@ -121,7 +122,7 @@
                         <td>"</td>
                         <td>정상</td>
                         <td><!-- <?php if($상태) { ?> -->
-                            <button onclick = "window.open('popup_staffing.html', 'popup' , 'width=300,height=300,location=no,status=no');" />
+                            <button class="table_button" onclick = "window.open('popup_staffing.html', 'popup' , 'width=300,height=300,location=no,status=no');" />
                             배치</button></td>
                             <!-- <?php } ?> -->
                             <!-- 배치 가능한 직원만 배치 버튼 출력 -->
@@ -129,6 +130,7 @@
                 </tbody>
             </table>
             </form>
+            </div>
         </section>
 	</main>
 
