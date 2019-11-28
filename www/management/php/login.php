@@ -13,13 +13,14 @@
         $id = $_POST['id'];
         $pw = $_POST['password'];
         $num = $db->quote($id);
-        $check = "SELECT 사번,이름,부서 FROM 직원관리 WHERE 사번 = $num";
+        $check = "SELECT 사번,이름,부서,지점번호 FROM 직원관리 WHERE 사번 = $num";
         $rows = $db->query($check);
-
         $result = $rows->fetchAll();
+        
         if ($result[0] === NULL or $result[0]['이름'] != $pw){
             header("Location: ../htmlp/home.php");
         }else {
+            $_SESSION['REGION'] = $result[0]['지점번호'];
             $_SESSION['ID'] = $id;
             $_SESSION['PW'] = $pw;
             $_SESSION['DEP'] = $result[0]['부서'];

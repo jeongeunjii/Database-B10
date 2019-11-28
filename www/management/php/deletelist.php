@@ -12,21 +12,22 @@
         
         $id = $_POST['id'];
         $num = $db->quote($id);
-
-        $check = "UPDATE floor업무관리
-        SET 시설물번호 = NULL,
-            상태 = 1
-        WHERE 사번 = $num;";
+        $check = "DELETE FROM 직원관리
+        WHERE 사번 = $num";
         $db->exec($check);
 
-        $check = "UPDATE 청결관리
-        SET 청결상태 = '정상',
-            사번 = NULL
-        WHERE 사번 = $num;";
-
+        $num = $db->quote($id);
+        $check = "DELETE FROM floor업무관리
+        WHERE 사번 = $num";
         $db->exec($check);
 
-        header("Location: ../htmlp/floor.php");
+        $num = $db->quote($id);
+        $check = "DELETE FROM 기술지원
+        WHERE 사번 = $num";
+        $db->exec($check);
+
+   
+        header("Location: ../htmlp/list.php");
         // echo "<pre>";
         // var_dump($result[0]);
         // echo "</pre>";

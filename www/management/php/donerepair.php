@@ -13,20 +13,20 @@
         $id = $_POST['id'];
         $num = $db->quote($id);
 
-        $check = "UPDATE floor업무관리
+        $check = "UPDATE 기술지원
         SET 시설물번호 = NULL,
             상태 = 1
         WHERE 사번 = $num;";
         $db->exec($check);
 
-        $check = "UPDATE 청결관리
-        SET 청결상태 = '정상',
+        $check = "UPDATE 시설물관리
+        SET 점검상태 = '정상',
             사번 = NULL
         WHERE 사번 = $num;";
 
         $db->exec($check);
 
-        header("Location: ../htmlp/floor.php");
+        header("Location: ../htmlp/repair.php");
         // echo "<pre>";
         // var_dump($result[0]);
         // echo "</pre>";

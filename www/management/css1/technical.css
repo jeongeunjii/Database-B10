@@ -1,0 +1,13 @@
+#assign {
+    display: none;
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    left: 50%;
+    top: 50%;
+    margin-left: -250px;
+    margin-top: -250px;
+    
+    border: #000 solid 1px;
+    background: #82713F;
+}

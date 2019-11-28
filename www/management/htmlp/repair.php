@@ -8,8 +8,8 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="../css1/layout2.css">
-    <link rel="stylesheet" type="text/css" href="../css1/list.css">
-    <script src="../script/list.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../css1/floor.css">
+    <script src="../script/floor.js" type="text/javascript"></script>
     <title>10Jo</title>
 </head>
 
@@ -75,37 +75,38 @@
         </ul>
     </nav>
     <main>
-    <?php
-        if ( $_SESSION['DEP'] == "매니저"){
-    ?>
-            <div>
-                <button onclick="addlist();">추가</button>
-                <button onclick="editlist();">수정</button>
-                <button onclick="deletelist();">삭제</button>
-            </div>
-    <?php
-        }
-    ?>
-        
+
     <?php
         try {
-            if ( $_SESSION['DEP'] == "매니저"){
+            if ( $_SESSION['DEP'] == "기술지원"){
                 $db = new PDO("mysql:dbname=movie; host=13.125.252.255; port=3306", "root", "1234");
                 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $db->query("set session character_set_connection=utf8;");
                 $db->query("set session character_set_results=utf8;");
                 $db->query("set session character_set_client=utf8;");
 
-                $rows = $db->query("SELECT * FROM 직원관리 ORDER BY 부서");
+                $no_jobs = true;
+                $rows = $db->query("SELECT * FROM 기술지원
+                NATURAL JOIN 직원관리
+                NATURAL JOIN 시설물");
                 foreach ($rows as $row) {
+                    if ($row['사번'] == $_SESSION['ID'] ) {
+                        $no_jobs = false;
                 ?>
-                <li>
-                    <?= $row["사번"] ?>
-                    <?= $row["이름"] ?>
-                    <?= $row["부서"] ?>
-                    <?= $row["생년월일"] ?>
-                    <?= $row["전화번호"] ?>
-                </li>
+                        <li>
+                            <?= $row["시설물명"] ?>
+                            <?= $row["이름"] ?>
+                            <form id='cptbutton' method="post" action="../php/donerepair.php">
+                                <input type="text" name="id" value="<?=$_SESSION['ID']?>" style="display: none;"/>
+                                <input type="submit" value="완료"/>
+                            </form>
+                        </li>
+                <?php
+                    }
+                }
+                if ($no_jobs){
+                ?>
+                    <li>배정된 업무가 없습니다.</li>
                 <?php
                 }
             }
@@ -118,34 +119,6 @@
         }
     ?>
     </main>
-    <div id="add">
-        <form method="post" action="../php/addlist.php">
-            <span>이름 : </span><input type="text" name="name" placeholder="이름"/><br>
-            <span>부서 : </span><input type="text" name="department" placeholder="부서"/><br>
-            <span>생년월일 : </span><input type="date" name="birth" placeholder="생일"/><br>
-            <span>전화번호 : </span><input type="phone" name="phone" placeholder="전화번호"/><br>
-            <span></span><input id="addbutton" type="submit" value="정보추가"/>
-        </form>
-    </div>
-
-    <div id="edit">
-        <form method="post" action="../php/editlist.php">
-            <span>사번 : </span><input type="text" name="id" placeholder="사번"/><br>
-            <span>이름 : </span><input type="text" name="name" placeholder="이름"/><br>
-            <span>부서 : </span><input type="text" name="department" placeholder="부서"/><br>
-            <span>생년월일 : </span><input type="date" name="birth" placeholder="생일"/><br>
-            <span>전화번호 : </span><input type="phone" name="phone" placeholder="전화번호"/><br>
-            <span></span><input id="editbutton" type="submit" value="정보수정"/>
-        </form>
-    </div>
-
-    <div id="delete">
-        <form method="post" action="../php/deletelist.php">
-            <span>사번 : </span><input type="text" name="id" placeholder="사번"/><br>
-            <span></span><input id="deletebutton" type="submit" value="정보삭제"/>
-        </form>
-    </div>
-
     </section>
 </body>
 
