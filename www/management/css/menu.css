@@ -20,7 +20,7 @@ input[type="checkbox"]#menu_state {
     padding: 0;
     list-style: none;
     box-shadow: 1px 1px 3.5px rgb(174, 176, 167);
-    transition: all 0.15s ease-in-out;
+    transition: all 0.16s ease-in-out;
     font-style: normal;
   }
   

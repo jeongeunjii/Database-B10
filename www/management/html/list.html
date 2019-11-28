@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="../css/layout.css">
-    <link rel="stylesheet" type="text/css" href="../css/clean.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
     <link rel="stylesheet" type="text/css" href="../css/menu.css">
     <link rel="stylesheet" type="text/css" href="../css/button.css">
 	<title>10Jo</title>
@@ -30,19 +30,20 @@
                     <a href="attendance_manager.html">
                         근태관리
                     </a>
+                <!--(직원용)<li><a href="attendance_emp.html"onclick="window.open(this.href, 'popup', 'width=300,height=300,location=no,status=no');">플로어업무</a></li>-->
                 </li>
                 <li><img src="../image/floor.png" alt="floor_icon" />
                     <a href="floor_manager.html">
                         플로어업무
                     </a>
                 </li>
-                <!--(직원용)<li><a href="floor_emp.html"onclick="window.open(this.href, 'popup', 'width=300,height=300,location=no,status=no');">플로어업무</a></li>-->
+                <!--(직원용)<li><a href="popup_floor_emp.html"onclick="window.open(this.href, 'popup', 'width=300,height=300,location=no,status=no');">플로어업무</a></li>-->
                 <li><img src="../image/engineer.png" alt="engineer_icon" />
                     <a href="engineer_manager.html">
                         기술업무
                     </a>
                 </li>
-                <!--(직원용)<li><a href="engineer_emp.html"onclick="window.open(this.href, 'popup', 'width=300,height=300,location=no,status=no');">기술업무</a></li>-->
+                <!--(직원용)<li><a href="popup_engineer_emp.html"onclick="window.open(this.href, 'popup', 'width=300,height=300,location=no,status=no');">기술업무</a></li>-->
                 <!--기술업무, 플로어업무 직원용 페이지는 새 페이지 띄우는 것보다 팝업으로 하는 게 더 깔끔할 것 같아서 팝업으로 처리 했습니다!-->
             </ul>
         </div>
@@ -73,11 +74,11 @@
             <form method="post" action="">
             <div id="btn_search"><button class="button">검색</button></div>
             <!-- 테이블 입력칸에 input하고 검색버튼 누르면 그에 맞는 테이블만 출력 -->
-            <div class="btn_etc"><button class="button" onclick = "window.open('emp_add.html', 'popup' , 'width=300,height=300,location=no,status=no');" />
+            <div class="btn_etc"><button class="button" onclick = "window.open('popup_emp_add.html', 'popup' , 'width=300,height=300,location=no,status=no');" />
                 추가</button></div>
-            <div class="btn_etc"><button class="button" onclick = "window.open('emp_del.html', 'popup' , 'width=300,height=300,location=no,status=no');" />
+            <div class="btn_etc"><button class="button" onclick = "window.open('popup_emp_del.html', 'popup' , 'width=300,height=300,location=no,status=no');" />
                 삭제</button></div>
-            <div class="btn_etc"><button class="button" onclick = "window.open('emp_edit.html', 'popup' , 'width=300,height=300,location=no,status=no');" />
+            <div class="btn_etc"><button class="button" onclick = "window.open('popup_emp_edit.html', 'popup' , 'width=300,height=300,location=no,status=no');" />
                 수정</button></div>
 
 

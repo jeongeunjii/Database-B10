@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="../css/layout.css">
-    <link rel="stylesheet" type="text/css" href="../css/clean.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
     <link rel="stylesheet" type="text/css" href="../css/menu.css">
     <link rel="stylesheet" type="text/css" href="../css/button.css">
 	<title>10Jo</title>
@@ -12,7 +12,7 @@
 
 <body>
     <header>
-		<a href="list.html"></a><h1>10Jo</h1></a>
+		<a href="list.html"><h1>10Jo</h1></a>
         <div id="login"><a href="login/login.html"><p><!-- <?php if (로그인정보 없으면) { ?> -->
             LOGIN <!-- <?php } else { ?> LOGOUT --></p></a></div>
     </header>
@@ -30,19 +30,20 @@
                     <a href="attendance_manager.html">
                         근태관리
                     </a>
+                <!--(직원용)<li><a href="attendance_emp.html"onclick="window.open(this.href, 'popup', 'width=300,height=300,location=no,status=no');">플로어업무</a></li>-->
                 </li>
                 <li><img src="../image/floor.png" alt="floor_icon" />
                     <a href="floor_manager.html">
                         플로어업무
                     </a>
                 </li>
-                <!--(직원용)<li><a href="floor_emp.html"onclick="window.open(this.href, 'popup', 'width=300,height=300,location=no,status=no');">플로어업무</a></li>-->
+                <!--(직원용)<li><a href="popup_floor_emp.html"onclick="window.open(this.href, 'popup', 'width=300,height=300,location=no,status=no');">플로어업무</a></li>-->
                 <li><img src="../image/engineer.png" alt="engineer_icon" />
                     <a href="engineer_manager.html">
                         기술업무
                     </a>
                 </li>
-                <!--(직원용)<li><a href="engineer_emp.html"onclick="window.open(this.href, 'popup', 'width=300,height=300,location=no,status=no');">기술업무</a></li>-->
+                <!--(직원용)<li><a href="popup_engineer_emp.html"onclick="window.open(this.href, 'popup', 'width=300,height=300,location=no,status=no');">기술업무</a></li>-->
                 <!--기술업무, 플로어업무 직원용 페이지는 새 페이지 띄우는 것보다 팝업으로 하는 게 더 깔끔할 것 같아서 팝업으로 처리 했습니다!-->
             </ul>
         </div>
@@ -96,12 +97,12 @@
                         <td>"</td>
                         <td>
                         <!-- <?php if(출근데이터 없으면) { -->
-                        <button onclick = "window.open('arrive_popup.html', 'popup' , 'width=300,height=300,location=no,status=no');" />
+                        <button onclick = "window.open('popup_attendance_arrive.html', 'popup' , 'width=300,height=300,location=no,status=no');" />
                             출근</button></td>
                             <!-- <?php }
                                 else { echo $time } ?>-->
                         <td><!-- <?php if(퇴근데이터 없으면) { -->
-                        <button onclick = "window.open('leave_popup.html', 'popup' , 'width=300,height=300,location=no,status=no');" />
+                        <button onclick = "window.open('popup_attendance_arrive.html', 'popup' , 'width=300,height=300,location=no,status=no');" />
                                 퇴근</button></td>
                                 <!-- <?php }
                                     else { echo $time } ?>-->
