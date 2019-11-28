@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<script src="time.js" type="text/javascript"></script>
+		<script src="script/time.js" type="text/javascript"></script>
 		<title>db testing</title>
 	</head>
 

@@ -14,41 +14,41 @@ section > div {
   color: #7F7F7F;
   text-align: center;
 }
-.mv_list{
+.movie{
   margin-left: 30px;
 }
-.mv_list > .container{
+.movie > .container{
     width: 200px;
     height: 500px;
     background: #EDEDEF;
     overflow-x: auto;
     }
 
-.mv_list > .container>img{
+.movie > .container>img{
   width: 30px;
   height: 30px;
   float: left;
   margin: 5px;
 }
 
-.mv_list > .container>p{
+.movie > .container>p{
   font-size: 12px;
   height: 50px;
   font-weight:bold;
   text-align: left;
   cursor: pointer;
 }
-.theater_list{
+.city{
   position: relative;
   width: 320px;
   height: 500px;
   background: #EDEDEF
 }
-.theater_list ul{
+.city ul{
   margin: 0;
   padding-left:20px;
 }
-.theater_list hr{
+.city hr{
   margin:0;
 }
 .area_name{
@@ -73,7 +73,7 @@ section > div {
   height: 500px;
   overflow-x: auto;
 }
-.theater_list p{
+.city p{
   font-size: 12px;
   font-weight: bold;
   cursor: pointer;
