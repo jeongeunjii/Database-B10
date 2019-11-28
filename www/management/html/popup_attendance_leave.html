@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../css/popup.css">
+    <title>10Jo</title>
+</head>
+
+<script language="javascript">
+        function showClock(){
+            var currentDate = new Date();
+            var divClock = document.getElementById("divClock");
+             
+            var msg = currentDate.getHours()+"시"
+            msg += currentDate.getMinutes()+"분";
+             
+            divClock.innerText = msg;
+            setTimeout(showClock,1000);
+        }
+    </script>
+
+<body onload="showClock()">
+    <form method="POST" action="">
+        <div id="divClock" class="clock"></div>
+        퇴근 등록하시겠습니까?
+        <br>
+        <button>확인</button>
+        <button>취소</button>
+    </form>
+</body>
+
+</html>

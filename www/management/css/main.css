@@ -1,0 +1,76 @@
+input[type="checkbox"]:checked ~ main {
+	left: 200px;
+	width: 88%;
+  }
+
+main {
+	position: absolute;
+	transition: all 0.15s ease-in-out;
+	top: 40px;
+	left: 0px;
+	color: rgb(70, 69, 69);
+	width: 100%;
+}
+
+section{
+	overflow: hidden;
+	padding: 50px;
+	padding-top: 20px;
+	margin: 10px 5px;
+}
+
+h2 {
+	font-weight: 600; 
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse; 
+	text-align: center;
+	background: #fffdfd;
+	border: 1.5px solid rgba(194, 194, 194, 0.568);
+}
+
+table th {
+	border-bottom: 2px solid #E6E6E6;
+	border-right: 1.5px solid #F2F2F2;
+	padding: 10px 0px 10px 10px;
+}
+
+table td {
+	height: 20px;
+	border-bottom: 1.5px solid #F2F2F2;
+	border-right: 1.5px solid #F2F2F2;
+	padding: 10px 10px 10px 10px;	
+}
+
+table tr.even td {
+	background: #f6f6f6;
+}
+
+table tr:hover td {
+	background: #f2f2f2;
+	background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#f0f0f0));
+	background: -moz-linear-gradient(top,  #f2f2f2,  #f0f0f0);	
+}
+
+table tr:first-child:hover td {
+	background: #fffdfd;
+}
+
+input, select {
+	width: 95%;
+	height: 140%;
+}
+
+input:hover, select:hover {
+	border: 2px solid rgb(170, 170, 170);
+}
+
+select {
+	background: white;
+}
+
+select:hover .selec_td {
+	padding: 10px 0px 10px 0px;
+}

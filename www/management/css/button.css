@@ -1,0 +1,28 @@
+/* transition: all 0.25s ease-in-out; */
+
+.button {
+    border: 1.2px solid rgb(250, 172, 88);
+    border-radius: 5px;
+    background-color: rgb(250, 172, 88);
+    color: #fff;
+    transition: all 0.25s ease-in-out;
+    width: 120px;
+    height: 35px;
+    font-size: 20px;
+    margin-bottom: 18px;
+    margin-top: 10px;
+}
+
+.button:hover {
+    color: rgb(250, 172, 88);
+    background: none;
+}
+
+#btn_search {
+    float: left;
+}
+
+.btn_etc {
+    float: right;
+    margin-left: 10px;
+}

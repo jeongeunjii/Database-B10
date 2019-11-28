@@ -19,6 +19,13 @@
         WHERE 사번 = $num;";
         $db->exec($check);
 
+        $check = "UPDATE 청결관리
+        SET 청결상태 = '정상',
+            사번 = NULL
+        WHERE 사번 = $num;";
+
+        $db->exec($check);
+
         header("Location: ../htmlp/floor.php");
         // echo "<pre>";
         // var_dump($result[0]);

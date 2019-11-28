@@ -26,9 +26,9 @@
     </ul>
   </nav>
   <section>
-    <div>
+    <div class= "mv_list">
       <h3>영화목록</h3>
-        <div class="mv_list" id ="style-1">
+        <div class="container" id ="style-1">
           <br><hr>
           <img src="img/all.png"> <p>겨울왕국2</p>
           <hr>
@@ -45,10 +45,61 @@
           <img src="img/19.png"> <p>펄프픽션</p>
         </div>
     </div>
-    <div>
+
+    <div class="theater">
+      <h3>지점</h3>
+      <div class="theater_list">
+        <ul>
+          <div class = area_name>
+            <p>서울(10)</p><hr>
+            <div class = area_name_list id = "style-1">
+                <p>대학로</p>
+                <p>동대문</p>
+                <p>등촌</p>
+                <p>목동</p>
+                <p>불광</p>
+                <p>강남</p>
+                <p>강변</p>
+                <p>구로</p>
+                <p>왕십리</p>
+                <p>영등포</p>
+              </div>
+            <p>경기(10)</p><hr>
+            <div class = area_name_list id = "style-1">
+                <p>안산</p>
+                <p>수원</p>
+                <p>시흥</p>
+                <p>용인</p>
+                <p>이천</p>
+                <p>김포</p>
+                <p>동백</p>
+                <p>동탄</p>
+                <p>오리</p>
+                <p>죽전</p>
+              </div>
+            <p>인천(10)</p><hr>
+            <div class = area_name_list id = "style-1">
+                <p>계양</p>
+                <p>남주안</p>
+                <p>부평</p>
+                <p>연수역</p>
+                <p>인천</p>
+                <p>인천공항</p>
+                <p>주안역</p>
+                <p>인천연수</p>
+                <p>청라</p>
+                <p>인천논현</p>
+              </div>
+          </div>
+        </ul>
+      </div>
+    </div>
+
+    <div class = date>
       <h3>날짜</h3>
-      <hr>
-      <div class = "date" id="style-1">
+
+      <div class = "date_list" id="style-1">
+        <br><hr style="margin-right:8px">
         2019<br>12월
         <p class = "day-red">1일 </p>
         <p class = "day">2일 </p>
@@ -83,26 +134,121 @@
         <p class = "day">31일 </p>
       </div>
     </div>
+
     <div>
       <h3>시간</h3>
-        <div class="time" id="style-1">
-          <hr>
-            <div class ="theater">
-            2D(자막) 2관(Laser) 6층(총124석)
-            <p>07:30(조조) 108석   09:40(조조) 110석  11:50 113석</p>
-            <p>16:30 102석  18:45 102석  21:00 104석</p>
-            <p>23:15 112석  25:30(심야) 113석  27:45(심야) 113석</p>
-            <hr>
-            2D(자막) 3관 8층(총172석)
-            <p>08:00(조조) 155석  10:15(조조) 153석  12:30 150석</p>
-            <p>14:45 140석  17:00 146석  19:15 124석</p>
-            <p>21:30 146석  23:45 156석  26:00(심야) 156석</p>
-            <p>28:15(심야) 172석</p>
-            <hr>
-          </div>
+        <div class="time_table" id="style-1">
+          <br>
+            <div class ="whole_table">
+              <div class="one_table">
+                <div class="theater_location">
+                  <p>2D(자막) 2관(Laser) 6층(총124석)</p>
+                </div>
+                <div class="time_info">
+                  <li>
+                    <span class="time">07:30</span>
+                    <span class="count">108석</span>
+                  </li>
+                  <li>
+                    <span class="time">09:40</span>
+                    <span class="count">110석</span>
+                  </li>
+                  <li>
+                    <span class="time">11:50</span>
+                    <span class="count">113석</span>
+                    </li>
+                  <li>
+                    <span class="time">16:30</span>
+                    <span class="count">102석</span>
+                  </li>
+                  <li>
+                    <span class="time">18:45</span>
+                    <span class="count">102석</span>
+                  </li>
+                  <li>
+                    <span class="time">21:00</span>
+                    <span class="count">104석</span>
+                    </li>
+                  <li>
+                    <span class="time">23:15</span>
+                    <span class="count">112석</span>
+                  </li>
+                  <li>
+                    <span class="time">25:30</span>
+                    <span class="count">113석</span>
+                  </li>
+                  <li>
+                    <span class="time">27:45</span>
+                    <span class="count">113석</span>
+                  </li>
+
+                </div>
+              </div>
+
+              <div class="one_table">
+                <div class="theater_location">
+                  <p>2D(자막) 3관 8층(총172석)</p>
+                </div>
+                <div class="time_info">
+                  <li>
+                    <span class="time">08:00</span>
+                    <span class="count">155석</span>
+                  </li>
+                  <li>
+                    <span class="time">10:15</span>
+                    <span class="count">153석</span>
+                  </li>
+                  <li>
+                    <span class="time">12:30</span>
+                    <span class="count">150석</span>
+                    </li>
+                  <li>
+                    <span class="time">14:45</span>
+                    <span class="count">140석</span>
+                  </li>
+                  <li>
+                    <span class="time">17:00</span>
+                    <span class="count">146석</span>
+                  </li>
+                  <li>
+                    <span class="time">19:15</span>
+                    <span class="count">124석</span>
+                    </li>
+                  <li>
+                    <span class="time">21:30</span>
+                    <span class="count">146석</span>
+                  </li>
+                  <li>
+                    <span class="time">23:45</span>
+                    <span class="count">156석</span>
+                  </li>
+                  <li>
+                    <span class="time">26:00</span>
+                    <span class="count">156석</span>
+                  </li>
+                </div>
+              </div>
+            </div>
         </div>
     </div>
-    <div class="main_content">
+    <div class="ticketing_choice">
+      <div class="info_movie">
+        겨울왕국2 2D 전체관람가
+      </div>
+      <div class="info_theater">
+        극장 CGV 안산
+        일시 2019.12.1(일)
+        상영관 3관
+        인원
+      </div>
+      <div class="info_path">
+        <span class="step2">좌석선택</span>
+        <span class="step3">결제</span>
+
+      </div>
+      <div class="choice">
+        <a href="seat.html">좌석선택</a>
+      </div>
 
     </div>
   </section>
