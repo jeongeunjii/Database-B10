@@ -26,3 +26,19 @@
     float: right;
     margin-left: 10px;
 }
+
+.table_button {
+    border: 1.2px solid rgb(250, 172, 88);
+    border-radius: 5px;
+    background-color: rgb(250, 172, 88);
+    color: #fff;
+    transition: all 0.25s ease-in-out;
+    width: 90px;
+    height: 30px;
+    font-size: 18px;
+}
+
+.table_button:hover {
+    color: rgb(250, 172, 88);
+    background: none;
+}
