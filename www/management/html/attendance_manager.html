@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../css/layout.css">
+    <link rel="stylesheet" type="text/css" href="../css/clean.css">
+    <link rel="stylesheet" type="text/css" href="../css/menu.css">
+    <link rel="stylesheet" type="text/css" href="../css/button.css">
+	<title>10Jo</title>
+</head>
+
+<body>
+    <header>
+		<a href="home.html"><h1>10Jo</h1></a>
+        <div id="login"><a href="login/login.html"><p><!-- <?php if (로그인정보 없으면) { ?> -->
+            LOGIN <!-- <?php } else { ?> LOGOUT --></p></a></div>
+    </header>
+    <input type="checkbox" id="menu_state" checked>
+    <nav>
+        <label for="menu_state"><img src="../image/menu.png" alt="menu_icon" /></label>
+        <div id="fir_category">
+            <ul> <div class="category_name">직원관리</div>
+                <li><img src="../image/employee.png" alt="employee_icon" />
+                    <a href="list.html">
+                        직원목록
+                    </a>
+                </li>
+                <li><img src="../image/attendance.png" alt="attendance_icon" />
+                    <a href="attendance_manager.html">
+                        근태관리
+                    </a>
+                </li>
+                <li><img src="../image/floor.png" alt="floor_icon" />
+                    <a href="floor_manager.html">
+                        플로어업무
+                    </a>
+                </li>
+                <!--(직원용)<li><a href="floor_emp.html"onclick="window.open(this.href, 'popup', 'width=300,height=300,location=no,status=no');">플로어업무</a></li>-->
+                <li><img src="../image/engineer.png" alt="engineer_icon" />
+                    <a href="engineer_manager.html">
+                        기술업무
+                    </a>
+                </li>
+                <!--(직원용)<li><a href="engineer_emp.html"onclick="window.open(this.href, 'popup', 'width=300,height=300,location=no,status=no');">기술업무</a></li>-->
+                <!--기술업무, 플로어업무 직원용 페이지는 새 페이지 띄우는 것보다 팝업으로 하는 게 더 깔끔할 것 같아서 팝업으로 처리 했습니다!-->
+            </ul>
+        </div>
+        <div id="sec_category">
+            <ul> <div class="category_name">시설관리</div>
+                <li><img src="../image/order.png" alt="order_icon" />
+                    <a href="order.html">
+                        주문발주
+                    </a>
+                </li>
+                <li><img src="../image/clean.png" alt="clean_icon" />
+                    <a href="clean_manager.html">
+                        청결관리
+                    </a>
+                </li>
+                <li><img src="../image/staffing.png" alt="staffing_icon" />
+                    <a href="staffing_manager.html">
+                        기술지원
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+         <section>
+            <h2>근태관리</h2>
+            <form method="post" action="">
+                <div id="btn_search"><button class="button">검색</button></div>
+                <!-- 테이블 입력칸에 input하고 검색버튼 누르면 그에 맞는 테이블만 출력 -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>이름</th>
+                        <th>날짜</th>
+                        <th>출근시간</th>
+                        <th>퇴근시간</th>
+                        <th>근무시간</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" name="이름" /></td>
+                        <td><input type="text" name="날짜" /></td>
+                        <td><input type="text" name="출근시간" /></td>
+                        <td><input type="text" name="퇴근시간" /></td>
+                        <td><input type="text" name="근무시간" /></td>
+                    </tr>
+                    <tr class="even">
+                        <td>"</td>
+                        <td>"</td>
+                        <td>"</td>
+                        <td>"</td>
+                        <td>"</td>
+                    </tr>
+                </tbody>
+            </table>
+            </form>
+        </section>
+    </main>
+	
+</body>
+</html>
+	

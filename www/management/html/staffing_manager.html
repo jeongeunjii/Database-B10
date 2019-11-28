@@ -5,68 +5,126 @@
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="../css/layout.css">
     <link rel="stylesheet" type="text/css" href="../css/clean.css">
+    <link rel="stylesheet" type="text/css" href="../css/menu.css">
+    <link rel="stylesheet" type="text/css" href="../css/button.css">
 	<title>10Jo</title>
 </head>
 
 <body>
     <header>
 		<a href="home.html"><h1>10Jo</h1></a>
-        <div id="login"></div>
+        <div id="login"><a href="login/login.html"><p><!-- <?php if (로그인정보 없으면) { ?> -->
+            LOGIN <!-- <?php } else { ?> LOGOUT --></p></a></div>
     </header>
+    <input type="checkbox" id="menu_state" checked>
     <nav>
-        <ul>
-			<div><a href="home.html"><img src="../image/home.png" alt="home_icon" />홈</a></div>
-            <li>
-                <img src="../image/employee.png" width="50px" alt="employee_icon" />직원관리
-                <ul>
-                    <li><a href="list.html">직원목록</a></li>
-                    <li><a href="attenndance_manager.html">근태관리</a></li>
-					<li><a href="floor.html">플로어업무</a></li>
-					<li><a href="engineer.html">기술업무</a></li>
-                </ul>
-            </li>
-            <li >
-                <img src="../image/store.png" width="50px" alt="store_icon" /> <span>시설관리</span> 
-                <ul>
-                    <li><a href="order.html">주문발주</a></li>
-                    <li><a href="staffing_manager.html">기술지원</a></li>
-                    <li><a href="clean_manager.html">청결관리</a></li>
-				</ul>
-			</li>
-			<div><a href="settings.html"><img src="../image/settings.png" alt="settings_icon" />설정</a></div>
-        </ul>
+        <label for="menu_state"><img src="../image/menu.png" alt="menu_icon" /></label>
+        <div id="fir_category">
+            <ul> <div class="category_name">직원관리</div>
+                <li><img src="../image/employee.png" alt="employee_icon" />
+                    <a href="list.html">
+                        직원목록
+                    </a>
+                </li>
+                <li><img src="../image/attendance.png" alt="attendance_icon" />
+                    <a href="attendance_manager.html">
+                        근태관리
+                    </a>
+                </li>
+                <li><img src="../image/floor.png" alt="floor_icon" />
+                    <a href="floor_manager.html">
+                        플로어업무
+                    </a>
+                </li>
+                <!--(직원용)<li><a href="floor_emp.html"onclick="window.open(this.href, 'popup', 'width=300,height=300,location=no,status=no');">플로어업무</a></li>-->
+                <li><img src="../image/engineer.png" alt="engineer_icon" />
+                    <a href="engineer_manager.html">
+                        기술업무
+                    </a>
+                </li>
+                <!--(직원용)<li><a href="engineer_emp.html"onclick="window.open(this.href, 'popup', 'width=300,height=300,location=no,status=no');">기술업무</a></li>-->
+                <!--기술업무, 플로어업무 직원용 페이지는 새 페이지 띄우는 것보다 팝업으로 하는 게 더 깔끔할 것 같아서 팝업으로 처리 했습니다!-->
+            </ul>
+        </div>
+        <div id="sec_category">
+            <ul> <div class="category_name">시설관리</div>
+                <li><img src="../image/order.png" alt="order_icon" />
+                    <a href="order.html">
+                        주문발주
+                    </a>
+                </li>
+                <li><img src="../image/clean.png" alt="clean_icon" />
+                    <a href="clean_manager.html">
+                        청결관리
+                    </a>
+                </li>
+                <li><img src="../image/staffing.png" alt="staffing_icon" />
+                    <a href="staffing_manager.html">
+                        기술지원
+                    </a>
+                </li>
+            </ul>
+        </div>
     </nav>
 
 	<main>
-		<h2>기술지원</h2>
-		<p>시설</p>
-		<select name="facility">
-			<option value="">선택</option>
-			<option value="카페">카페</option>
-			<option value="매표소">매표소</option>
-			<option value="매점">매점</option>
-			<option value="스태프실">스태프실</option>
-		</select>
-		<article>
-			<table>
-				<thead>
-					<tr>
-						<th>시설명</th>
-						<th>점검시간</th>
-						<th>점검상태</th>
-						<th>직원배치</th>					
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>1관</td>
-						<td>"</td>
-						<td>정상</td>
-						<td><button onclick = "window.open('staffing_popup.html', 'popup' , 'width=300,height=300,location=no,status=no');" />
-							배치</button></td>
-					</tr>
-				</tbody>
-			</table>
-		</article>
+        <section>
+            <h2>기술지원</h2>
+            <form method="POST" action="">
+            <div id="btn_search"><button class="button">검색</button></div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>시설명</th>
+                        <th>점검시간</th>
+                        <th>점검상태</th>
+                        <th>직원배치</th>					
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="selec_td"><select name="시설명">
+                            <option value=""></option>
+                            <option value="카페">카페</option>
+                            <option value="매점">매점</option>
+                            <option value="여자화장실6F">여자화장실6F</option>
+                            <option value="남자화장실6F">남자화장실6F</option>
+                            <option value="여자화장실7F">여자화장실7F</option>
+                            <option value="남자화장실7F">남자화장실7F</option>
+                            <option value="여자화장실8F">여자화장실8F</option>
+                            <option value="남자화장실8F">남자화장실8F</option>
+                            <option value="1관">1관</option>
+                            <option value="2관">2관</option>
+                            <option value="3관">3관</option>
+                            <option value="4관">4관</option>
+                            <option value="5관">5관</option>
+                            <option value="6관">6관</option>
+                            <option value="7관">7관</option>
+                            <option value="8관">8관</option>
+                        </select></td>
+                        <td><input type="text" name="점검시간" /></td>
+                        <td class="selec_td"><select name="점검상태">
+                            <option value=""></option>
+                            <option value="정상">정상</option>
+                            <option value="점검필요">점검필요</option>
+                        </select></td>
+                        <td class="selec_td"><select name="직원배치">
+                            <option value=""></option>
+                            <option value="배치가능">배치가능</option>
+                            <option value="배치불가능">배치불가능</option>
+                        </select></td>
+                    </tr>
+                    <tr class="even">
+                        <td>1관</td>
+                        <td>"</td>
+                        <td>정상</td>
+                        <td><button onclick = "window.open('staffing_popup.html', 'popup' , 'width=300,height=300,location=no,status=no');" />
+                            배치</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            </form>
+        </section>
+    </main>
 </body>
 </html>

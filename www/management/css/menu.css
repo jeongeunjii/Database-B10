@@ -1,0 +1,89 @@
+input[type="checkbox"]#menu_state {
+    display: none;
+  }
+    input[type="checkbox"]:checked ~ nav {
+    width: 220px;
+  } 
+  input[type="checkbox"]:checked ~ nav ul{
+    opacity: 1;
+    transition: opacity 0.25s ease-in-out;
+  }
+  nav {
+    position: fixed; 
+    height: 100%;
+    background-color: #f2f2f2;
+    width: 0px;
+    position: fixed;
+    top: 50px;
+    color: gray;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-shadow: 1px 1px 3.5px rgb(174, 176, 167);
+    transition: all 0.15s ease-in-out;
+    font-style: normal;
+  }
+  
+  nav ul{
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out;
+  }
+
+nav label[for="menu_state"] {
+      cursor: pointer;
+      position: fixed;
+      top: 2px;
+      left: 4px;
+      padding: 10px;
+      padding-right: 20px;
+      z-index: 999;
+  }
+
+nav label[for="menu_state"] img {
+    width: 25px;
+    z-index: 999;
+}
+
+nav a {
+    position: relative;
+    top: -5px;
+}
+
+nav ul img {
+    -webkit-filter: opacity(0.5) drop-shadow(0 0 0 gray);
+    filter: opacity(0.5) drop-shadow(0 0 0 gray);
+    width: 25px;
+    padding-right: 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+}
+
+nav ul li:hover {
+    background-color: rgba(218, 214, 214, 0.63);
+}
+
+
+nav a:link { color: gray; text-decoration: none;}
+nav a:visited { color: gray; text-decoration: none;}
+
+nav a:hover { 
+    text-decoration: none;
+}
+
+#fir_category {
+    padding-top: 15px;
+}
+
+.category_name {
+    margin-bottom: 16px;
+    padding-left: 17px;
+}
