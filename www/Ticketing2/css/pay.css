@@ -1,0 +1,35 @@
+section {
+    width: 1000px;
+}
+
+.top {
+    vertical-align: center;
+    padding: 1px;
+    margin-top: 0px;
+    text-align: center;
+    height: 30px;
+    width: 1000px;
+    border: solid 1px;
+    color: white;
+    font-weight: bold;
+    background-color: #353535;
+    border: solid 1px;
+    border-color: #353535;
+}
+
+.card {
+    padding: 5px;
+    background-color: #A6A6A6;
+}
+
+p {
+    display: inline-block;
+}
+select {
+    display: inline-block;
+    height: 30px;
+}
+
+.payment {
+    padding: 10px;
+}
