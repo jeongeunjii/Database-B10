@@ -1,13 +1,14 @@
 .box {
     text-align: center;
     font-weight: bold;
-    width: 20px;
+    height: 25px;
+    width: 25px;
     border: solid 1px;
     border-color: #A6A6A6;
     display: inline-block;
     color: #232323;
     cursor: pointer;
-
+    margin-top: 30px;
 }
 
 .peoplemenu {
@@ -39,12 +40,14 @@ hr {
 }
 
 .number_people {
+    margin-top: 10px;
     width: 400px;
     height: auto;
-    margin-left: 45px;
-    padding: 5px;
-    border-right: solid 1px;
+    padding: 10px;
+    padding-right: 35px;
+    border-right: solid 2px;
     border-right-color: #777777;
+    border-radius: 1px;
     display: inline-block;
 }
 
@@ -71,12 +74,16 @@ iframe  {
     display: inline-block;
     float: left;
     margin-left: 30px;
+    margin-top: 5px;
+}
 
+.bottom {
+    margin-top: 10px;
 }
 
 .seat {
     width: 1003px;
-    height: 800px;
+    height: 750px;
     border: solid 3px;
     border-color: #A6A6A6;
     border-top: none;
@@ -132,7 +139,9 @@ iframe  {
 .desc {
     width: 70px;
     text-align: left;
-    font-size: 14px;
+    font-size: 17px;
     vertical-align: middle;
 }
+
+
 
