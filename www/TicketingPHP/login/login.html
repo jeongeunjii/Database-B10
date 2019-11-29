@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../common/css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+    <title>로그인 | 회원서비스</title>
+</head>
+<body>
+    <header>
+        <a href="../index.html"><img src="../img/logo.png" alt="logo"></a>
+    </header>
+
+    <nav>
+      <ul>
+          <li id="home"><a href="../index.html">HOME</a></li>
+          <li id="movie"><a href="../movie/movie.html">영화</a></li>
+          <li id="ticketing"><a href="../ticketing/ticketing.html">예매</a></li>
+          <li class = "selected" id="login"><a href="login.html">로그인</a></li>
+      </ul>
+    </nav>
+
+    <section>
+      <div class="content">
+          <h1>로그인</h1>
+  				<form action="login.html" method="post">
+  					ID: <input type="text" id="username" name="id" /><br>
+  					PASSWORD: <input type="password" id="password" name="ps" /><br>
+  					<input type="submit" value="로그인">
+  					<input type="button" onclick="location.href='join.html'"name="" value="회원가입">
+  				</form>
+  				<?php
+  					session_start();
+
+  					$dbHost = "13.125.252.255";
+  					$dbName = "movie";
+  					$dbUser = "root";
+  					$dbPass = "1234";
+
+  					$id = $_POST["id"];
+  					$ps = $_POST["ps"];
+
+  					$db = new PDO("mysql:host={$dbHost};dbname={$dbName}; port=3306", $dbUser, $dbPass);
+  					$db->exec("set names utf8");
+  					$test_ps = $db->query("select 비밀번호 from 회원 where 아이디 ='$id'");
+  					$row = $test_ps -> fetch();
+
+  					if ($test_ps && $id != null && $ps != null) {
+  						if ($test_ps->rowCount() > 0) {
+  							if ($row["비밀번호"] == $ps) {
+  								$_SESSION['customer_id'] = $id;
+  		      		}
+  							else { ?>
+  								<div class="warning">
+  									<p>비밀번호가 올바르지 않습니다.</p>
+  								</div>
+  								<?php
+  							}
+  	          }
+  						else { ?>
+  							<div class="warning">
+  								<p>아이디가 존재하지 않습니다.</p>
+  							</div>
+  							<?php
+  						}
+  					} ?>
+      </div>
+    </section>
+
+    <footer>
+        <div>
+            <div id="foot_img">
+                <img src="../img/logo.png" width="120px">
+            </div>
+            <div id="foot_p">
+                <p>경기도 안산시 상록구 한양대학로 55</p>
+                <p>개발자 | 정은지,김재영,박예림,이재원,윤성주 |</p>
+                <p>&copy;10PLEX.All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

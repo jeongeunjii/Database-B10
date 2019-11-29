@@ -1,0 +1,129 @@
+
+
+body {
+    position: relative;
+    margin: 0px;
+    font-family: 'Lora';
+    background-image: linear-gradient(rgba(47, 23, 15, 0.35), rgba(47, 23, 15, 0.35)), url("../../img/bg.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+header {
+    padding-top: 60px;
+    text-align: center;
+    height: 100px;
+}
+
+nav {
+    background-color: rgb(44, 13, 3, 0.88);
+    font-weight: 800;
+    font-size: 0.9rem;
+}
+
+nav ul {
+    padding: 20px 0px;
+    list-style-type: none;
+    text-align: center;
+}
+nav ul li {
+    width: 120px;
+    height: 60px;
+    display: inline-block;
+}
+
+.selected {
+    background-color: rgb(44, 13, 3, 0.88);
+    color: #e6a756;
+}
+
+nav ul li a{
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    line-height: 60px;
+}
+
+nav ul li:hover a {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+
+section {
+    margin: 0px auto;
+    width: 90%;
+    background-color: ivory;
+}
+
+section h1 {
+    margin: 0px 15px;
+    padding: 10px 0px;
+    font-size: 50px;
+}
+
+section > hr {
+    width: 95%;
+    border: black solid 5px;
+}
+
+section article {
+    height: 500px;
+}
+
+section article hr {
+    border: gainsboro solid 2px;
+    width: 63%;
+}
+
+section img {
+    float: left;
+    margin: 20px;
+}
+
+section h2 {
+    font-size: 40px;
+    display: inline-block;
+}
+
+section p {
+    font-family: 'Lora';
+    font-size: 20px;
+    margin-right: 15px;
+}
+
+footer {
+    width: 100%;
+    position: relative;
+    bottom: -120px;
+    background-color: rgb(44, 13, 3, 0.88);
+    height: 450px;
+}
+
+footer > div {
+    width: 600px;
+    height: 300px;
+    padding: 75px 0px;
+    margin: auto;
+}
+
+#foot_img {
+    float: left;
+    width: 150px;
+    text-align: center;
+    height: 70px;
+    padding: 115px 0px;
+}
+
+#foot_p {
+    width: 450px;
+    height: 200px;
+    float: left;
+    text-align: center;
+    padding: 50px 0px;
+}
+
+#foot_p p {
+    color: rgb(90, 74, 69);
+    font-size: 22px;
+}

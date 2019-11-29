@@ -1,0 +1,170 @@
+section{
+  padding: 40px 0px;
+}
+
+section > div {
+    vertical-align: top;
+    display: inline-block;
+}
+  h3{
+  font-size:30px;
+  margin : 0;
+  height: 50px;
+  background-color: #333333;
+  color: #7F7F7F;
+  text-align: center;
+}
+.movie{
+  margin-left: 30px;
+}
+.movie > .container{
+    width: 200px;
+    height: 500px;
+    background: #EDEDEF;
+    overflow-x: auto;
+    }
+
+.movie > .container>img{
+  width: 30px;
+  height: 30px;
+  float: left;
+  margin: 5px;
+}
+
+.movie > .container>p{
+  font-size: 12px;
+  height: 50px;
+  font-weight:bold;
+  text-align: left;
+  cursor: pointer;
+}
+.city{
+  position: relative;
+  width: 320px;
+  height: 500px;
+  background: #EDEDEF
+}
+.city ul{
+  margin: 0;
+  padding-left:20px;
+}
+.city hr{
+  margin:0;
+}
+.area_name{
+  margin:0;
+  padding:0;
+  border-right: 1px solid gray;
+  width:100px;
+  height:500px;
+}
+.area_name>p{
+  background-color:#D5D5D5;
+  height: 50px;
+  text-align: center;
+  line-height: 40px;
+  margin:0;
+}
+.area_name_list{
+  position: absolute;
+  top:0;
+  right:0px;
+  width:170px;
+  height: 500px;
+  overflow-x: auto;
+}
+.city p{
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.area_name_list p{
+  margin:0;
+  line-height: 40px;
+  height: 55px;
+
+  text-align: left;
+}
+
+
+.date_list {
+    background-color:#EDEDEF;
+    margin: 0px 10px 0px 10px;
+    width: 120px;
+    height: 500px;
+    overflow-x: auto;
+    text-align: center;
+    }
+.day, .day-red {
+    background-color: #D5D5D5;
+    width: 60px;
+    height: 50px;
+    font-weight: bold;
+    line-height: 50px;
+    padding: 3px;
+    margin: 0px 0px 1px 19px;
+    cursor: pointer;
+    color: #454545;
+}
+.day-red {
+    color: #B70000;
+}
+
+.time_table{
+
+  background: #EDEDEF;
+  height: 500px;
+  width: 400px;
+  overflow-x: auto;
+}
+.time_table p{
+  height: 50px;
+  font-size: 12px;
+  font-weight: bold;
+}
+.time_table > .whole_table{
+  height:500px;
+}
+.one_table{
+  height:240px;
+  margin:0 25px 0 25px;
+  border-bottom:2px solid gray;
+}
+.one_table > theater_location{
+  text-align: left;
+}
+.time_info li{
+  position: relative;
+  float: left;
+  height: 50px;
+  line-height: 50px;
+  padding-bottom: 9px;
+}
+.ticketing_choice{
+  height:100px;
+  width:90%;
+  border:2px solid gold;
+  margin:auto;
+}
+.ticketing_choice .choice{
+  height:30px;
+  width: 80px;
+  border: 2px solid gold;
+  background-color: cyan;
+  text-align: center;
+}
+
+#style-1::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    background-color: #f5f5f5;
+}
+#style-1::-webkit-scrollbar {
+    width: 10px;
+    background-color: #f5f5f5;
+}
+#style-1::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.1);
+    background-color: #555;
+}

@@ -71,6 +71,7 @@
 	<main>
         <section>
             <h2>기술업무</h2>
+            <div id="container">
             <form method="POST" action="">
             <div id="btn_search"><button class="button">검색</button></div>
             <!-- 테이블 입력칸에 input하고 검색버튼 누르면 그에 맞는 테이블만 출력 -->
@@ -86,7 +87,7 @@
                 <tr>
                     <td><input type="text" name="이름" /></td>
                     <td class="selec_td"><select name="현배치장소">
-                        <option value=""></option>
+                        <option value="전체"></option>
                         <option value="카페">카페</option>
                         <option value="매점">매점</option>
                         <option value="여자화장실6F">여자화장실6F</option>
@@ -105,7 +106,7 @@
                         <option value="8관">8관</option>
                     </select></td>
                     <td class="selec_td"><select name="상태">
-                        <option value=""></option>
+                        <option value="전체"></option>
                         <option value="배치가능">배치가능</option>
                         <option value="배치불가능">배치불가능</option>
                     </select></td>
@@ -118,6 +119,7 @@
             </tbody>
             </table>
             </form>
+            </div>
         </section>
     </main>
 </body>
