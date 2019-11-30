@@ -6,9 +6,9 @@
 <html lang="en">
 
 <head>
-<meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="../css/layout.css">
-    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../css/s1.css">
+    <link rel="stylesheet" type="text/css" href="../css/s2.css">
     <link rel="stylesheet" type="text/css" href="../css/menu.css">
     <link rel="stylesheet" type="text/css" href="../css/button.css">
     <link rel="stylesheet" type="text/css" href="../css/list.css">
@@ -18,7 +18,7 @@
 
 <body>
     <header>
-        <a href="list.php"><h1>10Jo</h1></a>
+        <a href="list.php"><img src="../image/logo.png" alt="logo" /></a>
         
         <div id="login">
             <?php
