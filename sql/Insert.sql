@@ -2,6 +2,7 @@
 INSERT INTO 메인코드 VALUES('A', '상영관종류코드');
 INSERT INTO 메인코드 VALUES('B', '예매상태코드');
 INSERT INTO 메인코드 VALUES('C', '영화등급코드');
+INSERT INTO 메인코드 VALUES('D', '품목취소코드');
 
 INSERT INTO 서브코드 VALUES('A', 'A', '4D');
 INSERT INTO 서브코드 VALUES('A', 'B', '3D');
@@ -16,6 +17,9 @@ INSERT INTO 서브코드 VALUES('C', 'A', '전체');
 INSERT INTO 서브코드 VALUES('C', 'B', '12세 이상');
 INSERT INTO 서브코드 VALUES('C', 'C', '15세 이상');
 INSERT INTO 서브코드 VALUES('C', 'D', '청소년 관람불가');
+
+INSERT INTO 서브코드 VALUES('D', 'A', 'Y');
+INSERT INTO 서브코드 VALUES('D', 'B', 'N');
 
 INSERT INTO 지역 VALUES('01', '서울');
 INSERT INTO 지역 VALUES('02', '경기');
