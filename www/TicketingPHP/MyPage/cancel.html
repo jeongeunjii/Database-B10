@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../common/css/index.css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+    <title>myPage</title>
+</head>
+<body>
+    <header>
+        <a href="../index.html"><img src="../img/logo.png" alt="logo"></a>
+    </header>
+
+    <nav>
+      <ul>
+        <li id="home"><a href="../index.html">HOME</a></li>
+        <li id="movie"><a href="../movie/movie.html">영화</a></li>
+        <li id="ticketing"><a href="../ticketing/ticketing.html">예매</a></li>
+        <li id="login"><a href="../login/login.html">로그인</a></li>
+      </ul>
+    </nav>
+
+    <section>
+      <div class="wrap">
+          <p>취소되었습니다.</p>
+          <button type="button" onClick="javascript:toMain()">메인페이지로</button>
+          <script type="text/javascript">
+            function toMain() {
+              location.replace('../index.html');
+            }
+          </script>
+          <?php
+            session_start();
+            $id = $_SESSION['customer_id'];
+            $yeme = $_POST["yeme"];
+            $number = $_POST["number"];
+            $seats = $_POST['seats'];
+
+            if ($number == count($seats)) {
+              $code = 'C';
+            }
+            else {
+              $code = 'B';
+            }
+
+            $dbHost = "52.78.148.203";
+            $dbName = "movie";
+            $dbUser = "root";
+            $dbPass = "1234";
+
+            $db = new PDO("mysql:host={$dbHost};dbname={$dbName}; port=3306", $dbUser, $dbPass);
+            $db->exec("set names utf8");
+
+             // $yemeQ = $db->query("UPDATE 예매 SET '예매상태코드'= '$code' WHERE 예매번호='$yeme'");
+
+             foreach ($seats as $i) {
+               $row = substr($i, 0, 1);
+               $col = substr($i, 1);
+               $pp = "UPDATE 품목 SET '품목취소코드'= 'A' WHERE 예매번호='$yeme' and 좌석번호_행='$row'and  좌석번호_열=$col";
+               $pumInsert = $DB->query($pp);
+             } ?>
+      </div>
+    </section>
+
+    <footer>
+        <div>
+            <div id="foot_img">
+                <img src="../img/logo.png" width="120px">
+            </div>
+            <div id="foot_p">
+                <p>경기도 안산시 상록구 한양대학로 55</p>
+                <p>개발자 | 정은지,김재영,박예림,이재원,윤성주 |</p>
+                <p>&copy;10PLEX.All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
