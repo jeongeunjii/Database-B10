@@ -1,7 +1,4 @@
-main div {
-    border: rgb(241, 241, 241) solid 1px;
-    height: 100px;
-}
+
 
 #add {
     display: none;
@@ -15,6 +12,7 @@ main div {
    
     border: #000 solid 1px;
     background: #82713F;
+    opacity: 0.8;
 }
 
 #add input {
@@ -40,6 +38,7 @@ main div {
    
     border: #000 solid 1px;
     background: #82713F;
+    opacity: 0.8;
 }
 
 #edit input {
@@ -64,6 +63,7 @@ main div {
     margin-top: -250px;
     border: #000 solid 1px;
     background: #82713F;
+    opacity: 0.8;
 }
 
 #delete input {

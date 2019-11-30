@@ -183,7 +183,7 @@ iframe {
   background: #fff;
   border-radius: 10px;
   overflow: hidden;
-  padding: 77px 55px 33px 55px;
+  padding: 50px 55px 50px 55px;
 
   box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
@@ -210,6 +210,14 @@ iframe {
 }
 .login100-form-title i {
   font-size: 60px;
+}
+
+img {
+  -webkit-filter: opacity(0.5) drop-shadow(0 0 0 rgb(248, 128, 0));
+  filter: opacity(0.5) drop-shadow(0 0 0 rgb(248, 128, 0));
+  width: 200px;
+  position: relative;
+  left: 35px;
 }
 
 /*------------------------------------------------------------------

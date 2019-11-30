@@ -1,6 +1,6 @@
 <?php
     try {
-        $db = new PDO("mysql:dbname=movie; host=13.125.252.255; port=3306", "root", "1234");
+        $db = new PDO("mysql:dbname=movie; host=52.78.148.203; port=3306", "root", "1234");
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $db->query("set session character_set_connection=utf8;");
         $db->query("set session character_set_results=utf8;");

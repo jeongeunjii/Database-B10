@@ -7,12 +7,26 @@
     <link rel="stylesheet" type="text/css" href="../css/main.css">
     <link rel="stylesheet" type="text/css" href="../css/menu.css">
     <link rel="stylesheet" type="text/css" href="../css/button.css">
+    <link rel="stylesheet" type="text/css" href="../css/popup.css">
 	<title>10Jo</title>
 </head>
 
+<script language="javascript">
+    function showClock(){
+        var currentDate = new Date();
+        var divClock = document.getElementById("divClock");
+             
+        var msg = currentDate.getHours()+"시"
+        msg += currentDate.getMinutes()+"분";
+             
+        divClock.innerText = msg;
+        setTimeout(showClock,1000);
+    }
+</script>
+
 <body>
     <header>
-		<a href="list.html"><h1>10Jo</h1></a>
+		<a href="list.html"><img src="../image/logo.png" alt="logo" /></a>
         <div id="login"><a href="login/login.html"><p><!-- <?php if (로그인정보 없으면) { ?> -->
             LOGIN <!-- <?php } else { ?> LOGOUT --></p></a></div>
     </header>
@@ -71,7 +85,7 @@
     <main>
         <section>
             <h2>근태관리</h2>
-            <container>
+            <div id="container">
             <form method="post" action="">
                 <div id="btn_search"><button class="button">검색</button></div>
                 <!-- 테이블 입력칸에 input하고 검색버튼 누르면 그에 맞는 테이블만 출력 -->
@@ -98,12 +112,12 @@
                         <td>"</td>
                         <td>
                         <!-- <?php if(출근데이터 없으면) { -->
-                        <button class="table_button" onclick = "window.open('popup_attendance_arrive.html', 'popup' , 'width=300,height=300,location=no,status=no');" />
+                        <button class="table_button" onclick = "location.href='#arrive'" />
                             출근</button></td>
                             <!-- <?php }
                                 else { echo $time } ?>-->
                         <td><!-- <?php if(퇴근데이터 없으면) { -->
-                        <button class="table_button" onclick = "window.open('popup_attendance_arrive.html', 'popup' , 'width=300,height=300,location=no,status=no');" />
+                        <button class="table_button" onclick = "location.href='#leave'" />
                                 퇴근</button></td>
                                 <!-- <?php }
                                     else { echo $time } ?>-->
@@ -112,9 +126,31 @@
                 </tbody>
             </table>
             </form>
-            </container>
+            </div>
         </section>
     </main>
+
+    <article onload="showClock()">
+        <div id="arrive">
+        <form method="POST" action="">
+            <div id="divClock" class="clock"></div>
+            출근 등록하시겠습니까?
+            <br>
+            <button>확인</button>
+            <button>취소</button>
+        </form>
+        </div>
+
+        <div id="leave">
+        <form method="POST" action="">
+            <div id="divClock" class="clock"></div>
+            퇴근 등록하시겠습니까?
+            <br>
+            <button>확인</button>
+            <button>취소</button>
+        </form>
+        </div>
+    </article>
 </body>
 </html>
 	

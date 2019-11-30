@@ -1,0 +1,61 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    background-color: #f2f2f22f;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+header {
+    min-width: 1111px;
+    position: fixed;
+    color: white;
+    background-color: rgb(250, 172, 88);
+    width: 100%;
+    height: 50px;
+    top: 0;
+    left: 0;
+}
+
+header h1 {
+    position: fixed;
+    left: 60px;
+    line-height: 50px;
+    margin: 0px;
+    width: 100px;
+}
+
+header div {
+    position: fixed;
+    right: 10px;
+    line-height: 22px;
+    font-weight: 500;
+    display: flex;
+}
+
+header p {
+    margin: 14px 0px;
+}
+
+header .button {
+    border: 1.2px solid #fff;
+    border-radius: 5px;
+    background-color:#fff;
+    color: rgb(250, 172, 88);
+    transition: all 0.25s ease-in-out;
+    width: 120px;
+    height: 35px;
+    font-size: 20px;
+    margin: 7px 10px;
+}
+
+header .button:hover {
+    color:#fff;
+    background: none;
+}
+
+
+
+header a:link { color:white; text-decoration: none;}
+header a:visited { color: white; text-decoration: none;}
