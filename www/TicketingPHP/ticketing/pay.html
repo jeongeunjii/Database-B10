@@ -1,13 +1,29 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8" />
-		<script src="script/pay.js"></script>
-		<title>결제</title>
-	</head>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="../common/css/index.css">
+  <link rel="stylesheet" type="text/css" href="css/time.css">
+  <script src="script/pay.js"></script>
+  <title>영화 | 예매하기</title>
+</head>
 
-	<body>
-		<div class="wrap">
+<body>
+  <header>
+    <a href="../index.html"><img src="../img/logo.png" alt="logo"></a>
+  </header>
+
+  <nav>
+    <ul>
+        <li id="home"><a href="../index.html">HOME</a></li>
+        <li id="movie"><a href="../movie/movie.html">영화</a></li>
+        <li class = "selected" id="ticketing"><a href="ticketing.html">예매</a></li>
+        <li id="login"><a href="../login/login.html">로그인</a></li>
+    </ul>
+  </nav>
+
+  <section>
+    <div class="wrap">
 			<?php
 			function isEmpty($str) {
 				if ($str == null || $str == "") { return true; }
@@ -15,15 +31,14 @@
 			}
 
 			session_start();
+			$id = $_SESSION['customer_id'];
 
 			$time = $_POST['time'];
 			$adult = $_POST['adult'];
 			$teen = $_POST['teen'];
 			$seats = $_POST['seats'];
 
-			$id = $_SESSION['customer_id'];
-
-			$dbHost = "13.125.252.255";
+			$dbHost = "52.78.148.203";
 			$dbName = "movie";
 			$dbUser = "root";
 			$dbPass = "1234";
@@ -31,6 +46,7 @@
 			try {
 				$DB = new PDO("mysql:host={$dbHost};dbname={$dbName}; port=3306", $dbUser, $dbPass);
 				$DB->exec("set names utf8");
+
 				$timeQuery = $DB->query("select * from 영화상영정보 where 상영정보번호= '$time'");
 				$timeRes = $timeQuery -> fetch();
 				$office = $timeRes["지점번호"];
@@ -75,7 +91,7 @@
 			</div>
 
 
-			<form action="pay.php" method="post">
+			<form action="pay.html" method="post">
 				<input type="hidden" name="time" value= "<?= $time ?>"/>
 				<input type="hidden" name="adult" value="<?= $adult ?>"/>
 				<input type="hidden" name="teen" value="<?= $teen ?>"/>
@@ -109,12 +125,28 @@
 				foreach ($seats as $i) {
 					$row = substr($i, 0, 1);
 					$col = substr($i, 1);
-					$pumtstr = "insert into 품목 (예매번호,좌석번호_행,좌석번호_열,품목취소코드) values($yeme,'$row',$col,'B')";
-					$pumInsert = $DB->query($pumstr);
+          $pp = "insert into 품목 (예매번호,좌석번호_행,좌석번호_열,품목취소코드) values($yeme,'$row',$col,'B')";
+					$pumInsert = $DB->query($pp);
 				}
-				echo "<script>location.replace('complete.html')</script>";
+				echo "<script>location.replace('complete.html?num=" .$yeme. "')</script>";
 			}
 			?>
     </div>
-  </body>
+  </section>
+
+  <footer>
+    <div>
+      <div id="foot_img">
+          <img src="../img/logo.png" width="120px">
+      </div>
+          <div id="foot_p">
+              <p>경기도 안산시 상록구 한양대학로 55</p>
+              <p>개발자 | 정은지,김재영,박예림,이재원,윤성주 |</p>
+              <p>&copy;10PLEX.All Rights Reserved</p>
+          </div>
+    </div>
+  </footer>
+
+</body>
+
 </html>

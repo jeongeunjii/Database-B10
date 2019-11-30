@@ -17,7 +17,7 @@
 			if (isset($_GET["movie"])) { $movie = $_GET["movie"]; }
 			else { echo "<script>alert(\"오류 : 잘못된 접근입니다.\");</script>"; }
 
-			$dbHost = "13.125.252.255";
+			$dbHost = "52.78.148.203";
 			$dbName = "movie";
 			$dbUser = "root";
 			$dbPass = "1234";

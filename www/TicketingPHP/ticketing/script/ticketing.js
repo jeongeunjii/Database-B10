@@ -17,7 +17,7 @@ function reload(pcity,poffice,pdate,pmovie) {
   if (isEmpty(pdate)) { pdate = ""; }
   if (isEmpty(pmovie)) { pmovie = ""; }
 
-  location.href="selecMovie.php?city="+pcity+"&office="+poffice+"&date="+pdate+"&movie="+pmovie;
+  location.href="ticketing.html?city="+pcity+"&office="+poffice+"&date="+pdate+"&movie="+pmovie;
 }
 
 var today = new Date();
@@ -46,7 +46,7 @@ function next(poffice,pdate,pmovie){
     while (String(poffice).length < 4) {
         poffice = "0" + poffice;
     }
-    location.href="time.php?office="+poffice+"&date="+pdate+"&movie="+pmovie;
+    location.href="time.html?office="+poffice+"&date="+pdate+"&movie="+pmovie;
   }
 }
 

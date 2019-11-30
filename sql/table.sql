@@ -70,7 +70,7 @@ CREATE TABLE 영화상영정보
 CREATE TABLE 예매
 (
 예매번호 integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
-회원아이디 varchar(20) NOT NULL,
+회원아이디 varchar(20),
 상영정보번호 integer NOT NULL,
 개수_성인 integer,
 개수_청소년 integer,
