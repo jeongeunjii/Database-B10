@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../common/css/index.css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+    <title>myPage</title>
+</head>
+<body>
+    <header>
+        <a href="../index.html"><img src="../img/logo.png" alt="logo"></a>
+    </header>
+
+    <nav>
+      <ul>
+        <li id="home"><a href="../index.html">HOME</a></li>
+        <li id="movie"><a href="../movie/movie.html">영화</a></li>
+        <li id="ticketing"><a href="../ticketing/ticketing.html">예매</a></li>
+        <li id="login"><a href="../login/login.html">로그인</a></li>
+      </ul>
+    </nav>
+
+    <section>
+      <div class="wrap">
+          <h1>My Page</h1> <hr/>
+          <?php
+            session_start();
+            $id = $_SESSION['customer_id'];
+
+            $dbHost = "52.78.148.203";
+            $dbName = "movie";
+            $dbUser = "root";
+            $dbPass = "1234";
+
+            $db = new PDO("mysql:host={$dbHost};dbname={$dbName}; port=3306", $dbUser, $dbPass);
+            $db->exec("set names utf8");
+            $test_ps = $db->query("select * from 회원 where 아이디 ='$id'");
+            $row = $test_ps -> fetch();
+           ?>
+           <div class="hello">
+             <p><?= $row["이름_성"]?><?= $row["이름_이름"]?>님의 마이페이지</p>
+           </div>
+           <div class="TicketingList">
+             <h2>예매 내역</h2>
+             <table>
+               <th>예매번호</th>
+               <th>지점</th>
+               <th>영화</th>
+               <th>상영일</th>
+               <th>가격</th>
+               <th>예매일</th>
+               <th>예매상태</th>
+             <?php
+             $yemeQ = $db->query("select * from 예매 where 회원아이디 ='$id'");
+             foreach ($yemeQ as $i) {
+              $yeme = $i["예매번호"];
+              $time = $i["상영정보번호"];
+              $price = $i["총가격"];
+              $yemeD = $i["예매일자"];
+              $yemeC = $i["예매상태"];
+
+              $codeQ = $db->query("select 코드값 from 서브코드 where 메인코드 ='B' and 서브코드 = '$yemeC'");
+              $code = $codeQ -> fetch();
+              $yemeV = $code["코드값"];
+
+              $timeQuery = $db->query("select * from 영화상영정보 where 상영정보번호= $time");
+              $timeRes = $timeQuery -> fetch();
+
+              $office = $timeRes["지점번호"];
+              // $sang = $timeRes["상영관번호"];
+              $movie = $timeRes["영화번호"];
+              $movie_date = $timeRes["일자"];
+              $movie_time = $timeRes["영화시작시간"];
+
+              // (지점명, 상영관명, 영화제목)
+
+              $officeQuery = $db->query("select 지점명 from 지점 where 지점번호 ='$office'");
+              // $sangQuery = $db->query("select 상영관명 from 상영관 where 상영관번호 ='$sang' and 지점번호 ='$office'");
+              $movieQuery = $db->query("select 제목 from 영화 where 영화번호='$movie'");
+
+              $officeRes = $officeQuery -> fetch();
+              // $sangRes = $sangQuery -> fetch();
+              $movieRes = $movieQuery -> fetch(); ?>
+              <tr class = "row">
+                <td><?= $yeme ?></td>
+                <td><?= $officeRes["지점명"] ?></td>
+                <td><?= $movieRes["제목"] ?></td>
+                <td><?= $movie_date ?> <?= $movie_time ?></td>
+                <td><?= $price ?></td>
+                <td><?= $yemeD ?></td>
+                <td><?= $yemeV ?></td>
+              </tr>
+             <?php } ?>
+             </table>
+           </div>
+      </div>
+    </section>
+
+    <footer>
+        <div>
+            <div id="foot_img">
+                <img src="../img/logo.png" width="120px">
+            </div>
+            <div id="foot_p">
+                <p>경기도 안산시 상록구 한양대학로 55</p>
+                <p>개발자 | 정은지,김재영,박예림,이재원,윤성주 |</p>
+                <p>&copy;10PLEX.All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
