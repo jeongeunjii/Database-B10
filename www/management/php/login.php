@@ -27,7 +27,7 @@
             $_SESSION['ID'] = $id;
             $_SESSION['PW'] = $pw;
             $_SESSION['DEP'] = $result[0]['부서'];
-            header("Location: ../htmlp/list.php");
+            header("Location: ../htmlp/attendance.php");
         }
         // echo "<pre>";
         // var_dump($result[0]);
