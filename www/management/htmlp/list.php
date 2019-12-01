@@ -11,8 +11,6 @@
     <link rel="stylesheet" type="text/css" href="../css/s2.css">
     <link rel="stylesheet" type="text/css" href="../css/menu.css">
     <link rel="stylesheet" type="text/css" href="../css/button.css">
-    <link rel="stylesheet" type="text/css" href="../css/list.css">
-    <script src="../script/list.js" type="text/javascript"></script>
     <title>10Jo</title>
 </head>
 
@@ -48,7 +46,7 @@
                     <a href="attendance.php">
                         근태관리
                     </a>
-                <!--(직원용)<li><a href="attendance_emp.html"onclick="window.open(this.href, 'popup', 'width=300,height=300,location=no,status=no');">플로어업무</a></li>-->
+                <li><a href="../html/attendance_emp.html" onclick="window.open(this.href, 'popup', 'width=300,height=300,location=no,status=no');">플로어업무</a></li>
                 </li>
                 <li><img src="../image/floor.png" alt="floor_icon" />
                     <a href="floor.php">
@@ -92,12 +90,18 @@
             <div id="container">
             
             <!-- 테이블 입력칸에 input하고 검색버튼 누르면 그에 맞는 테이블만 출력 -->
-            <div class="btn_etc"><button class="button" onclick="addlist();">
+            <!-- <div class="btn_etc"><button class="button" onclick="addlist();">
                 추가</button></div>
             <div class="btn_etc"><button class="button" onclick="deletelist();">
                 삭제</button></div>
             <div class="btn_etc"><button class="button" onclick="editlist();">
+                수정</button></div> -->
+            <div class="btn_etc"><button class="button" onclick = "window.open('../html/popup_emp_edit.html', 'popup' , 'width=300,height=300,location=no,status=no');">
                 수정</button></div>
+            <div class="btn_etc"><button class="button" onclick = "window.open('../html/popup_emp_del.html', 'popup' , 'width=300,height=300,location=no,status=no');">
+                삭제</button></div>
+            <div class="btn_etc"><button class="button" onclick = "window.open('../html/popup_emp_add.html', 'popup' , 'width=300,height=300,location=no,status=no');">
+                추가</button></div>
 
 
             <table>
@@ -148,24 +152,11 @@
  
 
     <div id="add">
-        <form method="post" action="../php/addlist.php">
-            <span>이름 : </span><input type="text" name="name" placeholder="이름"/><br>
-            <span>부서 : </span><input type="text" name="department" placeholder="부서"/><br>
-            <span>생년월일 : </span><input type="date" name="birth" placeholder="생일"/><br>
-            <span>전화번호 : </span><input type="phone" name="phone" placeholder="전화번호"/><br>
-            <span></span><input id="addbutton" type="submit" value="정보추가"/>
-        </form>
+        
     </div>
 
     <div id="edit">
-        <form method="post" action="../php/editlist.php">
-            <span>사번 : </span><input type="text" name="id" placeholder="사번"/><br>
-            <span>이름 : </span><input type="text" name="name" placeholder="이름"/><br>
-            <span>부서 : </span><input type="text" name="department" placeholder="부서"/><br>
-            <span>생년월일 : </span><input type="date" name="birth" placeholder="생일"/><br>
-            <span>전화번호 : </span><input type="phone" name="phone" placeholder="전화번호"/><br>
-            <span></span><input id="editbutton" type="submit" value="정보수정"/>
-        </form>
+        
     </div>
 
     <div id="delete">

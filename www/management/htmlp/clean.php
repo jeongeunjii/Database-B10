@@ -155,13 +155,13 @@
                                     <td>
                                     <form method="post" action="../php/needclean.php">
                                     <input type="text" name="facility" value="<?=$row["시설물명"]?>" style="display: none;"/>
-                                    <input type="submit" value="청소필요"/>
+                                    <input class="table_button" type="submit" value="청소필요"/>
                                     </form></td>
                                 <?php
                                 } else if ( $row["청결상태"] == "접수완료") {
                                 ?>
                                     <td>
-                                    <button onclick="assign('<?=$row['시설물번호']?>')">배정</button>
+                                    <button class="table_button" onclick="assign('<?=$row['시설물번호']?>')">배정</button>
                                     </td>
                                 <?php
                                 } else {

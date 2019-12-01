@@ -122,7 +122,7 @@
                                     <td><?= $row["시설물명"] ?></td>
                                     <td><form id='cptbutton' method="post" action="../php/donerepair.php">
                                         <input type="text" name="id" value="<?=$_SESSION['ID']?>" style="display: none;"/>
-                                        <input type="submit" value="완료"/>
+                                        <input class="table_button" type="submit" value="완료"/>
                                     </form></td>
                             <?php
                                 }

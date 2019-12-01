@@ -89,10 +89,10 @@
          <section>
             <h2>근태관리</h2>
             <div id="container">
-            <form method="post" action="">
-                <div id="btn_search"><button class="button">검색</button></div>
+            <!-- <form method="post" action=""> -->
+                <!-- <div id="btn_search"><button class="button">검색</button></div> -->
                 <!-- 테이블 입력칸에 input하고 검색버튼 누르면 그에 맞는 테이블만 출력 -->
-            </form>
+            <!-- </form> -->
             <table>
                 <thead>
                     <tr>
@@ -181,7 +181,7 @@
                                             if ($row['출근'] === NULL){
                                             ?>
                                                 <form method="post" action="../php/gowork.php">
-                                                    <input type="submit" value="출근" />
+                                                    <input class="table_button" type="submit" value="출근" />
                                                 </form>
                                             <?php
                                             } else {
@@ -196,7 +196,7 @@
                                             if ($row['퇴근'] === NULL){
                                             ?>
                                                 <form method="post" action="../php/outwork.php">
-                                                    <input type="submit" value="퇴근" />
+                                                    <input class="table_button" type="submit" value="퇴근" />
                                                 </form>
                                             <?php
                                             }else{
@@ -225,9 +225,6 @@
             </table>
             </div>
         </section>
-    </main>
-    <main>
-    
     </main>
 
 </body>
