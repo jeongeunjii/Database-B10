@@ -25,23 +25,10 @@
         <hr>
         <article>
           <?php
-          function conlog($data){
-            echo "<script>console.log('" . $data . "');</script>";
-          }
+            include "../common/db.php";
 
-            session_start();
             $id = $_SESSION['customer_id'];
-
-            $dbHost = "52.78.148.203";
-            $dbName = "movie";
-            $dbUser = "root";
-            $dbPass = "1234";
-
-            //$today = date("Y-m-d");
             $today = "2019-11-18";
-
-            $db = new PDO("mysql:host={$dbHost};dbname={$dbName}; port=3306", $dbUser, $dbPass);
-            $db->exec("set names utf8");
 
             $movienumQuery = $db->query("select distinct 영화번호 from 영화상영정보 where 일자>='$today'");
             foreach ($movienumQuery as $k) {

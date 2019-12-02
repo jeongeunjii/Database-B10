@@ -35,30 +35,15 @@
         <div class="wrap">
 
           <?php
+          include "../common/db.php";
 
-          session_start();
           $id = $_SESSION['customer_id'];
 
           // 상영정보번호
           if (isset($_GET["time"])) { $time = $_GET["time"]; }
-          else { echo "<script>alert(\"오류 : 상영정보를 받아오지 못했습니다.\");</script>"; }
+          else { arl("오류 : 상영정보를 받아오지 못했습니다."); replace("../index.html"); }
 
-          $dbHost = "52.78.148.203";
-          $dbName = "movie";
-          $dbUser = "root";
-          $dbPass = "1234";
-
-          try {
-            $DB = new PDO("mysql:host={$dbHost};dbname={$dbName}; port=3306", $dbUser, $dbPass);
-            $DB->exec("set names utf8");
-            $timeQuery = $DB->query("select 지점번호, 상영관번호, 성인단가, 청소년단가 from 영화상영정보 where 상영정보번호= '$time'");
-          } catch (PDOException $ex) {
-          ?>
-          <p>Sorry, a database error occurred. Please try again later.</p>
-          <p>(Error details: <?= $ex->getMessage() ?>)</p>
-          <?php
-          }
-
+          $timeQuery = $db->query("select 지점번호, 상영관번호, 성인단가, 청소년단가 from 영화상영정보 where 상영정보번호= '$time'");
           $res = $timeQuery -> fetch();
           $office = $res["지점번호"];
           $sang = $res["상영관번호"];
@@ -71,14 +56,14 @@
             var teenPrice = <?php echo $teenPrice ?>;
           </script>
 
-          <?php $seatRowQuery = $DB->query("select distinct 좌석번호_행 from 좌석 where 상영관번호= '$sang'");
+          <?php $seatRowQuery = $db->query("select distinct 좌석번호_행 from 좌석 where 상영관번호= '$sang'");
           foreach ($seatRowQuery as $i) {
             $row = $i['좌석번호_행']; ?>
             <div class="row">
               <p><?= $row ?></p>
               <div class= "rowSeat" id="<?= $row ?>">
               <?php
-              $seatColQuery = $DB->query("select 좌석번호_열 from 좌석 where 상영관번호= '$sang' and 좌석번호_행 = '$row'");
+              $seatColQuery = $db->query("select 좌석번호_열 from 좌석 where 상영관번호= '$sang' and 좌석번호_행 = '$row'");
               foreach ($seatColQuery as $j) { ?>
                 <input type="button" class= "seat" id="<?= $row ?><?= $j['좌석번호_열'] ?>" value="<?= $j['좌석번호_열'] ?>" onClick="javascript:selec('<?= $row ?><?= $j['좌석번호_열'] ?>')" />
                 <?php
@@ -88,7 +73,7 @@
             <?php
           }
           $str = "select 좌석번호_열,좌석번호_행 from 예매,품목 where 예매.예매번호=품목.예매번호 and 예매.상영정보번호 =" .$time. " and 품목.품목취소코드 = 'B'";
-          $seatq = $DB->query($str);
+          $seatq = $db->query($str);
           foreach ($seatq as $k) { ?>
           <script type="text/javascript">
             $(function(){

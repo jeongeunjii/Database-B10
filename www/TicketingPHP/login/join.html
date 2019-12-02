@@ -24,7 +24,7 @@
     <section>
       <div class="wrap">
           <h1>회원가입</h1> <hr/>
-          <form action="join.html" method="post">
+          <form action="join.php" method="post">
             ID: <input type="text" name="id" /><br/>
             PASSWORD: <input type="password" name="ps" /><br/>
             이름(last): <input type="text" name="laName" /><br/>
@@ -38,36 +38,6 @@
             <hr>
             <input type="submit" value="등록" class="submit">
           </form>
-          <?php
-          function isEmpty($str) {
-            if ($str == null || $str == "") { return true; }
-            else { return false; }
-          }
-
-            $dbHost = "52.78.148.203";
-            $dbName = "movie";
-            $dbUser = "root";
-            $dbPass = "1234";
-
-            $id = $_POST["id"];
-            $ps = $_POST["ps"];
-            $laName = $_POST["laName"];
-            $fiName = $_POST["fiName"];
-            $birth = (string)$_POST["year"] . "-" . (string)$_POST["mon"] . "-" . (string)$_POST["day"];
-            $hp = $_POST["hp"];
-
-            $db = new PDO("mysql:host={$dbHost};dbname={$dbName}; port=3306", $dbUser, $dbPass);
-            $db->exec("set names utf8");
-            $test_ps = $db->query("select 아이디 from 회원 where 아이디 ='$id'");
-            $row = $test_ps -> fetch();
-            if ($test_ps->rowCount() > 0) {
-              echo "<script>alert(\"오류 : 중복된 아이디 입니다.\");</script>";
-            }
-            else if (!isEmpty($id) && !isEmpty($ps) && !isEmpty($laName) && !isEmpty($fiName) && !isEmpty($birth) && !isEmpty(hp)) {
-              $join = $db->query("insert into 회원 (아이디,비밀번호,이름_성,이름_이름,생일,전화번호) values('$id','$ps','$laName','$fiName','$birth','$hp')");
-              echo "<script>location.replace('../index.html')</script>";
-            }
-           ?>
       </div>
     </section>
 

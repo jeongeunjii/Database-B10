@@ -23,14 +23,14 @@
     <section>
       <div class="wrap">
           <p>취소되었습니다.</p>
-          <button type="button" onClick="javascript:toMain()">메인페이지로</button>
+          <button type="button" onClick="javascript:toMain()">마이페이지로</button>
           <script type="text/javascript">
             function toMain() {
-              location.replace('../index.html');
+              location.replace('MyPage.html');
             }
           </script>
           <?php
-            session_start();
+            include "../common/db.php";
             $id = $_SESSION['customer_id'];
             $yeme = $_POST["yeme"];
             $number = $_POST["number"];
@@ -42,14 +42,6 @@
             else {
               $code = 'B';
             }
-
-            $dbHost = "52.78.148.203";
-            $dbName = "movie";
-            $dbUser = "root";
-            $dbPass = "1234";
-
-            $db = new PDO("mysql:host={$dbHost};dbname={$dbName}; port=3306", $dbUser, $dbPass);
-            $db->exec("set names utf8");
 
             $yemeQ = $db->query("UPDATE 예매 SET 예매상태 = '$code' WHERE 예매번호='$yeme'");
 

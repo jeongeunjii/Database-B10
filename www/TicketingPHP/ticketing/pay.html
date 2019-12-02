@@ -3,7 +3,6 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="../common/css/index.css">
-  <link rel="stylesheet" type="text/css" href="css/time.css">
   <script src="script/pay.js"></script>
   <title>영화 | 예매하기</title>
 </head>
@@ -25,12 +24,8 @@
   <section>
     <div class="wrap">
 			<?php
-			function isEmpty($str) {
-				if ($str == null || $str == "") { return true; }
-				else { return false; }
-			}
+      include "../common/db.php";
 
-			session_start();
 			$id = $_SESSION['customer_id'];
 
 			$time = $_POST['time'];
@@ -38,16 +33,8 @@
 			$teen = $_POST['teen'];
 			$seats = $_POST['seats'];
 
-			$dbHost = "52.78.148.203";
-			$dbName = "movie";
-			$dbUser = "root";
-			$dbPass = "1234";
-
 			try {
-				$DB = new PDO("mysql:host={$dbHost};dbname={$dbName}; port=3306", $dbUser, $dbPass);
-				$DB->exec("set names utf8");
-
-				$timeQuery = $DB->query("select * from 영화상영정보 where 상영정보번호= '$time'");
+				$timeQuery = $db->query("select * from 영화상영정보 where 상영정보번호= '$time'");
 				$timeRes = $timeQuery -> fetch();
 				$office = $timeRes["지점번호"];
 				$sang = $timeRes["상영관번호"];
@@ -56,9 +43,9 @@
 				$teenPrice =$timeRes["청소년단가"]*$teen;
 				$price = $adultPrice + $teenPrice;
 
-				$officeQuery = $DB->query("select 지점명 from 지점 where 지점번호 ='$office'");
-				$sangQuery = $DB->query("select 상영관명 from 상영관 where 상영관번호 ='$sang' and 지점번호 ='$office'");
-				$movieQuery = $DB->query("select 제목 from 영화 where 영화번호='$movie'");
+				$officeQuery = $db->query("select 지점명 from 지점 where 지점번호 ='$office'");
+				$sangQuery = $db->query("select 상영관명 from 상영관 where 상영관번호 ='$sang' and 지점번호 ='$office'");
+				$movieQuery = $db->query("select 제목 from 영화 where 영화번호='$movie'");
 
 				$officeRes = $officeQuery -> fetch();
 				$sangRes = $sangQuery -> fetch();
@@ -91,10 +78,11 @@
 			</div>
 
 
-			<form action="pay.html" method="post">
+			<form action="pay.php" method="post">
 				<input type="hidden" name="time" value= "<?= $time ?>"/>
 				<input type="hidden" name="adult" value="<?= $adult ?>"/>
 				<input type="hidden" name="teen" value="<?= $teen ?>"/>
+        <input type="hidden" name="price" value="<?= $price ?>"/>
 				<div id="seatsDiv">
 					<!-- js will edit this -->
 				</div>
@@ -108,29 +96,6 @@
 				</div>
 				<button type="submit">결제</button>
 			</form>
-
-			<?php
-			$met = $_POST["met"];
-			$dis = $_POST["discount"];
-			$today = date("Y-m-d h:i:s");
-
-			if (!isEmpty($met) && !isEmpty($dis)) {
-				$yemestr = "insert into 예매 (예매번호, 회원아이디, 상영정보번호, 개수_성인, 개수_청소년, 결제방법, 할인적용, 총가격, 예매일자, 예매상태) values(null,'$id',$time,$adult,$teen,'$met','$dis',$price,'$today','A')";
-				$yemeInsert = $DB->query($yemestr);
-
-				$yemeQ = $DB->query("SELECT 예매번호 FROM 예매 ORDER BY 예매번호 DESC LIMIT 1");
-				$yemeRes = $yemeQ -> fetch();
-				$yeme = $yemeRes["예매번호"];
-
-				foreach ($seats as $i) {
-					$row = substr($i, 0, 1);
-					$col = substr($i, 1);
-          $pp = "insert into 품목 (예매번호,좌석번호_행,좌석번호_열,품목취소코드) values($yeme,'$row',$col,'B')";
-					$pumInsert = $DB->query($pp);
-				}
-				echo "<script>location.replace('complete.html?num=" .$yeme. "')</script>";
-			}
-			?>
     </div>
   </section>
 

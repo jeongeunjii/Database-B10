@@ -26,7 +26,7 @@
   <section>
     <div class="wrap">
       <?php
-      $today = date("Y-m-d");
+      include "../common/db.php";
 
       // 여기에 고른 지역번호, 지점번호, 날짜, 영화번호 저장
       if (isset($_GET["city"])) { $city = $_GET["city"]; }
@@ -36,24 +36,7 @@
       if (isset($_GET["date"])) { $date = $_GET["date"]; }
       else { $date = ""; }
       if (isset($_GET["movie"])) { $movie = $_GET["movie"]; }
-      else { $movie = ""; }
-
-      function isEmpty($str) {
-        if ($str == null || $str == "") { return true; }
-        else { return false; }
-      }
-
-      function conlog($data){
-        echo "<script>console.log('" . $data . "');</script>";
-      }
-
-      $dbHost = "52.78.148.203";
-      $dbName = "movie";
-      $dbUser = "root";
-      $dbPass = "1234";
-
-      $DB = new PDO("mysql:host={$dbHost};dbname={$dbName}; port=3306", $dbUser, $dbPass);
-      $DB->exec("set names utf8"); ?>
+      else { $movie = ""; } ?>
 
       <script type="text/javascript">
         var Dcity = '<?php echo $city ?>';
@@ -66,7 +49,7 @@
         <h3>지점</h3>
         <div class="city">
           <?php
-          $cityQuery = $DB->query("select distinct 지역명, 지역번호 from 지역");
+          $cityQuery = $db->query("select distinct 지역명, 지역번호 from 지역");
           foreach ($cityQuery as $i) {
           $tmpCity = $i["지역번호"] ?>
             <input type='button' value=<?= $i["지역명"]?> onClick= "javascript:reload('<?= $tmpCity ?>','<?= '' ?>','<?= $date ?>','<?= $movie ?>');"/>
@@ -78,7 +61,7 @@
         <div class="office">
           <?php
           if (!isEmpty($city)) {
-            $officeQuery = $DB->query("select 지점명, 지점번호 from 지점 where 지역번호 ='$city'");
+            $officeQuery = $db->query("select 지점명, 지점번호 from 지점 where 지역번호 ='$city'");
             foreach ($officeQuery as $j) {
               $tmpoffice = $j["지점번호"] ?>
               <input type='button' value=<?= $j["지점명"] ?> onClick= "javascript:reload('<?= $city ?>','<?= $tmpoffice ?>','<?= $date ?>','<?= $movie ?>');"/>
@@ -101,22 +84,22 @@
         <div class="movie">
           <?php
           if (isEmpty($office) && isEmpty($date)) {
-            $movienumQuery = $DB->query("select distinct 영화번호 from 영화상영정보 where 일자>='$today'");
+            $movienumQuery = $db->query("select distinct 영화번호 from 영화상영정보 where 일자>='$today'");
           }
           elseif (!isEmpty($office) && isEmpty($date)) {
-            $movienumQuery = $DB->query("select distinct 영화번호 from 영화상영정보 where 일자>='$today' and 지점번호 ='$office'");
+            $movienumQuery = $db->query("select distinct 영화번호 from 영화상영정보 where 일자>='$today' and 지점번호 ='$office'");
           }
           elseif (isEmpty($office) && !isEmpty($date)) {
-            $movienumQuery = $DB->query("select distinct 영화번호 from 영화상영정보 where 일자='$date'");
+            $movienumQuery = $db->query("select distinct 영화번호 from 영화상영정보 where 일자='$date'");
           }
           else {
-            $movienumQuery = $DB->query("select distinct 영화번호 from 영화상영정보 where 일자='$date' and 지점번호 ='$office'");
+            $movienumQuery = $db->query("select distinct 영화번호 from 영화상영정보 where 일자='$date' and 지점번호 ='$office'");
           }
 
           if ($movienumQuery) {
             foreach ($movienumQuery as $k) {
               $tmpmovie = $k['영화번호'];
-              $movieq = $DB->query("select 제목 from 영화 where 영화번호='$tmpmovie'");
+              $movieq = $db->query("select 제목 from 영화 where 영화번호='$tmpmovie'");
               if ($movieq->rowCount() <= 0) {
                 conlog("영화번호 : " .$tmpmovie. "번의 영화정보가 존재하지 않습니다.");
                 continue;

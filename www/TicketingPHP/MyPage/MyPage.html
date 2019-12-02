@@ -26,16 +26,9 @@
       <div class="wrap">
           <h1>My Page</h1> <hr/>
           <?php
-            session_start();
+            include "../common/db.php";
             $id = $_SESSION['customer_id'];
 
-            $dbHost = "52.78.148.203";
-            $dbName = "movie";
-            $dbUser = "root";
-            $dbPass = "1234";
-
-            $db = new PDO("mysql:host={$dbHost};dbname={$dbName}; port=3306", $dbUser, $dbPass);
-            $db->exec("set names utf8");
             $test_ps = $db->query("select * from 회원 where 아이디 ='$id'");
             $row = $test_ps -> fetch();
            ?>
