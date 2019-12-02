@@ -11,6 +11,8 @@
     <link rel="stylesheet" type="text/css" href="../css/s2.css">
     <link rel="stylesheet" type="text/css" href="../css/menu.css">
     <link rel="stylesheet" type="text/css" href="../css/button.css">
+    <link rel="stylesheet" type="text/css" href="../css/list.css">
+    <script type="text/javascript" src="../script/list.js"></script>
     <title>10Jo</title>
 </head>
 
@@ -20,7 +22,7 @@
         
         <div id="login">
             <?php
-                if (isset($_SESSION['ID'])){
+                if ( ($_SESSION['ID'])){
                     echo "<p>( ".$_SESSION['ID']." / ".$_SESSION['PW']." / ".$_SESSION['DEP']." )</p>";
             ?>
                     <a href="../php/logout.php"><button class="button">Logout</button></a>
@@ -121,18 +123,18 @@
             <div id="container">
             
             <!-- 테이블 입력칸에 input하고 검색버튼 누르면 그에 맞는 테이블만 출력 -->
-            <!-- <div class="btn_etc"><button class="button" onclick="addlist();">
+            <div class="btn_etc"><button class="button" onclick="addlist();">
                 추가</button></div>
             <div class="btn_etc"><button class="button" onclick="deletelist();">
                 삭제</button></div>
             <div class="btn_etc"><button class="button" onclick="editlist();">
-                수정</button></div> -->
-            <div class="btn_etc"><button class="button" onclick = "window.open('../html/popup_emp_edit.html', 'popup' , 'width=300,height=300,location=no,status=no');">
+                수정</button></div>
+            <!-- <div class="btn_etc"><button class="button" onclick = "window.open('../html/popup_emp_edit.html', 'popup' , 'width=300,height=300,location=no,status=no');">
                 수정</button></div>
             <div class="btn_etc"><button class="button" onclick = "window.open('../html/popup_emp_del.html', 'popup' , 'width=300,height=300,location=no,status=no');">
                 삭제</button></div>
             <div class="btn_etc"><button class="button" onclick = "window.open('../html/popup_emp_add.html', 'popup' , 'width=300,height=300,location=no,status=no');">
-                추가</button></div>
+                추가</button></div> -->
 
 
             <table>
@@ -180,22 +182,42 @@
         </div>
         </section>
     </main>
- 
 
-    <div id="add">
-        
-    </div>
-
-    <div id="edit">
-        
-    </div>
-
-    <div id="delete">
+    <div id="delete" style="display=none;">
+        <img id="plex" src="../image/logo.png" alt="logo" />
+        <img id="X" src="../image/clear.svg" alt="X" onclick="deletelist();">
         <form method="post" action="../php/deletelist.php">
             <span>사번 : </span><input type="text" name="id" placeholder="사번"/><br>
-            <span></span><input id="deletebutton" type="submit" value="정보삭제"/>
+            <input id="deletebutton" type="submit" value="정보삭제"/>
         </form>
     </div>
+
+    <div id="edit" style="display=none;">
+        <img id="plex" src="../image/logo.png" alt="logo" />
+        <img id="X" src="../image/clear.svg" alt="X" onclick="editlist();">
+        <form method="post" action="../php/editlist.php">
+            <input type="text" name="id" placeholder="사번"/><br>
+            <input type="text" name="name" placeholder="이름"/><br>
+            <input type="text" name="department" placeholder="부서"/><br>
+            <input type="date" name="birth" placeholder="생일"/><br>
+            <input type="phone" name="phone" placeholder="전화번호"/><br>
+            <input id="editbutton" type="submit" value="정보수정"/>
+        </form>
+    </div>
+
+    <div id="add" style="display=none;">
+        <img id="plex" src="../image/logo.png" alt="logo"/>
+        <img id="X" src="../image/clear.svg" alt="X" onclick="addlist();">
+        <form method="post" action="../php/addlist.php">
+            <input type="text" name="name" placeholder="이름"/><br>
+            <input type="text" name="department" placeholder="부서"/><br>
+            <input type="date" name="birth" placeholder="생일"/><br>
+            <input type="phone" name="phone" placeholder="전화번호"/><br>
+            <input id="addbutton" type="submit" value="정보추가"/>
+        </form>
+    </div>
+
+
 
 </body>
 

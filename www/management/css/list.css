@@ -1,19 +1,23 @@
-
-
 #add {
     display: none;
     position: absolute;
-    width: 500px;
-    height: 500px;
-    left: 50%;
-    top: 50%;
+    width: 400px;
+    height: 300px;
+    left: 60%;
+    top: 60%;
     margin-left: -250px;
     margin-top: -250px;
+    padding-top: 15px;
    
-    border: #000 solid 1px;
-    background: #82713F;
-    opacity: 0.8;
+    color: white;
+    border: white solid 1px;
+    background: rgb(247, 156, 81);
+    opacity: 0.92;
+    
+    text-align: center;
 }
+
+
 
 #add input {
     display: inline-block;
@@ -23,23 +27,41 @@
 #addbutton {
     position: absolute;
     bottom: 20px;
-    right: 20px;
+    right: 157px;
+    border: 1.2px solid #fff;
+    border-radius: 5px;
+    background-color: #fff;
+    color: rgb(250, 172, 88);
+    transition: all 0.25s ease-in-out;
+    width: 70px;
+    height: 20px;
+    font-size: 13px;
+}
+
+#addbutton:hover {
+    color: #fff;
+    background: none;
 }
 
 #edit {
     display: none;
     position: absolute;
-    width: 500px;
-    height: 500px;
-    left: 50%;
-    top: 50%;
+    width: 400px;
+    height: 340px;
+    left: 60%;
+    top: 60%;
     margin-left: -250px;
     margin-top: -250px;
+    padding-top: 15px;
    
-    border: #000 solid 1px;
-    background: #82713F;
-    opacity: 0.8;
+    color: white;
+    border: white solid 1px;
+    background: rgb(247, 156, 81);
+    opacity: 0.92;
+    
+    text-align: center;
 }
+
 
 #edit input {
     display: inline-block;
@@ -49,21 +71,39 @@
 #editbutton {
     position: absolute;
     bottom: 20px;
-    right: 20px;
+    right: 157px;
+    border: 1.2px solid #fff;
+    border-radius: 5px;
+    background-color: #fff;
+    color: rgb(250, 172, 88);
+    transition: all 0.25s ease-in-out;
+    width: 70px;
+    height: 20px;
+    font-size: 13px;
+}
+
+#editbutton:hover {
+    color: #fff;
+    background: none;
 }
 
 #delete {
     display: none;
     position: absolute;
-    width: 500px;
-    height: 100px;
-    left: 50%;
-    top: 50%;
+    width: 400px;
+    height: 200px;
+    left: 60%;
+    top: 60%;
     margin-left: -250px;
     margin-top: -250px;
-    border: #000 solid 1px;
-    background: #82713F;
-    opacity: 0.8;
+    padding-top: 15px;
+   
+    color: white;
+    border: white solid 1px;
+    background: rgb(247, 156, 81);
+    opacity: 0.92;
+    
+    text-align: center;
 }
 
 #delete input {
@@ -74,5 +114,70 @@
 #deletebutton {
     position: absolute;
     bottom: 20px;
-    right: 20px;
+    right: 157px;
+    border: 1.2px solid #fff;
+    border-radius: 5px;
+    background-color: #fff;
+    color: rgb(250, 172, 88);
+    transition: all 0.25s ease-in-out;
+    width: 70px;
+    height: 20px;
+    font-size: 13px;
+}
+
+#deletebutton:hover {
+    color: #fff;
+    background: none;
+}
+
+
+
+
+input {
+    width: 100px;
+    height: 15px;
+}
+
+/* Removes the clear button from date inputs */
+input[type="date"]::-webkit-clear-button {
+    display: none;
+}
+
+/* Removes the spin button */
+input[type="date"]::-webkit-inner-spin-button { 
+    display: none;
+}
+
+/* Always display the drop down caret */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    color: #2c3e50;
+}
+
+/* A few custom styles for date inputs */
+input[type="date"] {
+    appearance: none;
+    -webkit-appearance: none;
+    font-size: 10px;
+    border:1px solid #ecf0f1;
+}
+
+input[type="date"], focus {
+    color: #95a5a6;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+}
+
+#plex {
+    width: 120px;
+    height: 70px;
+}
+
+#X {
+    position: absolute;
+    cursor: pointer;
+    top: 4px;
+    right: 4px;
+    -webkit-filter: opacity(.5) drop-shadow(0 0 0 white);
+    filter: opacity(.5) drop-shadow(0 0 0 white);;
 }

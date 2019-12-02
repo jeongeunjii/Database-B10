@@ -120,7 +120,7 @@
             <h2>기술지원</h2>
             <div id="container">
             <!-- <form method="POST" action=""> -->
-            <div id="btn_search"><button class="button">검색</button></div>
+            <!-- <div id="btn_search"><button class="button">검색</button></div> -->
             <table>
                 <thead>
                     <tr>
@@ -231,6 +231,8 @@
     </main>
     
     <div id="assign" style="display: none;">
+        <img id="plex" src="../image/logo.png" alt="logo" />
+        <img id="X" src="../image/clear.svg" alt="X" onclick="windo();">
         <p>미배정 인원</p>
         <form method="post" action="../php/assign.php">
         <input id="facility" type="text" name="facility" value="" style="display: none;">
@@ -248,7 +250,7 @@
             }
         ?>
         <br>
-        <input type="submit" value="선택"/>
+        <input id="assignbutton" type="submit" value="선택"/>
         </form>
     </div>
 </body>

@@ -1,13 +1,58 @@
 #assign {
     display: none;
     position: absolute;
-    width: 500px;
-    height: 500px;
-    left: 50%;
-    top: 50%;
+    width: 400px;
+    height: 300px;
+    left: 60%;
+    top: 60%;
     margin-left: -250px;
     margin-top: -250px;
+    padding-top: 15px;
+   
+    color: white;
+    border: white solid 1px;
+    background: rgb(247, 156, 81);
+    opacity: 0.92;
     
-    border: #000 solid 1px;
-    background: #82713F;
+    text-align: center;
+}
+
+
+
+#assign input {
+    display: inline-block;
+    margin: 10px;
+}
+
+#assignbutton {
+    position: absolute;
+    bottom: 20px;
+    right: 157px;
+    border: 1.2px solid #fff;
+    border-radius: 5px;
+    background-color: #fff;
+    color: rgb(250, 172, 88);
+    transition: all 0.25s ease-in-out;
+    width: 70px;
+    height: 20px;
+    font-size: 13px;
+}
+
+#assignbutton:hover {
+    color: #fff;
+    background: none;
+}
+
+#plex {
+    width: 120px;
+    height: 70px;
+}
+
+#X {
+    position: absolute;
+    cursor: pointer;
+    top: 4px;
+    right: 4px;
+    -webkit-filter: opacity(.5) drop-shadow(0 0 0 white);
+    filter: opacity(.5) drop-shadow(0 0 0 white);;
 }

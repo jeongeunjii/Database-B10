@@ -120,7 +120,7 @@
             <h2>청결관리</h2>
             <div id="container">
             <!-- <form method="POST" action=""> -->
-                <div id="btn_search"><button class="button">검색</button></div>
+                <!-- <div id="btn_search"><button class="button">검색</button></div> -->
                 <!-- 테이블 입력칸에 input하고 검색버튼 누르면 그에 맞는 테이블만 출력 -->
             <table>
                 <thead>
@@ -238,6 +238,8 @@
 	</main>
 
     <div id="assign" style="display: none;">
+        <img id="plex" src="../image/logo.png" alt="logo" />
+        <img id="X" src="../image/clear.svg" alt="X" onclick="windo();">
         <p>미배정 인원</p>
         <form method="post" action="../php/assign.php">
         <input id="facility" type="text" name="facility" value="" style="display: none;">
@@ -255,7 +257,7 @@
             }
         ?>
         <br>
-        <input type="submit" value="선택"/>
+        <input id="assignbutton" type="submit" value="선택"/>
         </form>
     </div>
 </body>
