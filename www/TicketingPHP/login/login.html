@@ -50,6 +50,7 @@
   						if ($test_ps->rowCount() > 0) {
   							if ($row["비밀번호"] == $ps) {
   								$_SESSION['customer_id'] = $id;
+                  echo "<script>location.replace('../index.html')</script>";
   		      		}
   							else {
                   echo "<script>alert(\"비밀번호가 올바르지 않습니다.\");</script>";

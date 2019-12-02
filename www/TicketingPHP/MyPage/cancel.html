@@ -51,13 +51,13 @@
             $db = new PDO("mysql:host={$dbHost};dbname={$dbName}; port=3306", $dbUser, $dbPass);
             $db->exec("set names utf8");
 
-             // $yemeQ = $db->query("UPDATE 예매 SET '예매상태코드'= '$code' WHERE 예매번호='$yeme'");
+            $yemeQ = $db->query("UPDATE 예매 SET 예매상태 = '$code' WHERE 예매번호='$yeme'");
 
              foreach ($seats as $i) {
                $row = substr($i, 0, 1);
                $col = substr($i, 1);
-               $pp = "UPDATE 품목 SET '품목취소코드'= 'A' WHERE 예매번호='$yeme' and 좌석번호_행='$row'and  좌석번호_열=$col";
-               $pumInsert = $DB->query($pp);
+               $pp = "UPDATE 품목 SET 품목취소코드= 'A' WHERE 예매번호=$yeme and 좌석번호_행='$row' and  좌석번호_열=$col";
+               $pumInsert = $db->query($pp);
              } ?>
       </div>
     </section>

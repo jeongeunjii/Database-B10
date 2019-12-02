@@ -39,6 +39,11 @@
             <input type="submit" value="등록" class="submit">
           </form>
           <?php
+          function isEmpty($str) {
+            if ($str == null || $str == "") { return true; }
+            else { return false; }
+          }
+
             $dbHost = "52.78.148.203";
             $dbName = "movie";
             $dbUser = "root";
@@ -58,7 +63,7 @@
             if ($test_ps->rowCount() > 0) {
               echo "<script>alert(\"오류 : 중복된 아이디 입니다.\");</script>";
             }
-            else {
+            else if (!isEmpty($id) && !isEmpty($ps) && !isEmpty($laName) && !isEmpty($fiName) && !isEmpty($birth) && !isEmpty(hp)) {
               $join = $db->query("insert into 회원 (아이디,비밀번호,이름_성,이름_이름,생일,전화번호) values('$id','$ps','$laName','$fiName','$birth','$hp')");
               echo "<script>location.replace('../index.html')</script>";
             }
