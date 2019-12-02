@@ -8,3 +8,8 @@ function assign(arg) {
 
     document.getElementById("facility").value = arg;
 }
+
+function windo() {
+    var assign2 = document.getElementById("assign");
+    assign2.style.display = "none";
+}
