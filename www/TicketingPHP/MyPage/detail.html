@@ -96,9 +96,14 @@
                   <input type="hidden" name="number" value= '<?= $i["개수_성인"]+$i["개수_청소년"] ?>'/>
                   <?php
                   $pq = $db->query("select * from 품목 where 예매번호 = $yeme");
-                  foreach ($pq as $j) { ?>
-                    <input type='checkbox' name='seats[]' value='<?= $j["좌석번호_행"] ?><?= $j["좌석번호_열"] ?>'><?= $j["좌석번호_행"] ?><?= $j["좌석번호_열"] ?><br>
+                  foreach ($pq as $j) {
+                    if ($j["품목취소코드"] == 'A') { ?>
+                      <input type='checkbox' name='seats[]' checked="checked" disabled="disabled" value='<?= $j["좌석번호_행"] ?><?= $j["좌석번호_열"] ?>'><?= $j["좌석번호_행"] ?><?= $j["좌석번호_열"] ?><br>
+                    <?php
+                  } else { ?>
+                      <input type='checkbox' name='seats[]' value='<?= $j["좌석번호_행"] ?><?= $j["좌석번호_열"] ?>'><?= $j["좌석번호_행"] ?><?= $j["좌석번호_열"] ?><br>
                   <?php
+                    }
                   }
                   ?>
                   <button type="submit">취소</button>
