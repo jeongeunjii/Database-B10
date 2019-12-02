@@ -8,12 +8,12 @@
 </head>
 
 <body>
-    <form method="post" action="">
-        이름 <input type="text" name="이름" placeholder="이름"><br>
-        부서 <input type="text" name="부서" placeholder="부서"><br>
-        생년월일 <input type="text" name="생년월일" placeholder="생년월일"><br>
-        전화번호 <input type="text" name="전화번호" placeholder="전화번호"><br>
-        <button>정보추가</button>
+    <form method="post" action="../php/addlist.php">
+        <span>이름 : </span><input type="text" name="name" placeholder="이름"/><br>
+        <span>부서 : </span><input type="text" name="department" placeholder="부서"/><br>
+        <span>생년월일 : </span><input type="date" name="birth" placeholder="생일"/><br>
+        <span>전화번호 : </span><input type="phone" name="phone" placeholder="전화번호"/><br>
+        <span></span><input id="addbutton" type="submit" value="정보추가"/>
     </form>
 </body>
 

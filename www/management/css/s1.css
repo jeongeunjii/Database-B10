@@ -18,10 +18,10 @@ header {
     left: 0;
 }
 
-header h1 {
+header img {
     position: fixed;
+    top: 7px;
     left: 60px;
-    line-height: 50px;
     margin: 0px;
     width: 100px;
 }

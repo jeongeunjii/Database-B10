@@ -6,19 +6,17 @@
 <html lang="en">
 
 <head>
-<meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="../css/layout.css">
-    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../css/s1.css">
+    <link rel="stylesheet" type="text/css" href="../css/s2.css">
     <link rel="stylesheet" type="text/css" href="../css/menu.css">
     <link rel="stylesheet" type="text/css" href="../css/button.css">
-    <link rel="stylesheet" type="text/css" href="../css/list.css">
-    <script src="../script/list.js" type="text/javascript"></script>
     <title>10Jo</title>
 </head>
 
 <body>
     <header>
-        <a href="list.php"><h1>10Jo</h1></a>
+        <a href="attendance.php"><img src="../image/logo.png" alt="logo" /></a>
         
         <div id="login">
             <?php
@@ -38,50 +36,81 @@
     <nav>
         <label for="menu_state"><img src="../image/menu.png" alt="menu_icon" /></label>
         <div id="fir_category">
-            <ul> <div class="category_name">직원관리</div>
-                <li><img src="../image/employee.png" alt="employee_icon" />
-                    <a href="list.php">
-                        직원목록
-                    </a>
-                </li>
-                <li><img src="../image/attendance.png" alt="attendance_icon" />
-                    <a href="attendance.php">
-                        근태관리
-                    </a>
-                <!--(직원용)<li><a href="attendance_emp.html"onclick="window.open(this.href, 'popup', 'width=300,height=300,location=no,status=no');">플로어업무</a></li>-->
-                </li>
-                <li><img src="../image/floor.png" alt="floor_icon" />
-                    <a href="floor.php">
-                        플로어업무
-                    </a>
-                </li>
+            <ul> 
+                <?php 
+                    if ($_SESSION['DEP'] == "매니저") {
+                ?>
+                        <div class="category_name">직원관리</div>
+                        <li><img src="../image/employee.png" alt="employee_icon" />
+                            <a href="list.php">
+                                직원목록
+                            </a>
+                        </li>
+                        <li><img src="../image/attendance.png" alt="attendance_icon" />
+                            <a href="attendance.php">
+                                근태관리
+                            </a>
+                        <!--(직원용)<li><a href="attendance_emp.html"onclick="window.open(this.href, 'popup', 'width=300,height=300,location=no,status=no');">플로어업무</a></li>-->
+                        </li>
+                <?php
+                    } else if ($_SESSION['DEP'] == "플로어") {
+                ?>
+                        <div class="category_name">근태및 업무</div>
+                        <li><img src="../image/attendance.png" alt="attendance_icon" /><a href="attendance.php">
+                            출근퇴근
+                        </a></li>
+                        <li><img src="../image/floor.png" alt="floor_icon" /><a href="floor.php">
+                            플로어업무
+                        </a></li>
+                <?php
+                    } else if ($_SESSION['DEP'] == "기술지원") {
+                ?>
+                        <div class="category_name">근태및 업무</div>
+                        <li><img src="../image/attendance.png" alt="attendance_icon" /><a href="attendance.php">
+                            출근퇴근
+                        </a></li>
+                        <li><img src="../image/engineer.png" alt="engineer_icon" /><a href="repair.php">
+                            기술업무
+                        </a></li>
+                <?php
+                    } else {
+                ?>
+                        <div class="category_name">근태및 업무</div>
+                        <li><img src="../image/attendance.png" alt="attendance_icon" /><a href="attendance.php">
+                            출근퇴근
+                        </a></li>
+                        <li><img src="../image/order.png" alt="order_icon" /><a href="order.php">
+                            물건주문
+                        </a></li>
+                <?php
+                    }
+                ?>
+                
+                
                 <!--(직원용)<li><a href="popup_floor_emp.html"onclick="window.open(this.href, 'popup', 'width=300,height=300,location=no,status=no');">플로어업무</a></li>-->
-                <li><img src="../image/engineer.png" alt="engineer_icon" />
-                    <a href="repair.php">
-                        기술업무
-                    </a>
-                </li>
+                
                 <!--(직원용)<li><a href="popup_engineer_emp.html"onclick="window.open(this.href, 'popup', 'width=300,height=300,location=no,status=no');">기술업무</a></li>-->
                 <!--기술업무, 플로어업무 직원용 페이지는 새 페이지 띄우는 것보다 팝업으로 하는 게 더 깔끔할 것 같아서 팝업으로 처리 했습니다!-->
             </ul>
         </div>
         <div id="sec_category">
-            <ul> <div class="category_name">시설관리</div>
-                <li><img src="../image/order.png" alt="order_icon" />
-                    <a href="order.php">
-                        주문발주
-                    </a>
-                </li>
-                <li><img src="../image/clean.png" alt="clean_icon" />
-                    <a href="clean.php">
-                        청결관리
-                    </a>
-                </li>
-                <li><img src="../image/staffing.png" alt="staffing_icon" />
-                    <a href="technical.php">
-                        기술지원
-                    </a>
-                </li>
+            <ul> 
+                <?php
+                    if ($_SESSION['DEP'] == "매니저") {
+                ?>
+                        <div class="category_name">시설관리/주문발주</div>
+                        <li><img src="../image/order.png" alt="order_icon" /><a href="order.php">
+                            주문발주
+                        </a></li>
+                        <li><img src="../image/clean.png" alt="clean_icon" /><a href="clean.php">
+                            청결관리
+                        </a></li>
+                        <li><img src="../image/staffing.png" alt="staffing_icon" /><a href="technical.php">
+                            설비관리
+                        </a></li>
+                <?php
+                    }
+                ?>
             </ul>
         </div>
     </nav>
@@ -92,12 +121,18 @@
             <div id="container">
             
             <!-- 테이블 입력칸에 input하고 검색버튼 누르면 그에 맞는 테이블만 출력 -->
-            <div class="btn_etc"><button class="button" onclick="addlist();">
+            <!-- <div class="btn_etc"><button class="button" onclick="addlist();">
                 추가</button></div>
             <div class="btn_etc"><button class="button" onclick="deletelist();">
                 삭제</button></div>
             <div class="btn_etc"><button class="button" onclick="editlist();">
+                수정</button></div> -->
+            <div class="btn_etc"><button class="button" onclick = "window.open('../html/popup_emp_edit.html', 'popup' , 'width=300,height=300,location=no,status=no');">
                 수정</button></div>
+            <div class="btn_etc"><button class="button" onclick = "window.open('../html/popup_emp_del.html', 'popup' , 'width=300,height=300,location=no,status=no');">
+                삭제</button></div>
+            <div class="btn_etc"><button class="button" onclick = "window.open('../html/popup_emp_add.html', 'popup' , 'width=300,height=300,location=no,status=no');">
+                추가</button></div>
 
 
             <table>
@@ -148,24 +183,11 @@
  
 
     <div id="add">
-        <form method="post" action="../php/addlist.php">
-            <span>이름 : </span><input type="text" name="name" placeholder="이름"/><br>
-            <span>부서 : </span><input type="text" name="department" placeholder="부서"/><br>
-            <span>생년월일 : </span><input type="date" name="birth" placeholder="생일"/><br>
-            <span>전화번호 : </span><input type="phone" name="phone" placeholder="전화번호"/><br>
-            <span></span><input id="addbutton" type="submit" value="정보추가"/>
-        </form>
+        
     </div>
 
     <div id="edit">
-        <form method="post" action="../php/editlist.php">
-            <span>사번 : </span><input type="text" name="id" placeholder="사번"/><br>
-            <span>이름 : </span><input type="text" name="name" placeholder="이름"/><br>
-            <span>부서 : </span><input type="text" name="department" placeholder="부서"/><br>
-            <span>생년월일 : </span><input type="date" name="birth" placeholder="생일"/><br>
-            <span>전화번호 : </span><input type="phone" name="phone" placeholder="전화번호"/><br>
-            <span></span><input id="editbutton" type="submit" value="정보수정"/>
-        </form>
+        
     </div>
 
     <div id="delete">

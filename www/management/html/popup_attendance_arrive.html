@@ -8,17 +8,17 @@
 </head>
 
 <script language="javascript">
-        function showClock(){
-            var currentDate = new Date();
-            var divClock = document.getElementById("divClock");
-             
-            var msg = currentDate.getHours()+"시"
-            msg += currentDate.getMinutes()+"분";
-             
-            divClock.innerText = msg;
-            setTimeout(showClock,1000);
-        }
-    </script>
+    function showClock(){
+        var currentDate = new Date();
+        var divClock = document.getElementById("divClock");
+            
+        var msg = currentDate.getHours()+"시";
+        msg += currentDate.getMinutes()+"분";
+            
+        divClock.innerText = msg;
+        setTimeout(showClock,1000);
+    }
+</script>
 
 <body onload="showClock()">
     <form method="POST" action="">

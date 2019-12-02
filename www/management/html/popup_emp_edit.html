@@ -8,12 +8,14 @@
 </head>
 
 <body>
-    <form method="post" action="">
-        이름 <input type="text" name="이름" value="$이름"><br>
-        부서 <input type="text" name="부서" value="$부서"><br>
-        생년월일 <input type="text" name="생년월일" value="$생년월일"><br>
-        전화번호 <input type="text" name="전화번호" value="$전화번호"><br>
-        <button>정보수정</button>
+    <form method="post" action="../php/editlist.php">
+        <p>감자머리</p>
+        <span>사번 : </span><input type="text" name="id" placeholder="사번"/><br>
+        <span>이름 : </span><input type="text" name="name" placeholder="이름"/><br>
+        <span>부서 : </span><input type="text" name="department" placeholder="부서"/><br>
+        <span>생년월일 : </span><input type="date" name="birth" placeholder="생일"/><br>
+        <span>전화번호 : </span><input type="phone" name="phone" placeholder="전화번호"/><br>
+        <span></span><input id="editbutton" type="submit" value="정보수정"/>
     </form>
 </body>
 

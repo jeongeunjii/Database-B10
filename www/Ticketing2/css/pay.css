@@ -17,10 +17,6 @@ section {
     border-color: #353535;
 }
 
-.card {
-    padding: 5px;
-    background-color: #A6A6A6;
-}
 
 p {
     display: inline-block;
@@ -32,4 +28,10 @@ select {
 
 .payment {
     padding: 10px;
+}
+
+.page {
+    width: 1000px;
+    background-color: ivory;
+    height: 700px;
 }

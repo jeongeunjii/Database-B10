@@ -4,12 +4,15 @@
 
 <?php
     try {
-        $db = new PDO("mysql:dbname=movie; host=13.125.252.255; port=3306", "root", "1234");
+        $db = new PDO("mysql:dbname=movie; host=52.78.148.203; port=3306", "root", "1234");
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $db->query("set session character_set_connection=utf8;");
         $db->query("set session character_set_results=utf8;");
         $db->query("set session character_set_client=utf8;");
         
+        date_default_timezone_set("Asia/Seoul");
+        $today = date("Y-m-d H:i:s");
+        $q_today = $db->quote($today);
         $id = $_POST['id'];
         $num = $db->quote($id);
 
@@ -20,7 +23,8 @@
         $db->exec($check);
 
         $check = "UPDATE 시설물관리
-        SET 점검상태 = '정상',
+        SET 점검시간 = $q_today,
+            점검상태 = '정상',
             사번 = NULL
         WHERE 사번 = $num;";
 
