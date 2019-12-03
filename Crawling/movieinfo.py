@@ -1,7 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
 
-moviecodes = ['81581','82377','79313','82379','82530','82463','81895','82427','81945','82516','82487','82257','82481']
+moviecodes = ['81581','82377','79313','82379','82530','82463','81895','82427','81945','82516','82487','82257','82481','82014', '82618', '82481', '81914', '82493', '82497', '82463','82014', '82618', '82481', '82544', '82702']
+moviecodes = list(set(moviecodes))
 
 array = [[] for i in range(200)]
 
@@ -21,8 +22,9 @@ def movieinfo(moviecode, size) :
     
 
     for genre in genres:
-            if (genre.get_text()[0]=='장'):
-                array[size].append(genre.get_text())
+        if (genre.get_text()[0]=='장'):
+            array[size].append(genre.get_text())
+
 
     for i in range(0, len(specs)-1):
         if (specs[i].find('a')==None):
@@ -68,7 +70,14 @@ def makecode(str):
     elif (str=='청소년 관람불가'):
         return 'D'
 
+def splitcomma(str):
+    result = str.split(',')
+    result = result[0]
+    return result
+
+
 
 for info in array:
     if (info!=[]):
-        print("INSERT INTO 영화 VALUES ("+info[0]+",'"+info[1]+"','"+makecode(info[2])+"','"+info[3]+"','"+info[4]+"','"+info[5]+"','"+info[6]+"');")
+        print("INSERT INTO 영화 VALUES ("+info[0]+",'"+info[1]+"','"+makecode(info[2])+"','"+info[3]+"','"+splitcomma(info[4])+"','"+info[5]+"','"+info[6]+"');")
+

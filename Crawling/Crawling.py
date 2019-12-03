@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
-data = '20191125'
+data = '20191204'
 url = 'http://www.cgv.co.kr/common/showtimes/iframeTheater.aspx?areacode=02&theatercode=0211&date='+data
 respose = requests.get(url)
 html = respose.text
