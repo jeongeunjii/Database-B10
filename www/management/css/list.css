@@ -130,7 +130,23 @@
     background: none;
 }
 
-
+#info {
+    display: none;
+    position: absolute;
+    width: 400px;
+    height: 600px;
+    left: 60%;
+    top: 50%;
+    margin-left: -250px;
+    margin-top: -250px;
+    padding-top: 15px;
+   
+    color: white;
+    border: white solid 1px;
+    background: rgb(247, 156, 81);
+    
+    text-align: center;
+}
 
 
 input {

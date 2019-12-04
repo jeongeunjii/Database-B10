@@ -1,5 +1,13 @@
 <?php
     session_start();
+    function removez($str) {
+        if ($str[0] === '0') {
+            $result = $str[1];
+        }else{
+            $result = $str;
+        }
+        return $result;
+    }
 ?>
 
 <!DOCTYPE html>
@@ -157,20 +165,37 @@
                             $time = date("H:i:s"); 
                             $q_time = $db->quote($time);
 
+
+                            // #없는 날짜인 경우 날짜 추가
+                            // $rows = $db->query("SELECT * FROM 근태관리 NATURAL JOIN 직원관리 WHERE 일자 = $q_today");
+                            // $rows = $rows->fetchAll();
+                            // if (count($rows) === 0) {
+                            //     $lists = $db->query("SELECT 사번 FROM 직원관리");
+                            //     $lists = $lists->fetchAll();
+                            //     foreach ($lists as $list) {
+                            //         $num = $list['사번'];
+                            //         $q_num = $db->quote($num);
+                            //         $db->exec("INSERT INTO 근태관리 VALUE ($q_today, $q_num, NULL, NULL)");
+                            //     }
+                            //     $rows = $db->query("SELECT * FROM 근태관리 NATURAL JOIN 직원관리 WHERE 일자 = $q_today");
+                            //     $rows = $rows->fetchAll();
+                            // }
+                            
+                            #직원이 중간에 추가된 경우 직원의 근태정보 생성
+                            $members = $db->query("SELECT 사번 FROM 직원관리");
+                            $members = $members->fetchAll();
+                            foreach ($members as $member) {
+                                $id = $member['사번'];
+                                $id = $db->quote($id);
+                                $lines = $db->query("SELECT * FROM 근태관리 NATURAL JOIN 직원관리 WHERE 일자 = $q_today AND 사번 = $id");
+                                $lines = $lines->fetchAll();
+                                if (count($lines) === 0) {
+                                    $db->exec("INSERT INTO 근태관리 VALUE ($q_today, $id, NULL, NULL)");
+                                }
+                            }
+
                             $rows = $db->query("SELECT * FROM 근태관리 NATURAL JOIN 직원관리 WHERE 일자 = $q_today");
                             $rows = $rows->fetchAll();
-                            
-                            if (count($rows) === 0) {
-                                $lists = $db->query("SELECT 사번 FROM 직원관리");
-                                $lists = $lists->fetchAll();
-                                foreach ($lists as $list) {
-                                    $num = $list['사번'];
-                                    $q_num = $db->quote($num);
-                                    $db->exec("INSERT INTO 근태관리 VALUE ($q_today, $q_num, NULL, NULL)");
-                                }
-                                $rows = $db->query("SELECT * FROM 근태관리 NATURAL JOIN 직원관리 WHERE 일자 = $q_today");
-                                $rows = $rows->fetchAll();
-                            }
 
                             if (isset($_POST['day'])) {
                                 $today = $_POST['day'];
@@ -211,7 +236,35 @@
                                             }
                                             ?>
                                         </td>
-                                        <td></td>
+                                        <td>
+                                            <?php
+                                            $hour1 = removez(substr($row['퇴근'], 0, 2));
+                                            $hour2 = removez(substr($row['출근'], 0, 2));
+                                            $hour = (int)$hour1 - (int)$hour2;
+                                            $minu1 = removez(substr($row['퇴근'], 3, 2));
+                                            $minu2 = removez(substr($row['출근'], 3, 2));
+                                            $minu = (int)$minu1 - (int)$minu2;
+                                            if ($minu < 0) {
+                                                if ($hour == 0) {
+                                                    $hour = 0;
+                                                    $minu = 0;
+                                                }else {
+                                                    $hour = $hour - 1;
+                                                    $minu = $minu + 60;
+                                                }
+                                            }
+                                            // if ($hour < 10) {
+                                            //     $h = "0";
+                                            //     $h = $h.(string)$hour;
+                                            // }
+                                            if ($minu < 10) {
+                                                $m = "0".(string)$minu;
+                                            }else {
+                                                $m = $minu;
+                                            }
+                                            ?>
+                                            <?= "0".(string)$hour.":".$m ?>
+                                        </td>
                                     </tr>
                                 <?php
                                 }
@@ -252,7 +305,9 @@
                                             }
                                             ?>
                                         </td>
-                                        <td></td>
+                                        <td>
+
+                                        </td>
                                     </tr>
                                 <?php
                                     }
