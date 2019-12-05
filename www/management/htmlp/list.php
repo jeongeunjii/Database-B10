@@ -1,5 +1,13 @@
 <?php
     session_start();
+    function removez($str) {
+        if ($str[0] === '0') {
+            $result = $str[1];
+        }else{
+            $result = $str;
+        }
+        return $result;
+    }
 ?>
 
 <!DOCTYPE html>
@@ -145,6 +153,7 @@
                         <th>부서</th>
                         <th>생년월일</th>
                         <th>전화번호</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -157,7 +166,67 @@
                     $db->query("set session character_set_results=utf8;");
                     $db->query("set session character_set_client=utf8;");
 
+                    #상세정보 배열
+                    $rows = $db->query("SELECT * FROM 직원관리");
+                    $idset = array( array() );
+                    $index=0;
+                    $arrive=0;
+                    $late=0;
+                    foreach ($rows as $row) {
+                        $idset[$index][0] = $row['사번'];
+                        $idset[$index][1] = $row['이름'];
+                        $index = $index+1;
+                    }
+                    for ($i=0; $i < count($idset); $i++) {
+                        $num = $idset[$i][0];
+                        $num = $db->quote($num);
+                        $lines = $db->query("SELECT * FROM 근태관리 WHERE 사번=$num");
+                        foreach($lines as $line) {
+                            if ($line['출근'] !== NULL){
+                                $hour = removez(substr($line['출근'], 0, 2));
+                                if ($hour < 9) {
+                                    $arrive = $arrive + 1;
+                                }else {
+                                    $late = $late + 1;
+                                }
+                            }
+                        }
+                        $idset[$i][2] = $arrive;
+                        $idset[$i][3] = $late; 
+                        $arrive = 0;
+                        $late = 0;
+                    }
+
+                    for ($i=0; $i < count($idset); $i++) {
+                        $num = $idset[$i][0];
+                        $num = $db->quote($num);
+                        $lines = $db->query("SELECT * FROM 직원관리 WHERE 사번=$num");
+                        $lines = $lines->fetchAll();
+                        foreach ($lines as $line){
+                            if ($lines[0]['부서'] == "플로어") {
+                                $floors = $db->query("SELECT * FROM floor업무관리 NATURAL JOIN 시설물 WHERE 사번=$num");
+                                $floors = $floors->fetchAll();
+                                if (count($floors) == 0) {
+                                    $idset[$i][4] = 'NO';
+                                }else {
+                                    $idset[$i][4] = $floors[0]['시설물명'].' 청소중';
+                                }
+                            }else if ($lines[0]['부서'] == "기술지원") {
+                                $techs = $db->query("SELECT * FROM 기술지원 NATURAL JOIN 시설물 WHERE 사번=$num");
+                                $techs = $techs->fetchAll();
+                                if (count($techs) == 0) {
+                                    $idset[$i][4] = 'NO';
+                                }else {
+                                    $idset[$i][4] = $techs[0]['시설물명'].' 수리중';
+                                }
+                            } else {
+                                $idset[$i][4] = "NO staff";
+                            }
+                        }
+                    }
+                    
                     $rows = $db->query("SELECT * FROM 직원관리 ORDER BY 부서");
+                    $input = str_replace("\"","'",json_encode($idset, JSON_UNESCAPED_UNICODE));
                     foreach ($rows as $row) {
                 ?>
                         <tr>
@@ -166,6 +235,7 @@
                             <td><?= $row["부서"] ?></td>
                             <td><?= $row["생년월일"] ?></td>
                             <td><?= $row["전화번호"] ?></td>
+                            <td><button class="table_button" onclick="showinfo( '<?=$row['사번']?>', <?=$input?> );">상세정보</button></td>
                         </tr>
                 <?php
                     }
@@ -215,6 +285,15 @@
             <input type="phone" name="phone" placeholder="전화번호"/><br>
             <input id="addbutton" type="submit" value="정보추가"/>
         </form>
+    </div>
+
+    <div id="info" style="display=none;">
+        <img id="plex" src="../image/logo.png" alt="logo"/>
+        <img id="X" src="../image/clear.svg" alt="X" onclick="windo();">
+        <p id="p1">이름 : 구매니</p>
+        <p id="p2">출석 : 3회</p>
+        <p id="p3">지각 : 5회</p>
+        <p id="p4">현재 업무 : 없음</p>
     </div>
 
 

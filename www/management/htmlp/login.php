@@ -23,6 +23,7 @@ http-equiv="X-UA-Compatible" content="ie=edge"> <title>Document</title> </head>
     <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
     <link rel="stylesheet" type="text/css" href="css/util.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
 
 <body>
@@ -46,6 +47,20 @@ http-equiv="X-UA-Compatible" content="ie=edge"> <title>Document</title> </head>
 						</span>
 						<input class="input100" type="password" name="id">
 						<span class="focus-input100" data-placeholder="사번"></span>
+					</div>
+
+					<div id="login_error">
+						<?php
+							if ($_SESSION['WRID'] == "error") {
+						?>
+								존재하지 않는 직원입니다.
+						<?php
+							} else if ($_SESSION['WRPW'] == "error") {
+						?>
+								사번이 틀렸습니다.
+						<?php
+							}
+						?>
 					</div>
 
 					<div class="container-login100-form-btn">

@@ -21,8 +21,15 @@
         $result = $rows->fetchAll();
         
         if ($result[0] === NULL or $result[0]['이름'] != $pw){
+            if ( $result[0] === NULL ) {
+                $_SESSION['WRPW'] = "error";
+            } else {
+                $_SESSION['WRID'] = "error";
+            }
             header("Location: ../htmlp/login.php");
         }else {
+            $_SESSION['WRID'] = "same";
+            $_SESSION['WRPW'] = "same";
             $_SESSION['REGION'] = $result[0]['지점번호'];
             $_SESSION['ID'] = $id;
             $_SESSION['PW'] = $pw;

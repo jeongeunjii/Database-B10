@@ -1,84 +1,91 @@
 <?php
     session_start();
-?>
+    function removez($str) {
+        if ($str[0] === '0') {
+            $result = $str[1];
+        }else{
+            $result = $str;
+        }
+        return $result;
+    }
 
-<!DOCTYPE html>
-<html lang="en">
+    try {
+                    
+        $db = new PDO("mysql:dbname=movie; host=52.78.148.203; port=3306", "root", "1234");
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $db->query("set session character_set_connection=utf8;");
+        $db->query("set session character_set_results=utf8;");
+        $db->query("set session character_set_client=utf8;");
 
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="../css1/layout2.css">
-        <title>10Jo</title>
-    </head>
-
-    <body>
-        <header>
-            <a href="home.php"><h1>10Jo</h1></a>
-            <div id="login"><p>
-            <?php
-                if (isset($_SESSION['ID'])){
-                    echo "( ".$_SESSION['ID']." / ".$_SESSION['PW']." / ".$_SESSION['DEP']." )";
-            ?>
-            </p><a href="../php/logout.php">Logout</a>
-            <?php
-                }
-                else {
-                    echo '<a href="login.php">login</a>';
-                }
-            ?>
-            </div>
-        </header>
-        <section>
-
-        <nav>
-            <ul>
-                <li>
-                    <img src="../image/employee.png" width="50px" alt="employee_icon" /> <span>직원관리</span>
-                    <ul>
-                        <?php  
-                        if ($_SESSION['DEP'] == "매니저") { 
-                        ?>
-                            <li><a href="list.php">직원목록</a></li>
-                        <?php
-                        }
-                        ?>
-                        <li><a href="attendance.php">근태관리</a></li>
-                        <?php 
-                        if ($_SESSION['DEP'] == "플로어") { ?>
-                            <li><a href="floor.php">플로어업무</a></li>
-                        <?php
-                        }
-                        ?>
-                        <?php 
-                        if ($_SESSION['DEP'] == "기술지원") { ?>
-                            <li><a href="repair.php">정비업무</a></li>
-                        <?php
-                        }
-                        ?>
-                    </ul>
-                </li>
-                <li >
-                    <img src="../image/store.png" width="50px" alt="store_icon" /> <span>시설관리</span> 
-                    <ul>
-                        <li><a href="order.php">주문발주</a></li>
-                        <?php  
-                        if ($_SESSION['DEP'] == "매니저") { 
-                        ?>
-                            <li><a href="technical.php">시설정비</a></li>
-                            <li><a href="clean.php">청결관리</a></li>
-                        <?php
-                        }
-                        ?>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-        <main>
-           <p>너무 허전하다</p>
-        </main>
+        #상세정보 배열
+        $rows = $db->query("SELECT * FROM 직원관리");
+        $idset = array( array() );
+        $index=0;
+        $arrive=0;
+        $late=0;
         
-        </section>
-        
-    </body>
+        foreach ($rows as $row) {
+            $idset[$index][0] = $row['사번'];
+            $idset[$index][1] = $row['이름'];
+            $index = $index+1;
+        }
 
-</html>
+        for ($i=0; $i < count($idset); $i++) {
+            $num = $idset[$i][0];
+            $num = $db->quote($num);
+            $lines = $db->query("SELECT * FROM 근태관리 WHERE 사번=$num");
+            foreach($lines as $line) {
+                if ($line['출근'] !== NULL){
+                    $hour = removez(substr($line['출근'], 0, 2));
+                    if ($hour < 9) {
+                        $arrive = $arrive + 1;
+                    }else {
+                        $late = $late + 1;
+                    }
+                }
+            }
+            $idset[$i][2] = $arrive;
+            $idset[$i][3] = $late;
+            $arrive = 0;
+            $late = 0;
+        }
+        
+
+        for ($i=0; $i < count($idset); $i++) {
+            $num = $idset[$i][0];
+            $num = $db->quote($num);
+            $lines = $db->query("SELECT * FROM 직원관리 WHERE 사번=$num");
+            $lines = $lines->fetchAll();
+            foreach ($lines as $line){
+                if ($lines[0]['부서'] == "플로어") {
+                    $floors = $db->query("SELECT * FROM floor업무관리 NATURAL JOIN 시설물 WHERE 사번=$num");
+                    $floors = $floors->fetchAll();
+                    if (count($floors) == 0) {
+                        $idset[$i][4] = "할당된 업무가 없습니다.";
+                    }else {
+                        $idset[$i][4] = $floors[0]['시설물명']." 청소중";
+                    }
+                }else if ($lines[0]['부서'] == "기술지원") {
+                    $techs = $db->query("SELECT * FROM 기술지원 NATURAL JOIN 시설물 WHERE 사번=$num");
+                    $techs = $techs->fetchAll();
+                    if (count($techs) == 0) {
+                        $idset[$i][4] = "할당된 업무가 없습니다.";
+                    }else {
+                        $idset[$i][4] = $techs[0]['시설물명']." 수리중";
+                    }
+                } else {
+                    $idset[$i][4] = "청소, 기술업무 사원이 아닙니다.";
+                }
+            }
+        }
+        echo "<pre>";
+        var_dump($idset);
+        // var_dump(count($idset));
+        echo "</pre>";
+    } catch (PDOException $ex) {
+        ?>
+            <p>Sorry, a database error occurred. Please try again later.</p>
+            <p>(Error details: <?= $ex->getMessage() ?>)</p>
+        <?php
+            }
+        ?>		
