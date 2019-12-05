@@ -189,7 +189,8 @@ CREATE TABLE 회원쿠폰
   회원아이디 VARCHAR(20) NOT NULL
 );
 
-
+ALTER TABLE 쿠폰 CONVERT TO character SET utf8;
+ALTER TABLE 회원쿠폰 CONVERT TO character SET utf8;
 
 ALTER TABLE 메인코드 CONVERT TO character SET utf8;
 ALTER TABLE 서브코드 CONVERT TO character SET utf8;

@@ -18,6 +18,9 @@ function selec(id) {
 
 // 0 means adult and 1 means teen
 function tiket(kind, sign) {
+  if ((adult+teen)>=5 && sign>0) {
+    return ;
+  }
   if (kind == 0) {
     adult = adult + sign;
     numOfTiket = adult + teen;
