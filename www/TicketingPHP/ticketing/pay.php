@@ -8,12 +8,12 @@ $adult = $_POST['adult'];
 $teen = $_POST['teen'];
 $seats = $_POST['seats'];
 $met = $_POST["met"];
-$dis = $_POST["discount"];
+$dis = $_POST["dis"];
 $price = $_POST["price"];
 $today = date("Y-m-d h:i:s");
 
 if (!isEmpty($met) && !isEmpty($dis)) {
-  $yemestr = "insert into 예매 (예매번호, 회원아이디, 상영정보번호, 개수_성인, 개수_청소년, 결제방법, 할인적용, 총가격, 예매일자, 예매상태) values(null,'$id',$time,$adult,$teen,'$met','$dis',$price,'$today','A')";
+  $yemestr = "insert into 예매 (예매번호, 회원아이디, 상영정보번호, 개수_성인, 개수_청소년, 결제방법, 할인적용, 총가격, 예매일자, 예매상태) values(null,'$id',$time,$adult,$teen,'$met',$dis,($price-$dis),'$today','A')";
   $yemeInsert = $db->query($yemestr);
 
   $yemeQ = $db->query("SELECT 예매번호 FROM 예매 ORDER BY 예매번호 DESC LIMIT 1");

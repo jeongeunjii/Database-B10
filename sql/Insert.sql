@@ -3,6 +3,7 @@ INSERT INTO 메인코드 VALUES('A', '상영관종류코드');
 INSERT INTO 메인코드 VALUES('B', '예매상태코드');
 INSERT INTO 메인코드 VALUES('C', '영화등급코드');
 INSERT INTO 메인코드 VALUES('D', '품목취소코드');
+INSERT INTO 메인코드 VALUES('E', '쿠폰종류코드');
 
 INSERT INTO 서브코드 VALUES('A', 'A', '4D');
 INSERT INTO 서브코드 VALUES('A', 'B', '3D');
@@ -20,6 +21,9 @@ INSERT INTO 서브코드 VALUES('C', 'D', '청소년 관람불가');
 
 INSERT INTO 서브코드 VALUES('D', 'A', 'Y');
 INSERT INTO 서브코드 VALUES('D', 'B', 'N');
+
+INSERT INTO 서브코드 VALUES('E', 'A', '퍼센트');
+INSERT INTO 서브코드 VALUES('E', 'B', '절댓값');
 
 INSERT INTO 지역 VALUES('01', '서울');
 INSERT INTO 지역 VALUES('02', '경기');
@@ -280,14 +284,14 @@ INSERT INTO 품목 VALUES(1234, 'A',2,'A');
 INSERT INTO 품목 VALUES(1234, 'A',3,'A');
 INSERT INTO 품목 VALUES(1234, 'A',4,'A');
 
-INSERT INTO 예매 VALUES(123,'ID1', 1, 2, 3, 'card', '통신사', (10000*2+8000*3)*0.8, '2019-11-20 19:30:59', 'A');
+INSERT INTO 예매 VALUES(123,'ID1', 1, 2, 3, 'card', 1, (10000*2+8000*3)*0.8, '2019-11-20 19:30:59', 'A');
 INSERT INTO 품목 VALUES(123, 'A',1,'B');
 INSERT INTO 품목 VALUES(123, 'A',2,'B');
 INSERT INTO 품목 VALUES(123, 'A',3,'B');
 INSERT INTO 품목 VALUES(123, 'A',4,'B');
 INSERT INTO 품목 VALUES(123, 'A',5,'B');
 
-INSERT INTO 예매 VALUES(12345, 'ID3', 1, 2, 3, 'point', '쿠폰', (10000*2+8000*3)*0.5, '2019-11-20 15:30:59', 'B');
+INSERT INTO 예매 VALUES(12345, 'ID3', 1, 2, 3, 'point', 2, (10000*2+8000*3)*0.5, '2019-11-20 15:30:59', 'B');
 INSERT INTO 품목 VALUES(12345, 'B',3,'A');
 INSERT INTO 품목 VALUES(12345, 'B',4,'A');
 INSERT INTO 품목 VALUES(12345, 'B',5,'A');
@@ -416,3 +420,12 @@ INSERT INTO 청결관리 VALUES('0211',13,'2019-09-01 11:30:00', '정상', NULL)
 INSERT INTO 청결관리 VALUES('0211',14,'2019-09-01 11:30:00', '정상', NULL);
 INSERT INTO 청결관리 VALUES('0211',15,'2019-09-01 11:30:00', '정상', NULL);
 INSERT INTO 청결관리 VALUES('0211',16,'2019-09-01 11:30:00', '정상', NULL);
+
+
+INSERT INTO 쿠폰 VALUES(null,'A','10% 할인 쿠폰','2019-12-20',10,null);
+INSERT INTO 쿠폰 VALUES(null,'A','10% 할인 쿠폰','2019-12-18',10,null);
+INSERT INTO 쿠폰 VALUES(null,'B','1000원 할인 쿠폰','2019-12-18',null,1000);
+
+INSERT INTO 회원쿠폰 VALUES(1,'ID1');
+INSERT INTO 회원쿠폰 VALUES(2,'ID1');
+INSERT INTO 회원쿠폰 VALUES(3,'ID1');

@@ -50,6 +50,8 @@
 				$officeRes = $officeQuery -> fetch();
 				$sangRes = $sangQuery -> fetch();
 				$movieRes = $movieQuery -> fetch();
+
+        $discountQ = $db->query("select * from 회원쿠폰 where 회원아이디 = '$id'");
 			} catch (PDOException $ex) {
 			?>
 			<p>Sorry, a database error occurred. Please try again later.</p>
@@ -74,7 +76,7 @@
 				<p>가격 <br/>
 					일반 : <?= $adultPrice ?> <br/>
 					청소년 : <?= $teenPrice ?> <br/>
-					총 가격 : <?= $price ?> </p>
+					총 가격(할인제외) : <?= $price ?> </p>
 			</div>
 
 
@@ -91,8 +93,24 @@
 				<input type="radio" name="met" value="휴대폰"> 휴대폰결제<br>
 				<input type="radio" name="met" value="무통장"> 무통장입금<br><br>
 				<div id="discountDiv">
-					할인 : <input type="text" name="discount" /><br>
-					<!-- js will edit this -->
+					할인 : <br>
+          <?php
+          foreach ($discountQ as $k) {
+            $cupon = $k["쿠폰번호"];
+            $disQ = $db->query("select * from 쿠폰 where 쿠폰번호 = '$cupon' and where 만료일 >= '$today'");
+            $disRes = $disQ -> fetch();
+            if ($disRes ->rowCount() > 0) {
+              if ($disRes["쿠폰종류코드"] == 'A') {
+                $disPrice = $price * $disRes["할인가_per"];
+              }
+              else {
+                $disPrice = $disRes["할인가_const"];
+              } ?>
+              <input type="radio" name="dis" value="<?= $disPrice ?>"><?= $disRes["쿠폰이름"] ?><br>
+            <?php
+            }
+          } ?>
+          <br>
 				</div>
 				<button type="submit">결제</button>
 			</form>
