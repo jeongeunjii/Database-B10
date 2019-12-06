@@ -1,0 +1,70 @@
+.top>p {
+    vertical-align: center;
+    padding: 1px;
+    margin-top: 0px;
+    width: 1000px;
+    height: 40px;
+    border: solid 1px;
+    border-color: #353535;
+    color: white;
+    font-weight: bold;
+    background-color: #353535;
+    padding-top: 10px;
+}
+
+.myplex {
+    background-color: ivory;
+    text-align: center;
+    width: 1004px;
+    height: 600px;
+}
+
+.title > p {
+    float: left;
+    margin-left: 20px;
+    color: ivory;
+    background-color: #212121;
+    width: 150px;
+    height: 40px;
+    padding-top: 10px;
+}
+
+.title {
+    width: 600px;
+}
+
+
+.ticket {
+    height: 200px;
+    width: 350px;
+    border: solid 1px;
+    border-color: black;
+    display: inline-block;
+    margin: 5px;
+}
+
+.fnb {
+    width: 350px;
+    height: 200px;
+    margin: 5px;
+    border: solid 1px;
+    border-color: black;
+    display: inline-block;
+}
+
+.cancel {
+    margin-top: 25px;
+    border: solid 1px;
+    border-color: black;
+    width: 720px;
+    height: 200px;
+    float: right;
+    margin-right: 50px;
+
+}
+
+.warning {
+    background-color: #adadad;
+    width: 1004px;
+    height: 500px;
+}
