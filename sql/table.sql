@@ -50,8 +50,8 @@ CREATE TABLE 영화
 영화등급코드 char(1) NOT NULL,
 상영시간 VARCHAR(9) NOT NULL,
 장르 VARCHAR(20) NOT NULL,
-감독_first VARCHAR(20),
-감독_family VARCHAR(20) NOT NULL
+감독 VARCHAR(20),
+배우 VARCHAR(20)
 );
 
 CREATE TABLE 영화상영정보
@@ -75,7 +75,7 @@ CREATE TABLE 예매
 개수_성인 integer,
 개수_청소년 integer,
 결제방법 varchar(10) NOT NULL,
-할인적용 varchar(10),
+할인적용 integer,
 총가격 integer NOT NULL,
 예매일자 datetime NOT NULL,
 예매상태 char(1) NOT NULL
@@ -173,6 +173,24 @@ CREATE TABLE 청결관리
 
 
 
+CREATE TABLE 쿠폰
+(
+  쿠폰번호 integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  쿠폰종류코드 char(1) NOT NULL,
+  쿠폰이름 varchar(20),
+  만료일 date,
+  할인가_per integer,
+  할인가_const integer
+);
+
+CREATE TABLE 회원쿠폰
+(
+  쿠폰번호 integer NOT NULL,
+  회원아이디 VARCHAR(20) NOT NULL
+);
+
+ALTER TABLE 쿠폰 CONVERT TO character SET utf8;
+ALTER TABLE 회원쿠폰 CONVERT TO character SET utf8;
 
 ALTER TABLE 메인코드 CONVERT TO character SET utf8;
 ALTER TABLE 서브코드 CONVERT TO character SET utf8;
