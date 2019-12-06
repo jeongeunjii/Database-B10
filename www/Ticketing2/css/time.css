@@ -1,0 +1,41 @@
+
+.section-2{
+  width: 600px;
+  height: 650px;
+}
+.wrap{
+  width:auto;
+  height:auto;
+  text-align: center;
+}
+.wrap>div{
+  display: inline-block;
+}
+.time_table{
+
+  background: #EDEDEF;
+  height: 500px;
+  width: 400px;
+  overflow-x: auto;
+  font-size: 12px;
+  font-weight: bold;
+}
+.time_table > .whole_table{
+  height:auto;
+}
+.whole_table > div{
+  height:240px;
+  margin:0 25px 0 25px;
+  border-bottom:2px solid gray;
+}
+.whole_table>div>div{
+  height:180px;
+  width:340px;
+}
+.whole_table>div>div>li{
+  list-style:none;
+  float: left;
+  height: 50px;
+  width:110px;
+  padding-bottom: 10px;
+}

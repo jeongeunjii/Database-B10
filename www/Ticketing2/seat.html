@@ -21,46 +21,25 @@
             <li class="menu"><a href="join.html">회원가입</a></li>
         </ul>
     </nav>
-    <section class = "seat">
+    <section>
         <div class="top">
             <p>인원/좌석</p>
         </div>
-        <div class = "number_people">
+        <div class = "numberoftiket">
             <div>
                 <h5 class="peoplemenu">일반</h5>
-                <button class = "box">1</button>
-                <button class = "box">2</button>
-                <button class = "box">3</button>
-                <button class = "box">4</button>
-                <button class = "box">5</button>
-                <button class = "box">6</button>
-                <button class = "box">7</button>
-                <button class = "box">8</button>
+                <input type="button" value="+">
+                <span id="numOfAdult">3</span>
+                <input type="button" value="-">
             </div>
 
             <div>
                 <h5 class="peoplemenu">청소년</h5>
-                <button class = "box">1</button>
-                <button class = "box">2</button>
-                <button class = "box">3</button>
-                <button class = "box">4</button>
-                <button class = "box">5</button>
-                <button class = "box">6</button>
-                <button class = "box">7</button>
-                <button class = "box">8</button>
+                <input type="button" value="+">
+                <span id="numOfTeen">1</span>
+                <input type="button" value="-">
             </div>
 
-            <div>
-                <h5 class="peoplemenu">우대 </h5>
-                <button class = "box">1</button>
-                <button class = "box">2</button>
-                <button class = "box">3</button>
-                <button class = "box">4</button>
-                <button class = "box">5</button>
-                <button class = "box">6</button>
-                <button class = "box">7</button>
-                <button class = "box">8</button>
-            </div>
         </div>
         <div class = "status">
             <p class = "theater">10PLEX 안산  |  1관</p>
@@ -68,8 +47,54 @@
         </div>
 
 
-        <div class = "bottom">
-            <iframe href=""></iframe>
+        <div class = "wrap">
+              <div class="row">
+                <p>A</p>
+                <div class="rowseat" id = "A">
+                  <input type="button" class="seat" id="A1" value="1">
+                  <input type="button" class="seat" id="A2" value="2">
+                  <input type="button" class="seat" id="A3" value="3">
+                  <input type="button" class="seat" id="A4" value="4">
+                  <input type="button" class="seat" id="A5" value="5">
+                  <input type="button" class="seat" id="A6" value="6">
+                  <input type="button" class="seat" id="A7" value="7">
+                  <input type="button" class="seat" id="A8" value="8">
+                  <input type="button" class="seat" id="A9" value="9">
+                  <input type="button" class="seat" id="A10" value="10">
+                  <input type="button" class="seat" id="A11" value="11">
+                  <input type="button" class="customerSelect" id="A12" value="12">
+                  <input type="button" class="seat" id="A13" value="13">
+                  <input type="button" class="seat" id="A14" value="14">
+                  <input type="button" class="seat" id="A15" value="15">
+                  <input type="button" class="seat" id="A6" value="16">
+                  <input type="button" class="seat" id="A17" value="17">
+                  <input type="button" class="seat" id="A18" value="18">
+                </div>
+              </div>
+              <div class="row">
+                <p>B</p>
+                <div class="rowseat" id = "B">
+                  <input type="button" class="seat" id="B1" value="1">
+                  <input type="button" class="seat" id="B2" value="2">
+                  <input type="button" class="seat" id="B3" value="3">
+                  <input type="button" class="seat" id="B4" value="4">
+                  <input type="button" class="seat" id="B5" value="5">
+                  <input type="button" class="seat" id="B6" value="6">
+                  <input type="button" class="seat" id="B7" value="7">
+                  <input type="button" class="seat" id="B8" value="8">
+                  <input type="button" class="seat" id="B9" value="9">
+                  <input type="button" class="seat" id="B10" value="10">
+                  <input type="button" class="seat" id="B11" value="11">
+                  <input type="button" class="seat" id="B12" value="12">
+                  <input type="button" class="seat" id="B13" value="13">
+                  <input type="button" class="seat" id="B14" value="14">
+                  <input type="button" class="seat" id="B15" value="15">
+                  <input type="button" class="seat" id="B16" value="16">
+                  <input type="button" class="seat" id="B17" value="17">
+                  <input type="button" class="seat" id="B18" value="18">
+                </div>
+              </div>
+
             <div class="info">
                 <p class="choose"></p> <p class = "desc">선택</p><br>
                 <p class="done"></p> <p class = "desc">예매완료</p><br>
@@ -93,9 +118,8 @@
                 상영관 3관 <br>
             </div>
 
-                <span class="step2">좌석선택</span>
-                <span class = "step3"> > </span>
-
+                <span class="step2">시간선택</span>
+                <span class="step2">>&nbsp&nbsp&nbsp좌선선택&nbsp&nbsp> </span>
             <div class="choice">
                 <p><a href="pay.html" style="color:white">결제</a></p>
             </div>

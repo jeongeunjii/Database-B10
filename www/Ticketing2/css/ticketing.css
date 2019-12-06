@@ -1,9 +1,13 @@
 .section-1{
+  width: 900px;
+  height: 700px;
+}
+.wrap{
   padding: 40px 0px;
-  width:1200px;
+  width:900px;
 }
 
-.section-1 > div {
+.wrap > div {
     vertical-align: top;
     display: inline-block;
 }
@@ -18,18 +22,18 @@ h3{
 hr{
   margin:0;
 }
-button{
+input[type="button"]{
   background-color:#D5D5D5;
   font-size: 12px;
   font-weight: bold;
   cursor: pointer;
   outline: 0;
-  border: 0;
+  border:0;
+
 }
-.mv_list{
-  margin-left: 110px;
+.movieSec{margin-left: 20%;
 }
-.mv_list > .mv_names{
+.movieSec > .mv_names{
   background: #EDEDEF;
   width:200px;
   height:500px;
@@ -41,7 +45,7 @@ button{
   margin: 12px 10px 10px 10px;
 }
 
-.mv_names > button{
+.mv_names > input[type="button"]{
   height: 55px;
   background-color: #EDEDEF;
 }
@@ -60,12 +64,12 @@ button{
   width:101px;
   border-right: 1px solid gray;
 }
- ul button{
+ ul input[type="button"]{
   width:100px;
   text-align: right;
   height: 50px;
 }
-.area_name_list{
+.office{
   position: absolute;
   top:0;
   right:0;
@@ -73,7 +77,7 @@ button{
   height: 500px;
   overflow-x: hidden;
 }
-.area_name_list button{
+.office input[type="button"]{
   background-color:#EDEDEF;
   width: 118px;
   margin:0;
@@ -85,15 +89,15 @@ button{
   margin-left: 25px;
   width: 58px;
 }
-.date_list {
+.currentMonth {
   background-color:#EDEDEF;
-  margin: 0px 10px 0px 10px;
+  margin: 0px 0px 0px 0px;
   width: 120px;
   height: 500px;
   overflow-x: auto;
   text-align: center;
 }
-.day, .day-red {
+.currentMonth input[type="button"]{
     background-color: #D5D5D5;
     width: 60px;
     height: 50px;
@@ -101,45 +105,10 @@ button{
     line-height: 40px;
     cursor: pointer;
     color: #454545;
+    font-size: 18px;
 
 }
-.day-red {
-    color: #B70000;
-}
 
-.time_table{
-
-  background: #EDEDEF;
-  height: 500px;
-  width: 400px;
-  overflow-x: auto;
-}
-.time_table {
-  font-size: 12px;
-  font-weight: bold;
-}
-.time_table > .whole_table{
-  height:500px;
-}
-.one_table{
-  height:240px;
-  margin:0 25px 0 25px;
-  border-bottom:2px solid gray;
-}
-.one_table > .theater_location{
-  text-align: left;
-}
-.time_info{
-  height:180px;
-  width:340px;
-}
-.time_info li{
-  list-style:none;
-  float: left;
-  height: 50px;
-  width:110px;
-  padding-bottom: 10px;
-}
 ::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
     border-radius: 10px;
