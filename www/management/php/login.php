@@ -23,7 +23,9 @@
         if ($result[0] === NULL or $result[0]['이름'] != $pw){
             if ( $result[0] === NULL ) {
                 $_SESSION['WRPW'] = "error";
+                $_SESSION['WRID'] = "";
             } else {
+                $_SESSION['WRPW'] = "";
                 $_SESSION['WRID'] = "error";
             }
             header("Location: ../htmlp/login.php");
@@ -38,8 +40,10 @@
         }
         // echo "<pre>";
         // var_dump($result[0]);
+        // var_dump($result[0] === NULL);
+        // var_dump($result[0]['이름'] != $pw);
         // echo "</pre>";
-
+        // session_destroy();
     } catch (PDOException $ex) {
         ?>
         <p>Sorry, a database error occurred. Please try again later.</p>

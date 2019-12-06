@@ -88,9 +88,6 @@
                         <li><img src="../image/attendance.png" alt="attendance_icon" /><a href="attendance.php">
                             출근퇴근
                         </a></li>
-                        <li><img src="../image/order.png" alt="order_icon" /><a href="order.php">
-                            물건주문
-                        </a></li>
                 <?php
                     }
                 ?>
@@ -107,10 +104,7 @@
                 <?php
                     if ($_SESSION['DEP'] == "매니저") {
                 ?>
-                        <div class="category_name">시설관리/주문발주</div>
-                        <li><img src="../image/order.png" alt="order_icon" /><a href="order.php">
-                            주문발주
-                        </a></li>
+                        <div class="category_name">시설관리</div>
                         <li><img src="../image/clean.png" alt="clean_icon" /><a href="clean.php">
                             청결관리
                         </a></li>
@@ -238,32 +232,37 @@
                                         </td>
                                         <td>
                                             <?php
-                                            $hour1 = removez(substr($row['퇴근'], 0, 2));
-                                            $hour2 = removez(substr($row['출근'], 0, 2));
-                                            $hour = (int)$hour1 - (int)$hour2;
-                                            $minu1 = removez(substr($row['퇴근'], 3, 2));
-                                            $minu2 = removez(substr($row['출근'], 3, 2));
-                                            $minu = (int)$minu1 - (int)$minu2;
-                                            if ($minu < 0) {
-                                                if ($hour == 0) {
-                                                    $hour = 0;
-                                                    $minu = 0;
-                                                }else {
-                                                    $hour = $hour - 1;
-                                                    $minu = $minu + 60;
+                                            if ($row['퇴근'] !== NULL && $row['출근'] !== NULL){
+                                                $hour1 = removez(substr($row['퇴근'], 0, 2));
+                                                $hour2 = removez(substr($row['출근'], 0, 2));
+                                                $hour = (int)$hour1 - (int)$hour2;
+                                                $minu1 = removez(substr($row['퇴근'], 3, 2));
+                                                $minu2 = removez(substr($row['출근'], 3, 2));
+                                                $minu = (int)$minu1 - (int)$minu2;
+                                                if ($minu < 0) {
+                                                    if ($hour == 0) {
+                                                        $hour = 0;
+                                                        $minu = 0;
+                                                    }else {
+                                                        $hour = $hour - 1;
+                                                        $minu = $minu + 60;
+                                                    }
                                                 }
-                                            }
                                             // if ($hour < 10) {
                                             //     $h = "0";
                                             //     $h = $h.(string)$hour;
                                             // }
-                                            if ($minu < 10) {
-                                                $m = "0".(string)$minu;
-                                            }else {
-                                                $m = $minu;
+                                                if ($minu < 10) {
+                                                    $m = "0".(string)$minu;
+                                                }else {
+                                                    $m = $minu;
+                                                }
+                                            
+                                            ?>
+                                                <?= "0".(string)$hour.":".$m ?>
+                                            <?php
                                             }
                                             ?>
-                                            <?= "0".(string)$hour.":".$m ?>
                                         </td>
                                     </tr>
                                 <?php

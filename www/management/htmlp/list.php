@@ -89,9 +89,6 @@
                         <li><img src="../image/attendance.png" alt="attendance_icon" /><a href="attendance.php">
                             출근퇴근
                         </a></li>
-                        <li><img src="../image/order.png" alt="order_icon" /><a href="order.php">
-                            물건주문
-                        </a></li>
                 <?php
                     }
                 ?>
@@ -109,9 +106,6 @@
                     if ($_SESSION['DEP'] == "매니저") {
                 ?>
                         <div class="category_name">시설관리/주문발주</div>
-                        <li><img src="../image/order.png" alt="order_icon" /><a href="order.php">
-                            주문발주
-                        </a></li>
                         <li><img src="../image/clean.png" alt="clean_icon" /><a href="clean.php">
                             청결관리
                         </a></li>
@@ -290,10 +284,10 @@
     <div id="info" style="display=none;">
         <img id="plex" src="../image/logo.png" alt="logo"/>
         <img id="X" src="../image/clear.svg" alt="X" onclick="windo();">
-        <p id="p1">이름 : 구매니</p>
-        <p id="p2">출석 : 3회</p>
-        <p id="p3">지각 : 5회</p>
-        <p id="p4">현재 업무 : 없음</p>
+        <p id="p1"></p>
+        <p id="p2"></p>
+        <p id="p3"></p>
+        <p id="p4"></p>
     </div>
 
 

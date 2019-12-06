@@ -79,9 +79,6 @@
                         <li><img src="../image/attendance.png" alt="attendance_icon" /><a href="attendance.php">
                             출근퇴근
                         </a></li>
-                        <li><img src="../image/order.png" alt="order_icon" /><a href="order.php">
-                            물건주문
-                        </a></li>
                 <?php
                     }
                 ?>
@@ -99,9 +96,7 @@
                     if ($_SESSION['DEP'] == "매니저") {
                 ?>
                         <div class="category_name">시설관리/주문발주</div>
-                        <li><img src="../image/order.png" alt="order_icon" /><a href="order.php">
-                            주문발주
-                        </a></li>
+
                         <li><img src="../image/clean.png" alt="clean_icon" /><a href="clean.php">
                             청결관리
                         </a></li>

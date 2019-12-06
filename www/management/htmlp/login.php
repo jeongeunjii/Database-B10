@@ -51,14 +51,16 @@ http-equiv="X-UA-Compatible" content="ie=edge"> <title>Document</title> </head>
 
 					<div id="login_error">
 						<?php
-							if ($_SESSION['WRID'] == "error") {
+							if (isset($_SESSION['WRID']) || isset($_SESSION['WRPW']) ){
+								if ($_SESSION['WRID'] == "error") {
 						?>
-								존재하지 않는 직원입니다.
+									존재하지 않는 직원입니다.
 						<?php
-							} else if ($_SESSION['WRPW'] == "error") {
+								} else if ($_SESSION['WRPW'] == "error") {
 						?>
-								사번이 틀렸습니다.
+									사번이 틀렸습니다.
 						<?php
+								}
 							}
 						?>
 					</div>

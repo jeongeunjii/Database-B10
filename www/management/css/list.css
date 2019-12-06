@@ -134,12 +134,11 @@
     display: none;
     position: absolute;
     width: 400px;
-    height: 600px;
     left: 60%;
-    top: 50%;
+    top: 60%;
     margin-left: -250px;
     margin-top: -250px;
-    padding-top: 15px;
+    padding: 15px 0px;
    
     color: white;
     border: white solid 1px;

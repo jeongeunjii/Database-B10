@@ -1,20 +1,24 @@
 input[type="checkbox"]#menu_state {
     display: none;
   }
-    input[type="checkbox"]:checked ~ nav {
+  input[type="checkbox"]:checked ~ nav {
     width: 220px;
   } 
+  input[type="checkbox"]:checked ~ main {
+    width: calc(100% - 220px);
+  }
   input[type="checkbox"]:checked ~ nav ul{
     opacity: 1;
     transition: opacity 0.25s ease-in-out;
   }
+  main {
+    width: 100%;
+  }
   nav {
-    position: fixed; 
-    height: 100%;
+    float: left;
+    height: calc(100% - 60px);
     background-color: #f2f2f2;
-    width: 0px;
-    position: fixed;
-    top: 50px;
+    width: 0;
     color: gray;
     margin: 0;
     padding: 0;
@@ -32,7 +36,7 @@ input[type="checkbox"]#menu_state {
 nav label[for="menu_state"] {
       cursor: pointer;
       position: fixed;
-      top: 2px;
+      top: 6px;
       left: 4px;
       padding: 10px;
       padding-right: 20px;
