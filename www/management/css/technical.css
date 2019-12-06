@@ -2,7 +2,6 @@
     display: none;
     position: absolute;
     width: 400px;
-    height: 300px;
     left: 60%;
     top: 60%;
     margin-left: -250px;
@@ -24,10 +23,11 @@
     margin: 10px;
 }
 
+#assign label {
+    display: block;
+}
+
 #assignbutton {
-    position: absolute;
-    bottom: 20px;
-    right: 157px;
     border: 1.2px solid #fff;
     border-radius: 5px;
     background-color: #fff;

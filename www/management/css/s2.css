@@ -1,21 +1,18 @@
 input[type="checkbox"]:checked ~ main {
 	left: 200px;
-	width: 88%;
   }
 
 main {
-	position: absolute;
+	float: right;
 	transition: all 0.15s ease-in-out;
-	top: 40px;
-	left: 0px;
 	color: rgb(70, 69, 69);
-	width: 100%;
+	height: calc(100% - 60px);
+	overflow: scroll;
 }
 
 section{
-	overflow: hidden;
-	padding: 10px 20px 40px 20px;
-	margin: 20px 35px;
+	/* overflow: hidden; */
+	padding: 20px;
 }
 
 #container {

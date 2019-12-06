@@ -3,35 +3,27 @@ html, body {
     margin: 0;
     background-color: #f2f2f22f;
     font-family: Arial, Helvetica, sans-serif;
-    overflow-x: hidden;
-    overflow-y: auto;
 }
 
 header {
     min-width: 1111px;
-    position: fixed;
     color: white;
     background-color: rgb(250, 172, 88);
     width: 100%;
-    height: 50px;
-    top: 0;
-    left: 0;
+    height: 60px;
 }
 
 header img {
-    position: fixed;
-    top: 7px;
-    left: 60px;
-    margin: 0px;
+    margin: 12px 0px 8px 50px;
     width: 100px;
 }
 
 header div {
-    position: fixed;
-    right: 10px;
-    line-height: 22px;
+    /* line-height: 22px; */
+    margin: 5px 0px;
     font-weight: 500;
     display: flex;
+    float: right;
 }
 
 header p {

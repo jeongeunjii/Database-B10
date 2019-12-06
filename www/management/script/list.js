@@ -66,10 +66,15 @@ function showinfo(arg1, arg2) {
 
     for (var i=0; i<arg2.length; i++) {
         if (arg2[i][0] == arg1) {
-            p1.innerHTML = String(arg2[i][1]);
-            p2.innerHTML = String(arg2[i][2]);
-            p3.innerHTML = String(arg2[i][3]);
-            p4.innerHTML = String(arg2[i][4]);
+            p1.innerHTML = "이름 : " + String(arg2[i][1]);
+            p2.innerHTML = "출석일수 : " + String(arg2[i][2]);
+            p3.innerHTML = "지각횟수 : " + String(arg2[i][3]);
+            if ( String(arg2[i][4]) != "NO staff"){
+                p4.innerHTML = "현재업무 : " + String(arg2[i][4]);
+            } else {
+                p4.innerHTML = "";
+            }
+            
         }
     }
     
