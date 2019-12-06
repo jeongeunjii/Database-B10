@@ -2,7 +2,7 @@ import requests
 import copy
 from bs4 import BeautifulSoup
 
-date = '20191206'
+date = '20191208'
 url = 'http://www.cgv.co.kr/common/showtimes/iframeTheater.aspx?areacode=02&theatercode=0211&date='+date
 respose = requests.get(url)
 html = respose.text

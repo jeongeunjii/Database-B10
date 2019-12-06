@@ -24,7 +24,7 @@
     <section>
       <div class="wrap">
           <h1>회원가입</h1> <hr/>
-          <form action="../php/join.php" method="post">
+          <form action="php/join.php" method="post">
             ID: <input type="text" name="id" /><br/>
             PASSWORD: <input type="password" name="ps" /><br/>
             이름(last): <input type="text" name="laName" /><br/>

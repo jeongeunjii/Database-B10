@@ -1,0 +1,48 @@
+section h1 {
+    margin: 0px 15px;
+    padding: 10px 0px;
+    font-size: 50px;
+}
+
+section > hr {
+    width: 95%;
+    border: black solid 5px;
+}
+
+section article {
+    height: 600px;
+}
+
+section article hr {
+    border: gainsboro solid 2px;
+    width: 63%;
+}
+
+section img {
+    float: left;
+    margin: 20px;
+}
+
+section h2 {
+    margin-bottom: 5px;
+    margin-right: 20px;
+    font-size: 40px;
+    display: inline-block;
+}
+
+section p {
+    display: inline-block;
+    font-family: 'Lora';
+    font-size: 20px;
+    margin-right: 15px;
+}
+
+article {
+    overflow: visible;
+}
+
+article > div > div {
+    width: calc(100% - 440px);
+    margin-left: 340px;
+    margin-right: 100px;
+}

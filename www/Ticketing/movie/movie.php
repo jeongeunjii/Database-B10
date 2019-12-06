@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="../common/css/layout.css">
+    <link rel="stylesheet" type="text/css" href="../common/css/movie.css">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
     <title>Best of Best, 쉽조영화관</title>
 </head>
@@ -47,11 +48,14 @@
               <div class="movieInform">
                 <img src="<?= $imgurl ?>" alt="" width="300px" height="450px">
                 <h2><?= $row["제목"] ?></h2>
-                <hr>
                 <p>감독 : <?= $row["감독"] ?></p>
                 <p>주연 : <?= $row["배우"] ?></p>
                 <p>장르 : <?= $row["장르"] ?></p>
                 <p>기본 : <?= $movieV["코드값"] ?>, <?= $row["상영시간"] ?></p>
+                <hr>
+                <div>
+                  <?= $row["줄거리"] ?>
+                </div>
               </div>
               </article>
               <?php

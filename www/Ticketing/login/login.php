@@ -24,7 +24,7 @@
     <section>
         <div class="content">
             <h1>로그인</h1>
-            <form action="../php/login.php" method="post">
+            <form action="php/login.php" method="post">
                 <p>ID:</p><input type="text" id="username" name="id" /><br>
                 <p>PASSWORD:</p><input type="password" id="password" name="ps" /><br>
                 <input type="submit" value="로그인">
