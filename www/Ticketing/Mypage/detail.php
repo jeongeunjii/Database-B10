@@ -1,23 +1,38 @@
+<?php
+  session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="../common/css/index.css">
+    <link rel="stylesheet" type="text/css" href="../common/css/layout.css">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
     <title>myPage</title>
 </head>
 <body>
     <header>
-        <a href="../index.html"><img src="../img/logo.png" alt="logo"></a>
+        <a href="../index.php"><img src="../img/logo.png" alt="logo"></a>
     </header>
 
     <nav>
-      <ul>
-        <li id="home"><a href="../index.html">HOME</a></li>
-        <li id="movie"><a href="../movie/movie.html">영화</a></li>
-        <li id="ticketing"><a href="../ticketing/ticketing.html">예매</a></li>
-        <li id="login"><a href="../login/login.html">로그인</a></li>
-      </ul>
+        <ul>
+            <li id="home"><a href="../index.php">HOME</a></li>
+            <li id="movie"><a href="../movie/movie.php">영화</a></li>
+            <li id="ticketing"><a href="../Ticketing/ticketing.php">예매</a></li>
+            <?php
+                if (isset($_SESSION['customer_id'])) {
+            ?>
+                    <li id="mypage"><a href="../Mypage/Mypage.php">마이페이지</a></li>
+            <?php
+                } else {
+            ?>
+                    <li id="login"><a href="../login/login.php">로그인</a></li>
+            <?php
+                }
+            ?>
+            
+        </ul>
     </nav>
 
     <section>

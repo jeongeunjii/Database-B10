@@ -1,21 +1,250 @@
+
 .wrap{
-  padding: 40px 0px;
-  width:1200px;
+  padding: 40px calc( (100% - 870px)/2);
+  width:60%;
+  overflow: hidden;
+  margin: 0px auto;
+  min-width: 900px;
 }
 
 .wrap > div {
-    vertical-align: top;
+  float: left;
+  height: 800px;
+}
+
+.title {
+    font-size:35px;
+    margin : 0;
+    height: 60px;
+    background-color: #333333;
+    color: #7F7F7F;
+    text-align: center;
+    clear: both;
+}
+.title h3{
+    margin : 0;
+} 
+
+.movieSec > .movie {
+    padding: 15px;
+    background: #EDEDEF;
+    width:270px;
+    height:720px;
+    overflow: scroll;
+}
+
+.movieSec > .movie img {
+    margin: 0px 0px 0px 5px;
+    vertical-align: middle;
+    width:30px;
+}
+
+.movieSec > .movie div {
+    background-color: whitesmoke;
+    cursor: pointer;
+    margin-bottom: 4px;
+    box-shadow: 1px 1px 3.5px rgb(174, 176, 167);
+}
+
+.movieSec > .movie div p{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+.theater > .city {
+    padding: 15px;
+    background: #EDEDEF;
+    width:170px;
+    height:720px;
+    overflow: scroll;
+    float: left;
+}
+
+.theater > .city div {
+    text-align: right;
+    background-color: whitesmoke;
+    cursor: pointer;
+    margin-bottom: 15px;
+    box-shadow: 1px 1px 3.5px rgb(174, 176, 167);
+}
+
+.theater > .city div p{
+    margin: 4px 4px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.theater > .office {
+    padding: 15px;
+    background: #EDEDEF;
+    width:170px;
+    height:720px;
+    overflow: scroll;
+    float: left;
+}
+
+.theater > .office div {
+    background-color: whitesmoke;
+    cursor: pointer;
+    margin-bottom: 10px;
+    box-shadow: 1px 1px 3.5px rgb(174, 176, 167);
+}
+
+.theater > .office div p{
+    margin: 4px 4px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+.date > #currentMonth {
+    background: #EDEDEF;
+    width:170px;
+    height:750px;
+    overflow: scroll;
     display: inline-block;
 }
 
-h3{
-  font-size:30px;
-  margin : 0;
-  height: 50px;
-  background-color: #333333;
-  color: #7F7F7F;
-  text-align: center;
+.date > #currentMonth input {
+    display: block;
 }
+.date > #currentMonth > p {
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    color: #666;
+    font-size: 30px;
+    font-family: Verdana;
+    font-weight: bold;
+    line-height: 30px;
+    text-shadow: 0 0 black;
+}
+
+.date > #currentMonth div {
+    width: 60px;
+    text-align: center;
+    background-color: whitesmoke;
+    cursor: pointer;
+    margin: 5px auto;
+    box-shadow: 1px 1px 3.5px rgb(174, 176, 167);
+}
+
+.date > #currentMonth div p{
+    margin: 4px 4px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.submit {
+    padding: 40px 0px;
+    background-color: #212121;
+    width: 100%;
+    vertical-align: middle;
+    text-align: center;
+    font-weight: bold;
+}
+
+.submit > div:first-child {
+    cursor: pointer;
+    color: white;
+    background-color: #555;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 40px;
+    border-radius: 10px;
+    border: white solid 2px;
+    padding: 15px;
+    text-decoration: underline;
+    text-decoration-color: white;
+}
+
+.submit > div:nth-child(odd):not(:first-child) {
+    color: white;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 40px;
+    padding: 15px;
+}
+
+.submit > div:nth-child(even) {
+    color: white;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 40px;
+    padding: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+
+
+
+
 hr{
   margin:0;
 }
@@ -27,15 +256,8 @@ button{
   outline: 0;
   border: 0;
 }
-.movieSec{
-  margin-left: 110px;
-}
-.movieSec > .movie{
-  background: #EDEDEF;
-  width:200px;
-  height:500px;
-  overflow: auto;
-}
+
+
 
 .movie > button{
   height: 55px;
@@ -137,7 +359,6 @@ button{
   padding-bottom: 10px;
 }
 ::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
     border-radius: 10px;
     background-color: #f5f5f5;
 }
@@ -147,6 +368,5 @@ button{
 }
 ::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.1);
     background-color: #555;
 }

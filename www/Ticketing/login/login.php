@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +20,18 @@
             <li id="home"><a href="../index.php">HOME</a></li>
             <li id="movie"><a href="../movie/movie.php">영화</a></li>
             <li id="ticketing"><a href="../Ticketing/ticketing.php">예매</a></li>
-            <li class = "selected" id="login"><a href="login.php">로그인</a></li>
+            <?php
+                if (isset($_SESSION['customer_id'])) {
+            ?>
+                    <li id="mypage"><a href="../Mypage/Mypage.php">마이페이지</a></li>
+            <?php
+                } else {
+            ?>
+                    <li id="login"><a href="../login/login.php">로그인</a></li>
+            <?php
+                }
+            ?>
+            
         </ul>
     </nav>
 

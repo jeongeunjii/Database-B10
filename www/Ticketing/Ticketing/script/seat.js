@@ -39,7 +39,7 @@ function posting() {
   var cs = document.getElementsByClassName("customerSelect");
   str = '<p>인원</p> <p>일반 : ' + adult + '명, 청소년 : ' + teen + '명</p>'+
         '<p>가격</p> <p>일반 : ' + adultPrice*adult + '원, 청소년 : ' + teenPrice*teen + '원</p>'+
-        '<form class="payPost" action="pay.html" method="post">' +
+        '<form class="payPost" action="pay.php" method="post">' +
         '<input type="hidden" name="time" value= "'+ ptime +'"/>' +
         '<input type="hidden" name="adult" value="'+ adult +'"/>' +
         '<input type="hidden" name="teen" value="'+ teen +'"/>';

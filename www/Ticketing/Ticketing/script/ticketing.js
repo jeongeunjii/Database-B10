@@ -17,7 +17,7 @@ function reload(pcity,poffice,pdate,pmovie) {
   if (isEmpty(pdate)) { pdate = ""; }
   if (isEmpty(pmovie)) { pmovie = ""; }
 
-  location.href="ticketing.html?city="+pcity+"&office="+poffice+"&date="+pdate+"&movie="+pmovie;
+  location.href="ticketing.php?city="+pcity+"&office="+poffice+"&date="+pdate+"&movie="+pmovie;
 }
 
 var today = new Date();
@@ -33,8 +33,7 @@ function editDate() {
   curMonDiv.innerHTML = "<p>" + (today.getMonth() + 1) + "월 </p>";
   for (i=1; i<lastDate.getDate(); i++) {
     var Dvalue = today.getFullYear() + "-" + (today.getMonth() + 1) +"-"+ i;
-    curMonDiv.innerHTML += '<input type="button" value= '+i+
-    ' onClick= "javascript:reload(\'' + Dcity +"\',\'"+ Doffice +"\',\'"+ Dvalue +"\',\'"+ Dmovie + '\');"/>';
+    curMonDiv.innerHTML += '<div onClick= "javascript:reload(\'' + Dcity +"\',\'"+ Doffice +"\',\'"+ Dvalue +"\',\'"+ Dmovie + '\');"/><p>'+i+'</p></div>';
    }
 }
 
@@ -46,7 +45,7 @@ function next(poffice,pdate,pmovie){
     while (String(poffice).length < 4) {
         poffice = "0" + poffice;
     }
-    location.href="time.html?office="+poffice+"&date="+pdate+"&movie="+pmovie;
+    location.href="time.php?office="+poffice+"&date="+pdate+"&movie="+pmovie;
   }
 }
 
