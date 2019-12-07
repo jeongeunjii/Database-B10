@@ -21,23 +21,38 @@
         </ul>
     </nav>
 
-    <section class="page">
-        <div class="top">결제</div>
-
-
-        <div>
-            <div class="payment">
-                <p>카드종류</p>
-                <select>
-                    <option>카드를 선택하세요</option>
-                    <option>BC카드</option>
-                    <option>현대카드</option>
-                    <option>신한카드</option>
-                    <option>kEB하나카드</option>
-                    <option>국민카드</option>
-                    <option>삼성카드</option>
-                    <option>카카오뱅크카드</option>
-                </select>
+    <section>
+        <div class="wrap">
+            <div class="top">
+                결제
+            </div>
+            <div class = "data">
+                <img src="img/movie1.PNG" alt="" width="300px" height="500px">
+                <h1>터미네이터-다크페이트</h1>
+                <p>지점명 : CGV안산</p>
+                <p>상영관 : 3관</p>
+                <p>상영시간 : 2019-12-04 11:40 ~ (107분)</p>
+                <p>수량<br>일반 : 1 <br>청소년 : 0 </p>
+                <p id="seatP">좌석 : A1</p>
+                <p>가격 <br>일반 : 8000 <br>청소년 : 0 <br>총 가격(할인제외) : 8000 </p>
+            </div>
+            <form action="pay.php" method="post">
+                결제수단<br>
+                <input type="radio" name="met" value="신용카드">
+                신용카드<br>
+                <input type="radio" name="met" value="휴대폰">
+                휴대폰결제<br>
+                <input type="radio" name="met" value="무통장">
+                무통장입금
+                <br>                
+                <div id="discountDiv">
+                        할인 : <br>
+                        <br>
+                    </div> 
+                    <button type="submit">결제</button>
+            </form>
+            <div>
+                
             </div>
         </div>
 

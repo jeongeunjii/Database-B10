@@ -1,5 +1,7 @@
 section {
     width: 1000px;
+    background-color: ivory;
+    height: 700px;
 }
 
 .top {
@@ -18,20 +20,9 @@ section {
 }
 
 
-p {
-    display: inline-block;
+.wrap{
+    position: relative;
 }
-select {
-    display: inline-block;
-    height: 30px;
-}
-
 .payment {
     padding: 10px;
-}
-
-.page {
-    width: 1000px;
-    background-color: ivory;
-    height: 700px;
 }
