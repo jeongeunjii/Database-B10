@@ -1,0 +1,152 @@
+.wrap{
+  padding: 40px 0px;
+  width:1200px;
+}
+
+.wrap > div {
+    vertical-align: top;
+    display: inline-block;
+}
+
+h3{
+  font-size:30px;
+  margin : 0;
+  height: 50px;
+  background-color: #333333;
+  color: #7F7F7F;
+  text-align: center;
+}
+hr{
+  margin:0;
+}
+button{
+  background-color:#D5D5D5;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  outline: 0;
+  border: 0;
+}
+.movieSec{
+  margin-left: 110px;
+}
+.movieSec > .movie{
+  background: #EDEDEF;
+  width:200px;
+  height:500px;
+  overflow: auto;
+}
+
+.movie > button{
+  height: 55px;
+  background-color: #EDEDEF;
+}
+
+.theater_list{
+  position: relative;
+  width: 220px;
+  height: 500px;
+  background: #EDEDEF
+}
+.theater_list ul{
+  list-style:none;
+  margin: 0;
+  padding-left: 0;
+  height:500px;
+  width:101px;
+  border-right: 1px solid gray;
+}
+ ul button{
+  width:100px;
+  text-align: right;
+  height: 50px;
+}
+.office{
+  position: absolute;
+  top:0;
+  right:0;
+  width:118px;
+  height: 500px;
+  overflow-x: hidden;
+}
+.office button{
+  background-color:#EDEDEF;
+  width: 118px;
+  margin:0;
+  line-height: 40px;
+  height: 50px;
+  text-align: left;
+}
+.date hr{
+  margin-left: 25px;
+  width: 58px;
+}
+.currentMonth {
+  background-color:#EDEDEF;
+  margin: 0px 10px 0px 10px;
+  width: 120px;
+  height: 500px;
+  overflow-x: auto;
+  text-align: center;
+}
+.day, .day-red {
+    background-color: #D5D5D5;
+    width: 60px;
+    height: 50px;
+    font-weight:bold;
+    line-height: 40px;
+    cursor: pointer;
+    color: #454545;
+
+}
+.day-red {
+    color: #B70000;
+}
+
+.time_table{
+
+  background: #EDEDEF;
+  height: 500px;
+  width: 400px;
+  overflow-x: auto;
+}
+.time_table {
+  font-size: 12px;
+  font-weight: bold;
+}
+.time_table > .whole_table{
+  height:500px;
+}
+.one_table{
+  height:240px;
+  margin:0 25px 0 25px;
+  border-bottom:2px solid gray;
+}
+.one_table > .theater_location{
+  text-align: left;
+}
+.time_info{
+  height:180px;
+  width:340px;
+}
+.time_info li{
+  list-style:none;
+  float: left;
+  height: 50px;
+  width:110px;
+  padding-bottom: 10px;
+}
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    background-color: #f5f5f5;
+}
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: #f5f5f5;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.1);
+    background-color: #555;
+}
