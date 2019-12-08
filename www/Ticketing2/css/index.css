@@ -127,3 +127,12 @@ footer > div {
     color: rgb(90, 74, 69);
     font-size: 22px;
 }
+
+.mainpage {
+    width: 900px;
+    height: 600px;
+}
+
+.opening {
+    width: 850px;
+}
