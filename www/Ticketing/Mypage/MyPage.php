@@ -4,63 +4,76 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="../common/css/layout.css">
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="mypage.js"></script>
-    <title>myPage</title>
-</head>
-<body>
-    <header>
-        <a href="../index.php"><img src="../img/logo.png" alt="logo"></a>
-    </header>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="../common/css/layout.css">
+        <link
+            href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i"
+            rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="mypage.js"></script>
+        <title>myPage</title>
+    </head>
+    <body>
+        <header>
+            <a href="../index.php"><img src="../img/logo.png" alt="logo"></a>
+        </header>
 
-    <nav>
-        <ul>
-            <li id="home"><a href="../index.php">HOME</a></li>
-            <li id="movie"><a href="../movie/movie.php">영화</a></li>
-            <li id="ticketing"><a href="../Ticketing/ticketing.php">예매</a></li>
-            <?php
+        <nav>
+            <ul>
+                <li id="home">
+                    <a href="../index.php">HOME</a>
+                </li>
+                <li id="movie">
+                    <a href="../movie/movie.php">영화</a>
+                </li>
+                <li id="ticketing">
+                    <a href="../Ticketing/ticketing.php">예매</a>
+                </li>
+                <?php
                 if (isset($_SESSION['customer_id'])) {
             ?>
-                    <li id="mypage"><a href="../Mypage/Mypage.php">마이페이지</a></li>
+                <li id="mypage">
+                    <a href="../Mypage/Mypage.php">마이페이지</a>
+                </li>
             <?php
                 } else {
             ?>
-                    <li id="login"><a href="../login/login.php">로그인</a></li>
-            <?php
+                <li id="login">
+                    <a href="../login/login.php">로그인</a>
+                </li>
+                <?php
                 }
             ?>
-            
-        </ul>
-    </nav>
 
-    <section>
-        <div class="wrap">
-            <h1>My Page</h1> <hr/>
-        <?php
+            </ul>
+        </nav>
+
+        <section>
+            <div class="wrap">
+                <h1>My Page</h1>
+                <hr/>
+                <?php
             include "../common/db.php";
             $id = $_SESSION['customer_id'];
 
             $test_ps = $db->query("select * from 회원 where 아이디 ='$id'");
             $row = $test_ps -> fetch();
         ?>
-            <div class="hello">
-            <p><?= $row["이름_성"]?><?= $row["이름_이름"]?>님의 마이페이지</p>
-            </div>
-            <div class="TicketingList">
-            <h2>예매 내역</h2>
-            <table>
-              <th>예매번호</th>
-              <th>지점</th>
-              <th>영화</th>
-              <th>상영일</th>
-              <th>가격</th>
-              <th>예매일</th>
-              <th>예매상태</th>
-             <?php
+                <div class="hello">
+                    <p><?= $row["이름_성"]?><?= $row["이름_이름"]?>님의 마이페이지</p>
+                </div>
+                <div class="TicketingList">
+                    <h2>예매 내역</h2>
+                    <table>
+                        <th>예매번호</th>
+                        <th>지점</th>
+                        <th>영화</th>
+                        <th>상영일</th>
+                        <th>가격</th>
+                        <th>예매일</th>
+                        <th>예매상태</th>
+                        <?php
              $yemeQ = $db->query("select * from 예매 where 회원아이디 ='$id'");
              foreach ($yemeQ as $i) {
               $yeme = $i["예매번호"];
@@ -91,32 +104,36 @@
               $officeRes = $officeQuery -> fetch();
               // $sangRes = $sangQuery -> fetch();
               $movieRes = $movieQuery -> fetch(); ?>
-              <tr class = "row" id = "<?= $yeme ?>">
-                <td><?= $yeme ?></td>
-                <td><?= $officeRes["지점명"] ?></td>
-                <td><?= $movieRes["제목"] ?></td>
-                <td><?= $movie_date ?> <?= $movie_time ?></td>
-                <td><?= $price ?></td>
-                <td><?= $yemeD ?></td>
-                <td><?= $yemeV ?></td>
-              </tr>
-             <?php } ?>
-             </table>
-           </div>
-      </div>
-    </section>
+                        <tr class="row" id="<?= $yeme ?>">
+                            <td><?= $yeme ?></td>
+                            <td><?= $officeRes["지점명"] ?></td>
+                            <td><?= $movieRes["제목"] ?></td>
+                            <td><?= $movie_date ?>
+                                <?= $movie_time ?></td>
+                            <td><?= $price ?></td>
+                            <td><?= $yemeD ?></td>
+                            <td><?= $yemeV ?></td>
+                        </tr>
+                        <?php } ?>
+                    </table>
+                </div>
+            </div>
+            <a href="logout.php">
+                <button class="button">Logout</button>
+            </a>
+        </section>
 
-    <footer>
-        <div>
-            <div id="foot_img">
-                <img src="../img/logo.png" width="120px">
+        <footer>
+            <div>
+                <div id="foot_img">
+                    <img src="../img/logo.png" width="120px">
+                </div>
+                <div id="foot_p">
+                    <p>경기도 안산시 상록구 한양대학로 55</p>
+                    <p>개발자 | 정은지,김재영,박예림,이재원,윤성주 |</p>
+                    <p>&copy;10PLEX.All Rights Reserved</p>
+                </div>
             </div>
-            <div id="foot_p">
-                <p>경기도 안산시 상록구 한양대학로 55</p>
-                <p>개발자 | 정은지,김재영,박예림,이재원,윤성주 |</p>
-                <p>&copy;10PLEX.All Rights Reserved</p>
-            </div>
-        </div>
-    </footer>
-</body>
+        </footer>
+    </body>
 </html>
