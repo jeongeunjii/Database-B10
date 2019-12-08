@@ -35,21 +35,22 @@
 
 
 .ticket {
+
     height: 200px;
-    width: 350px;
+    width: 720px;
     border: solid 1px;
     border-color: black;
     display: inline-block;
     margin: 5px;
 }
 
-.fnb {
-    width: 350px;
-    height: 200px;
-    margin: 5px;
-    border: solid 1px;
-    border-color: black;
-    display: inline-block;
+.ticket > p {
+    font-size: 20px;
+}
+
+
+.breakdown {
+    vertical-align: middle;
 }
 
 .cancel {
