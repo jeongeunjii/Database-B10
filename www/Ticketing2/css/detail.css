@@ -1,6 +1,6 @@
 .cancel {
     width: 800px;
-    height: 600px;
+    height: 700px;
 }
 
 .top > p{
@@ -31,22 +31,14 @@
     color: #353535;
 }
 
-.home {
-    border: solid 0px;
-    height: 40px;
-    width: 120px;
+button {
     text-align: center;
-    padding-top: 15px;
+    margin-left: 45%;
+    height: 50px;
+    width: 150px;
+    font-size: 30px;
     background-color: #353535;
     color: ivory;
-    text-decoration: none;
     font-weight: bold;
-}
-
-.home_div {
-    margin-left: 40%;
-}
-
-.home >a{
-    text-decoration: none;
+    border: solid 0px;
 }
