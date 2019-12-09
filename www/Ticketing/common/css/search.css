@@ -1,24 +1,32 @@
 section {
-    background: none;
+    min-width: 40%;
+    width: 40%;
+    padding: 30px;
+    text-align: center;
 }
 
-section img {
-    width: 100%;
+section p {
+    margin: 0px 0px 20px 0px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+section input {
+    line-height: 30px;
+    vertical-align: middle;
 }
 
 section button {
+    vertical-align: middle;
+    display: inline;
     border-radius: 10px;
     cursor: pointer;
-    margin: 40px 0px;
     padding: 10px 20px;
     font-size: 20px;
-    background: gray;
+    background: black;
     color: white;
     border: white 2px solid;
     margin: 10px 0px;
-    position: absolute;
-    top: 20px;
-    right: 20px;
 }
 
 section button:hover {
@@ -28,7 +36,7 @@ section button:hover {
     padding: 10px 20px;
     font-size: 20px;
     background: white;
-    color: gray;
-    border: gray 2px solid;
+    color: black;
+    border: black 2px solid;
     margin: 10px 0px;
 }

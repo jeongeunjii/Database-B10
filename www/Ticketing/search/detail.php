@@ -45,7 +45,7 @@
             <?php
                 include "../common/db.php";
                 $id = $_SESSION['customer_id'];
-                $yeme = $_GET["num"];
+                $yeme = $_GET["yemenum"];
 
                 $yemeQ = $db->query("select * from 예매 where 예매번호 = $yeme");
                 foreach ($yemeQ as $i) {

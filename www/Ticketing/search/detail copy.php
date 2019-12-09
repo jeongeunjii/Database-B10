@@ -109,7 +109,7 @@
                 if ($isCanceled != "C"){
             ?>
                 <div class="cancel_reserve">
-                    <h2>예매취소하기</h2>
+                    <h2>예매취소</h2>
                     <form action="cancel.php" method="post">
                         <input type="hidden" name="yeme" value= "<?= $yeme ?>"/>
                         <button type="submit">취소</button>

@@ -47,3 +47,35 @@ section {
     height: 25px;
     font-weight: bold;
 }
+
+.cancel_reserve {
+    text-align: center;
+}
+
+.cancel_reserve h2 {
+    margin: 0px;
+}
+
+.cancel_reserve button {
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 40px 0px;
+    padding: 10px 20px;
+    font-size: 20px;
+    background: black;
+    color: white;
+    border: white 2px solid;
+    margin: 10px 0px;
+}
+
+.cancel_reserve button:hover {
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 40px 0px;
+    padding: 10px 20px;
+    font-size: 20px;
+    background: white;
+    color: black;
+    border: black 2px solid;
+    margin: 10px 0px;
+}
