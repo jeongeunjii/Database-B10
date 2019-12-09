@@ -44,7 +44,8 @@ nav ul li:hover a {
 
 section {
     min-width: 1000px;
-    margin: 0px auto;
+    margin: 80px auto;
+    margin-bottom: 0px;
     width: 50%;
     background-color: ivory;
 }

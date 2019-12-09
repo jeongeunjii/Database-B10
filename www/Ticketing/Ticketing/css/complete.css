@@ -1,0 +1,21 @@
+section {
+    width: 20%;
+    margin: 50px auto;
+    text-align: center;
+}
+
+section p {
+    font-size: 35px;
+}
+
+section button {
+    height: 40px;
+    color: white;
+    border-radius: 10px;
+    background-color:#FAAC58;
+    font-size: 15px;
+    padding: 10px;
+    cursor: pointer;
+    border: 1;
+    border-color: lightgray;
+}

@@ -80,6 +80,15 @@
                         $movieRes = $movieQuery -> fetch();
 
                         $discountQ = $db->query("select * from 회원쿠폰 where 회원아이디 = '$id'");
+                        
+                        $date = $timeRes["일자"];
+                        $start = $timeRes["영화시작시간"];
+                        $running = $timeRes["러닝타임"];
+
+                        $numrunning = substr($running, 0, -3);
+                        $selectedTime = $start.":00";
+                        $endTime = strtotime("+".$numrunning." minutes", strtotime($selectedTime));
+
                     } catch (PDOException $ex) {
                 ?>
                         <p>Sorry, a database error occurred. Please try again later.</p>
@@ -99,9 +108,7 @@
                     <hr>
                     <p><?= $officeRes["지점명"] ?></p>
                     <p><?= $sangRes["상영관명"] ?></p>
-                    <p><?= $timeRes["일자"] ?>
-                        <?= $timeRes["영화시작시간"] ?>
-                        ~ (<?= $timeRes["러닝타임"] ?>)</p>
+                    <p class="time"><?=$date?> <?=$start." ~ "?><?=date('H:i', $endTime)?> <?=$running?></p>
                     <hr>
                     <p>수량 : 일반 <?= $adult ?> , 청소년 : <?= $teen ?></p>
                     <p id="seatP">좌석 :

@@ -43,7 +43,7 @@
           <?php
             include "../common/db.php";
             
-            $id = $_SESSION['customer_id'];
+            // $id = $_SESSION['customer_id'];
             $today = "2019-11-18";
 
             $movienumQuery = $db->query("select distinct 영화번호 from 영화상영정보 where 일자>='$today'");

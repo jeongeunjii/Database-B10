@@ -53,39 +53,56 @@
                 </div>
                 <div class="numberofticket">
                     <div class="status">
-                        <p class="theater">10PLEX 안산 | 1관</p>
-                        <p class="time">2019.12.01(일) 13:00 ~ 14:50</p>
+                        <?php
+                            include "../common/db.php";
+                            if (isset($_SESSION['customer_id'])){
+                                $id = $_SESSION['customer_id'];
+                            }
+
+                            // 상영정보번호
+                            if (isset($_GET["time"])) { $time = $_GET["time"]; }
+                            else { arl("오류 : 상영정보를 받아오지 못했습니다."); replace("../index.php"); }
+
+                            $timeQuery = $db->query("select * from 영화상영정보 natural join 상영관 natural join 지점 where 상영정보번호 = '$time'");
+                            $res = $timeQuery -> fetch();
+                            $office = $res["지점번호"];
+                            $sang = $res["상영관번호"];
+                            $adultPrice = $res["성인단가"];
+                            $teenPrice = $res["청소년단가"];
+                            $namesang = $res["상영관명"];
+                            $nameoffice = $res["지점명"];
+                            $nameoffice = str_replace("CGV","10PLEX",$nameoffice);
+                            $date = $res["일자"];
+                            $start = $res["영화시작시간"];
+                            $running = $res["러닝타임"];
+
+                            $numrunning = substr($running, 0, -3);
+                            $selectedTime = $start.":00";
+                            $endTime = strtotime("+".$numrunning." minutes", strtotime($selectedTime));
+                            
+                        ?>
+                            <p class="theater"><?=$nameoffice?> | <?=$namesang?></p>
+                            <p class="time"><?=$date?> <?=$start." ~ "?><?=date('H:i', $endTime)?> <?=$running?></p>
                     </div>
                     <div>
                         <p> 일반 </p>
-                        <input type="button" value="+" onclick="javascript:tiket(0,1)">
-                        <p id="numOfAdult">0</p>
                         <input type="button" value="-" onclick="javascript:tiket(0,-1)">
+                        <p id="numOfAdult">0</p>
+                        <input type="button" value="+" onclick="javascript:tiket(0,1)">
                     </div>
                     <div>
                         <p>청소년</p>
-                        <input type="button" value="+" onclick="javascript:tiket(1,1)">
-                        <p id="numOfTeen">0</p>
                         <input type="button" value="-" onclick="javascript:tiket(1,-1)">
+                        <p id="numOfTeen">0</p>
+                        <input type="button" value="+" onclick="javascript:tiket(1,1)">
                     </div>
                     
                 </div>
 
                     <?php
-                        include "../common/db.php";
+                        
 
-                        $id = $_SESSION['customer_id'];
-
-                        // 상영정보번호
-                        if (isset($_GET["time"])) { $time = $_GET["time"]; }
-                        else { arl("오류 : 상영정보를 받아오지 못했습니다."); replace("../index.php"); }
-
-                        $timeQuery = $db->query("select 지점번호, 상영관번호, 성인단가, 청소년단가 from 영화상영정보 where 상영정보번호= '$time'");
-                        $res = $timeQuery -> fetch();
-                        $office = $res["지점번호"];
-                        $sang = $res["상영관번호"];
-                        $adultPrice = $res["성인단가"];
-                        $teenPrice = $res["청소년단가"];
+                        
                     ?>
 
                 <script type="text/javascript">
@@ -147,7 +164,7 @@
                             <script type="text/javascript">
                             $(function () {
                                 var id = '#<?php echo $k["좌석번호_행"] ?><?php echo $k["좌석번호_열"] ?>';
-                                $(id).attr('class', 'selcted');
+                                $(id).attr('class', 'selected');
                                 $(id)
                                 .attr('onclick', '')
                                 .unbind('click');
@@ -177,7 +194,7 @@
             </div>
             <div id="payB">
                 <?php
-                    if( $id==null || $id=='' || $id == undefined ) { 
+                    if( !isset($_SESSION['customer_id']) ) { 
                 ?>
                         <button onclick="location.href='../login/login.html'">로그인 페이지로</button>
                         <button onclick="javascript:posting()">비회원 예매</button>

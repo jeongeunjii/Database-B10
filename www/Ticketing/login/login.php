@@ -39,10 +39,10 @@
         <div class="content">
             <h1>로그인</h1>
             <form action="php/login.php" method="post">
-                <p>ID:</p><input type="text" id="username" name="id" /><br>
-                <p>PASSWORD:</p><input type="password" id="password" name="ps" /><br>
-                <input type="submit" value="로그인">
-                <input type="button" onclick="location.href='join.php'" value="회원가입">
+                <p>아이디 </p><input type="text" id="username" name="id" /><br>
+                <p>비밀번호 </p><input type="password" id="password" name="ps" /><br>
+                <input type="submit" class="submit" value="로그인">
+                <input type="button" class="submit" onclick="location.href='join.php'" value="회원가입">
             </form>
         </div>
     </section>

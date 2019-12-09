@@ -9,13 +9,30 @@ section div {
     background: lightgray;
     opacity: 0.8;
     text-align: center;
+}
 
+section div h1 {
+    margin: 0px 15px;
+    padding: 10px 0px;
+    font-size: 50px;
 }
 
 section div p {
     display: inline-block;
+    margin-right: 10px;
 }
 
 section div input {
     display: inline-block;
+}
+
+.submit {
+    height: 30px;
+    width: 50px;
+    margin: 10px;
+    background-color:#555;
+    border: white 2px solid;
+    font-weight: bold;
+    cursor: pointer;
+    border: 0;
 }
