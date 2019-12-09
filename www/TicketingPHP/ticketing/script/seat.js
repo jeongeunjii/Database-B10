@@ -54,3 +54,14 @@ function posting() {
   }
   payDiv.innerHTML = str;
 }
+
+function block(x) {
+  jQuery(function() {
+    if (x == 1) {
+        $( ':button' ).not( ".noid" ).attr( 'disabled', true );
+    }
+    else {
+        $( ':button' ).attr( 'disabled', false );
+    }
+  });
+}

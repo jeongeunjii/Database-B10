@@ -87,8 +87,9 @@
           <div id="payB">
             <?php
             if( $id==null || $id=='' || $id == undefined ) { ?>
-              <button onclick = "location.href='../login/login.html'">로그인 페이지로</button>
-              <button onClick = "javascript:posting()">비회원 예매</button>
+              <button class="noid" onclick = "location.href='../login/login.html'">로그인 페이지로</button>
+              <button class="noid" onClick = "javascript:posting();block(0);">비회원 예매</button>
+              <script> block(1); </script>
             <?php
             } else {
               $postingStr = "<script> posting() </script>";
