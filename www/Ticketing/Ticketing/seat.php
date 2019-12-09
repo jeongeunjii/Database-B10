@@ -32,7 +32,7 @@
                     if (isset($_SESSION['customer_id'])) {
                 ?>
                 <li id="mypage">
-                    <a href="../Mypage/Mypage.php">마이페이지</a>
+                    <a href="../Mypage/MyPage.php">마이페이지</a>
                 </li>
             <?php
                     } else {

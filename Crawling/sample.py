@@ -15,12 +15,14 @@ time2 = ["'17:50:","'17:51:","'17:52:","'17:53:","'17:54:","'17:55:","'17:56:","
 
 
 for elem in array:
-    for i in range(1,12):
+    for i in range(1,2):
         result = "INSERT INTO 근태관리 VALUES ('2019-12-"
-        if (i < 10):
-            result = result + "0"
-        result = result + str(i) + "', "
+        # if (i < 10):
+        #     result = result + "0"
+        # result = result + str(i) + "', "
+        result = result + "12', "
         result = result + str(elem) + ", "
+        
 
         result = result + random.sample(time, 1)[0]
         s = int(randint(0,59))
@@ -37,7 +39,7 @@ for elem in array:
 
     
 
-# for i in range(1,100):
-#     x = randint(0,60)
-#     if (x < 10):
-#         print(x)
+for i in range(1,100):
+    x = randint(0,60)
+    if (x < 10):
+        print(x)
