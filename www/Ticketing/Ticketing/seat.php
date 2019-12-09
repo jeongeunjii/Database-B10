@@ -123,7 +123,7 @@
                                     <p><?= $row ?></p>
                                     <div class="rowSeat" id="<?= $row ?>">
                     <?php
-                                        $seatColQuery = $db->query("select 좌석번호_열 from 좌석 where 상영관번호= '$sang' and 좌석번호_행 = '$row'");
+                                        $seatColQuery = $db->query("select 좌석번호_열 from 좌석 where 상영관번호= '$sang' and 좌석번호_행 = '$row' order by 좌석번호_열");
                                         $empty = 1; #for check empty seat
                                         foreach ($seatColQuery as $j) {
                                             if ($empty != $j['좌석번호_열']){

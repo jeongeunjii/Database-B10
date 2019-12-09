@@ -55,11 +55,22 @@ form button {
 button {
     height: 40px;
     width: 70px;
-    background-color:#FAAC58;
+    background-color:black;
     font-size: 15px;
     font-weight: bold;
     cursor: pointer;
-    border: 0;
+    border: white 2px solid;
+    color: white;
 }
 
+button:hover {
+    height: 40px;
+    width: 70px;
+    background-color:white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    border: black 2px solid;
+    color: black;
+}
 

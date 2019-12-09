@@ -7,6 +7,7 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="../common/css/layout.css">
+        <link rel="stylesheet" type="text/css" href="../common/css/mypage.css">
         <link
             href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i"
             rel="stylesheet">
@@ -51,15 +52,17 @@
 
         <section>
             <div class="wrap">
-                <h1>My Page</h1>
-                <hr/>
+                <div class="top">
+                    <h1>My Page</h1>
+                </div>
+                
                 <?php
-            include "../common/db.php";
-            $id = $_SESSION['customer_id'];
+                    include "../common/db.php";
+                    $id = $_SESSION['customer_id'];
 
-            $test_ps = $db->query("select * from 회원 where 아이디 ='$id'");
-            $row = $test_ps -> fetch();
-        ?>
+                    $test_ps = $db->query("select * from 회원 where 아이디 ='$id'");
+                    $row = $test_ps -> fetch();
+                ?>
                 <div class="hello">
                     <p><?= $row["이름_성"]?><?= $row["이름_이름"]?>님의 마이페이지</p>
                 </div>
@@ -73,37 +76,38 @@
                         <th>가격</th>
                         <th>예매일</th>
                         <th>예매상태</th>
-                        <?php
-             $yemeQ = $db->query("select * from 예매 where 회원아이디 ='$id'");
-             foreach ($yemeQ as $i) {
-              $yeme = $i["예매번호"];
-              $time = $i["상영정보번호"];
-              $price = $i["총가격"];
-              $yemeD = $i["예매일자"];
-              $yemeC = $i["예매상태"];
+        <?php
+                        $yemeQ = $db->query("select * from 예매 where 회원아이디 ='$id'");
+                        foreach ($yemeQ as $i) {
+                            $yeme = $i["예매번호"];
+                            $time = $i["상영정보번호"];
+                            $price = $i["총가격"];
+                            $yemeD = $i["예매일자"];
+                            $yemeC = $i["예매상태"];
 
-              $codeQ = $db->query("select 코드값 from 서브코드 where 메인코드 ='B' and 서브코드 = '$yemeC'");
-              $code = $codeQ -> fetch();
-              $yemeV = $code["코드값"];
+                            $codeQ = $db->query("select 코드값 from 서브코드 where 메인코드 ='B' and 서브코드 = '$yemeC'");
+                            $code = $codeQ -> fetch();
+                            $yemeV = $code["코드값"];
 
-              $timeQuery = $db->query("select * from 영화상영정보 where 상영정보번호= $time");
-              $timeRes = $timeQuery -> fetch();
+                            $timeQuery = $db->query("select * from 영화상영정보 where 상영정보번호= $time");
+                            $timeRes = $timeQuery -> fetch();
 
-              $office = $timeRes["지점번호"];
-              // $sang = $timeRes["상영관번호"];
-              $movie = $timeRes["영화번호"];
-              $movie_date = $timeRes["일자"];
-              $movie_time = $timeRes["영화시작시간"];
+                            $office = $timeRes["지점번호"];
+                            // $sang = $timeRes["상영관번호"];
+                            $movie = $timeRes["영화번호"];
+                            $movie_date = $timeRes["일자"];
+                            $movie_time = $timeRes["영화시작시간"];
 
-              // (지점명, 상영관명, 영화제목)
+                            // (지점명, 상영관명, 영화제목)
 
-              $officeQuery = $db->query("select 지점명 from 지점 where 지점번호 ='$office'");
-              // $sangQuery = $db->query("select 상영관명 from 상영관 where 상영관번호 ='$sang' and 지점번호 ='$office'");
-              $movieQuery = $db->query("select 제목 from 영화 where 영화번호='$movie'");
+                            $officeQuery = $db->query("select 지점명 from 지점 where 지점번호 ='$office'");
+                            // $sangQuery = $db->query("select 상영관명 from 상영관 where 상영관번호 ='$sang' and 지점번호 ='$office'");
+                            $movieQuery = $db->query("select 제목 from 영화 where 영화번호='$movie'");
 
-              $officeRes = $officeQuery -> fetch();
-              // $sangRes = $sangQuery -> fetch();
-              $movieRes = $movieQuery -> fetch(); ?>
+                            $officeRes = $officeQuery -> fetch();
+                            // $sangRes = $sangQuery -> fetch();
+                            $movieRes = $movieQuery -> fetch(); 
+        ?>
                         <tr class="row" id="<?= $yeme ?>">
                             <td><?= $yeme ?></td>
                             <td><?= $officeRes["지점명"] ?></td>
@@ -114,13 +118,16 @@
                             <td><?= $yemeD ?></td>
                             <td><?= $yemeV ?></td>
                         </tr>
-                        <?php } ?>
+        <?php 
+            }
+        ?>
                     </table>
                 </div>
             </div>
-            <a href="logout.php">
-                <button class="button">Logout</button>
-            </a>
+            <div class="logout">
+                <a href="logout.php"><button class="button">Logout</button></a>
+            </div>
+            
         </section>
 
         <footer>

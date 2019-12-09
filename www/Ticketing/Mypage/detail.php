@@ -7,6 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="../common/css/layout.css">
+    <link rel="stylesheet" type="text/css" href="../common/css/detail.css">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
     <title>myPage</title>
 </head>
@@ -36,88 +37,93 @@
     </nav>
 
     <section>
-      <div class="wrap">
-          <h1>예매 내용</h1> <hr/>
-          <?php
-            include "../common/db.php";
-            $id = $_SESSION['customer_id'];
-            $yeme = $_GET["num"];
+        <div class="wrap">
+            <div class="top">
+                <h1>예매 상세</h1>
+            </div>
+            
+            <?php
+                include "../common/db.php";
+                $id = $_SESSION['customer_id'];
+                $yeme = $_GET["num"];
 
-             $yemeQ = $db->query("select * from 예매 where 예매번호 = $yeme");
-             foreach ($yemeQ as $i) {
-              $yeme = $i["예매번호"];
-              $time = $i["상영정보번호"];
-              $price = $i["총가격"];
-              $yemeD = $i["예매일자"];
-              $yemeC = $i["예매상태"];
+                $yemeQ = $db->query("select * from 예매 where 예매번호 = $yeme");
+                foreach ($yemeQ as $i) {
+                $yeme = $i["예매번호"];
+                $time = $i["상영정보번호"];
+                $price = $i["총가격"];
+                $yemeD = $i["예매일자"];
+                $yemeC = $i["예매상태"];
 
-              $codeQ = $db->query("select 코드값 from 서브코드 where 메인코드 ='B' and 서브코드 = '$yemeC'");
-              $code = $codeQ -> fetch();
-              $yemeV = $code["코드값"];
+                $codeQ = $db->query("select 코드값 from 서브코드 where 메인코드 ='B' and 서브코드 = '$yemeC'");
+                $code = $codeQ -> fetch();
+                $yemeV = $code["코드값"];
 
-              $timeQuery = $db->query("select * from 영화상영정보 where 상영정보번호= $time");
-              $timeRes = $timeQuery -> fetch();
+                $timeQuery = $db->query("select * from 영화상영정보 where 상영정보번호= $time");
+                $timeRes = $timeQuery -> fetch();
 
-              $office = $timeRes["지점번호"];
-              $sang = $timeRes["상영관번호"];
-              $movie = $timeRes["영화번호"];
-              $movie_date = $timeRes["일자"];
-              $movie_time = $timeRes["영화시작시간"];
+                $office = $timeRes["지점번호"];
+                $sang = $timeRes["상영관번호"];
+                $movie = $timeRes["영화번호"];
+                $movie_date = $timeRes["일자"];
+                $movie_time = $timeRes["영화시작시간"];
 
-              // (지점명, 상영관명, 영화제목)
+                // (지점명, 상영관명, 영화제목)
 
-              $officeQuery = $db->query("select 지점명 from 지점 where 지점번호 ='$office'");
-              $sangQuery = $db->query("select 상영관명 from 상영관 where 상영관번호 ='$sang' and 지점번호 ='$office'");
-              $movieQuery = $db->query("select 제목 from 영화 where 영화번호='$movie'");
+                $officeQuery = $db->query("select 지점명 from 지점 where 지점번호 ='$office'");
+                $sangQuery = $db->query("select 상영관명 from 상영관 where 상영관번호 ='$sang' and 지점번호 ='$office'");
+                $movieQuery = $db->query("select 제목 from 영화 where 영화번호='$movie'");
 
-              $officeRes = $officeQuery -> fetch();
-              $sangRes = $sangQuery -> fetch();
-              $movieRes = $movieQuery -> fetch(); ?>
-              <div class="">
-                <p>예매번호</p>
-                <p><?= $yeme ?></p>
+                $officeRes = $officeQuery -> fetch();
+                $sangRes = $sangQuery -> fetch();
+                $movieRes = $movieQuery -> fetch(); ?>
+                <div class="detail">
+                    <div class="succeed">
+                        <p>예매번호</p>
+                        <p>지점</p>
+                        <p>영화</p>
+                        <p>상영일</p>
+                        <p>일반</p>
+                        <p>청소년</p>
+                        <p>가격</p>                   
+                        <p>예매일</p>                    
+                        <p>예매상태</p>
+                    </div>
+                    <div class="information">
+                        <p><?= $yeme ?></p>
+                        <p><?= $officeRes["지점명"] ?> <?= $sangRes["상영관명"]?></p>
+                        <p><?= $movieRes["제목"] ?></p>
+                        <p><?= $movie_date ?> <?= $movie_time ?></p>
+                        <p><?= $i["개수_성인"]?></p>
+                        <p><?= $i["개수_청소년"]?></p>
+                        <p><?= $price ?></p>
+                        <p><?= $yemeD ?></p>
+                        <p><?= $yemeV ?></p>
+                    </div>
+                </div>
+                
 
-                <p>지점</p>
-                <p><?= $officeRes["지점명"] ?> <?= $sangRes["상영관명"]?></p>
-                <p>영화</p>
-                <p><?= $movieRes["제목"] ?></p>
-                <p>상영일</p>
-                <p><?= $movie_date ?> <?= $movie_time ?></p>
-
-                <p>일반</p>
-                <p><?= $i["개수_성인"]?></p>
-                <p>청소년</p>
-                <p><?= $i["개수_청소년"]?></p>
-
-                <p>가격</p>
-                <p><?= $price ?></p>
-                <p>예매일</p>
-                <p><?= $yemeD ?></p>
-                <p>예매상태</p>
-                <p><?= $yemeV ?></p>
-
-                <hr/>
-                <h2>예매취소</h2>
-                <form action="cancel.html" method="post">
-                  <input type="hidden" name="yeme" value= "<?= $yeme ?>"/>
-                  <input type="hidden" name="number" value= '<?= $i["개수_성인"]+$i["개수_청소년"] ?>'/>
-                  <?php
-                  $pq = $db->query("select * from 품목 where 예매번호 = $yeme");
-                  foreach ($pq as $j) {
-                    if ($j["품목취소코드"] == 'A') { ?>
-                      <input type='checkbox' name='seats[]' checked="checked" disabled="disabled" value='<?= $j["좌석번호_행"] ?><?= $j["좌석번호_열"] ?>'><?= $j["좌석번호_행"] ?><?= $j["좌석번호_열"] ?><br>
+                    <h2>예매취소</h2>
+                    <form action="cancel.html" method="post">
+                    <input type="hidden" name="yeme" value= "<?= $yeme ?>"/>
+                    <input type="hidden" name="number" value= '<?= $i["개수_성인"]+$i["개수_청소년"] ?>'/>
                     <?php
-                  } else { ?>
-                      <input type='checkbox' name='seats[]' value='<?= $j["좌석번호_행"] ?><?= $j["좌석번호_열"] ?>'><?= $j["좌석번호_행"] ?><?= $j["좌석번호_열"] ?><br>
-                  <?php
+                    $pq = $db->query("select * from 품목 where 예매번호 = $yeme");
+                    foreach ($pq as $j) {
+                        if ($j["품목취소코드"] == 'A') { ?>
+                        <input type='checkbox' name='seats[]' checked="checked" disabled="disabled" value='<?= $j["좌석번호_행"] ?><?= $j["좌석번호_열"] ?>'><?= $j["좌석번호_행"] ?><?= $j["좌석번호_열"] ?><br>
+                        <?php
+                    } else { ?>
+                        <input type='checkbox' name='seats[]' value='<?= $j["좌석번호_행"] ?><?= $j["좌석번호_열"] ?>'><?= $j["좌석번호_행"] ?><?= $j["좌석번호_열"] ?><br>
+                    <?php
+                        }
                     }
-                  }
-                  ?>
-                  <button type="submit">취소</button>
-                </form>
-              </div>
-             <?php } ?>
-      </div>
+                    ?>
+                    <button type="submit">취소</button>
+                    </form>
+                
+                <?php } ?>
+        </div>
     </section>
 
     <footer>

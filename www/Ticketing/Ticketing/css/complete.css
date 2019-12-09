@@ -2,20 +2,34 @@ section {
     width: 20%;
     margin: 50px auto;
     text-align: center;
+    padding: 30px 0px;
 }
 
 section p {
     font-size: 35px;
+    margin: 10px 0px;
 }
 
 section button {
     height: 40px;
     color: white;
     border-radius: 10px;
-    background-color:#FAAC58;
+    background-color:black;
     font-size: 15px;
     padding: 10px;
     cursor: pointer;
     border: 1;
     border-color: lightgray;
+}
+
+section button:hover {
+    height: 40px;
+    color: black;
+    border-radius: 10px;
+    background-color:white;
+    font-size: 15px;
+    padding: 10px;
+    cursor: pointer;
+    border: 1;
+    border-color: black;
 }
