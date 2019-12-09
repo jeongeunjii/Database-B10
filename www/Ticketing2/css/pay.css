@@ -1,7 +1,7 @@
 section {
-    width: 1000px;
+    width: 1000px !important;
     background-color: ivory;
-    height: 700px;
+    height: 650px;
 }
 
 .top {
@@ -21,8 +21,37 @@ section {
 
 
 .wrap{
+    font-weight: bold;
     position: relative;
 }
 .payment {
     padding: 10px;
 }
+.data > h2{
+    margin-top: 20px ;
+    display: inline-block;
+    
+}
+.data > p{
+    font-size: 12px;
+}
+
+form{
+    font-size : 12px;
+   
+}
+#discountDiv > p{
+    font-size: 12px;
+}
+button{
+    height: 40px;
+    width: 70px;
+    background-color:#FAAC58;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 0;
+  
+  }
+
+

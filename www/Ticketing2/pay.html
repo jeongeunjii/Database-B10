@@ -2,11 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>pay</title>
-
+    <title>결제 | 예매</title>
+    <link rel="stylesheet" href="css/pay.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/choice_section.css">
-    <link rel="stylesheet" href="css/pay.css">
 </head>
     <body>
     <header>
@@ -14,10 +13,11 @@
     </header>
     <nav>
         <ul>
-          <li class="menu"><a href="index.html" onclick="menu();">HOME</a></li>
-          <li class="menu"><a href="movie.html">영화</a></li>
-          <li class="menu"><a href="ticketing.html">예매</a></li>
-          <li class="menu"><a href="login.html">로그인</a></li>
+            <li class="menu"><a href="index.html" onclick="menu();">HOME</a></li>
+            <li class="menu"><a href="movie.html">영화</a></li>
+            <li class="menu"><a href="ticketing.html">예매</a></li>
+            <li class="menu"><a href="login.html">로그인</a></li>
+            <li class="mypage"><a href="mypage.html">마이페이지</a></li>
         </ul>
     </nav>
 
@@ -28,15 +28,15 @@
             </div>
             <div class = "data">
                 <img src="img/movie1.PNG" alt="" width="300px" height="500px">
-                <h1>터미네이터-다크페이트</h1>
+                <h3>터미네이터-다크페이트</h3><hr>
                 <p>지점명 : CGV안산</p>
                 <p>상영관 : 3관</p>
-                <p>상영시간 : 2019-12-04 11:40 ~ (107분)</p>
-                <p>수량<br>일반 : 1 <br>청소년 : 0 </p>
-                <p id="seatP">좌석 : A1</p>
-                <p>가격 <br>일반 : 8000 <br>청소년 : 0 <br>총 가격(할인제외) : 8000 </p>
+                <p>상영시간 : 2019-12-04 11:40 ~ (107분)</p><hr>
+                <p>수량 : 일반 1 , 청소년 2</p><hr>
+                <p id="seatP">좌석 : A1</p><hr>
+                <p>가격 : 일반 8000 원, 청소년 0 원, <br>총 가격(할인제외) : 8000 원</p><hr>
             </div>
-            <form action="pay.php" method="post">
+            <form action="complete.html" method="post">
                 결제수단<br>
                 <input type="radio" name="met" value="신용카드">
                 신용카드<br>
@@ -44,9 +44,9 @@
                 휴대폰결제<br>
                 <input type="radio" name="met" value="무통장">
                 무통장입금
-                <br>                
+                               
                 <div id="discountDiv">
-                        할인 : <br>
+                        <p>할인 : </p>
                         <br>
                     </div> 
                     <button type="submit">결제</button>

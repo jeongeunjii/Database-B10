@@ -1,0 +1,16 @@
+section > div{
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+}
+
+button{
+    height: 40px;
+    
+    background-color:#FAAC58;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1;
+    border-color: lightgray;
+}

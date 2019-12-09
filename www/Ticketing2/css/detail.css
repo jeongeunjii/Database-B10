@@ -1,0 +1,48 @@
+.cancel {
+    width: 800px;
+    height: 700px;
+}
+
+.top > p{
+    vertical-align: center;
+    padding: 1px;
+    margin-top: 0px;
+    width: 767px;
+    height: 40px;
+    border: solid 1px;
+    border-color: #353535;
+    color: white;
+    font-weight: bold;
+    background-color: #353535;
+    padding-top: 10px;
+    padding-left: 30px;
+}
+
+.succeed {
+    padding: 50px;
+    display: inline-block;
+    margin-left: 90px;
+    color: #353535;
+}
+
+.information {
+    padding: 50px;
+    display: inline-block;
+    color: #353535;
+}
+
+button {
+    text-align: center;
+    margin-left: 45%;
+    height: 50px;
+    width: 150px;
+    font-size: 30px;
+    background-color: #353535;
+    color: ivory;
+    font-weight: bold;
+    border: solid 0px;
+}
+
+.button {
+    cursor: pointer;
+}

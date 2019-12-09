@@ -1,10 +1,13 @@
 function Createseatp() {
-  var seatP = document.getElementById("seatP");
-  var str = "좌석 : <br/>";
-  for(var i=0; i <seatArr.length; i++) {
-    str = str + seatArr[i] + "<br/>";
-  }
-  seatP.innerHTML = str;
+    var seatP = document.getElementById("seatP");
+    var str = "좌석 : ";
+    for(var i=0; i <seatArr.length; i++) {
+        str = str + seatArr[i];
+        if (i!=seatArr.length-1){
+            str = str + ", ";
+        }
+    }
+    seatP.innerHTML = str;
 }
 
 function posting() {

@@ -7,6 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="common/css/layout.css">
+    <link rel="stylesheet" href="common/css/index.css">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
     <title>Best of Best, 쉽조영화관</title>
 </head>
@@ -35,8 +36,8 @@
         </ul>
     </nav>
 
-    <section>
-      <p>환영합니다!</p>
+    <section class="mainpage">
+        <img src="img/grand_opening.jpg">
     </section>
 
     <footer>
