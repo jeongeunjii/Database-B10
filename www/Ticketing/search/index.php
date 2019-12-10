@@ -1,14 +1,16 @@
 <?php
     session_start();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="../common/css/layout.css">
-    <link rel="stylesheet" type="text/css" href="css/join.css" >
+    <link rel="stylesheet" type="text/css" href="../common/css/search.css">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
-    <title>회원가입 | 회원서비스</title>
+    <script src="../common/script/index.js" type="text/javascript"></script>
+    <title>Best of Best, 쉽조영화관</title>
 </head>
 <body>
     <header>
@@ -36,29 +38,23 @@
     </nav>
 
     <section>
-      <div class="wrap">
-          <h1>회원가입</h1> <hr/>
-          <form action="php/join.php" method="post">
-            <p>ID:</p><input type="text" name="id" /><br/>
-            <p>비밀번호:</p><input type="password" name="ps" /><br/>
-            <p>이름(last):</p><input type="text" name="laName" /><br/>
-            <p>이름(first):</p><input type="text" name="fiName" /><br/>
-            <p>생일</p> <br/>
-            <p>년:</p><input type="text" name="year" /><br>
-            <p>월:</p><input type="text" name="mon" /><br>
-            <p>일:</p><input type="text" name="day" /><br>
-            <p>전화번호:</p><input type="text" name="hp" /><br>
-            *"-"를 제외하고 작성해주세요. <br/>
-            <hr>
-            <input type="submit" value="등록" class="submit">
-          </form>
-      </div>
+        <?php
+            include "../common/db.php";
+            if (isset($_GET["error"])) { $error = $_GET["error"]; }
+            else { $error=0; }
+            if ($error==1) {arl("잘못된 예매번호 입니다.");} 
+        ?>
+        <form class="" action="check.php" method="post">
+            <p>예매번호 입력</p>
+            <input type="text" name="yemenum" />
+            <button type="submit">조회</button>
+        </form>
     </section>
 
     <footer>
         <div>
             <div id="foot_img">
-                <img src="../img/logo.png" width="120px">
+                <img src="img/logo.png" width="120px">
             </div>
             <div id="foot_p">
                 <p>경기도 안산시 상록구 한양대학로 55</p>

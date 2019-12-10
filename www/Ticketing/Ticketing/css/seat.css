@@ -36,7 +36,6 @@
     width: calc(50% - 60px);
     display: inline-block;
     text-align: center;
-    
 }
 
 .numberofticket div:nth-child(2) {
@@ -54,10 +53,13 @@
 }
 
 .numberofticket div input {
-    display: inline-block;
+    border-radius: 10px;
+    border: white solid 1px;
     width: 20px;
     height: 20px;
     padding: 0px;
+    text-align: center;
+    vertical-align: middle;
 }
 
 .numberofticket .status {
@@ -75,10 +77,11 @@
     background-color: #EDEDEF;
     padding: 50px 0px;
     border: black solid 2px;
+    
 }
 
 .row {
-    display: inline;
+    display: block;
     margin-left: calc(100% - 660px);
 }
 
@@ -89,10 +92,12 @@
 }
 
 .row .rowSeat {
+    margin-bottom: 2px;
     display: inline-block;
 }
 
 .row .rowSeat input{
+    border: solid 0px;
     width: 20px;
     height: 20px;
     padding: 0px;
@@ -101,8 +106,16 @@
 .customerSelect {
     background-color: #AA1212;
     border: solid 0px;
-    width: 15px;
-    height: 15px;
+    width: 20px;
+    height: 20px;
+    padding: 0px;
+}
+
+.selected {
+    background-image: url(../../img/clear.svg);
+    border: solid 0px;
+    background-color: gray;
+    padding: 0px;
 }
 
 

@@ -7,6 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="../common/css/layout.css">
+    <link rel="stylesheet" type="text/css" href="../common/css/cancel.css">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
     <title>myPage</title>
 </head>
@@ -36,36 +37,22 @@
     </nav>
 
     <section>
-      <div class="wrap">
-          <p>취소되었습니다.</p>
-          <button type="button" onClick="javascript:toMain()">마이페이지로</button>
-          <script type="text/javascript">
-            function toMain() {
-              location.replace('MyPage.html');
-            }
-          </script>
-          <?php
-            include "../common/db.php";
-            $id = $_SESSION['customer_id'];
-            $yeme = $_POST["yeme"];
-            $number = $_POST["number"];
-            $seats = $_POST['seats'];
+        <div class="wrap">
+            <p>취소되었습니다.</p>
+            <button type="button" onClick="javascript:toMain()">마이페이지로</button>
+            <script type="text/javascript">
+                function toMain() {
+                location.replace('MyPage.php');
+                }
+            </script>
+            <?php
+                include "../common/db.php";
+                $id = $_SESSION['customer_id'];
+                $yeme = $_POST["yeme"];
 
-            if ($number == count($seats)) {
-              $code = 'C';
-            }
-            else {
-              $code = 'B';
-            }
-
-            $yemeQ = $db->query("UPDATE 예매 SET 예매상태 = '$code' WHERE 예매번호='$yeme'");
-
-             foreach ($seats as $i) {
-               $row = substr($i, 0, 1);
-               $col = substr($i, 1);
-               $pp = "UPDATE 품목 SET 품목취소코드= 'A' WHERE 예매번호=$yeme and 좌석번호_행='$row' and  좌석번호_열=$col";
-               $pumInsert = $db->query($pp);
-             } ?>
+                $db->exec("UPDATE 예매 SET 예매상태 = 'C' WHERE 예매번호='$yeme'");
+                $db->exec("UPDATE 품목 SET 품목취소코드= 'A' WHERE 예매번호='$yeme'");
+            ?>
       </div>
     </section>
 

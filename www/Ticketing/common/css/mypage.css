@@ -1,0 +1,74 @@
+.top {
+    font-size:30px;
+    margin : 0;
+    height: 60px;
+    background-color: #333333;
+    color: #7F7F7F;
+    text-align: center;
+    clear: both;
+}
+
+.top h1 {
+    margin: 0px;
+}
+
+.hello {
+    text-align: center;
+    font-size: 30px;
+}
+
+.TicketingList > h2 {
+    float: left;
+    margin-left: 20px;
+    color: ivory;
+    background-color: #212121;
+    width: 150px;
+    height: 40px;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.TicketingList table{
+    width: 75%;
+    border-top: black 1px solid;
+    margin: 0px auto;
+    border-collapse: collapse;
+}
+
+.TicketingList th {
+    font-weight: bolder;
+    font-size: 20px;
+    padding: 10px 0px;
+    border-bottom: black 1px solid;
+}
+
+.TicketingList td {
+    cursor: pointer;
+    padding: 8px 0px;
+    text-align: center;
+    border-bottom: black 1px solid;
+}
+
+.logout {
+    text-align: center;
+}
+
+.logout button {
+    cursor: pointer;
+    margin: 40px 0px;
+    padding: 10px 20px;
+    font-size: 20px;
+    background: black;
+    color: white;
+    border: white 2px solid;
+}
+
+.logout button:hover {
+    cursor: pointer;
+    margin: 40px 0px;
+    padding: 10px 20px;
+    font-size: 20px;
+    background: white;
+    color: black;
+    border: black 2px solid;
+}

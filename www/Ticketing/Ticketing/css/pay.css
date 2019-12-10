@@ -5,18 +5,14 @@ section {
 }
 
 .top {
-    vertical-align: center;
-    padding: 1px;
-    margin-top: 0px;
+    font-size:35px;
+    margin : 0;
+    height: 60px;
+    background-color: #333333;
+    color: #7F7F7F;
     text-align: center;
-    height: 30px;
-    width: 1000px;
-    border: solid 1px;
-    color: white;
-    font-weight: bold;
-    background-color: #353535;
-    border: solid 1px;
-    border-color: #353535;
+    clear: both;
+    padding-top: 20px;
 }
 
 
@@ -45,7 +41,11 @@ section {
 
 form {
     font-size: 12px;
-   
+}
+
+form button {
+    margin: 30px 90px 0px 0px;
+    float: right;
 }
 
 #discountDiv > p {
@@ -55,11 +55,22 @@ form {
 button {
     height: 40px;
     width: 70px;
-    background-color:#FAAC58;
+    background-color:black;
     font-size: 15px;
     font-weight: bold;
     cursor: pointer;
-    border: 0;
+    border: white 2px solid;
+    color: white;
 }
 
+button:hover {
+    height: 40px;
+    width: 70px;
+    background-color:white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    border: black 2px solid;
+    color: black;
+}
 

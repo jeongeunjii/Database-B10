@@ -1,34 +1,39 @@
 section {
-    background: none;
+    width: 30%;
+    min-width: 30%;
 }
 
-section img {
-    width: 100%;
+.wrap {
+    text-align: center;
+    padding: 30px 0px;
 }
 
-section button {
+.wrap p {
+    margin: 0px 0px 20px 0px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.wrap button {
     border-radius: 10px;
     cursor: pointer;
     margin: 40px 0px;
     padding: 10px 20px;
     font-size: 20px;
-    background: gray;
+    background: black;
     color: white;
     border: white 2px solid;
     margin: 10px 0px;
-    position: absolute;
-    top: 20px;
-    right: 20px;
 }
 
-section button:hover {
+.wrap button:hover {
     border-radius: 10px;
     cursor: pointer;
     margin: 40px 0px;
     padding: 10px 20px;
     font-size: 20px;
     background: white;
-    color: gray;
-    border: gray 2px solid;
+    color: black;
+    border: black 2px solid;
     margin: 10px 0px;
 }

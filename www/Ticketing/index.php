@@ -38,6 +38,9 @@
 
     <section class="mainpage">
         <img src="img/grand_opening.jpg">
+        <div>
+            <a href="search/index.php"><button>비회원 예매 확인</button></a>
+        </div>
     </section>
 
     <footer>
