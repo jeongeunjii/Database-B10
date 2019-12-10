@@ -21,6 +21,9 @@ function tiket(kind, sign) {
   if ((adult+teen)>=5 && sign>0) {
     return ;
   }
+  if ((adult == 0 && kind == 0 && sign<0) || (teen == 0 && kind == 1 && sign<0)) {
+    return ;
+  }
   if (kind == 0) {
     adult = adult + sign;
     numOfTiket = adult + teen;
