@@ -1,5 +1,5 @@
 <?php
-    session_start();
+  session_start();  
 ?>
 
 <!DOCTYPE html>
@@ -7,10 +7,9 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="../common/css/layout.css">
-    <link rel="stylesheet" type="text/css" href="../common/css/search.css">
-    <!-- <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet"> -->
-    <!-- <script src="../common/script/index.js" type="text/javascript"></script> -->
-    <title>Best of Best, 쉽조영화관</title>
+    <link rel="stylesheet" type="text/css" href="../common/css/cancel.css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+    <title>myPage</title>
 </head>
 <body>
     <header>
@@ -38,26 +37,29 @@
     </nav>
 
     <section>
-        <?php
-            include "../common/db.php";
-            if (isset($_GET["error"])) { $error = $_GET["error"]; }
-            else { $error=0; }
-            if ($error==1) {arl("잘못된 예매번호 입니다.");}
-            if (isset($_GET["phone_miss"])) { $error = $_GET["phone_miss"]; }
-            else { $error=0; }
-            if ($error==1) {arl("전화번호가 일치하지 않습니다.");} 
-        ?>
-        <form class="" action="check.php" method="post">
-            <p>예매번호 입력</p><input type="text" name="yemenum" />
-            <p>핸드폰번호</p><input type="text" name="phone">
-            <button type="submit">조회</button>
-        </form>
+        <div class="wrap">
+            <p>취소되었습니다.</p>
+            <button type="button" onClick="javascript:toMain()">홈으로</button>
+            <script type="text/javascript">
+                function toMain() {
+                    location.replace('../index.php');
+                }
+            </script>
+            <?php
+                include "../common/db.php";
+                // $id = $_SESSION['customer_id'];
+                $yeme = $_POST["yeme"];
+
+                $db->exec("UPDATE 예매 SET 예매상태 = 'C' WHERE 예매번호='$yeme'");
+                $db->exec("UPDATE 품목 SET 품목취소코드= 'A' WHERE 예매번호='$yeme'");
+            ?>
+      </div>
     </section>
 
     <footer>
         <div>
             <div id="foot_img">
-                <img src="img/logo.png" width="120px">
+                <img src="../img/logo.png" width="120px">
             </div>
             <div id="foot_p">
                 <p>경기도 안산시 상록구 한양대학로 55</p>

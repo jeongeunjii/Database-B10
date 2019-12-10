@@ -37,7 +37,7 @@ function tiket(kind, sign) {
 function posting() {
   var payDiv = document.getElementById("payB");
   var cs = document.getElementsByClassName("customerSelect");
-  str = '<div><form class="payPost" action="pay.php" method="post">' +
+  str = '<div><form class="payPost" action="pay.php" method="get">' +
   '<input type="hidden" name="time" value= "'+ ptime +'"/>' +
   '<input type="hidden" name="adult" value="'+ adult +'"/>' +
   '<input type="hidden" name="teen" value="'+ teen +'"/>';

@@ -108,13 +108,23 @@
             <?php
                 if ($isCanceled != "C"){
             ?>
-                <div class="cancel_reserve">
-                    <h2>예매취소하기</h2>
-                    <form action="cancel.php" method="post">
-                        <input type="hidden" name="yeme" value= "<?= $yeme ?>"/>
-                        <button type="submit">취소</button>
-                    </form>
-                </div>
+                    <div class="cancel_reserve">
+                        <h2>예매취소하기</h2>
+                        <form action="cancel.php" method="post">
+                            <input type="hidden" name="yeme" value= "<?= $yeme ?>"/>
+                            <button type="submit">취소</button>
+                        </form>
+                    </div>
+            <?php
+                } else {
+            ?>
+                    <button type="button" onClick="javascript:toMain()">마이페이지로</button>
+                    <script type="text/javascript">
+                        function toMain() {
+                            location.replace('../Mypage/Mypage.php');
+                        }
+                    </script>
+
             <?php
                 }
             ?>

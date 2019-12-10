@@ -52,13 +52,20 @@
                 </div>
                 <?php
                     include "../common/db.php";
+                    if (isset($_SESSION['customer_id'])) {
+                        $id = $_SESSION['customer_id'];
+                    }
+                    if (isset($_GET["met_miss"])) { $error = $_GET["met_miss"]; }
+                    else { $error=0; }
+                    if ($error==1) {arl("결제수단을 선택해주세요.");}
+                    if (isset($_GET["phone_miss"])) { $error = $_GET["phone_miss"]; }
+                    else { $error=0; }
+                    if ($error==1) {arl("전화번호를 입력해주세요.");} 
 
-                    $id = $_SESSION['customer_id'];
-
-                    $time = $_POST['time'];
-                    $adult = $_POST['adult'];
-                    $teen = $_POST['teen'];
-                    $seats = $_POST['seats'];
+                    $time = $_GET['time'];
+                    $adult = $_GET['adult'];
+                    $teen = $_GET['teen'];
+                    $seats = $_GET['seats'];
 
                     try {
                         $timeQuery = $db->query("select * from 영화상영정보 where 상영정보번호 = '$time'");
@@ -78,9 +85,9 @@
                         $officeRes = $officeQuery -> fetch();
                         $sangRes = $sangQuery -> fetch();
                         $movieRes = $movieQuery -> fetch();
-
+                    if (isset($_SESSION['customer_id'])) {
                         $discountQ = $db->query("select * from 회원쿠폰 where 회원아이디 = '$id'");
-                        
+                    }
                         $date = $timeRes["일자"];
                         $start = $timeRes["영화시작시간"];
                         $running = $timeRes["러닝타임"];
@@ -106,7 +113,7 @@
                     <img src="<?= $imgurl ?>" alt="" width="300px" height="500px" style="margin: 20px;">
                     <h2><?= $movieRes["제목"] ?></h2>
                     <hr>
-                    <p><?= $officeRes["지점명"] ?></p>
+                    <p><?= str_replace("CGV", "10PLEX ", $officeRes["지점명"]) ?></p>
                     <p><?= $sangRes["상영관명"] ?></p>
                     <p class="time"><?=$date?> <?=$start." ~ "?><?=date('H:i', $endTime)?> <?=$running?></p>
                     <hr>
@@ -120,7 +127,7 @@
                     <hr>
                 </div>
 
-                <form action="php/pay.php" method="post">
+                <form action="php/pay.php" method="get">
                     <input type="hidden" name="time" value="<?= $time ?>"/>
                     <input type="hidden" name="adult" value="<?= $adult ?>"/>
                     <input type="hidden" name="teen" value="<?= $teen ?>"/>
@@ -136,28 +143,39 @@
                     휴대폰결제<br>
                     <input type="radio" name="met" value="무통장">
                     무통장입금<br><br>
+                    
+
                     <div id="discountDiv">
-                        할인 :
-                        <br>
                     <?php
+                    if (isset($_SESSION['customer_id'])) {
                         foreach ($discountQ as $k) {
                             $cupon = $k["쿠폰번호"];
                             $disQ = $db->query("select * from 쿠폰 where 쿠폰번호 = $cupon and 만료일 >= '$today'");
                             if ($disQ->rowCount() > 0) {
-                            $disRes = $disQ -> fetch();
-                            if ($disRes["쿠폰종류코드"] == 'A') {
-                                $disPrice = $price * $disRes["할인가_per"];
+                                $disRes = $disQ -> fetch();
+                                if ($disRes["쿠폰종류코드"] == 'A') {
+                                    $disPrice = $price * $disRes["할인가_per"];
+                                }
+                                else {
+                                    $disPrice = $disRes["할인가_const"];
+                                } 
+                    ?>
+                                할인 :
+                                <br>
+                                <input type="radio" name="dis" value="<?= $disPrice ?>"><?= $disRes["쿠폰이름"] ?><br>
+                    <?php
                             }
-                            else {
-                                $disPrice = $disRes["할인가_const"];
-                            } ?>
-                                        <input type="radio" name="dis" value="<?= $disPrice ?>"><?= $disRes["쿠폰이름"] ?><br>
-                                        <?php
-                            }
-                        } ?>
+                        } 
+                    } else {
+                    ?>
+                        <p>핸드폰번호</p><input type="text" name="phone">
+                        <span class="error" id="errMsg_01"></span>
+                    <?php
+                    }
+                    ?>
                         <br>
                     </div>
-                    <button type="submit">결제</button>
+                    <button class="submit" type="submit" id="checkVal">결재</button>
                 </form>
             </div>
         </section>

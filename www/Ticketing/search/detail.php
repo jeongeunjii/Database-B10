@@ -44,7 +44,7 @@
             
             <?php
                 include "../common/db.php";
-                $id = $_SESSION['customer_id'];
+                // $id = $_SESSION['customer_id'];
                 $yeme = $_GET["yemenum"];
 
                 $yemeQ = $db->query("select * from 예매 where 예매번호 = $yeme");
@@ -108,13 +108,22 @@
             <?php
                 if ($isCanceled != "C"){
             ?>
-                <div class="cancel_reserve">
-                    <h2>예매취소하기</h2>
-                    <form action="cancel.php" method="post">
-                        <input type="hidden" name="yeme" value= "<?= $yeme ?>"/>
-                        <button type="submit">취소</button>
-                    </form>
-                </div>
+                    <div class="cancel_reserve">
+                        <h2>예매취소하기</h2>
+                        <form action="cancel.php" method="post">
+                            <input type="hidden" name="yeme" value= "<?= $yeme ?>"/>
+                            <button type="submit">취소</button>
+                        </form>
+                    </div>
+            <?php
+                } else {
+            ?>
+                    <button type="button" onClick="javascript:toMain()">홈으로</button>
+                    <script type="text/javascript">
+                        function toMain() {
+                            location.replace('../index.php');
+                        }
+                    </script>
             <?php
                 }
             ?>
