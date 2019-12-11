@@ -42,11 +42,9 @@
 
 
     $met = $_GET["met"];
-    $cupon = $_GET["dis"];
-    $dis = (int)$dis;
-    $price = (int)$price - $dis;
 
-    if (!isEmpty($cupon)) {
+    if (isset($_GET["dis"];)) {
+      $cupon = $_GET["dis"];
       $disQ = $db->query("select * from 쿠폰 where 쿠폰번호 = $cupon");
       if ($disQ->rowCount() > 0) {
         $disRes = $disQ -> fetch();
@@ -59,9 +57,10 @@
       }
       $del = $db->query("delete from 회원쿠폰 where 쿠폰번호 = $cupon");
     }
-    else {$disPrice = 0;}
+    else { $cupon = 0; $disPrice = 0;}
 
-    $yemestr = "insert into 예매 values(null,'$id',$time,$adult,$teen,'$met',$cupon,($price-$disPrice),'$today','A')";
+    $price = (int)$price - $disPrice;
+    $yemestr = "insert into 예매 values(null,'$id',$time,$adult,$teen,'$met',$cupon,$price,'$today','A')";
     $db->exec($yemestr);
     // echo "<pre>";
     // var_dump($yemestr);

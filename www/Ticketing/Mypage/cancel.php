@@ -59,7 +59,9 @@
                 $cuponRes = $disQ -> fetch();
                 $cupon = $cuponRes["할인적용"];
                 $id = $_SESSION['customer_id'];
-                $db->exec("insert into 회원쿠폰 values($cupon,$id)");
+                if (isset($cupon)) {
+                  $db->exec("insert into 회원쿠폰 values($cupon,$id)");
+                }
             ?>
       </div>
     </section>
