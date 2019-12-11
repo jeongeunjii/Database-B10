@@ -1,15 +1,21 @@
 .top {
-    font-size:30px;
+    font-size: 15pt;
     margin : 0;
     height: 60px;
     background-color: #333333;
-    color: #7F7F7F;
+    color: white;
     text-align: center;
     clear: both;
+    line-height: 60px;
+    border-bottom: rgb(202, 202, 202) 1px solid;
+    border-top: black 2px solid;
+    padding-left: 20px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .top h1 {
     margin: 0px;
+    font-weight: 400;
 }
 
 .hello {

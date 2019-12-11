@@ -9,10 +9,11 @@ section {
     margin : 0;
     height: 60px;
     background-color: #333333;
-    color: #7F7F7F;
+    color: white;
     text-align: center;
     clear: both;
     padding-top: 20px;
+    font-weight: 400;
 }
 
 

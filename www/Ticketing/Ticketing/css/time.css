@@ -7,15 +7,21 @@
 }
 
 .title {
-    width: 500px;
-    font-size:35px;
+    font-size: 15pt;
     margin : 0;
-    background-color: #333333;
-    color: #7F7F7F;
-    text-align: center;
+    height: 60px;
+    background-color: rgb(255, 255, 253);
+    text-align: left;
+    clear: both;
+    line-height: 60px;
+    border-bottom: rgb(202, 202, 202) 1px solid;
+    border-top: black 3px solid;
+    padding-left: 20px;
+    width: 480px;
 }
 .title h1{
     margin : 0;
+    font-weight: 400;
 } 
 
 .wrap > div:not(:first-child) {

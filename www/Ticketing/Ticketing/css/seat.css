@@ -8,13 +8,16 @@
   }
 
 .top {
-    font-size:35px;
+    font-size: 15pt;
     margin : 0;
     height: 60px;
-    background-color: #333333;
-    color: #7F7F7F;
-    text-align: center;
+    background-color: rgb(255, 255, 253);
+    text-align: left;
     clear: both;
+    line-height: 60px;
+    border-bottom: rgb(202, 202, 202) 1px solid;
+    border-top: black 3px solid;
+    padding-left: 20px;
 }
 
 .top h3{
@@ -23,7 +26,6 @@
 
 .numberofticket {
     background-color: #EDEDEF;
-    border: black solid 2px;
     border-bottom: none;
 }
 
@@ -76,8 +78,7 @@
 .rowarea {
     background-color: #EDEDEF;
     padding: 50px 0px;
-    border: black solid 2px;
-    
+    border-top: rgb(202, 202, 202) 1px solid;
 }
 
 .row {

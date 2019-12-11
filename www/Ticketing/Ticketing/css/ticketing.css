@@ -27,7 +27,6 @@
 }
 .title h3{
     margin : 0;
-}
     font-weight: 400;
     border-right: rgb(202, 202, 202) 1px solid;
 } 
@@ -59,7 +58,7 @@
 }
 
 .movieSec > .movie div:hover {
-    background-color: black;
+    background-color: gray;
     color: white;
 }
 
@@ -104,7 +103,7 @@
     float: left;
     border-right: rgb(202, 202, 202) 1px solid;
 }
-
+ 
 .theater > .office div {
     cursor: pointer;
     margin-bottom: 2px;
@@ -200,9 +199,9 @@
     padding: 15px;
 }
 
-.selec {
-  /* 임시 */
-  background-color: black;
+.theater .city .selec, .movieSec > .movie .selec, .date > #currentMonth .selec {
+  background-color: gray;
+  color: white;
 }
 
 
