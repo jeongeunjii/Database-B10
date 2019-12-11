@@ -80,7 +80,7 @@
                         $movieRes = $movieQuery -> fetch();
 
                         $discountQ = $db->query("select * from 회원쿠폰 where 회원아이디 = '$id'");
-                        
+
                         $date = $timeRes["일자"];
                         $start = $timeRes["영화시작시간"];
                         $running = $timeRes["러닝타임"];
@@ -144,15 +144,9 @@
                             $cupon = $k["쿠폰번호"];
                             $disQ = $db->query("select * from 쿠폰 where 쿠폰번호 = $cupon and 만료일 >= '$today'");
                             if ($disQ->rowCount() > 0) {
-                            $disRes = $disQ -> fetch();
-                            if ($disRes["쿠폰종류코드"] == 'A') {
-                                $disPrice = $price * $disRes["할인가_per"];
-                            }
-                            else {
-                                $disPrice = $disRes["할인가_const"];
-                            } ?>
-                                        <input type="radio" name="dis" value="<?= $disPrice ?>"><?= $disRes["쿠폰이름"] ?><br>
-                                        <?php
+                              $disRes = $disQ -> fetch(); ?>
+                              <input type="radio" name="dis" value="<?= $disRes["쿠폰번호"] ?>"><?= $disRes["쿠폰이름"] ?><br>
+                            <?php
                             }
                         } ?>
                         <br>

@@ -1,5 +1,5 @@
 <?php
-  session_start();  
+  session_start();
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +32,7 @@
             <?php
                 }
             ?>
-            
+
         </ul>
     </nav>
 
@@ -52,6 +52,13 @@
 
                 $db->exec("UPDATE 예매 SET 예매상태 = 'C' WHERE 예매번호='$yeme'");
                 $db->exec("UPDATE 품목 SET 품목취소코드= 'A' WHERE 예매번호='$yeme'");
+
+                //쿠폰 다시 지급
+                $cuponQ = $db->query("select 할인적용 from 예매 where 예매번호='$yeme'");;
+                $cuponRes = $disQ -> fetch();
+                $cupon = $cuponRes["할인적용"];
+                $id = $_SESSION['customer_id'];
+                $db->exec("insert into 회원쿠폰 values($cupon,$id)");
             ?>
       </div>
     </section>
