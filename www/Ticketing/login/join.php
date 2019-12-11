@@ -38,18 +38,18 @@
     <section>
       <div class="wrap">
           <h1>회원가입</h1> <hr/>
-          <form action="php/join.php" method="post">
-            <p>ID:</p><input type="text" name="id" /><br/>
-            <p>비밀번호:</p><input type="password" name="ps" /><br/>
-            <p>이름(last):</p><input type="text" name="laName" /><br/>
-            <p>이름(first):</p><input type="text" name="fiName" /><br/>
-            <p>생일</p> <br/>
-            <p>년:</p><input type="text" name="year" /><br>
-            <p>월:</p><input type="text" name="mon" /><br>
-            <p>일:</p><input type="text" name="day" /><br>
-            <p>전화번호:</p><input type="text" name="hp" /><br>
-            *"-"를 제외하고 작성해주세요. <br/>
-            <hr>
+          <form action="php/join.php" method="post" id="join">
+            <p>ID</p><input type="text" name="id" /><br/>
+            <p>비밀번호</p><input type="password" name="ps" /><br/>
+            <p>이름 (Last)</p><input type="text" name="laName" /><br/>
+            <p>이름 (First)</p><input type="text" name="fiName" /><br/>
+            <p id="birth">생일</p> <br/>
+            <p>년</p><input type="text" name="year" /><br>
+            <p>월</p><input type="text" name="mon" /><br>
+            <p>일</p><input type="text" name="day" /><br>
+            <p>전화번호</p><input type="text" name="hp" /><br>
+            * "-"를 제외하고 작성해주세요. <br/>
+            <hr id="hr"/>
             <input type="submit" value="등록" class="submit">
           </form>
       </div>

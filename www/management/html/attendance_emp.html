@@ -16,8 +16,8 @@
         var currentDate = new Date();
         var divClock = document.getElementById("divClock");
              
-        var msg = currentDate.getHours()+"시"
-        msg += currentDate.getMinutes()+"분";
+        var msg = currentDate.getHours()+":"
+        msg += currentDate.getMinutes();
              
         divClock.innerText = msg;
         setTimeout(showClock,1000);
@@ -112,12 +112,12 @@
                         <td>"</td>
                         <td>
                         <!-- <?php if(출근데이터 없으면) { -->
-                        <button class="table_button" onclick = "location.href='#arrive'" />
+                        <button id="arrive_btn" onclick = "window.open('popup_attendance_arrive.html')" />
                             출근</button></td>
                             <!-- <?php }
                                 else { echo $time } ?>-->
                         <td><!-- <?php if(퇴근데이터 없으면) { -->
-                        <button class="table_button" onclick = "location.href='#leave'" />
+                        <button id="leave_btn" onclick = "location.href='#leave'" />
                                 퇴근</button></td>
                                 <!-- <?php }
                                     else { echo $time } ?>-->
@@ -130,10 +130,10 @@
         </section>
     </main>
 
-    <article onload="showClock()">
+    <article>
         <div id="arrive">
         <form method="POST" action="">
-            <div id="divClock" class="clock"></div>
+            <div onload="showClock()"></div>
             출근 등록하시겠습니까?
             <br>
             <button>확인</button>
@@ -143,7 +143,7 @@
 
         <div id="leave">
         <form method="POST" action="">
-            <div id="divClock" class="clock"></div>
+            <div ></div>
             퇴근 등록하시겠습니까?
             <br>
             <button>확인</button>
