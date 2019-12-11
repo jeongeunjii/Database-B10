@@ -43,7 +43,7 @@
 
     $met = $_GET["met"];
 
-    if (isset($_GET["dis"];)) {
+    if (isset($_GET["dis"])) {
       $cupon = $_GET["dis"];
       $disQ = $db->query("select * from 쿠폰 where 쿠폰번호 = $cupon");
       if ($disQ->rowCount() > 0) {
