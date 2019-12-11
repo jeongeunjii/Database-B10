@@ -60,7 +60,7 @@
                     if ($error==1) {arl("결제수단을 선택해주세요.");}
                     if (isset($_GET["phone_miss"])) { $error = $_GET["phone_miss"]; }
                     else { $error=0; }
-                    if ($error==1) {arl("전화번호를 입력해주세요.");} 
+                    if ($error==1) {arl("전화번호를 입력해주세요.");}
 
                     $time = $_GET['time'];
                     $adult = $_GET['adult'];
@@ -143,7 +143,7 @@
                     휴대폰결제<br>
                     <input type="radio" name="met" value="무통장">
                     무통장입금<br><br>
-                    
+
 
                     <div id="discountDiv">
                     <?php
@@ -154,7 +154,6 @@
                             if ($disQ->rowCount() > 0) {
                                 $disRes = $disQ -> fetch();
                     ?>
-                    <?= $disRes["쿠폰번호"] ?>
                                 할인 :
                                 <br>
                                 <input type="radio" name="dis" value="<?= $disRes["쿠폰번호"] ?>"><?= $disRes["쿠폰이름"] ?><br>
