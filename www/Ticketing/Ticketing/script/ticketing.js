@@ -33,11 +33,16 @@ function editDate() {
   curMonDiv.innerHTML = "<p>" + (today.getMonth() + 1) + "월 </p>";
   for (i=1; i<lastDate.getDate(); i++) {
     var Dvalue = today.getFullYear() + "-" + (today.getMonth() + 1) +"-"+ i;
-    if (Ddate != "" && Ddate == Dvalue) {
-      curMonDiv.innerHTML += '<div class = "selec" onClick= "javascript:reload(\'' + Dcity +"\',\'"+ Doffice +"\',\'"+ Dvalue +"\',\'"+ Dmovie + '\');"/><p>'+i+'</p></div>';
+    if (i < today.getDate()) {
+      curMonDiv.innerHTML += '<div/><p>'+i+'</p></div>';
     }
     else {
-      curMonDiv.innerHTML += '<div onClick= "javascript:reload(\'' + Dcity +"\',\'"+ Doffice +"\',\'"+ Dvalue +"\',\'"+ Dmovie + '\');"/><p>'+i+'</p></div>';
+      if (Ddate != "" && Ddate == Dvalue) {
+        curMonDiv.innerHTML += '<div class = "selec" onClick= "javascript:reload(\'' + Dcity +"\',\'"+ Doffice +"\',\'"+ Dvalue +"\',\'"+ Dmovie + '\');"/><p>'+i+'</p></div>';
+      }
+      else {
+        curMonDiv.innerHTML += '<div onClick= "javascript:reload(\'' + Dcity +"\',\'"+ Doffice +"\',\'"+ Dvalue +"\',\'"+ Dmovie + '\');"/><p>'+i+'</p></div>';
+      }
     }
    }
 }
