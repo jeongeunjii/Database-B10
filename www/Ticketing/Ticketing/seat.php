@@ -195,17 +195,9 @@
             </div>
             <div id="payB">
                 <?php
-                    if( !isset($_SESSION['customer_id']) ) { 
+                    $postingStr = "<script> posting() </script>";
+                    echo $postingStr;
                 ?>
-                        <button onclick="location.href='../login/login.html'">로그인 페이지로</button>
-                        <button onclick="javascript:posting()">비회원 예매</button>
-                <?php
-                    } else {
-                        $postingStr = "<script> posting() </script>";
-                        echo $postingStr;
-                    } 
-                ?>
-
                 <!-- js will edit this -->
             </div>
         </div>

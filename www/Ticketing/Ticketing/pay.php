@@ -86,9 +86,7 @@
                         $officeRes = $officeQuery -> fetch();
                         $sangRes = $sangQuery -> fetch();
                         $movieRes = $movieQuery -> fetch();
-                    if (isset($_SESSION['customer_id'])) {
-                        $discountQ = $db->query("select * from 회원쿠폰 where 회원아이디 = '$id'");
-                    }
+                    
                         $date = $timeRes["일자"];
                         $start = $timeRes["영화시작시간"];
                         $running = $timeRes["러닝타임"];
@@ -149,6 +147,8 @@
                     <div id="discountDiv">
                     <?php
                     if (isset($_SESSION['customer_id'])) {
+                        $discountQ = $db->query("select * from 회원쿠폰 where 회원아이디 = '$id'");
+
                         foreach ($discountQ as $k) {
                             $cupon = $k["쿠폰번호"];
                             $disQ = $db->query("select * from 쿠폰 where 쿠폰번호 = $cupon and 만료일 >= '$today'");
@@ -170,7 +170,7 @@
                     ?>
                         <br>
                     </div>
-                    <button class="submit" type="submit" id="checkVal">결재</button>
+                    <button class="submit" type="submit" id="checkVal">결제</button>
                 </form>
             </div>
         </section>

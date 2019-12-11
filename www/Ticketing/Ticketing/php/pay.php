@@ -44,20 +44,19 @@
     $met = $_GET["met"];
     try {
         if (isset($_GET["dis"])) {
-        $cupon = $_GET["dis"];
-        $disQ = $db->query("select * from 쿠폰 where 쿠폰번호 = $cupon");
-        if ($disQ->rowCount() > 0) {
-            $disRes = $disQ -> fetch();
-            if ($disRes["쿠폰종류코드"] == 'A') {
-            $disPrice = $price * $disRes["할인가_per"];
+            $cupon = $_GET["dis"];
+            $disQ = $db->query("select * from 쿠폰 where 쿠폰번호 = $cupon");
+            if ($disQ->rowCount() > 0) {
+                $disRes = $disQ -> fetch();
+                if ($disRes["쿠폰종류코드"] == 'A') {
+                    $disPrice = $price * $disRes["할인가_per"];
+                }
+                else {
+                    $disPrice = $disRes["할인가_const"];
+                }
             }
-            else {
-            $disPrice = $disRes["할인가_const"];
-            }
-        }
-        $del = exec("delete from 회원쿠폰 where 쿠폰번호 = $cupon");
-        }
-        else { $cupon = 0; $disPrice = 0;}
+            $db->exec("delete from 회원쿠폰 where 쿠폰번호 = $cupon");
+        } else { $cupon = 0; $disPrice = 0;}
 
         $price = (int)$price - $disPrice;
         $yemestr = "insert into 예매 values(null,'$id',$time,$adult,$teen,'$met',$cupon,$price,'$today','A')";
