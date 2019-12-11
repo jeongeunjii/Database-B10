@@ -5,6 +5,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" href="../img/fav.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="../common/css/layout.css">
     <link rel="stylesheet" type="text/css" href="css/join.css" >
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">

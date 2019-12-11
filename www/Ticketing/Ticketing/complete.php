@@ -6,6 +6,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
+        <link rel="shortcut icon" href="../img/fav.ico" type="image/x-icon">
         <link rel="stylesheet" type="text/css" href="../common/css/layout.css">
         <link rel="stylesheet" type="text/css" href="css/complete.css">
         <title>영화 | 예매하기</title>
