@@ -17,4 +17,5 @@
     $join = $db->query("insert into 회원 (아이디,비밀번호,이름_성,이름_이름,생일,전화번호) values('$id','$ps','$laName','$fiName','$birth','$hp')");
     replace('../index.php');
   }
+  exit;
  ?>

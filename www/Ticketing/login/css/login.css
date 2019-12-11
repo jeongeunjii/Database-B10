@@ -4,7 +4,7 @@ section {
 
 section div {
     margin: auto;
-    background: rgb(240, 238, 238);
+    background: rgb(243, 242, 238);
     opacity: 0.8;
     text-align: center;
 }
@@ -38,6 +38,7 @@ section div input {
     padding: 10px;
     width: 400px;
     height: 300px;
+    border: lightgray 1px solid;
 }
 
 .submit {

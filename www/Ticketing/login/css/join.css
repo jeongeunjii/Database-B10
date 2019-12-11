@@ -6,7 +6,7 @@ section div {
     margin: auto;
     width: 400px;
     height: 900px;
-    background: rgb(240, 238, 238);
+    background: rgb(243, 242, 238);
     opacity: 0.8;
     text-align: center;
     padding: 10px;
@@ -52,6 +52,10 @@ hr {
     background-color: black;
     color: white;
     font-size: 13pt;
+}
+
+.wrap {
+    border: lightgray 1px solid;
 }
 
 #join {
