@@ -153,19 +153,14 @@
                             $disQ = $db->query("select * from 쿠폰 where 쿠폰번호 = $cupon and 만료일 >= '$today'");
                             if ($disQ->rowCount() > 0) {
                                 $disRes = $disQ -> fetch();
-                                if ($disRes["쿠폰종류코드"] == 'A') {
-                                    $disPrice = $price * $disRes["할인가_per"];
-                                }
-                                else {
-                                    $disPrice = $disRes["할인가_const"];
-                                } 
                     ?>
+                    <?= $disRes["쿠폰번호"] ?>
                                 할인 :
                                 <br>
-                                <input type="radio" name="dis" value="<?= $disPrice ?>"><?= $disRes["쿠폰이름"] ?><br>
+                                <input type="radio" name="dis" value="<?= $disRes["쿠폰번호"] ?>"><?= $disRes["쿠폰이름"] ?><br>
                     <?php
                             }
-                        } 
+                        }
                     } else {
                     ?>
                         <p>핸드폰번호</p><input type="text" name="phone">
