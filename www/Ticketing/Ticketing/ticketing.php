@@ -101,12 +101,20 @@
                                     continue;
                                 }
                                 $row = $movieq -> fetch();
+                                if (isset($movie) && $movie == $tmpmovie) {
                     ?>
+                                <div class = "selec" onclick="javascript:reload('<?= $city ?>','<?= $office ?>','<?= $date ?>','<?= $tmpmovie ?>');">
+                                    <img src="../img/<?=$row["영화등급코드"]?>.png">
+                                    <p><?= $row["제목"] ?></p>
+                                </div>
+
+                              <?php } else { ?>
                                 <div onclick="javascript:reload('<?= $city ?>','<?= $office ?>','<?= $date ?>','<?= $tmpmovie ?>');">
                                     <img src="../img/<?=$row["영화등급코드"]?>.png">
                                     <p><?= $row["제목"] ?></p>
                                 </div>
                     <?php
+                              }
                             }
                         }
                     ?>
@@ -122,14 +130,14 @@
                         <?php
                             $cityQuery = $db->query("select distinct 지역명, 지역번호 from 지역");
                             foreach ($cityQuery as $i) {
-                              $tmpCity = $i["지역번호"]
+                              $tmpCity = $i["지역번호"];
                               if (isset($city) && $tmpCity == $city) {
                         ?>
                               <div class ="selec" onclick="javascript:reload('<?= $tmpCity ?>','<?= '' ?>','<?= $date ?>','<?= $movie ?>');">
                                 <p><?= $i["지역명"]?></p>
                               </div>
                               <?php
-                              } else {
+                            } else { ?>
                                 <div onclick="javascript:reload('<?= $tmpCity ?>','<?= '' ?>','<?= $date ?>','<?= $movie ?>');">
                                     <p><?= $i["지역명"]?></p>
                                 </div>
@@ -144,15 +152,19 @@
                             if (!isEmpty($city)) {
                                 $officeQuery = $db->query("select 지점명, 지점번호 from 지점 where 지역번호 ='$city'");
                                 foreach ($officeQuery as $j) {
-                                $tmpoffice = $j["지점번호"]
-                                //if (isset($office) && $office == $$tmpoffice)
-                        ?>
+                                $tmpoffice = $j["지점번호"];
+                                if (isset($office) && $office == $$tmpoffice) { ?>
+                                  <div class = "selec" onclick="javascript:reload('<?= $city ?>','<?= $tmpoffice ?>','<?= $date ?>','<?= $movie ?>');">
+                                    <p> <?= str_replace("CGV","10PLEX ",$j["지점명"]) ?></p>
+                                  </div>
+                      <?php } else { ?>
                                 <div onclick="javascript:reload('<?= $city ?>','<?= $tmpoffice ?>','<?= $date ?>','<?= $movie ?>');">
                                     <p> <?= str_replace("CGV","10PLEX ",$j["지점명"]) ?></p>
                                 </div>
                         <?php
                                 }
                             }
+                          }
                         ?>
                     </div>
                 </div>
