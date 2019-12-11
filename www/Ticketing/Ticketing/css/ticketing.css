@@ -5,6 +5,7 @@
   overflow: hidden;
   margin: 0px auto;
   min-width: 900px;
+  margin-left: 5px;
 }
 
 .wrap > div {
@@ -13,37 +14,52 @@
 }
 
 .title {
-    font-size:35px;
+    font-size: 15pt;
     margin : 0;
     height: 60px;
-    background-color: #333333;
-    color: #7F7F7F;
-    text-align: center;
+    background-color: rgb(255, 255, 253);
+    text-align: left;
     clear: both;
+    line-height: 60px;
+    border-bottom: rgb(202, 202, 202) 1px solid;
+    border-top: black 3px solid;
+    padding-left: 20px;
 }
 .title h3{
     margin : 0;
+    font-weight: 400;
+    border-right: rgb(202, 202, 202) 1px solid;
 } 
+
+.date .title h3{
+  border-right: none;
+}
 
 .movieSec > .movie {
     padding: 15px;
-    background: #EDEDEF;
-    width:270px;
+    background: rgb(255, 255, 253);
+    width:310px;
     height:720px;
     overflow: scroll;
+    border-right: rgb(202, 202, 202) 1px solid;
 }
 
 .movieSec > .movie img {
-    margin: 0px 0px 0px 5px;
+    margin: 0px 15px 0px 5px;
     vertical-align: middle;
-    width:30px;
+    width:25px;
 }
 
 .movieSec > .movie div {
-    background-color: whitesmoke;
     cursor: pointer;
     margin-bottom: 4px;
-    box-shadow: 1px 1px 3.5px rgb(174, 176, 167);
+    border: none;
+    height: 50px;
+}
+
+.movieSec > .movie div:hover {
+    background-color: black;
+    color: white;
 }
 
 .movieSec > .movie div p{
@@ -54,8 +70,8 @@
 
 .theater > .city {
     padding: 15px;
-    background: #EDEDEF;
-    width:170px;
+    background: rgb(255, 255, 253);
+    width:175px;
     height:720px;
     overflow: scroll;
     float: left;
@@ -65,8 +81,10 @@
     text-align: right;
     background-color: whitesmoke;
     cursor: pointer;
-    margin-bottom: 15px;
-    box-shadow: 1px 1px 3.5px rgb(174, 176, 167);
+    margin-bottom: 2px;
+    height: 40px;
+    padding-right: 10px;
+    line-height: 30px;
 }
 
 .theater > .city div p{
@@ -77,18 +95,20 @@
 
 .theater > .office {
     padding: 15px;
-    background: #EDEDEF;
+    padding-left: 5px;
+    background: rgb(255, 255, 253);
     width:170px;
     height:720px;
     overflow: scroll;
     float: left;
+    border-right: rgb(202, 202, 202) 1px solid;
 }
 
 .theater > .office div {
-    background-color: whitesmoke;
     cursor: pointer;
-    margin-bottom: 10px;
-    box-shadow: 1px 1px 3.5px rgb(174, 176, 167);
+    margin-bottom: 2px;
+    height: 40px;
+    line-height: 30px;
 }
 
 .theater > .office div p{
@@ -99,8 +119,8 @@
 
 
 .date > #currentMonth {
-    background: #EDEDEF;
-    width:170px;
+    background: rgb(255, 255, 253);
+    width:120px;
     height:750px;
     overflow: scroll;
     display: inline-block;
@@ -112,28 +132,29 @@
 .date > #currentMonth > p {
     display: block;
     margin-top: 10px;
+    margin-bottom: 10px;
     text-align: center;
     color: #666;
-    font-size: 30px;
+    font-size: 19pt;
     font-family: Verdana;
     font-weight: bold;
-    line-height: 30px;
     text-shadow: 0 0 black;
 }
 
 .date > #currentMonth div {
     width: 60px;
     text-align: center;
-    background-color: whitesmoke;
     cursor: pointer;
-    margin: 5px auto;
-    box-shadow: 1px 1px 3.5px rgb(174, 176, 167);
+    margin: 10px auto;
 }
 
 .date > #currentMonth div p{
     margin: 4px 4px;
     display: inline-block;
     vertical-align: middle;
+    font-size: 12pt;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .submit {
