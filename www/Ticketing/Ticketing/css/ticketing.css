@@ -27,6 +27,7 @@
 }
 .title h3{
     margin : 0;
+}
     font-weight: 400;
     border-right: rgb(202, 202, 202) 1px solid;
 } 
@@ -199,8 +200,10 @@
     padding: 15px;
 }
 
-
-
+.selec {
+  /* 임시 */
+  background-color: black;
+}
 
 
 

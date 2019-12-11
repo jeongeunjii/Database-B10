@@ -76,7 +76,7 @@
                     <div class="title">
                         <h3>영화</h3>
                     </div>
-                    
+
                     <div class="movie">
                     <?php
                         if (isEmpty($office) && isEmpty($date)) {
@@ -100,15 +100,15 @@
                                     conlog("영화번호 : " .$tmpmovie. "번의 영화정보가 존재하지 않습니다.");
                                     continue;
                                 }
-                                $row = $movieq -> fetch(); 
-                    ?> 
+                                $row = $movieq -> fetch();
+                    ?>
                                 <div onclick="javascript:reload('<?= $city ?>','<?= $office ?>','<?= $date ?>','<?= $tmpmovie ?>');">
                                     <img src="../img/<?=$row["영화등급코드"]?>.png">
                                     <p><?= $row["제목"] ?></p>
                                 </div>
                     <?php
                             }
-                        } 
+                        }
                     ?>
                     </div>
                 </div>
@@ -117,18 +117,25 @@
                     <div class="title">
                         <h3>지점</h3>
                     </div>
-                
+
                     <div class="city">
                         <?php
                             $cityQuery = $db->query("select distinct 지역명, 지역번호 from 지역");
                             foreach ($cityQuery as $i) {
-                            $tmpCity = $i["지역번호"] 
+                              $tmpCity = $i["지역번호"]
+                              if (isset($city) && $tmpCity == $city) {
                         ?>
+                              <div class ="selec" onclick="javascript:reload('<?= $tmpCity ?>','<?= '' ?>','<?= $date ?>','<?= $movie ?>');">
+                                <p><?= $i["지역명"]?></p>
+                              </div>
+                              <?php
+                              } else {
                                 <div onclick="javascript:reload('<?= $tmpCity ?>','<?= '' ?>','<?= $date ?>','<?= $movie ?>');">
                                     <p><?= $i["지역명"]?></p>
                                 </div>
                         <?php
-                            } 
+                              }
+                          }
                         ?>
                     </div>
 
@@ -138,13 +145,14 @@
                                 $officeQuery = $db->query("select 지점명, 지점번호 from 지점 where 지역번호 ='$city'");
                                 foreach ($officeQuery as $j) {
                                 $tmpoffice = $j["지점번호"]
+                                //if (isset($office) && $office == $$tmpoffice)
                         ?>
                                 <div onclick="javascript:reload('<?= $city ?>','<?= $tmpoffice ?>','<?= $date ?>','<?= $movie ?>');">
                                     <p> <?= str_replace("CGV","10PLEX ",$j["지점명"]) ?></p>
                                 </div>
                         <?php
                                 }
-                            } 
+                            }
                         ?>
                     </div>
                 </div>
@@ -153,21 +161,21 @@
                     <div class="title">
                         <h3>날짜</h3>
                     </div>
-                    
+
                     <div id='currentMonth'>
                         <!-- js will edit this section -->
                     </div>
                 </div>
 
-                
-            </div>  
+
+            </div>
         </section>
         <div class="submit">
             <div onclick="javascript:next('<?= $office ?>','<?= $date ?>','<?= $movie ?>');">
                 시간선택
             </div>
             <div>
-                > 
+                >
             </div>
             <div>
                 좌석선택
