@@ -43,7 +43,7 @@
             <button type="button" onClick="javascript:toMain()">마이페이지로</button>
             <script type="text/javascript">
                 function toMain() {
-                location.replace('MyPage.php');
+                location.replace('Mypage.php');
                 }
             </script>
             <?php

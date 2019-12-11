@@ -153,7 +153,7 @@
                                 $officeQuery = $db->query("select 지점명, 지점번호 from 지점 where 지역번호 ='$city'");
                                 foreach ($officeQuery as $j) {
                                 $tmpoffice = $j["지점번호"];
-                                if (isset($office) && $office == $$tmpoffice) { ?>
+                                if (isset($office) && $office == $tmpoffice) { ?>
                                   <div class = "selec" onclick="javascript:reload('<?= $city ?>','<?= $tmpoffice ?>','<?= $date ?>','<?= $movie ?>');">
                                     <p> <?= str_replace("CGV","10PLEX ",$j["지점명"]) ?></p>
                                   </div>
