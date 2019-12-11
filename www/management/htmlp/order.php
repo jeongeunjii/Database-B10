@@ -6,6 +6,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <link rel="shortcut icon" href="../image/fav.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="../css/s1.css">
     <link rel="stylesheet" type="text/css" href="../css/s2.css">
     <link rel="stylesheet" type="text/css" href="../css/menu.css">

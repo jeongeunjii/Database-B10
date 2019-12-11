@@ -1,6 +1,6 @@
 section {
     width: 1000px !important;
-    background-color: ivory;
+    
     height: 650px;
 }
 
@@ -16,9 +16,23 @@ section {
 }
 
 
+section:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
 .wrap{
     font-weight: bold;
     position: relative;
+    background-color: ivory;
+    padding: 0px 0px 10px 0px;
+}
+
+.wrap:after {
+    content: "";
+    display: block;
+    clear: both;
 }
 
 .payment {

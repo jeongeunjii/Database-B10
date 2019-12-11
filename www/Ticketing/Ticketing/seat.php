@@ -7,6 +7,7 @@
     <head>
         <meta charset="UTF-8">
         <title>seat</title>
+        <link rel="shortcut icon" href="../img/fav.ico" type="image/x-icon">
         <link rel="stylesheet" type="text/css" href="../common/css/layout.css">
         <link rel="stylesheet" href="css/seat.css">
         <script src="script/seat.js" type="text/javascript"></script>
