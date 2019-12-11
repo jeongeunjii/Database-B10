@@ -35,13 +35,22 @@
             
         </ul>
     </nav>
-
+    
+    
     <section class="mainpage">
         <img src="img/grand_opening.jpg">
-        <div>
-            <a href="search/index.php"><button>비회원 예매 확인</button></a>
-        </div>
+            <?php
+                if (!isset($_SESSION['customer_id'])) {
+            ?>
+                    <div>
+                        <a href="search/index.php"><button>비회원 예매 확인</button></a>
+                    </div>
+            <?php
+                }
+            ?>
     </section>
+    
+    
 
     <footer>
         <div>

@@ -4,35 +4,67 @@ section {
 
 section div {
     margin: auto;
-    width: 400px;
-    height: 300px;
-    background: lightgray;
+    background: rgb(240, 238, 238);
     opacity: 0.8;
     text-align: center;
 }
 
 section div h1 {
     margin: 0px 15px;
-    padding: 10px 0px;
+    padding: 10px;
+    padding-top: 20px;
     font-size: 50px;
+    margin-bottom: 25px;
+    text-align: left;
+    font-weight: 400;
 }
 
 section div p {
     display: inline-block;
     margin-right: 10px;
+    margin-left: 20px;
+    width: 70px;
+    text-align: left;
 }
 
 section div input {
     display: inline-block;
+    height: 40px;
+    width: 190px;
+    margin-bottom: 10px;
+}
+
+.content{
+    padding: 10px;
+    width: 400px;
+    height: 300px;
 }
 
 .submit {
-    height: 30px;
-    width: 70px;
-    margin: 10px;
-    background-color:#555;
-    border: white 2px solid;
-    font-weight: bold;
+    width: 80px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: 500;
     cursor: pointer;
-    border: 0;
+}
+
+.input {
+    float: left;
+    margin: 0px;
+}
+
+#loginbtn {
+    height: 80px;
+    font-size: 14pt;
+    background-color:black;
+    color: white;
+}
+
+#joinbtn {
+    margin: 0;
+    height: 25px;
+    background-color: rgb(240, 238, 238);
+    border: none;
+    font-size: 11pt;
+    text-decoration: underline;
 }

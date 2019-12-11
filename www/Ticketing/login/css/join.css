@@ -5,34 +5,69 @@ section {
 section div {
     margin: auto;
     width: 400px;
-    height: 600px;
-    background: lightgray;
+    height: 900px;
+    background: rgb(240, 238, 238);
     opacity: 0.8;
     text-align: center;
+    padding: 10px;
 }
 
 section div h1 {
     margin: 0px 15px;
-    padding: 10px 0px;
+    padding: 10px 5px;
+    padding-top: 20px;
     font-size: 50px;
+    text-align: left;
+    font-weight: 400;
 }
 
 section div p {
     display: inline-block;
-    margin: 10px;
+    margin: 3px 0px;
+    width: 400px;
+    font-weight: 400;
 }
 
 section div input {
     display: inline-block;
+    height: 30px;
+    width: 350px;
+    margin-bottom: 10px;
+    border-bottom: rgb(126, 125, 125) 1.5px solid;
+    border-top: none;
+    border-left: none;
+    background-color: rgb(240, 238, 238);
+}
+
+hr {
+    width: 370px;
 }
 
 .submit {
+    width: 360px;
     height: 40px;
-    width: 70px;
-    background-color:#555;
-    border: white 2px solid;
-    font-size: 15px;
-    font-weight: bold;
+    margin-top: 30px;
+    font-weight: 500;
     cursor: pointer;
-    border: 0;
+    background-color: black;
+    color: white;
+    font-size: 13pt;
+}
+
+#join {
+    float: left;
+    text-align: left;
+    margin-left: 20px;
+}
+
+#birth {
+    margin: 30px 0px 20px 0px;
+    font-weight: 500;
+    font-size: 12.5pt;
+}
+
+#hr {
+    position: relative;
+    left: -20px;
+    margin-top: 20px;
 }

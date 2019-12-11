@@ -26,7 +26,7 @@
     margin-left: 10px;
 }
 
-.table_button {
+.table_button, #arrive_btn, #leave_btn {
     border: 1.2px solid rgb(250, 172, 88);
     border-radius: 5px;
     background-color: rgb(250, 172, 88);
@@ -37,7 +37,7 @@
     font-size: 18px;
 }
 
-.table_button:hover {
+.table_button:hover, #arrive_btn:hover, #leave_btn:hover {
     color: rgb(250, 172, 88);
     background: none;
 }
