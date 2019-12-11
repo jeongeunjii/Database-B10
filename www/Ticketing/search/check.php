@@ -15,4 +15,5 @@
     // echo "<pre>";
     // var_dump($yemeRes);
     // echo "</pre>";
+    exit;
 ?>
